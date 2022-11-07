@@ -1,5 +1,5 @@
 const mongoose = require("mongoose")
-mongoose.connect('mongodb://127.0.0.1:27017/NewsProject')
+mongoose.connect('mongodb+srv://aadilkhan:1234@e-com.l2pmf.mongodb.net/?retryWrites=true&w=majority')
 
 const newsSchema = new mongoose.Schema({
     "title": {
