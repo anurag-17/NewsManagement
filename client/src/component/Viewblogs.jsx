@@ -1,4 +1,4 @@
-import React, {useRef} from 'react'
+import React, { useRef } from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import axios from 'axios';
@@ -25,14 +25,14 @@ export const Viewblogs = () => {
     })
     const editorRef = useRef(null);
 
-    
+
     useEffect(() => {
         axios.get("/api/auth/viewblogs").then((res) => {
             // console.log(res.data.result);
             setBlogdata(res.data.result)
         })
         navigate("/viewblogs")
-    }, [blogdata])
+    }, [blogdata, editblogdata])
     const deletehandler = async (id) => {
 
         setDeleteid(id)
@@ -48,6 +48,13 @@ export const Viewblogs = () => {
     const edithandler = async (id) => {
         setEditid(id)
         console.log(id);
+        await axios.post("/api/auth/editid", { params: id }).then((res) => {
+            setEditblogdata(res.data.result)
+            console.log(editblogdata);
+            setAvatarpreview(res.data.result.url)
+        }).catch((error) => {
+            console.log(error);
+        })
     }
 
 
@@ -94,14 +101,14 @@ export const Viewblogs = () => {
     };
     encodefile(selectedimage[0]);
     const log = async (e) => {
-
+e.preventDefault()
         if (editorRef.current) {
             editblogdata.description = editorRef.current.getContent()
-            console.log(blogdata);
-            //   await axios.post("/api/auth/addblogs", editblogdata, { headers: { "Content-Type": "application/json" } }).then((res) => {
-            //     console.log(res.data);
+            console.log(editblogdata);
+              await axios.post("/api/auth/editblogs", editblogdata, { headers: { "Content-Type": "application/json" } }).then((res) => {
+                console.log(res.data);
 
-            //   })
+              })
         }
     };
 
@@ -155,13 +162,13 @@ export const Viewblogs = () => {
                                     <form action="">
                                         <div className='mb-5'>
 
-                                            <input type="text" name="title" id="" placeholder='Title' className='blog_title' onChange={Input_handler} />
+                                            <input type="text" name="title" id="" placeholder='Title' className='blog_title' onChange={Input_handler} value={editblogdata.title}/>
                                         </div>
                                         <label htmlFor=""><strong>Description</strong></label>
                                         <Editor
 
                                             onInit={(evt, editor) => editorRef.current = editor}
-                                            initialValue=""
+                                            initialValue={editblogdata.description}
                                             init={{
                                                 height: 400,
                                                 menubar: false,
@@ -181,7 +188,7 @@ export const Viewblogs = () => {
                                         <div className='mt-4'>
                                             <h5>Feature Image</h5>
                                             <label htmlFor="url"><img style={{ width: "3.2rem", height: "3.1rem", marginLeft: "10px", borderRadius: "50%" }} src={avtarpreview} /></label>
-                                            <input type="file" name="url" id="" onChange={input_file} />
+                                            <input type="file" name="url" id=""  onChange={input_file} />
                                         </div>
                                         <div className='btn_box'>
                                             <button className='btn btn-primary mt-2 give_margin' onClick={log}>Submit</button>

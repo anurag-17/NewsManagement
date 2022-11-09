@@ -125,8 +125,19 @@ exports.deleteblogs = catchAsyncError(
 )
 exports.editid = catchAsyncError(
     async(req, res, next)=>{
-        let uid = req.body
-        Blogs.findById({})
+        try {
+            let uid = req.body.params
+            Blogs.findById({_id: uid}, (error, result)=>{
+             if (error) {
+                 console.log(error, "editid");
+             }
+             res.send({result})
+            })
+        } catch (error) {
+            console.log(error);
+        }
+       
+       
     }
 )
 
