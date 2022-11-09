@@ -118,11 +118,57 @@ exports.deleteblogs = catchAsyncError(
                 console.log(error);
             }) 
         } catch (error) {
-            console.log(error ,"delete news");
+            console.log(error ,"delete blog");
         }
     }
 
 )
+exports.deletenews = catchAsyncError(
+    async(req, res, next)=>{
+        let uid = req.body.params
+        try{
+            News.findByIdAndRemove({_id: uid}).then().catch((error)=>{
+                console.log(error);
+            })
+        }
+        catch(error){
+            console.log(error, "delete news");
+        }
+    }
+)
+exports.editidnews = catchAsyncError(
+    async(req, res, next)=>{
+        try {
+            let uid = req.body.params
+            console.log(req.body.params);
+            News.findById({_id: uid},(error,result)=>{
+                if (error) {
+                    console.log(error, "editidnews");
+                }
+                console.log(result)
+                res.send({result})
+            })
+        } catch (error) {
+            console.log(error, "catcheditidnews");
+        }
+    }
+)
+
+exports.editnews =catchAsyncError(
+    async(req, res, next)=>{
+        console.log(req.body);
+        await News.findByIdAndUpdate({_id : new ObjectId(req.body._id)},{"title": req.body.title, "description": req.body.description, "url": req.body.url}),(error, data)=>{
+            if (error) {
+                console.log(error, "updatenews");
+            } else {
+                console.log(data);
+            }
+        }
+    }
+)
+
+
+
 exports.editid = catchAsyncError(
     async(req, res, next)=>{
         try {
@@ -144,7 +190,8 @@ exports.editid = catchAsyncError(
 
 exports.editblogs = catchAsyncError(
     async(req, res, next)=>{
-        await Blogs.findByIdAndUpdate({_id: new ObjectId(req.body._id)}, {"title": req.body.title, "descrition": req.body.description, "url": req.body.url}),(error, data)=>{
+        console.log(req.body);
+        await Blogs.findByIdAndUpdate({_id: new ObjectId(req.body._id)}, {"title": req.body.title, "description": req.body.description, "url": req.body.url}),(error, data)=>{
             if (error) {
                 console.log(error, "updateblog");
             } else {
