@@ -18,7 +18,8 @@ export const ViewNews = () => {
     const [editnewsdata, setEditnewsdata] = useState({
         "title": "",
         "description": "",
-        "url": ""
+        "url": "",
+        "date": new Date().toLocaleDateString()
     })
     const editorRef = useRef(null);
     useEffect(() => {
@@ -101,6 +102,7 @@ export const ViewNews = () => {
         e.preventDefault()
         if (editorRef.current) {
             editnewsdata.description = editorRef.current.getContent()
+           editnewsdata.date = new Date().toLocaleDateString()
             console.log(editnewsdata);
             await axios.post("/api/auth/editnews", editnewsdata, { headers: { "Content-Type": "application/json" } }).then((res) => {
                 console.log(res.data);
