@@ -18,7 +18,7 @@ const blogSchema = new mongoose.Schema({
     "description": {
         type: String
     },
-    "imageUrl":{
+    "url":{
         type:String,
       
     },

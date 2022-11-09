@@ -18,11 +18,13 @@ const newsSchema = new mongoose.Schema({
     "description": {
         type: String
     },
-    "imageUrl":{
+    "url":{
         type:String,
       
     },
-    
+    "date":{
+        type: String,
+    }
 })
-const news = mongoose.model("news", newsSchema)
-module.exports = news;
+const News = mongoose.model("news", newsSchema)
+module.exports = News;

@@ -68,8 +68,60 @@ ul.socillist li a {
     font-family: "Open Sans", Sans-serif;
     font-size: 13px;
     font-weight: 400;
-    line-height: 1.1em;
+    line-height: 22px
 }
 .social-menu {
     text-align: right;
 }
+
+@media (max-width:767px){
+#footer-section {
+    padding: 45px 0px 0px 0px;
+}
+#footer-section .Footer-Alin {
+    align-items: baseline;
+    text-align: center;
+}
+
+#footer-section .Footer-Alin {
+    align-items: normal;
+}
+#footer-section .Footer-Alin {
+    align-items: baseline;
+    text-align: center !important;
+}
+.footer-first:nth-child(3) {
+    width: 50% !important;
+    text-align: center;
+}
+.footer-first:nth-child(2) {
+    width: 50% !important;
+    text-align: center;
+}
+.footer-2 img {
+    max-width: 45%;
+}
+.footer-2 {
+    text-align: center;
+}
+#footer-section img.foot-logo {
+    max-width: 60%;
+}
+.social-menu {
+    text-align: center;
+}
+.footer-copyright p {
+    text-align: center;
+}
+.footer-bottm {
+    text-align: center;
+}
+.footer-copyright {
+    padding-top: 0px;
+    align-items: center;
+}
+}
+
+@media (max-width:500px){
+   
+ }

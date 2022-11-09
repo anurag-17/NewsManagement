@@ -9,7 +9,7 @@ const Footer = () => {
             <div className='container'>
                 <div className='fooetr-main'>
                    <div className='row Footer-Alin'>
-                    <div className='col-lg-5 col-md-3'>
+                    <div className='col-lg-5 col-md-3 footer-first'>
                         <img src={logo} alt='footerlogo' className='foot-logo'></img>
                         <address>
                         Ashoka Fortune, NO 3/1-11ST Main, Next to Dailyhunt,<br></br> Jakkasandra, Kormangala, Bangalore, Karnataka –<br></br> 560034.
@@ -21,7 +21,7 @@ const Footer = () => {
                         </ul>
                         
                     </div>
-                    <div className='col-lg-2 col-md-3'>
+                    <div className='col-lg-2 col-md-3 footer-first'>
                         <div className='footer-2'>
                           <div className='footer-title'>
                               <h3>Company</h3>
@@ -36,21 +36,17 @@ const Footer = () => {
                         </div>
                     </div>
 
-                    <div className='col-lg-2 col-md-3'>
+                    <div className='col-lg-2 col-md-3 footer-first'>
                         <div className='footer-2'>
                           <div className='footer-title'>
                               <h3>Products</h3>
                           </div>
                           <ul className='footerlist'>
-                            <li> <a href='#'>News</a></li>
-                            <li> <a href='#'>Learn</a></li>
-                            <li> <a href='#'>Blog</a></li>
-                            <li> <a href='#'>About Us</a></li>
-                            <li> <a href='#'>Career</a></li>
+                            <li> <a href='#'>Coming Soon</a></li>
                           </ul>
                         </div>
                     </div>
-                    <div className='col-lg-3 col-md-3'>
+                    <div className='col-lg-3 col-md-3 footer-first'>
                         <div className='footer-2'>
                           <img src={downlaodimg1} alt='footerimg'></img>
                           

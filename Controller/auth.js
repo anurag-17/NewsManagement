@@ -3,7 +3,10 @@ const News = require("../Model/News");
 const Blogs = require("../Model/Blogs");
 const catchAsyncError = require("../Errorhandlers/catchAsyncError");
 const ErrorResponse = require("../Utlis/errorresponse");
-const jwt = require("jsonwebtoken")
+const jwt = require("jsonwebtoken");
+const { query } = require("express");
+var ObjectId = require('mongodb').ObjectId
+
 // dotenv.config({ path: "../config.env" });
 
 
@@ -41,9 +44,101 @@ exports.adminlogin = catchAsyncError(
 
     }
 )
-// exports.addnews = catchAsyncError(
-//     async(req, res, next)=>{
-//         const {title ,  description, url }= req.body;
-   
-//     }
-// )
+exports.addnews = catchAsyncError(
+    async(req, res, next)=>{
+        console.log(req.body);
+        const {title ,  description, url, date }= req.body;
+        try {
+            let newsdata = new News({
+                title, description, url, date
+            })
+            newsdata.save().then((result)=>{
+                console.log("successfully news feeded");
+            }).catch((err)=>{
+                console.log(err, "news feederror");
+            })
+        } catch (error) {
+            console.log(error);
+        } 
+        
+    }
+)
+
+exports.addblog = catchAsyncError(
+    async(req, res, next)=>{
+        console.log(req.body);
+        const {title ,  description, url }= req.body;
+        try {
+            let blogdata = new Blogs({
+                title, description, url
+            })
+            blogdata.save().then((result)=>{
+                console.log("successfully blog feeded");
+            }).catch((err)=>{
+                console.log(err, " blog feederror");
+            })
+        } catch (error) {
+            console.log(error);
+        } 
+        
+    }
+)
+exports.viewnews = catchAsyncError(
+    async(req, res)=>{
+        try {
+             News.find({}, (error, result)=>{
+                if (error) {console.log(error , "viewnews error")}
+                res.send({result})
+            } )
+            
+        } catch (error) {
+           console.log(error , "catchviewnews error"); 
+        }
+    }
+)
+exports.viewblogs = catchAsyncError(
+    async(req, res)=>{
+        try {
+             Blogs.find({}, (error, result)=>{
+                if (error) {console.log(error , "viewblog error")}
+                res.send({result})
+            } )
+            
+        } catch (error) {
+           console.log(error , "catchviewblog error"); 
+        }
+    }
+)
+exports.deleteblogs = catchAsyncError(
+    async(req, res, next)=>{
+        let uid = req.body.params
+        console.log(req.body.params);
+        try {
+             Blogs.findByIdAndRemove({_id: uid}).then().catch((error)=>{
+                console.log(error);
+            }) 
+        } catch (error) {
+            console.log(error ,"delete news");
+        }
+    }
+
+)
+exports.editid = catchAsyncError(
+    async(req, res, next)=>{
+        let uid = req.body
+        Blogs.findById({})
+    }
+)
+
+
+exports.editblogs = catchAsyncError(
+    async(req, res, next)=>{
+        await Blogs.findByIdAndUpdate({_id: new ObjectId(req.body._id)}, {"title": req.body.title, "descrition": req.body.description, "url": req.body.url}),(error, data)=>{
+            if (error) {
+                console.log(error, "updateblog");
+            } else {
+                console.log(data);
+            }
+        }
+    }
+)

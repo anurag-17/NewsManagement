@@ -27,10 +27,11 @@ section#home-banner {
 .Banner-img {
     width: 100%;
     height: 100%;
+    text-align:center;
 }
 .Banner-img img {
     width: 100%;
-    max-width: 70%;
+    max-width:80%;
 }
 
 button.know-btn {
@@ -90,6 +91,9 @@ section#New-section {
     color: #E34C66;
     font-weight: 700;
 }
+.News-title h2:hover {
+    color: #333366;
+}
 .News-ct p {
     font-size: 16px;
     color: #333333;
@@ -101,7 +105,10 @@ section#New-section {
     grid-template-columns: 34% 60%;
     grid-gap: 20px;
     border-bottom: 1px solid #ddd;
-    padding-top: 40px;
+    padding-top: 15px;
+}
+.row.Newalin {
+    align-items: baseline;
 }
 .blogR-img img {
     height: 125px;
@@ -137,7 +144,7 @@ section#New-section {
     -webkit-box-orient: vertical;
 }
 .news-btn {
-    padding-top: 75px;
+    padding-top:145px;
 }
 .news-btn button {
     border: none;
@@ -164,6 +171,11 @@ section#New-section {
     top: 12px;
     margin-left: 10px;
 }
+.news-btn a {
+    color: #0f71f2;
+}
+
+
 /* news section */
 
 
@@ -300,10 +312,11 @@ section#New-section {
     padding-top: 20px;
 }
 #Investing-sec .Investing-1 {
-    padding: 50px 20px 20px 20px;
+    padding: 50px 20px 50px 20px;
+    border-radius: 10px;
 }
 #Investing-sec .Investing-1:nth-child(1) {
-    background-color: #1A3073;
+    background-color: #0F71F2;
 }
 #Investing-sec .Investing-1:nth-child(2) {
     background-color: #0F71F2;
@@ -313,32 +326,37 @@ section#New-section {
 }
 #Investing-sec .invest-content h3 {
     color: #FFFFFF;
-    font-size: 22px;
+    font-size: 28px;
     font-weight: 700;
+    line-height: 36px;
 }
 #Investing-sec  .invest-content p {
     color: #FFFFFF;
     font-family: "Open Sans", Sans-serif;
     font-weight: 400;
-    padding-bottom: 40px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+
 }
 #Investing-sec .Invest-btn button {
-    border: none;
-    background: none;
+    border: 1px solid #1A3073;
+    background: #1A3073;
     font-size: 18px;
     line-height: 30px;
+    border-radius: 27px;
+    padding: 8px 25px;
 }
 #Investing-sec .Invest-btn button a {
     font-size: 16px;
     text-decoration: none;
-    border-bottom: 2px solid;
     border-style: solid;
     border-width: 0px 0px 2px 0px;
     border-color: #0F71F2;
     border-radius: 0px 0px 0px 0px;
     padding: 0px 0px 2px 0px;
     color: #fff;
-    border-bottom: 1px solid #fff;
+    border-bottom:none;
+    text-transform: uppercase;
 }
 
 .view-btn {
@@ -414,3 +432,338 @@ button.Blog-btn a {
     background: transparent;
 }
 
+/* top news css start */
+
+#Top-News {
+    padding: 80px 0px 80px 0px;
+}
+#Top-News  .top-title h3 {
+    color: #1A3073;
+    font-size: 26px;
+    font-weight: 700;
+    padding-top: 0px;
+    padding-bottom: 10px;
+}
+.Topnews-1 {
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    grid-gap: 30px;
+}
+.Topnew-img img {
+    width: 100%;
+    height: 100%;
+}
+.Topnews-item h3 {
+    font-size: 20px;
+    line-height: 24px;
+    color: #333333;
+    font-weight: 700;
+    font-style: normal;
+    font-family: 'Montserrat';
+    padding-top: 10px;
+}
+.Topnews-item p {
+    font-size: 14px;
+    line-height: 24px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    margin-bottom: 5px;
+}
+.Topnews-item h4 {
+    font-size: 14px;
+    line-height: 24px;
+    font-style: italic;
+    color: #333333;
+    font-weight: 700;
+}
+h4.top-title {
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 0px;
+}
+.topnew-2 {
+    text-align: center;
+}
+.topnews2-img img {
+    width: 100%;
+    height: 387px;
+    object-fit: fill;
+}
+.topnew-2 h3 {
+    font-size: 36px;
+    line-height: 36px;
+    color: #333333;
+    font-weight: 600;
+}
+.topnew-2 h4 {
+    font-size: 16px;
+    padding-top: 25px;
+    line-height: 26px;
+    font-weight: 400;
+}
+.topnew-2 p {
+    font-size: 14px;
+    line-height: 24px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    margin-bottom: 5px;
+    font-style: italic;
+}
+.sub-author{
+    font-size: 14px;
+    line-height: 24px;
+    font-style: italic;
+    color: #333333;
+    font-weight: 700;
+}
+.Topnews-item:nth-child(2) {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #dddd;
+    padding: 20px 0px;
+}
+.Topnew2-bottom {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    padding-top: 50px;
+    grid-gap: 25px;
+    border-top: 1px solid #ddd;
+    margin-top: 10px;
+}
+.Topnew2-bt h3 {
+    font-size: 20px;
+    line-height: 24px;
+    color: #333333;
+    font-weight: 700;
+}
+.Topnew2-bt h4 {
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 400;
+}
+.Topnew2-bt p {
+    font-size: 14px;
+    line-height: 24px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    margin-bottom: 5px;
+}
+.Topnew2-bt img {
+    width: 100%;
+    max-width: 80%;
+    height: 124px;
+    object-fit: cover;
+}
+/* top news css end */
+
+/* responsive */
+
+
+
+
+
+@media (max-width:1200px) {
+    .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: auto;
+    }
+    .News_sub h3:after {
+        margin-left: 0px;
+        width: 200px;
+    }
+    .Home-slide h2 {
+        font-size: 45px;
+        line-height: 52px;
+    }
+    .Banner-img img {
+        width: 100%;
+        max-width: 60%;
+    }
+}
+@media (max-width:992px){
+   #home-banner {
+        padding: 120px 0px 120px 0px;
+    }
+    .News_sub h3:after {
+        margin-left: 0px;
+    }
+    section#home-banner {
+        background-color: transparent;
+        background-image: linear-gradient(50deg, #003AAD 0%, #070F1F 100%);
+        padding: 120px 0px 120px 0px;
+    }
+    .News_sub h3:after {
+        margin-left: 0px !important;
+        width: 116px;
+    }
+    .Newsleft {
+        padding-right: 20px;
+    }
+    .newsR-ct h3 {
+        position: relative;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: auto;
+}
+.newsR-ct p {
+    -webkit-line-clamp: 3;
+}
+.blogR-img img {
+    height: 90px;
+}
+.topnew-2 h3 {
+    font-size: 25px;
+    line-height: 32px;
+}
+.Topnews-item h3 {
+    font-size: 18px;
+    line-height: 24px;
+}
+.topnews2-img img {
+    object-fit: cover;
+}
+.Topnew2-bottom {
+    grid-template-columns: 60% 33%;
+}
+#Top-News {
+    padding: 40px 0px 40px 0px;
+}
+}
+
+@media (max-width:767px){
+.home-alin {
+    align-items: center;
+    text-align: center;
+    flex-direction: column-reverse;
+}
+.Home-slide h2 {
+    text-align: center;
+    
+}
+.Banner-img img {
+    max-width: 40%;
+    padding-bottom: 20px;
+}
+.news-img {
+    height: 350px;
+}
+
+section#New-section {
+    padding: 45px 0px 45px 0px;
+}
+.news-btn {
+    padding-top: 30px;
+}
+#Top-News .top-title h3 {
+    text-align: center;
+}
+.Topnew-img img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+.Topnew2-bottom {
+    padding-top: 30px;
+}
+.Live-ct {
+    text-align: center;
+}
+.input-group {
+    max-width: 355px;
+    margin: auto;
+    padding-bottom: 30px;
+}
+#live-section {
+    padding: 45px 0px 45px 0px;
+}
+#Investing-sec {
+    padding: 45px 0px 45px 0px;
+}
+#blof-sec .learn-head h3 {  
+    text-align: center;
+}
+#blof-sec .blog-grid {
+    grid-template-columns: repeat(2,1fr);
+}
+#blof-sec .learn-head h3 {
+    padding-top: 0px;
+}
+#Investing-sec .Investing-grid {
+    grid-template-columns: repeat(2,1fr);
+}
+.section-head {
+    text-align: center;
+}
+#Investing-sec .learn-head h3 {
+    padding-top: 0px;
+    text-align: center;
+}
+}
+
+
+
+@media (max-width:667px){
+.new-Head h3 {
+    font-size: 30px;
+    line-height: 46px;
+    text-align: center;
+}
+.Newsleft {
+    padding-right: 0px;
+}
+.nes-des {
+    text-align: center;
+}
+.News_sub h3 {
+    text-align: center;
+}
+#Investing-sec .Investing-grid {
+    grid-template-columns: repeat(1,1fr);
+}
+.Topnew2-bottom {
+    grid-template-columns: 100%;
+    display: grid;
+    padding-bottom: 30px;
+}
+.Topnew2-bt img {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.Home-slide h2 {
+    font-size: 40px;
+    line-height: 52px;
+}
+}
+
+
+@media (max-width:500px){
+   
+    #blof-sec .blog-grid {
+        grid-template-columns: repeat(1,1fr);
+    }
+    .topnews2-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover !important;
+    }
+    .Home-slide h2 {
+        font-size: 30px;
+        line-height: 36px;
+    }
+ }

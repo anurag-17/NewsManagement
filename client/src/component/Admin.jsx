@@ -17,8 +17,10 @@ export const Admin = () => {
     const form_handler = async(e) => {
         e.preventDefault()
         await axios.post("/api/auth/admin", admindata, { headers: { "Content-Type": "application/json" } }).then((res)=>{
-            console.log(res.data);
-            navigate("/admindash")
+            console.log(res.data.token);
+            localStorage.setItem("newstoken", JSON.stringify(res.data.token))
+            navigate("/addnews")
+
          })
     }
     return (

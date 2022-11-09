@@ -1,0 +1,17 @@
+.flex_news{
+    display: flex;
+    
+}
+.title_input{
+    width: 50%;
+    padding: 10px;
+    
+}
+.bgnews{
+    /* Created with https://www.css-gradient.com */
+/* Created with https://www.css-gradient.com */
+background: #F0F0F0;
+background: -webkit-linear-gradient(right, #F0F0F0, #FFFFFF);
+background: -moz-linear-gradient(right, #F0F0F0, #FFFFFF);
+background: linear-gradient(to left, #F0F0F0, #FFFFFF);
+}

@@ -1,0 +1,123 @@
+
+/* new banner */
+.banner-bg{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../component/Images/about-banner.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+}
+.Banner-main {
+    padding:140px 0px;
+    text-align: center;
+}
+.Banner-title h2 {
+    font-family: "Montserrat", Sans-serif;
+    font-size: 65px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #fff;
+    line-height: 76px;
+}
+br {
+    display:none;
+  }
+
+
+/* who we are start */
+#AbWho-section {
+    padding: 60px 0px 0px 0px;
+}
+.Who-About h3 {
+    color: #1A3073;
+    font-size: 40px;
+    line-height: 40px;
+    font-weight: 700;
+    font-family: "Montserrat", Sans-serif;
+    padding-bottom: 15px;
+}
+.Who-About p {
+    color: #020202;
+    font-family: "Open Sans", Sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+}
+.who-img {
+    text-align: right;
+}
+.Mission {
+    padding: 60px 0px 60px 0px;
+}
+.Mission h3 {
+    color: #1A3073;
+    font-size: 40px;
+    line-height: 40px;
+    font-weight: 700;
+    font-family: "Montserrat", Sans-serif;
+    padding-bottom: 15px;
+}
+.Who-About p {
+    color: #020202;
+    font-family: "Open Sans", Sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+}
+/* who we are end */
+
+
+
+/* responsive */
+@media (max-width:992px) {
+    .Banner-main {
+        padding: 80px 0px;
+    }
+    .Banner-title h2 {
+        font-size:45px;
+        line-height:52px;
+    }
+    .Banner-title h2 {
+        font-size: 35px;
+        line-height: 42px;
+    }
+    
+}
+
+@media (max-width:767px) {
+.who-alin {
+    flex-direction: column-reverse;
+    text-align: center;
+}
+.who-img {
+    text-align: center;
+    padding-bottom: 20px;
+}
+.Who-About h3 {
+    padding-bottom: 0px;
+}
+.Mission {
+    padding: 45px 0px 45px 0px;
+    text-align: center;
+}
+.Mission h3 {
+    font-size: 30px;
+    padding-bottom: 0px;
+}
+}
+
+
+
+@media (max-width:667px) {
+.Mission {
+    padding:0px 0px 30px 0px;
+}
+.Who-About h3 {
+    font-size: 30px;
+    line-height: 36px;
+}
+#AbWho-section {
+    padding: 30px 0px 0px 0px;
+}
+
+}

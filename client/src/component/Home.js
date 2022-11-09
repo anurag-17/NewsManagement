@@ -9,26 +9,22 @@ import Liveimg6 from './Images/livepay.png';
 import blog1 from './Images/blog_img1.jpg';
 import blog2 from './Images/blog-img2.png';
 import blog3 from './Images/blog-img3.png';
+import blog4 from './Images/bottom-news1.webp';
+import blog5 from './Images/blog_img5.jpg';
 import './Home.css';
-import Navbarmenu from './menu/Navbarmenu';
-import Footer from './menu/Footer';
 
 
 
 const Home = () => {
-  return (
-    <>
 
-<header className="">
-          <Navbarmenu/>
-        </header>
+  return (
     <div className='homepage'>
       <section id='home-banner'>
         <div className='container'>
           <div className='Home-slide'>
             <div className='row home-alin'>
               <div className='col-lg-8 col-md-6'>
-                <h2>Smart <span>People. </span>  <br></br>Smart <span>Investment .</span> </h2>
+                <h2>Smart <span>People. </span>  <br className='line-brek'></br>Smart <span>Investment .</span> </h2>
                 <p>We use technology to help young investors invest smartly.</p>
                 <div className='bannerbtn'>
                    <button className='know-btn'><a href='#'>KNOW MORE</a></button>
@@ -44,17 +40,108 @@ const Home = () => {
         </div>
       </section>
 
-      <section id='New-section'>
+      <section id='Top-News'>        
+        <div className='container'>
+          <div className='top-title'>
+            <h3>TOP News</h3>
+          </div>
+          
+          <div className='row'>
+            <div className='col-md-3'>
+              <div className='Topnews-1'>
+                <div className='Topnews-item'>
+                  <div className='Topnew-img'>
+                     <img src={blog1} alt='topnews'></img>
+                  </div>
+                  <h3>Bank Holidays this week: Guru Nanak Jayanti, 3 others. Details here</h3>
+                  <p>Responding to a question, the Karnataka CM said, 'Cabinet expansion...I have already spoken.....our leadership is a bit busy with the Gujarat elections, as soon as 
+                    it is over they will call me (for discussions)'</p>
+                   <h4>By Umair Irfan</h4> 
+                </div>
+                <div className='Topnews-item'>
+                  <div className=''>
+                    <h4 className='top-title'>Karnataka cabinet expansion on cards?</h4>
+                  </div>
+                  <h3>Bank Holidays this week: Guru Nanak Jayanti, 3 others. Details here</h3>
+                  <p>Responding to a question, the Karnataka CM said, 'Cabinet expansion...I have already spoken.....our leadership is a bit busy with the Gujarat elections, as soon as 
+                    it is over they will call me (for discussions)'</p>
+                   <h4>By Umair Irfan</h4> 
+                </div>
+
+                <div className='Topnews-item'>                  
+                  <h3>Bank Holidays this week: Guru Nanak Jayanti, 3 others. Details here</h3>
+                  <p>Responding to a question, the Karnataka CM said, 'Cabinet expansion...I have already spoken.....our leadership is a bit busy with the Gujarat elections, as soon as 
+                    it is over they will call me (for discussions)'</p>
+                   <h4>By Umair Irfan</h4> 
+                </div>
+              </div>
+            </div>
+
+            <div className='col-md-6'>
+              <div className='topnew-2'>
+              <div className='topnews2-img'>
+                 <img src={blog5} alt='topnews'></img>
+              </div>
+              <h4>THE 2022 MIDTERM ELECTIONS, EXPLAINED</h4>
+              <h3>India's Namita Thapar, Ghazal Alagh & Soma Mondal among 20 Asia Power businesswomen</h3>
+              <p>According to Forbes website, the 20 women business leaders were ranked for their achievements in their current role of running a business with sizeable revenue and demonstrating strong leadership throughout their career.</p>
+              <p className='sub-author'>By Christian Paz</p>
+              </div>
+              <div className='Topnew2-bottom'>
+                <div className='Topnew2-bt'>
+                  <h4>THE 2022 MIDTERM ELECTIONS, EXPLAINED</h4>
+                  <h3>3 Senate races that could still surprise us</h3>
+                  <p>The unexpectedly close contests in Iowa, Utah, and Washington, briefly explained.</p>
+                  <h4>By Umair Irfan</h4>
+                </div>
+                <div className='Topnew2-bt'>
+                 <img src={blog4} alt='news' className='newsbt'></img>
+                </div>
+              </div>
+            </div>
+            <div className='col-md-3'>
+            <div className='Topnews-1'>
+                <div className='Topnews-item'>
+                  <div className='Topnew-img'>
+                     <img src={blog1} alt='topnews'></img>
+                  </div>
+                  <h3>Bank Holidays this week: Guru Nanak Jayanti, 3 others. Details here</h3>
+                  <p>Responding to a question, the Karnataka CM said, 'Cabinet expansion...I have already spoken.....our leadership is a bit busy with the Gujarat elections, as soon as 
+                    it is over they will call me (for discussions)'</p>
+                   <h4>By Umair Irfan</h4> 
+                </div>
+                <div className='Topnews-item'>
+                  <div className=''>
+                    <h4 className='top-title'>Karnataka cabinet expansion on cards?</h4>
+                  </div>
+                  <h3>Bank Holidays this week: Guru Nanak Jayanti, 3 others. Details here</h3>
+                  <p>Responding to a question, the Karnataka CM said, 'Cabinet expansion...I have already spoken.....our leadership is a bit busy with the Gujarat elections, as soon as 
+                    it is over they will call me (for discussions)'</p>
+                   <h4>By Umair Irfan</h4> 
+                </div>
+
+                <div className='Topnews-item'>                  
+                  <h3>Bank Holidays this week: Guru Nanak Jayanti, 3 others. Details here</h3>
+                  <p>Responding to a question, the Karnataka CM said, 'Cabinet expansion...I have already spoken.....our leadership is a bit busy with the Gujarat elections, as soon as 
+                    it is over they will call me (for discussions)'</p>
+                   <h4>By Umair Irfan</h4> 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* <section id='New-section'>
         <div className='container'>
           <div className='New-main'>
-            <div className='row'>
-              <div className='col-lg-8 col-mg-8'>
+            <div className='row Newalin'>
+              <div className='col-lg-8 col-md-8'>
                 <div className='Newsleft'>
                   <div className='new-Head'>
                     <h3>News</h3>
                   </div>
                   <div className='news-img'>
-                    {/* <img src={newsimg2} alt='newsimg'></img> */}
                   </div>
                   <div className='nes-des'>
                     <div className='News-title'>
@@ -109,7 +196,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section id='live-section'>
       <div className='container'>
@@ -157,25 +244,25 @@ const Home = () => {
                 <h3>Basic Lessons</h3>
                 <p>Start your investment journey with confidence</p>
                 <div className='Invest-btn'>
-                    <button><a href='#'>EXPLORE MORE <i class="fa fa-angle-right"></i></a></button>
+                    <button><a href='#'>Learn MORE <i class="fa fa-angle-right"></i></a></button>
                   </div>
               </div>
             </div>
             <div className='Investing-1'>
               <div className='invest-content'>
-                <h3>Basic Lessons</h3>
+                <h3>General Investment</h3>
                 <p>Start your investment journey with confidence</p>
                 <div className='Invest-btn'>
-                    <button><a href='#'>EXPLORE MORE <i class="fa fa-angle-right"></i></a></button>
+                    <button><a href='#'>Learn MORE <i class="fa fa-angle-right"></i></a></button>
                   </div>
               </div>
             </div>
             <div className='Investing-1'>
               <div className='invest-content'>
-                <h3>Basic Lessons</h3>
+                <h3>Mutual Funds</h3>
                 <p>Start your investment journey with confidence</p>
                   <div className='Invest-btn'>
-                    <button><a href='#'>EXPLORE MORE <i class="fa fa-angle-right"></i></a></button>
+                    <button><a href='#'>Learn MORE <i class="fa fa-angle-right"></i></a></button>
                   </div>
               </div>
             </div>
@@ -240,8 +327,6 @@ const Home = () => {
         </div>
       </section>
     </div>
-    <Footer/>
-    </>
   )
 }
 

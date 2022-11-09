@@ -1,0 +1,17 @@
+.blogcard{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.blogimg{
+    width: 300px;
+    height: 300px;
+}
+.blogbox{
+    text-align: center;
+    text-transform: uppercase;
+  
+}
+.flex_blog{
+    display: flex;
+}

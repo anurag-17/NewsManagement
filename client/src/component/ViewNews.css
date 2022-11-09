@@ -1,0 +1,17 @@
+.imgcardnews{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.cardimgnews{
+   width: 300px;
+   height: 300px;
+}
+.newsbox{
+    text-align: center;
+    margin: 10px 0;
+    text-transform: uppercase;
+}
+.flex_viewnews{
+    display: flex;
+}
