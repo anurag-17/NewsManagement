@@ -1,9 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
 import axios from 'axios';
 import { useNavigate } from 'react-router';
 import "./Admin.css"
 export const Admin = () => {
+
+const [token, setToken] = useState(JSON.parse(localStorage.getItem("newstoken")))
+
+useEffect(()=>{
+
+    if(token){
+        navigate("/admindash")
+    }
+},[])
+
     const [admindata, setAdmindata] = useState({
         "email": "",
         "password": ""
@@ -18,14 +28,19 @@ export const Admin = () => {
         e.preventDefault()
         await axios.post("/api/auth/admin", admindata, { headers: { "Content-Type": "application/json" } }).then((res)=>{
             console.log(res.data.token);
-            localStorage.setItem("newstoken", JSON.stringify(res.data.token))
-            navigate("/addnews")
+            const now = new Date().getTime()
 
+             const item = {
+                token:res.data.token,
+                expiry:now+25200000
+             }
+            localStorage.setItem("newstoken", JSON.stringify(item))
+            navigate("/addnews")
          })
     }
     return (
         <>
-            <div className="container">
+            <div style={{width:"50%"}} className="container mt-5">
                 <h3>Admin</h3>
                 <form className="was-validated" onSubmit={form_handler}>
                     <div className="mb-3 mt-3">

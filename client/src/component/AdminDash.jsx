@@ -7,18 +7,17 @@ import logo from "./Images/logo.png"
 import "./Admindash.css"
 export const AdminDash = () => {
   const [token, setToken] = useState(JSON.parse(localStorage.getItem("newstoken")))
+
   const navigate = useNavigate()
   useEffect(() => {
-    axios.get("/api/auth/adminin", { params: token }).then((res) => {
-      console.log(res);
-
-      if (res.data.message == "error") {
-        navigate("/admin")
-      }
-
-    }).catch((error) => {
-      console.log(error);
-    })
+      axios.get("/api/auth/adminin", { params:token!==null?token.token:""}).then((res) => {
+        console.log(res);
+        if (res.data.message == "error") {
+          navigate("/admin")
+        }
+      }).catch((error) => {
+        console.log(error);
+      })
   }, [])
 
   const logout = () => {

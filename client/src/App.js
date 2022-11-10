@@ -15,6 +15,16 @@ import Blog from './component/Blog';
 
 function App() {
   let location = useLocation()
+
+const data = JSON.parse(localStorage.getItem('newstoken'))
+
+if(data !== null){
+  if(Date.now()>data.expiry){
+    localStorage.removeItem("newstoken")
+  }
+}
+
+
   return (
     <>
       <div className='App'>
