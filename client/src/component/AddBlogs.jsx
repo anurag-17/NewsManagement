@@ -5,8 +5,6 @@ import { AdminDash } from './AdminDash';
 import Resizer from "react-image-file-resizer";
 import "./AddBlogs.css"
 
-
-
 export const AddBlogs = () => {
   const [selectedimage, setSelectedImage] = useState([])
   const [avtarpreview, setAvatarpreview] = useState()
@@ -76,17 +74,26 @@ export const AddBlogs = () => {
     <>
       <div className="flex_blog">
         <AdminDash />
-        <div className="container">
+        <div className="container scroll-main">
           <h2 className='mt-3 mb-2'>Add Blogs</h2>
           <div>
             <form action="">
-              <div className='mb-5'>
+              <div className='mb-2 flex-image'>
+                <input type="text" name="title" id="" placeholder='Title' className='blog_title mt-4' onChange={Input_handler} />
+                       <div style = {{position:"relative",bottom:"2rem"}} className='ml-4'>
+              <h4 className='ml-2'>Feature Image</h4>
+              <div className='flex-file file_input'>
+                  <img className="mt-3" style={{ width: "3.2rem", height: "3.1rem", marginLeft: "10px", borderRadius: "50%" }} src={avtarpreview} />
+               <input className="file" type="file" name="url" id="file" onChange={input_file} />
+                <label className='ml-3' htmlFor="file">
+                   Choose Image
+                  </label>
+              </div>
 
-                <input type="text" name="title" id="" placeholder='Title' className='blog_title' onChange={Input_handler} />
+              </div>
               </div>
               <label htmlFor=""><strong>Description</strong></label>
               <Editor
-
                 onInit={(evt, editor) => editorRef.current = editor}
                 initialValue=""
                 init={{
@@ -103,15 +110,9 @@ export const AddBlogs = () => {
                     'removeformat | help',
                   content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
                 }}
-              />
-
-                <div className='mt-4'>
-                  <h5>Feature Image</h5>
-                  <label htmlFor="url"><img style={{ width: "3.2rem", height: "3.1rem", marginLeft: "10px", borderRadius: "50%" }} src={avtarpreview} /></label>
-                  <input type="file" name="url" id="" onChange={input_file} />
-                </div>
+              />          
                 <div className='btn_box'>
-                <button className='btn btn-primary mt-2 give_margin' onClick={log}>Submit</button>
+                <button className='btn btn-primary my-2 give_margin' onClick={log}>Submit</button>
               </div>
             </form>
           </div>

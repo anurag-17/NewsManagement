@@ -15,3 +15,22 @@
 .flex_viewnews{
     display: flex;
 }
+.scroll-main{
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+.flex-image{
+    display: flex;
+}
+.model_title{
+    width: 85%;
+    margin: auto;
+    padding: 7px;
+    border: 1px solid grey;
+    border-radius: 8px;
+    
+}
+.model_input{
+    display: flex;
+}

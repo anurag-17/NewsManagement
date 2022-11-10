@@ -5,7 +5,9 @@
 .title_input{
     width: 50%;
     padding: 10px;
-    
+    height: 2.4rem;
+    border: 2px solid gray;
+    border-radius: 5px;
 }
 .bgnews{
     /* Created with https://www.css-gradient.com */
@@ -15,3 +17,34 @@ background: -webkit-linear-gradient(right, #F0F0F0, #FFFFFF);
 background: -moz-linear-gradient(right, #F0F0F0, #FFFFFF);
 background: linear-gradient(to left, #F0F0F0, #FFFFFF);
 }
+.flex-image{
+    display: flex;
+}
+
+.file {
+    opacity: 0;
+    width: 0.1px;
+    height: 0.1px;
+    position: absolute;
+  }
+  .file_input label {
+    display: block;
+    position: relative;
+    width:300px;
+    height:45px;
+    border-radius: 5px;
+    background:linear-gradient(to top right,#0661FF,#010101);;
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 18px;
+    transition: transform .2s ease-out;
+  }
+
+  .flex-file{
+    display:flex;
+  }

@@ -12,7 +12,7 @@ const Navbarmenu = () => {
     const toggleClass = () => {
       setisMenu(isMenu === false ? true : false);
       setResponsiveclose(isResponsiveclose === false ? true : false);
-  };
+    };
 
     let boxClass = ["main-menu menu-right menuq1"];
     if(isMenu) {
@@ -33,10 +33,6 @@ const Navbarmenu = () => {
     }else {
         boxClassSubMenu.push('');
     }
-
-
-    // sticky
-    // Sticky Menu Area
     useEffect(() => {
         window.addEventListener('scroll', isSticky);
         return () => {
@@ -82,7 +78,7 @@ const Navbarmenu = () => {
                     </li>
                     <li className="menu-item " ><Link onClick={toggleClass} activeClassName='is-active' to="/About"> News </Link> </li>
                     <li className="menu-item " ><Link onClick={toggleClass} activeClassName='is-active' to={`/About`}> Learn </Link> </li>
-                    <li className="menu-item " ><Link onClick={toggleClass} activeClassName='is-active' to={`/About`}> Blog </Link> </li>
+                    <li className="menu-item " ><Link onClick={toggleClass} activeClassName='is-active' to={`/blog`}> Blog </Link> </li>
                     <li className="menu-item " ><Link onClick={toggleClass} activeClassName='is-active' to={`/About`}> About us </Link> </li>
                     <li className="menu-item " ><Link onClick={toggleClass} activeClassName='is-active' to={`/About`}> Career </Link> </li>
                     

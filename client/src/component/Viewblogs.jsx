@@ -8,9 +8,6 @@ import { useNavigate } from 'react-router';
 import { Editor } from '@tinymce/tinymce-react';
 import Resizer from "react-image-file-resizer";
 
-
-
-
 export const Viewblogs = () => {
     const navigate = useNavigate()
     const [blogdata, setBlogdata] = useState([])
@@ -23,16 +20,15 @@ export const Viewblogs = () => {
         "description": "",
         "url": ""
     })
+    const[onclose,setOnClose] = useState(true)
     const editorRef = useRef(null);
-
-
     useEffect(() => {
         axios.get("/api/auth/viewblogs").then((res) => {
             // console.log(res.data.result);
             setBlogdata(res.data.result)
         })
         navigate("/viewblogs")
-    }, [blogdata, editblogdata])
+    }, [blogdata,editblogdata])
     const deletehandler = async (id) => {
 
         setDeleteid(id)
@@ -43,7 +39,6 @@ export const Viewblogs = () => {
         }).catch((error) => {
             console.log(error);
         })
-
     }
     const edithandler = async (id) => {
         setEditid(id)
@@ -56,9 +51,6 @@ export const Viewblogs = () => {
             console.log(error);
         })
     }
-
-
-
     const Input_handler = (e) => {
         setEditblogdata({ ...editblogdata, [e.target.name]: e.target.value })
     }
@@ -112,15 +104,11 @@ e.preventDefault()
         }
     };
 
-
-
     return (
-
-
         <>
             <div className="flex_blog">
                 <AdminDash />
-                <div className="container">
+                <div className="container scroll-main">
                     <div className='blogbox'><h3>View Blogs</h3></div>
                     <div className='blogcard'>
                         {
@@ -148,56 +136,58 @@ e.preventDefault()
                         }
 
                     </div>
-                    <div class="modal" id="myModal">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-
-
-                                <div class="modal-header">
-                                    <h4 class="modal-title">Modal Heading</h4>
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <div className="modal" id="myModal">
+                        <div className="modal-dialog">
+                            <div style = {{width:"120%"}} className="modal-content">
+                                <div className="modal-header">
+                                    <h4 className="modal-title">Edit News</h4>
+                                    <button type="button" className="close" data-dismiss="modal">&times;</button>
                                 </div>
 
                                 <div>
                                     <form action="">
-                                        <div className='mb-5'>
-
-                                            <input type="text" name="title" id="" placeholder='Title' className='blog_title' onChange={Input_handler} value={editblogdata.title}/>
+                                        <div className='mb-5 mt-3 model_input'>
+                                            <input type="text" name="title" id="" placeholder='Title' className='model_title' onChange={Input_handler} value={editblogdata.title}/>
                                         </div>
-                                        <label htmlFor=""><strong>Description</strong></label>
+                                        <label className='ml-3' htmlFor=""><strong>Description</strong></label>
                                         <Editor
-
                                             onInit={(evt, editor) => editorRef.current = editor}
                                             initialValue={editblogdata.description}
                                             init={{
-                                                height: 400,
+                                                height: 300,
                                                 menubar: false,
                                                 plugins: [
                                                     'advlist autolink lists link image charmap print preview anchor',
                                                     'searchreplace visualblocks code fullscreen',
                                                     'insertdatetime media table paste code help wordcount'
                                                 ],
-                                                toolbar: 'undo redo | formatselect | ' +
-                                                    'bold italic backcolor | alignleft aligncenter ' +
+                                                toolbar: 'undo redo | formatselect |' +
+                                                    'bold italic backcolor | alignleft aligncenter' +
                                                     'alignright alignjustify | bullist numlist outdent indent | ' +
                                                     'removeformat | help',
                                                 content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
                                             }}
                                         />
-
-                                        <div className='mt-4'>
-                                            <h5>Feature Image</h5>
-                                            <label htmlFor="url"><img style={{ width: "3.2rem", height: "3.1rem", marginLeft: "10px", borderRadius: "50%" }} src={avtarpreview} /></label>
-                                            <input type="file" name="url" id=""  onChange={input_file} />
-                                        </div>
+        
+                                         
+        <div className="ml-3">
+              <h4 className='ml-2'>Feature Image</h4>
+              <div className='flex-file file_input'>
+                  <img className="mt-3" style={{ width: "3.2rem", height: "3.1rem", marginLeft: "10px", borderRadius: "50%" }} src={avtarpreview} />
+               <input className="file" type="file" name="url" id="file" onChange={input_file} />
+                <label className='ml-3' htmlFor="file">
+                   Choose Image
+                  </label>
+              </div>
+              </div>
                                         <div className='btn_box'>
-                                            <button className='btn btn-primary mt-2 give_margin' onClick={log}>Submit</button>
+                                            <button className='btn btn-primary give_margin mx-auto' onClick={log}>Submit</button>
                                         </div>
                                     </form>
                                 </div>
 
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                <div className="modal-footer p-2">
+                                    <button type="button" className="btn btn-danger" data-dismiss="modal">Close</button>
                                 </div>
 
                             </div>

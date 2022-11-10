@@ -9,7 +9,6 @@ var ObjectId = require('mongodb').ObjectId
 
 // dotenv.config({ path: "../config.env" });
 
-
 exports.adminlogin = catchAsyncError(
     async (req, res, next) => {
         const { email, password } = req.body;
@@ -63,7 +62,6 @@ exports.addnews = catchAsyncError(
         
     }
 )
-
 exports.addblog = catchAsyncError(
     async(req, res, next)=>{
         console.log(req.body);
@@ -86,7 +84,7 @@ exports.addblog = catchAsyncError(
 exports.viewnews = catchAsyncError(
     async(req, res)=>{
         try {
-             News.find({}, (error, result)=>{
+            await News.find({}, (error, result)=>{
                 if (error) {console.log(error , "viewnews error")}
                 res.send({result})
             } )
@@ -99,7 +97,7 @@ exports.viewnews = catchAsyncError(
 exports.viewblogs = catchAsyncError(
     async(req, res)=>{
         try {
-             Blogs.find({}, (error, result)=>{
+            await Blogs.find({}, (error, result)=>{
                 if (error) {console.log(error , "viewblog error")}
                 res.send({result})
             } )
@@ -114,7 +112,7 @@ exports.deleteblogs = catchAsyncError(
         let uid = req.body.params
         console.log(req.body.params);
         try {
-             Blogs.findByIdAndRemove({_id: uid}).then().catch((error)=>{
+          await Blogs.findByIdAndRemove({_id: uid}).then().catch((error)=>{
                 console.log(error);
             }) 
         } catch (error) {
@@ -127,7 +125,7 @@ exports.deletenews = catchAsyncError(
     async(req, res, next)=>{
         let uid = req.body.params
         try{
-            News.findByIdAndRemove({_id: uid}).then().catch((error)=>{
+           await News.findByIdAndRemove({_id: uid}).then().catch((error)=>{
                 console.log(error);
             })
         }
@@ -141,7 +139,7 @@ exports.editidnews = catchAsyncError(
         try {
             let uid = req.body.params
             console.log(req.body.params);
-            News.findById({_id: uid},(error,result)=>{
+           await News.findById({_id: uid},(error,result)=>{
                 if (error) {
                     console.log(error, "editidnews");
                 }
@@ -153,7 +151,6 @@ exports.editidnews = catchAsyncError(
         }
     }
 )
-
 exports.editnews =catchAsyncError(
     async(req, res, next)=>{
         console.log(req.body);
@@ -166,14 +163,11 @@ exports.editnews =catchAsyncError(
         }
     }
 )
-
-
-
 exports.editid = catchAsyncError(
     async(req, res, next)=>{
         try {
             let uid = req.body.params
-            Blogs.findById({_id: uid}, (error, result)=>{
+            await Blogs.findById({_id: uid}, (error, result)=>{
              if (error) {
                  console.log(error, "editid");
              }
@@ -186,8 +180,6 @@ exports.editid = catchAsyncError(
        
     }
 )
-
-
 exports.editblogs = catchAsyncError(
     async(req, res, next)=>{
         console.log(req.body);

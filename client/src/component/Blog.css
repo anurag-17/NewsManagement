@@ -1,0 +1,780 @@
+#Blog-sewction {
+    padding: 60px 0px 60px 0px;
+}
+#Blog-sewction .Blog-left {
+    position: relative;
+}
+#Blog-sewction .BContent {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: #fff;
+    padding: 20px;
+    max-width: 485px;
+}
+#Blog-sewction .BlogImg img {
+    width: 100%;
+}
+#Blog-sewction .BContent h3 {
+    font-size: 12px;
+    line-height: 35px;
+    text-transform: uppercase;
+    color: #8c8c8c;
+    font-weight: 700;
+    font-family: "Montserrat";
+    margin-bottom: 0px;
+}
+
+#Blog-sewction .BContent p {
+    font-size: 24px;
+    line-height: 35px;
+    font-weight: 700;
+    font-family: 'Montserrat';
+    text-transform: capitalize;
+    max-width: 465px;
+    margin: auto;
+}
+#Blog-sewction .BContent a {
+    font-size: 24px;
+    line-height: 35px;
+    font-weight: 600;
+    font-family: 'Montserrat';
+    text-transform: capitalize;
+    max-width: 465px;
+    margin: auto;
+    color: #000;
+}
+#Blog-sewction .BContent i {
+    background-color: #012f8d;
+    padding: 4px 10px;
+    color: #fff;
+    font-size: 22px;
+}
+
+#Blog-sewction .Blog-heading h3 {
+    position: relative;
+    font-size: 24px;
+    line-height: 24px;
+    color: #000000;
+    font-weight: 600;
+    font-family: "Montserrat";
+}
+#Blog-sewction .Blog-heading h3:before {
+    content: '';
+    width: 54px;
+    height: 3px;
+    background-color: #01318d;
+    position: absolute;
+    bottom: -9px;
+}
+.Blog-MRead {
+    padding-top: 30px;
+}
+.Blog-mread1 h3 {
+    font-size: 12px;
+    line-height: 35px;
+    text-transform: uppercase;
+    color: #8c8c8c;
+    font-weight: 600;
+    font-family: "Montserrat";
+}
+.Blog-mread1 p {
+    font-size: 16px;
+    line-height: 25px;
+    color: #000000;
+    font-weight: 700;
+    font-family: "Montserrat";
+}
+.Blog-mread1 {
+    padding-bottom: 20px;
+    border-bottom: dotted 2px #ddd;
+    padding-top: 20px;
+}
+
+
+/* blog slider  */
+
+
+/* Investing section start  */
+
+#BInvest-section {
+    padding: 40px 0px 40px 0px;
+    background-image: url(./Images/Invets-shap.png);   
+    background-size: auto;
+    background-position: left;
+    background-repeat: no-repeat;
+    padding: 5px 0px 40px 0px;
+    margin: 40px 0px;
+}
+#BInvest-section .BInvest-rigth{
+    background-image: url(./Images/Invest-bg.png);
+    background-size: auto;
+    background-position: top right;
+    background-repeat: no-repeat;
+    padding: 40px 0px 40px 0px;
+}
+
+#BInvest-section .section-head h2 {
+    color: #1A3073;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    padding-bottom: 50px;
+    text-transform: uppercase;
+
+}
+#BInvest-section .BInvest-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 45px;
+}
+#BInvest-section .bInvest-img img {
+    width: 100%;
+}
+#BInvest-section .Binvest-item1 h4 {
+    font-size: 12px;
+    line-height: 35px;
+    text-transform: uppercase;
+    color: #8c8c8c;
+    font-weight: 600;
+    font-family: "Montserrat";
+    margin-bottom: 0px;
+}
+
+#BInvest-section .Binvest-item1 p {
+    font-size: 20px;
+    line-height: 28px;
+    color: #000000;
+    font-weight: 700;
+    font-family: "Montserrat";
+}
+#BInvest-section .text-vertical {
+    position: relative;
+}
+#BInvest-section .text-vertical h3 {
+    font-size: 87px;
+    line-height: 97px;
+    color: #f7f7f7;
+    font-weight: 800;
+    font-family: "Montserrat";
+    transform: rotate(-90deg);
+    position: absolute;
+    top: 201px;
+    right: -166px;
+}
+#BInvest-section .BInvest-btn a {
+    font-size: 16px;
+    line-height: 28px;
+    color: #878787;
+    font-weight: 600;
+    font-family: "Montserrat";
+}
+#BInvest-section button.BInvst {
+    padding: 6px 20px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+}   
+#BInvest-section .Latest-title h3 {
+    font-size: 24px;
+    line-height: 35px;
+    color: #000000;
+    font-weight: 600;
+    font-family: "Montserrat";
+}
+/* Investing section end  */
+
+
+
+
+/* blog letetst slider start */
+section#Blog-slider {
+    padding: 40px 0px 40px 0px;
+}
+h4.time-head {
+    font-size: 12px;
+    line-height: 35px;
+    text-transform: uppercase;
+    color: #8c8c8c;
+    font-weight: 600;
+    font-family: "Montserrat";
+    margin-bottom: 0px;
+    padding-top: 20px;
+}
+div#Latest-slider h3 {
+    font-size: 20px;
+    line-height: 28px;
+    color: #000000;
+    font-weight: 600;
+    font-family: "Montserrat";
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    padding-bottom: 0px;
+}
+#Blog-slider h3{
+    padding-bottom: 40px;
+}
+div#Latest-slider p {
+    font-size: 14px;
+    line-height: 24px;
+    color: #616161;
+    font-weight: 400;
+    font-family: "Open Sans";
+}
+#Latest-slider {
+    text-align: left;
+}
+div#Latest-slider {
+    text-align: left;
+    overflow: hidden;
+    height: 430px;
+}
+.Letestslide .swiper {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+  }
+
+#Blog-slider .guidslide {
+    padding-left:0px;
+}
+#Blog-slider .guidslide .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after {
+    content: 'next';
+    font-size: 15px;
+}
+#Blog-slider .guidslide .swiper-button-prev:after, .swiper-rtl .swiper-button-next:after {
+    content: 'prev';
+    font-size: 15px;
+}
+#Blog-slider .guidslide .swiper-button-prev, .swiper-rtl .swiper-button-next {
+    left: 15%;
+    right: auto;
+}
+#Blog-slider.guidslide  .swiper {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: inherit;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+}
+#Blog-slider .swiper-button-next, .swiper-button-prev {
+    position: absolute;
+    top: -14% !important;
+    left: 20%;
+}
+
+/* blog letetst slider end */
+
+
+  /* planing section satrt */
+  #Planning-section {
+    padding: 40px 0px 40px 0px;
+    padding: 5px 0px 40px 0px;
+    margin: 40px 0px;
+}
+#Planning-section .BInvest-rigth{
+    background-image: url(./Images/planing-shape.png);
+    background-size: auto;
+    background-position: top left;
+    background-repeat: no-repeat;
+    padding: 40px 0px 40px 0px;
+}
+
+#Planning-section .section-head h2 {
+    color: #1A3073;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    padding-bottom: 50px;
+    text-transform: uppercase;
+    text-align: right;
+
+}
+#Planning-section .BInvest-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 45px;
+}
+#Planning-section .bInvest-img img {
+    width: 100%;
+}
+#Planning-section .Binvest-item1 h4 {
+    font-size: 12px;
+    line-height: 35px;
+    text-transform: uppercase;
+    color: #8c8c8c;
+    font-weight: 600;
+    font-family: "Montserrat";
+    margin-bottom: 0px;
+}
+
+#Planning-section .Binvest-item1 p {
+    font-size: 20px;
+    line-height: 28px;
+    color: #000000;
+    font-weight: 700;
+    font-family: "Montserrat";
+}
+.text-vertical {
+    position: relative;
+}
+#Planning-section .text-vertical h3 {
+    font-size: 87px;
+    line-height: 97px;
+    color: #f7f7f7;
+    font-weight: 800;
+    font-family: "Montserrat";
+    transform: rotate(-90deg);
+    position: absolute;
+    top: 196px;
+    right: -219px;
+}
+#Planning-section .BInvest-btn a {
+    font-size: 16px;
+    line-height: 28px;
+    color: #878787;
+    font-weight: 600;
+    font-family: "Montserrat";
+}
+#Planning-section button.BInvst {
+    padding: 6px 20px;
+    border: 1px solid #ddd;
+    background-color: #f7f7f7;
+}   
+#Planning-section .Latest-title h3 {
+    font-size: 24px;
+    line-height: 35px;
+    color: #000000;
+    font-weight: 600;
+    font-family: "Montserrat";
+}
+
+   /* planing section end */
+
+
+/* Investing section start  */
+
+#Saving-section{
+    padding: 40px 0px 40px 0px;
+    background-image: url(./Images/Invets-shap.png);   
+    background-size: auto;
+    background-position: left;
+    background-repeat: no-repeat;
+    padding: 5px 0px 40px 0px;
+    margin: 40px 0px;
+}
+#Saving-section .BInvest-rigth{
+    background-image: url(./Images/Invest-bg.png);
+    background-size: auto;
+    background-position: top right;
+    background-repeat: no-repeat;
+    padding: 40px 0px 40px 0px;
+}
+
+#Saving-section .section-head h2 {
+    color: #1A3073;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    padding-bottom: 50px;
+    text-transform: uppercase;
+
+}
+#Saving-section .BInvest-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 45px;
+}
+#Saving-section .bInvest-img img {
+    width: 100%;
+}
+#Saving-section .Binvest-item1 h4 {
+    font-size: 12px;
+    line-height: 35px;
+    text-transform: uppercase;
+    color: #8c8c8c;
+    font-weight: 600;
+    font-family: "Montserrat";
+    margin-bottom: 0px;
+}
+
+#Saving-section .Binvest-item1 p {
+    font-size: 20px;
+    line-height: 28px;
+    color: #000000;
+    font-weight: 700;
+    font-family: "Montserrat";
+}
+#Saving-section .text-vertical {
+    position: relative;
+}
+#Saving-section .text-vertical h3 {
+    font-size: 87px;
+    line-height: 97px;
+    color: #f7f7f7;
+    font-weight: 800;
+    font-family: "Montserrat";
+    transform: rotate(90deg);
+    position: absolute;
+    top: 125px;
+    right: -94px;
+}
+#Saving-section .BInvest-btn a {
+    font-size: 16px;
+    line-height: 28px;
+    color: #878787;
+    font-weight: 600;
+    font-family: "Montserrat";
+}
+#Saving-section button.BInvst {
+    padding: 6px 20px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+}   
+#Saving-section .Latest-title h3 {
+    font-size: 24px;
+    line-height: 35px;
+    color: #000000;
+    font-weight: 600;
+    font-family: "Montserrat";
+}
+/* saving section end  */
+
+
+
+  /* planing section satrt */
+  #Industry-section {
+    padding: 5px 0px 100px 0px;
+    margin: 40px 0px;
+}
+#Industry-section .BInvest-rigth{
+    background-image: url(./Images/planing-shape.png);
+    background-size: auto;
+    background-position: top left;
+    background-repeat: no-repeat;
+    padding: 40px 0px 40px 0px;
+}
+
+#Industry-section .section-head h2 {
+    color: #1A3073;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    padding-bottom: 50px;
+    text-transform: uppercase;
+    text-align: right;
+
+}
+#Industry-section .BInvest-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 45px;
+}
+#Industry-section .bInvest-img img {
+    width: 100%;
+}
+#Industry-section .Binvest-item1 h4 {
+    font-size: 12px;
+    line-height: 35px;
+    text-transform: uppercase;
+    color: #8c8c8c;
+    font-weight: 600;
+    font-family: "Montserrat";
+    margin-bottom: 0px;
+}
+
+#Industry-section .Binvest-item1 p {
+    font-size: 20px;
+    line-height: 28px;
+    color: #000000;
+    font-weight: 600;
+    font-family: "Montserrat";
+}
+#Industry-section .text-vertical {
+    position: relative;
+}
+#Industry-section .text-vertical h3 {
+    font-size: 87px;
+    line-height: 97px;
+    color: #f7f7f7;
+    font-weight: 800;
+    font-family: "Montserrat";
+    transform: rotate(-90deg);
+    position: absolute;
+    top: 407px;
+    right: -419px;
+}
+#Industry-section .BInvest-btn a {
+    font-size: 16px;
+    line-height: 28px;
+    color: #878787;
+    font-weight: 600;
+    font-family: "Montserrat";
+}
+#Industry-section button.BInvst {
+    padding: 6px 20px;
+    border: 1px solid #ddd;
+    background-color: #f7f7f7;
+}   
+#Industry-section    .Latest-title h3 {
+    font-size: 24px;
+    line-height: 35px;
+    color: #000000;
+    font-weight: 600;
+    font-family: "Montserrat";
+}
+
+   /* planing section end */
+
+
+   /* guid sldier Start*/
+
+   .Guidsldier-sec {
+    padding: 80px 0px 0px 0px;
+    }
+    #Guidsldier-sec .swiper {
+        width: 100%;
+        height: 100%;
+      }
+      
+      #Guidsldier-sec .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+      
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+      #guid-slider .swiper-wrapper {
+        transform: translate3d(-1204.5px, 0px, 0px) !important;
+      }
+      #Guidsldier-sec .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .Letestslide .swiper {
+        width: 100%;
+        height: 100%;
+        overflow: visible;
+      }
+      .Guid-head h3{
+        position: relative;
+      }
+      .Guid-head h3:before {
+        position: absolute;
+        content: '';
+        width: 78px;
+        height: 3px;
+        background-color: #02318e;
+        bottom: -30%;
+    }
+     /* .Letestslide  .swiper-wrapper {
+        transform: translate3d(-1204.5px, 0px, 0px) !important;
+    } */
+    
+    
+    .Letestslide .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+        bottom: -50px;
+        left: 0;
+        width: 100%;
+        display: none;
+    }
+    
+    .Letestslide .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+      
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+      
+      .Letestslide .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .guidslide {
+        padding-left: 100px;
+    }
+      .guidslide .swiper-button-next,.swiper-button-prev {
+        position: absolute;
+        top: -14% !important;
+        width: 45px;
+        height: 45px;
+        margin-top: calc(0px - (var(--swiper-navigation-size)/ 2));
+        z-index: 10;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #000;
+        background-color: #ddd;
+        border-radius: 25px;
+    }
+
+   .guidslide .swiper-button-prev{
+    position: absolute;
+    top: -14% !important;
+    width: 45px;
+    height: 45px;
+    margin-top: calc(0px - (var(--swiper-navigation-size)/ 2));
+    z-index: 10;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    background-color: #ddd;
+    border-radius: 25px;
+   } 
+
+    .guidslide .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after {
+        content: 'next';
+        font-size: 15px;
+    }
+    .guidslide .swiper-button-prev:after, .swiper-rtl .swiper-button-next:after {
+        content: 'prev';
+        font-size: 15px;
+    }
+    .guidslide .swiper-button-prev, .swiper-rtl .swiper-button-next {
+        left: 90%;
+        right: auto;
+        top: -50px;
+    }
+    .guidslide  .swiper {
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        overflow: inherit;
+        list-style: none;
+        padding: 0;
+        z-index: 1;
+    }
+    .guid-ct h3 {
+        font-size: 30px;
+        line-height: 36px;
+        color: #000000;
+        font-weight: 600;
+        font-family: "Montserrat";
+    }
+    .guid-ct span {
+        color: #02318e;;
+    }
+.guid-ct p {
+    font-size: 14px;
+    line-height: 24px;
+}
+.slide-btn a {
+    color: #02318e;
+}
+button.guidbr {
+    border: none;
+    background-color: #fff;
+    font-size: 12px;
+    line-height: 35px;
+    text-transform: uppercase;
+    color: #02318e;
+    font-weight: 600;
+    font-family: "Montserrat";
+    border-bottom: 3px solid;
+    padding: 0px;
+    padding-top: 20px;
+    margin-bottom: 29px;
+}
+    .latest-img {
+        text-align: right;
+    }
+   .guidslide  .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
+        display: none;
+    }
+    #Guid-section{
+        background-image: url(./Images/guid-slider-sape.png);
+        background-position: bottom;
+        background-repeat: no-repeat;
+    }
+    .Guid-head h3 {
+        font-size: 70px;
+        letter-spacing: -3px;
+        line-height: 102px;
+        color: #f8f8f8;
+        font-weight: 900;
+        font-family: "Montserrat";
+        
+    }
+    /* Guid sldier  End */
+
+    .Letmain .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
+        display: none;
+    }
+    .Letmain .swiper-button-next, .swiper-button-prev {
+        position: absolute;
+        top: -9%;
+        width: 45px;
+        height:45px;
+        margin-top: calc(0px - (var(--swiper-navigation-size)/ 2));
+        z-index: 10;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--swiper-navigation-color,var(--swiper-theme-color));
+    }
+    .swiper-button-next, .swiper-button-prev {
+        position: absolute;
+        top: -9%;
+        width: 45px;
+        height: 45px;
+        margin-top: calc(0px - (var(--swiper-navigation-size)/ 2));
+        z-index: 10;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color:#000;
+        background-color: #ddd;
+        border-radius: 25px;
+    }
+    .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after {
+        content: 'next';
+        font-size: 16px;
+    }
+    .Letestslide {
+        padding-top: 40px;
+    }
+    .Letestslide .swiper-button-next{
+        top: -9%;
+        right: 74%;
+    }
+    .Letestslide .swiper-button-prev {
+        right: 74%;
+    }

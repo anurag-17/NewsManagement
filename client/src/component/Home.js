@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Bnnerimg from './Images/banner-right.png';
 import newsimg1 from './Images/News-main.webp';
 import newsimg2 from './Images/News-img2.webp';
@@ -12,13 +12,24 @@ import blog3 from './Images/blog-img3.png';
 import blog4 from './Images/bottom-news1.webp';
 import blog5 from './Images/blog_img5.jpg';
 import './Home.css';
-
+import axios from 'axios';
 
 
 const Home = () => {
-
+ const [newsdata,setNewsdata] = useState([])
+  const newsres = async()=>{
+    await axios.get("/api/auth/viewnews").then((res)=>{
+     console.log(res.data)
+       setNewsdata(res.data.result)
+   })
+   }
+   
+   useEffect(()=>{
+   newsres()
+   },[newsdata])
+  
   return (
-    <div className='homepage'>
+    <div className='homepage' id='home-first'>
       <section id='home-banner'>
         <div className='container'>
           <div className='Home-slide'>

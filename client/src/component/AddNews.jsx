@@ -77,24 +77,30 @@ export const AddNews = () => {
       })
     }
   }
-
-
-
-
-
-
+  
   return (
     <>
       <div className='flex_news bgnews'>
         <AdminDash />
-        <div className="container ">
-          <h2>Add News</h2>
+        <div style= {{height:"97vh"}} className="container scroll-main mt-3">
+          <h2 style = {{fontSize:"1.5rem"}}>Add News</h2>
           <div>
             <form action="">
-              <div className='mb-5'>
-
-                <input type="text" name="title" id="" placeholder='Title' onChange={Input_handler} className="title_input" />
+              <div className='flex-image'>
+                <input type="text" name="title" id="" placeholder='Title' onChange={Input_handler} className="title_input mt-4" />
+              <div style = {{position:"relative",bottom:"2rem"}} className='ml-4'>
+              <h4 className='ml-2'>Feature Image</h4>
+              <div className='flex-file file_input'>
+                  <img className="mt-3" style={{ width: "3.2rem", height: "3.1rem", marginLeft: "10px", borderRadius: "50%" }} src={avtarpreview} />
+               <input className="file" type="file" name="url" id="file" onChange={input_file} />
+                <label className='ml-3' htmlFor="file">
+                   Choose Image
+                  </label>
               </div>
+
+              </div>
+              </div>
+              <div className="editor-container">
               <label htmlFor="">Description</label>
               <Editor
 
@@ -115,12 +121,9 @@ export const AddNews = () => {
                   content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
                 }}
               />
-              <div className='mt-4'>
-              <h5>Feature Image</h5>
-                <label htmlFor="url"><img style={{ width: "3.2rem", height: "3.1rem", marginLeft: "10px", borderRadius: "50%" }} src={avtarpreview} /></label>
-                <input type="file" name="url" id="" onChange={input_file} />
+         
+              <button className='btn btn-primary my-2' onClick={log}>Submit</button>
               </div>
-              <button className='btn btn-primary mt-4' onClick={log}>Submit</button>
             </form>
           </div>
         </div>

@@ -4,6 +4,10 @@
 .blog_title{
     width: 50%;
     padding: 10px;
+    height: 2.4rem;
+    border: 2px solid gray;
+    border-radius: 5px;
+
 }
 .give_margin{
     justify-content: right;

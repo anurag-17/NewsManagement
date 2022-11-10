@@ -58,125 +58,8 @@ button.know-btn {
     color: #fff;
 }
 
+/* banner section end */
 
-
-/* news section */
-section#New-section {
-    transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
-    padding: 80px 0px 30px 0px;
-}
-.news-img {
-    background-image: url(./Images/News-img2.webp);
-    width: 100%;
-    background-size: cover;
-    height: 760px;
-    background-position: bottom;
-    display: block;
-    overflow: hidden;
-}
-.Newsleft {
-    padding-right: 50px;
-}
-.new-Head h3 {
-    color: #173592;
-    font-size: 40px;
-    font-weight: bold;
-    line-height: 56px;
-}
-.nes-des {
-    padding-top: 20px;
-}
-.News-title h2 {
-    font-size: 18px;
-    color: #E34C66;
-    font-weight: 700;
-}
-.News-title h2:hover {
-    color: #333366;
-}
-.News-ct p {
-    font-size: 16px;
-    color: #333333;
-    line-height: 26px;
-    font-weight: 400;
-}
-.News-box {
-    display: grid;
-    grid-template-columns: 34% 60%;
-    grid-gap: 20px;
-    border-bottom: 1px solid #ddd;
-    padding-top: 15px;
-}
-.row.Newalin {
-    align-items: baseline;
-}
-.blogR-img img {
-    height: 125px;
-    object-fit: cover;
-    background-size: cover;
-}
-.newsR-ct p {
-    font-size: 16px;
-    line-height: 26px;
-} 
-.News_sub h3 {
-    color: #1A3073;
-    font-family: "Montserrat", Sans-serif;
-    font-size: 20px;
-    font-weight: 700;
-    position: relative;
-}
-.newsR-ct h3 {
-    font-size: 16px;
-    line-height: 25px;
-    font-weight: 600;
-    color: #000;
-    position: relative;
-}
-
-.newsR-ct p {
-    font-size: 16px;
-    line-height: 26px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 5;
-    -webkit-box-orient: vertical;
-}
-.news-btn {
-    padding-top:145px;
-}
-.news-btn button {
-    border: none;
-    background: none;
-    font-size: 18px;
-    line-height: 30px;
-}
-.news-btn button a {
-    font-size: 16px;
-    text-decoration: none;
-    border-bottom: 2px solid;
-    border-style: solid;
-    border-width: 0px 0px 2px 0px;
-    border-color: #0F71F2;
-    border-radius: 0px 0px 0px 0px;
-    padding: 0px 0px 2px 0px;
-}
-.News_sub h3:after {
-    content: '';
-    width: 260px;
-    height: 2px;
-    background: #28F2B9;
-    position: absolute;
-    top: 12px;
-    margin-left: 10px;
-}
-.news-btn a {
-    color: #0f71f2;
-}
-
-
-/* news section */
 
 
 /* Live section */
@@ -456,11 +339,11 @@ button.Blog-btn a {
 .Topnews-item h3 {
     font-size: 20px;
     line-height: 24px;
-    color: #333333;
     font-weight: 700;
     font-style: normal;
     font-family: 'Montserrat';
     padding-top: 10px;
+    color: #000000;
 }
 .Topnews-item p {
     font-size: 14px;
@@ -475,7 +358,7 @@ button.Blog-btn a {
 .Topnews-item h4 {
     font-size: 14px;
     line-height: 24px;
-    font-style: italic;
+    font-style:normal;
     color: #333333;
     font-weight: 700;
 }
@@ -496,10 +379,11 @@ h4.top-title {
     object-fit: fill;
 }
 .topnew-2 h3 {
-    font-size: 36px;
-    line-height: 36px;
-    color: #333333;
+    font-size: 30px;
+    line-height: 33px;
+    color: #000000;
     font-weight: 600;
+    font-family: 'Montserrat';
 }
 .topnew-2 h4 {
     font-size: 16px;
@@ -516,7 +400,7 @@ h4.top-title {
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     margin-bottom: 5px;
-    font-style: italic;
+    font-style:normal;
 }
 .sub-author{
     font-size: 14px;
@@ -541,13 +425,16 @@ h4.top-title {
 .Topnew2-bt h3 {
     font-size: 20px;
     line-height: 24px;
-    color: #333333;
+    color: #000000;
     font-weight: 700;
+    font-family: 'Montserrat';
 }
 .Topnew2-bt h4 {
-    font-size: 16px;
-    line-height: 26px;
-    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    font-style: normal;
+    color: #333333;
+    font-weight: 700;
 }
 .Topnew2-bt p {
     font-size: 14px;
