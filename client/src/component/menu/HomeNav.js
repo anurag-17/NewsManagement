@@ -5,6 +5,7 @@ import './Navbarmenu.css';
 import logo from '../Images/logo.png';
 
 
+
 const Navbarmenu = () => {
 
     const [isMenu, setisMenu] = useState(false);
@@ -54,7 +55,7 @@ const Navbarmenu = () => {
    
 
     return (
-    <header className="header__middle header-section" id='he'>
+    <header className="header__middle header-section HomeNav" id='HomeNav'>
         <div className="container">
             <div className="row Menualin">
 

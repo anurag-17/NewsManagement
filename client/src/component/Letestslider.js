@@ -9,20 +9,30 @@ import letestslide6 from './Images/letestSlide6.png';
 import guidslid1 from './Images/guid-slide1.png';
 import guidslid2 from './Images/guid-slide2.png';
 import { Navigation, Pagination } from "swiper";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-
 
 const Letestslider = () => {
   return (
     <div>
       <div className='guidslide'>
       <div className='Let-slider1'>
-      <Swiper
-        slidesPerView={4}
-        spaceBetween={30}
-        slidesPerGroup={4}
+
+
+     <Swiper  
+      breakpoints={{
+      1023: {
+        slidesPerView:4,
+      },
+      768: {
+        slidesPerView:1
+      },
+      500: {
+        slidesPerView: 1
+      },
+
+      }}
+      slidesPerView={2}
+        spaceBetween={45}
+        slidesPerGroup={1}
         loop={true}
         loopFillGroupWithBlank={true}
         pagination={{
@@ -30,8 +40,8 @@ const Letestslider = () => {
         }}
         navigation={true}
         modules={[Pagination, Navigation]}
-        className="mySwiper"
-      >
+        className="mySwiper"  
+      >        
         <SwiperSlide>
         <div id='Latest-slider'>
             <div className='latest-img'>

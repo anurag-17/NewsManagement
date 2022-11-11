@@ -12,7 +12,8 @@ export const AddBlogs = () => {
   const [blogdata, setBlogdata] = useState({
     "title": "",
     "description": "",
-    "url": ""
+    "url": "",
+    "date":new Date().toLocaleDateString()
   })
   const editorRef = useRef(null);
   const Input_handler = (e) => {
@@ -21,7 +22,6 @@ export const AddBlogs = () => {
   const input_file = (e) => {
     setSelectedImage(e.target.files)
     console.log(e.target.files);
-
     const reader = new FileReader();
     reader.onload = () => {
       if (reader.readyState === 2) {

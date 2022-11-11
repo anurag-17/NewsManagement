@@ -15,3 +15,8 @@
 .flex_blog{
     display: flex;
 }
+
+.image-center{
+    display: flex;
+    justify-content: center;
+}

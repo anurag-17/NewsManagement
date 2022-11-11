@@ -34,3 +34,19 @@
 .model_input{
     display: flex;
 }
+.card-bottom{
+    border-top: 1px solid grey;
+    display: flex;
+    justify-content:space-between;
+    flex-direction: row-reverse;
+    align-items: baseline;
+    background-color: gainsboro;
+  padding-left: 10px;
+}
+
+.card-bottom .fa{
+    font-size: 28px;
+}
+.card-bottom p{
+    font-size: 18px;
+}

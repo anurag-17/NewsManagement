@@ -17,7 +17,9 @@ img {
   max-width: 100%;
   height: auto;
 }
-
+header#HomeNav {
+  background-image: none !important;
+}
 .sec__one {
     position: relative;
     width: 100%;
@@ -50,6 +52,11 @@ ul.main-menu {
   float: right;
   z-index: 7;
 }
+.Menualin {
+  align-items: center;
+  padding-top:12px;
+}
+
 ul.main-menu>li.menu-item:first-child {
   padding-left: 0;
   margin-left: 0;
@@ -61,17 +68,18 @@ li {
   list-style-type: none;
 }
 .menu-item a {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
   line-height: 40px;
   position: relative;
   display: block;
-  color: #fff;
-  margin: 27px 17px;
+  margin: 20px 0px 0px 40px;
   text-decoration: none;
   cursor: pointer;
   text-transform: uppercase;
-  
+  padding: 0px 0px 19px 0px;
+  color: #ffff;
+  font-family: 'Arial Bold', sans-serif;
 }
 .header__middle__logo{
   width: 20%;
@@ -106,9 +114,14 @@ li {
   text-decoration: none;
   margin-top: 33px;
 }
-/* .active{
-  color: #ff1800!important;
-} */
+.active {
+  color: #fff !important;
+  /* padding-bottom: 20px; */
+}
+.menuq1 .active {
+  color: #fff !important;
+  border-bottom: 2px solid #4AF8D5;
+}
 .header__middle__menus span.text {
   position: absolute;
   right: 177px;
@@ -142,7 +155,8 @@ li {
   width: 100%;
   z-index: 999;
   box-shadow: 0 2px 24px 0 rgb(0 0 0 / 15%);
-  background-color: #ffffff !important;
+  background-color: rgb(4,49,144);  
+
   animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
   padding-top: 0px;
   padding-bottom: 0px;
@@ -168,14 +182,17 @@ li {
   margin: 7px 27px;
 }
 .menu-item:hover > a{
-  color: #07a8ff !important;
+  /* color: #07a8ff !important; */
+  color: #fff !important;
+  border-bottom: 2px solid #4af8d5;
 }
 .menu-item .sub__menus li:hover a{
-  color: #0f71f2 !important;
+  color: #fff !important;
+  border-bottom: 2px solid #4af8d5;
 }
 
 .header__middle__logo img{
-  max-width: 207px;
+  max-width:189px;
   margin: 10px 0 0 0;
 }
 
@@ -194,7 +211,9 @@ li {
   background-color: #0f71f2;
 }
 .main-nav .menu-item:hover > a {
-  color: #07a8ff !important;
+  /* color: #07a8ff !important; */
+  color: #fff !important;
+  border-bottom: 2px solid #4AF8D5;
 }
 .main-nav .menubar__button {
   display: block!important;
@@ -224,7 +243,9 @@ li {
   padding-top: 57px;
 }
 .main-nav .menu-item a {
-  margin: 10px 17px;text-align: center;color: #000000;
+  margin: 10px 17px;
+  text-align: center;
+  color: #000000;
 }
 .main-nav  ul.main-menu {
   display: none;
@@ -252,4 +273,3 @@ li {
 }
 
 }
-

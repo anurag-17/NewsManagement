@@ -1,8 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700;800&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@font-face {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    src: local('Arial font'), url('../src/component//font/arialn.ttf') format('ttf');
+  }
 *{
-    font-family: 'Montserrat', sans-serif;
-    font-family: 'Open Sans', sans-serif;
-}
+    font-family: 'Poppins', sans-serif;
+    font-family: Arial , sans-serif;
+ }
 span {
     color: #24ffc4;
 }
@@ -29,6 +36,14 @@ h3 {
     line-height: 24px;
     color: #000000;
     font-weight: 600;
-    font-family: "Montserrat";
     margin-bottom: 0px;
+}
+
+@media (max-width:1200px) {
+.body-main {
+    padding: 57px 10px 0px 10px;
+}
+}
+.loader{
+    
 }

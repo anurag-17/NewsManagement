@@ -18,7 +18,8 @@ export const Viewblogs = () => {
     const [editblogdata, setEditblogdata] = useState({
         "title": "",
         "description": "",
-        "url": ""
+        "url": "",
+        "date": new Date().toLocaleDateString()
     })
     const[onclose,setOnClose] = useState(true)
     const editorRef = useRef(null);
@@ -32,10 +33,7 @@ export const Viewblogs = () => {
     const deletehandler = async (id) => {
 
         setDeleteid(id)
-        console.log(id);
-
         await axios.post("/api/auth/deleteblogs", { params: id }).then((res) => {
-
         }).catch((error) => {
             console.log(error);
         })
@@ -112,23 +110,26 @@ e.preventDefault()
                     <div className='blogbox'><h3>View Blogs</h3></div>
                     <div className='blogcard'>
                         {
-                            blogdata.slice(0).reverse().map((items, index) => {
+                            blogdata.slice(0).reverse().map((items, index) =>{
                                 return (
-                                    <div className="card mt-4" style={{ "width": "300px" }} key={index}>
+                                    <div className="card mt-4 col-5 card-main" key={index}>
+                                        <div className="image-center">
                                         <img className="card-img-top blogimg" src={items.url} alt="Card image" />
+                                        </div>
                                         <div className="card-body">
                                             <h4 className="card-title">{items.title}</h4>
                                             <p className="card-text" dangerouslySetInnerHTML={{ __html: items.description }}></p>
-
                                         </div>
-                                        <div className="card-footer">
+                                        <div className="card-bottom">
+                                            <div>
                                             <button className='btn' onClick={() => deletehandler(items._id)}>
                                                 <i className="fa fa-trash" aria-hidden="true"></i>
                                             </button>
                                             <button type="button" class="btn" data-toggle="modal" data-target="#myModal" onClick={() => edithandler(items._id)}>
                                                 <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                             </button>
-
+                                            </div>
+                                            <p>{items.date}</p>
                                         </div>
                                     </div>
                                 )

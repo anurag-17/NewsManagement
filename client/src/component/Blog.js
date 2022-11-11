@@ -51,17 +51,19 @@ const Blog = () => {
         </div>
       </section>
 
-
+    
       <section id='Blog-slider'>
       <div className='container'>
         <div className='Latest-title'>
           <h3>Latest Stories</h3>
         </div>
         <div className='letslider2'>
-          <Letestslider/>
+          <Letestslider/> 
+      
         </div>
       </div>
       </section>
+
 
      <section id='Guid-section'>
       <div className='container'>
@@ -69,10 +71,10 @@ const Blog = () => {
         <div className='Guid-head'>
           <h3>ESSENTIAL GUIDES</h3>
         </div>
-        {/* <Guidslider/> */}
+        <Guidslider/>
         </div>      
       </div>
-     </section>
+     </section> 
 
     <section id='BInvest-section'>
       <div className='Binveshape'>
@@ -278,10 +280,11 @@ const Blog = () => {
                  <h3>SAVING</h3>
               </div>
             </div>
-          </div>
-          <div className='BInvest-btn'>
+            <div className='BInvest-btn'>
             <button className='BInvst'><a href='#'>SEE MORE</a></button>
           </div>
+          </div>
+          
       </div>
       </div>
       </section>

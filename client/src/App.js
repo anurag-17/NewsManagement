@@ -12,6 +12,8 @@ import { AddBlogs } from './component/AddBlogs';
 import { ViewNews } from './component/ViewNews';
 import { Viewblogs } from './component/Viewblogs';
 import Blog from './component/Blog';
+import { Loader } from './component/Common/Loader';
+import { AddContent } from './component/AddContent';
 
 function App() {
   let location = useLocation()
@@ -23,12 +25,10 @@ if(data !== null){
     localStorage.removeItem("newstoken")
   }
 }
-
-
   return (
     <>
       <div className='App'>
-          {location.pathname !== "/admin" && location.pathname !== "/admindash" && location.pathname !== "/addblogs" && location.pathname !== "/viewnews" && location.pathname !== "/viewblogs" && location.pathname !== "/addnews" && <Navbarmenu/>}
+          {location.pathname !== "/admin" && location.pathname !== "/admindash" && location.pathname !== "/addblogs" && location.pathname !== "/viewnews" && location.pathname !== "/viewblogs" && location.pathname !== "/addnews" && location.pathname !=="/"&&location.pathname!=="/addcontent" &&<Navbarmenu/>}
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/blog' element={<Blog/>} />
@@ -39,8 +39,12 @@ if(data !== null){
             <Route path='/addblogs' element={<AddBlogs />} />
             <Route path='/viewnews' element={<ViewNews />} />
             <Route path='/viewblogs' element={<Viewblogs />} />
+            <Route path='/loader' element={<Loader/>} />
+            <Route path='/addcontent' element={<AddContent/>} />
+
+            
         </Routes>
-          {location.pathname !== "/admin" && location.pathname !== "/admindash" && location.pathname !== "/addblogs" && location.pathname !== "/viewnews" && location.pathname !== "/viewblogs" && location.pathname !== "/addnews" && <Footer/>}
+          {location.pathname !== "/admin" && location.pathname !== "/admindash" && location.pathname !== "/addblogs" && location.pathname !== "/viewnews" && location.pathname !== "/viewblogs" && location.pathname !== "/addnews"&&location.pathname!=="/addcontent" && <Footer/>}
       </div>
     </>
   );

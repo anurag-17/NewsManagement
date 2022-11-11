@@ -57,7 +57,7 @@
     line-height: 24px;
     color: #000000;
     font-weight: 600;
-    font-family: "Montserrat";
+    font-family: 'Arial Bold', sans-serif;
 }
 #Blog-sewction .Blog-heading h3:before {
     content: '';
@@ -83,7 +83,7 @@
     line-height: 25px;
     color: #000000;
     font-weight: 700;
-    font-family: "Montserrat";
+    font-family: Arial , sans-serif;
 }
 .Blog-mread1 {
     padding-bottom: 20px;
@@ -103,7 +103,7 @@
     background-size: auto;
     background-position: left;
     background-repeat: no-repeat;
-    padding: 5px 0px 40px 0px;
+    padding: 40px 0px 40px 0px;
     margin: 40px 0px;
 }
 #BInvest-section .BInvest-rigth{
@@ -115,7 +115,7 @@
 }
 
 #BInvest-section .section-head h2 {
-    color: #1A3073;
+    color: #1F286F;
     font-family: "Montserrat", Sans-serif;
     font-size: 40px;
     font-weight: 700;
@@ -144,9 +144,9 @@
 #BInvest-section .Binvest-item1 p {
     font-size: 20px;
     line-height: 28px;
-    color: #000000;
+    color: #1F286F;
     font-weight: 700;
-    font-family: "Montserrat";
+    font-family: 'Arial Bold', sans-serif;
 }
 #BInvest-section .text-vertical {
     position: relative;
@@ -160,20 +160,33 @@
     transform: rotate(-90deg);
     position: absolute;
     top: 201px;
-    right: -166px;
+    right: -94px;
+}
+#BInvest-section .BInvest-btn {
+    padding-top: 40px;
 }
 #BInvest-section .BInvest-btn a {
-    font-size: 16px;
+    font-size: 14px;
     line-height: 28px;
-    color: #878787;
+    color: #1A3073;
     font-weight: 600;
     font-family: "Montserrat";
 }
 #BInvest-section button.BInvst {
     padding: 6px 20px;
-    border: 1px solid #ddd;
+    border: 1px solid #1A3073;
     background-color: #fff;
+    background-color: #fff;
+    border-width: 2px 2px 2px 2px;
+    border-radius: 7px 7px 7px 7px;
 }   
+#BInvest-section:hover button.BInvst{
+    border: 2px solid #0F71F2;
+}  
+#BInvest-section:hover a{
+    color: #0F71F2;
+}
+
 #BInvest-section .Latest-title h3 {
     font-size: 24px;
     line-height: 35px;
@@ -203,9 +216,9 @@ h4.time-head {
 div#Latest-slider h3 {
     font-size: 20px;
     line-height: 28px;
-    color: #000000;
+    color: #1F286F;
     font-weight: 600;
-    font-family: "Montserrat";
+    font-family: 'Arial Bold', sans-serif;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -263,8 +276,12 @@ div#Latest-slider {
 }
 #Blog-slider .swiper-button-next, .swiper-button-prev {
     position: absolute;
-    top: -14% !important;
+    top: -14%;
     left: 20%;
+}
+#Blog-slider .swiper-button-next, .swiper-button-prev {
+    position: absolute;
+    top: -14% !important;
 }
 
 /* blog letetst slider end */
@@ -273,7 +290,6 @@ div#Latest-slider {
   /* planing section satrt */
   #Planning-section {
     padding: 40px 0px 40px 0px;
-    padding: 5px 0px 40px 0px;
     margin: 40px 0px;
 }
 #Planning-section .BInvest-rigth{
@@ -308,16 +324,16 @@ div#Latest-slider {
     text-transform: uppercase;
     color: #8c8c8c;
     font-weight: 600;
-    font-family: "Montserrat";
+    font-family: 'Arial Bold', sans-serif;
     margin-bottom: 0px;
 }
 
 #Planning-section .Binvest-item1 p {
     font-size: 20px;
     line-height: 28px;
-    color: #000000;
+    color: #1F286F;
     font-weight: 700;
-    font-family: "Montserrat";
+    font-family: 'Arial Bold', sans-serif;
 }
 .text-vertical {
     position: relative;
@@ -327,30 +343,39 @@ div#Latest-slider {
     line-height: 97px;
     color: #f7f7f7;
     font-weight: 800;
-    font-family: "Montserrat";
+    font-family: 'Arial Bold', sans-serif;
     transform: rotate(-90deg);
     position: absolute;
     top: 196px;
     right: -219px;
 }
 #Planning-section .BInvest-btn a {
-    font-size: 16px;
+    font-size: 14px;
     line-height: 28px;
-    color: #878787;
+    color: #1A3073;
     font-weight: 600;
     font-family: "Montserrat";
 }
 #Planning-section button.BInvst {
     padding: 6px 20px;
-    border: 1px solid #ddd;
+    border: 2px solid #1A3073;
     background-color: #f7f7f7;
-}   
+    border-width: 2px 2px 2px 2px;
+    border-radius: 7px 7px 7px 7px;
+}  
+
+#Planning-section:hover button.BInvst{
+    border: 2px solid #0F71F2;
+}  
+#Planning-section:hover a{
+    color: #0F71F2;
+}
 #Planning-section .Latest-title h3 {
     font-size: 24px;
     line-height: 35px;
     color: #000000;
     font-weight: 600;
-    font-family: "Montserrat";
+    font-family: 'Arial Bold', sans-serif;
 }
 
    /* planing section end */
@@ -398,16 +423,16 @@ div#Latest-slider {
     text-transform: uppercase;
     color: #8c8c8c;
     font-weight: 600;
-    font-family: "Montserrat";
+    font-family: 'Arial Bold', sans-serif;
     margin-bottom: 0px;
 }
 
 #Saving-section .Binvest-item1 p {
     font-size: 20px;
     line-height: 28px;
-    color: #000000;
+    color: #1F286F;
     font-weight: 700;
-    font-family: "Montserrat";
+    font-family: 'Arial Bold', sans-serif;
 }
 #Saving-section .text-vertical {
     position: relative;
@@ -417,30 +442,38 @@ div#Latest-slider {
     line-height: 97px;
     color: #f7f7f7;
     font-weight: 800;
-    font-family: "Montserrat";
+    font-family: 'Arial Bold', sans-serif;
     transform: rotate(90deg);
     position: absolute;
     top: 125px;
     right: -94px;
 }
 #Saving-section .BInvest-btn a {
-    font-size: 16px;
+    font-size: 14px;
     line-height: 28px;
-    color: #878787;
+    color:#1A3073;
     font-weight: 600;
     font-family: "Montserrat";
 }
-#Saving-section button.BInvst {
+#Saving-section button.BInvst { 
     padding: 6px 20px;
-    border: 1px solid #ddd;
-    background-color: #fff;
+    border: 2px solid #1A3073;
+    background-color: #f7f7f7;
+    border-width: 2px 2px 2px 2px;
+    border-radius: 7px 7px 7px 7px;
 }   
+#Saving-section:hover button.BInvst{
+    border: 2px solid #0F71F2;
+}  
+#Saving-section:hover a{
+    color: #0F71F2;
+}
 #Saving-section .Latest-title h3 {
     font-size: 24px;
     line-height: 35px;
     color: #000000;
     font-weight: 600;
-    font-family: "Montserrat";
+    font-family: 'Arial Bold', sans-serif;
 }
 /* saving section end  */
 
@@ -448,7 +481,7 @@ div#Latest-slider {
 
   /* planing section satrt */
   #Industry-section {
-    padding: 5px 0px 100px 0px;
+    padding: 40px 0px 0px 0px;
     margin: 40px 0px;
 }
 #Industry-section .BInvest-rigth{
@@ -483,16 +516,16 @@ div#Latest-slider {
     text-transform: uppercase;
     color: #8c8c8c;
     font-weight: 600;
-    font-family: "Montserrat";
+    font-family: 'Arial Bold', sans-serif;
     margin-bottom: 0px;
 }
 
 #Industry-section .Binvest-item1 p {
     font-size: 20px;
     line-height: 28px;
-    color: #000000;
+    color: #1F286F;
     font-weight: 600;
-    font-family: "Montserrat";
+    font-family: 'Arial Bold', sans-serif;
 }
 #Industry-section .text-vertical {
     position: relative;
@@ -502,39 +535,49 @@ div#Latest-slider {
     line-height: 97px;
     color: #f7f7f7;
     font-weight: 800;
-    font-family: "Montserrat";
+    font-family: 'Arial Bold', sans-serif;
     transform: rotate(-90deg);
     position: absolute;
     top: 407px;
     right: -419px;
 }
 #Industry-section .BInvest-btn a {
-    font-size: 16px;
+    font-size: 14px;
     line-height: 28px;
-    color: #878787;
+    color: #1A3073;
     font-weight: 600;
     font-family: "Montserrat";
 }
 #Industry-section button.BInvst {
     padding: 6px 20px;
-    border: 1px solid #ddd;
+    border: 2px solid #1A3073;
     background-color: #f7f7f7;
-}   
+    border-width: 2px 2px 2px 2px;
+    border-radius: 7px 7px 7px 7px;
+} 
+#Industry-section:hover button.BInvst{
+    border: 2px solid #0F71F2;
+}  
+#Industry-section:hover a{
+    color: #0F71F2;
+}
 #Industry-section    .Latest-title h3 {
     font-size: 24px;
     line-height: 35px;
     color: #000000;
     font-weight: 600;
-    font-family: "Montserrat";
+    font-family: 'Arial Bold', sans-serif;
 }
-
-   /* planing section end */
+#Industry-section .BInvest-btn {
+    padding-top: 110px;
+}
+   /* Industry  section end */
 
 
    /* guid sldier Start*/
 
    .Guidsldier-sec {
-    padding: 80px 0px 0px 0px;
+    padding:0px;
     }
     #Guidsldier-sec .swiper {
         width: 100%;
@@ -626,7 +669,7 @@ div#Latest-slider {
       .guidslide {
         padding-left: 100px;
     }
-      .guidslide .swiper-button-next,.swiper-button-prev {
+      .guidslide .swiper-button-next, .swiper-button-prev {
         position: absolute;
         top: -14% !important;
         width: 45px;
@@ -641,23 +684,6 @@ div#Latest-slider {
         background-color: #ddd;
         border-radius: 25px;
     }
-
-   .guidslide .swiper-button-prev{
-    position: absolute;
-    top: -14% !important;
-    width: 45px;
-    height: 45px;
-    margin-top: calc(0px - (var(--swiper-navigation-size)/ 2));
-    z-index: 10;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #000;
-    background-color: #ddd;
-    border-radius: 25px;
-   } 
-
     .guidslide .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after {
         content: 'next';
         font-size: 15px;
@@ -685,7 +711,7 @@ div#Latest-slider {
         line-height: 36px;
         color: #000000;
         font-weight: 600;
-        font-family: "Montserrat";
+        font-family: 'Arial Bold', sans-serif;
     }
     .guid-ct span {
         color: #02318e;;
@@ -699,7 +725,7 @@ div#Latest-slider {
 }
 button.guidbr {
     border: none;
-    background-color: #fff;
+    background-color: transparent;
     font-size: 12px;
     line-height: 35px;
     text-transform: uppercase;
@@ -711,6 +737,7 @@ button.guidbr {
     padding-top: 20px;
     margin-bottom: 29px;
 }
+
     .latest-img {
         text-align: right;
     }
@@ -721,6 +748,7 @@ button.guidbr {
         background-image: url(./Images/guid-slider-sape.png);
         background-position: bottom;
         background-repeat: no-repeat;
+        padding: 40px 0px 40px 0px;
     }
     .Guid-head h3 {
         font-size: 70px;
@@ -728,7 +756,7 @@ button.guidbr {
         line-height: 102px;
         color: #f8f8f8;
         font-weight: 900;
-        font-family: "Montserrat";
+        font-family: 'Arial Bold', sans-serif;
         
     }
     /* Guid sldier  End */
@@ -778,3 +806,180 @@ button.guidbr {
     .Letestslide .swiper-button-prev {
         right: 74%;
     }
+    .swiper-button-next, .swiper-button-prev {
+        background-color: #fff !important;
+        border-radius: 25px !important;
+        border: 1px solid #ddd;
+        width: 40px !important;
+        height: 40px !important;
+    }
+    /* .swiper {
+        overflow: hidden !important;
+    } */
+    .tag {
+        text-align: center;
+    }
+      
+    .slick-slide img {
+        margin: auto;
+        width:100% !important;
+        height: 50%;
+    }
+    .slick-track{
+        width:100%;
+    }
+
+    /* resposnive */
+    @media (max-width:992px) {
+        #Planning-section .BInvest-grid {
+            grid-template-columns: repeat(2,1fr);
+            grid-gap:20px;
+        }
+        #Blog-sewction {
+            padding: 45px 0;
+        }
+        #Planning-section .BInvest-btn {
+            padding-top: 30px;
+        }
+       
+
+        #Saving-section .BInvest-grid {
+            grid-gap: 20px;
+            grid-template-columns: repeat(2,1fr);
+        }
+        #Saving-section .BInvest-btn {
+            padding-top: 30px;
+        }
+        #Industry-section .BInvest-btn {
+            padding-top: 40px;
+        }
+
+        
+        #Industry-section .BInvest-grid {
+            grid-gap: 20px;
+            grid-template-columns: repeat(2,1fr);
+        }
+      
+      }
+
+      @media (max-width:767px) {
+        #Saving-section {
+            padding: 30px 0px;
+        }
+        .Blog-right {
+            padding-top: 30px;
+        }
+        .Blog-MRead {
+            padding-top: 10px;
+        }
+        #Blog-sewction {
+            padding: 30px 0;
+        }
+        #BInvest-section {
+            margin: 0px 0px;
+        }
+        #BInvest-section .BInvest-grid {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            grid-gap: 20px;
+        }
+        #BInvest-section .text-vertical h3 {
+            transform: rotate(360deg);
+            right: 0px;
+            font-size: 45px;
+            line-height: 86px;
+        }
+        #Planning-section .text-vertical h3 {
+            transform: rotate(360deg);
+            top: -82px;
+            right: 0px;
+            font-size: 45px;
+            line-height: 86px;
+        }
+        #Industry-section .text-vertical h3 {
+            transform: rotate(360deg);
+            top: -82px;
+            right: 0px;
+            font-size: 45px;
+            line-height: 86px;
+        }
+        #Saving-section .text-vertical h3 {
+            transform: rotate(360deg);
+            top: 125px;
+            right: 0px;
+            font-size: 45px;
+            line-height: 86px;
+        }
+        #Industry-section .section-head h2 {
+            text-align: center;
+        }
+        #BInvest-section .section-head h2 {
+            padding-bottom: 10px;
+        }
+        #Planning-section ,  #BInvest-section ,  #Saving-section , #Industry-section  .BInvest-btn {
+            text-align: center;
+        }
+        #Planning-section ,  #BInvest-section ,  #Saving-section , #Industry-section {
+            padding: 30px 0px !important;
+            margin: 0px !important;
+        }   
+        #Blog-sewction .BContent {
+            max-width: 100%;
+            box-shadow: 0px 0px 2px #00000054;
+        }
+
+        #Blog-sewction .Blog-heading h3 {
+            text-align: center;
+        }
+        #Blog-sewction .Blog-heading h3:before {
+            width: 134px;
+        }
+      }
+
+      @media (max-width:667px) {
+      #Planning-section .section-head h2 {
+        font-size: 30px;
+        text-align: center;
+        line-height: 42px;
+    }
+
+    #Planning-section {
+        padding: 30px 0px 30px 0px;
+        margin: 0px;
+    }
+    #BInvest-section {
+        padding: 30px 0px 30px 0px;
+        margin: 0px 0px;
+    }
+}
+
+      @media (max-width:500px) {
+        #Industry-section .BInvest-grid {
+            grid-gap: 20px;
+            grid-template-columns: repeat(1,1fr);
+        }
+        #Saving-section .BInvest-grid {
+            grid-gap: 20px;
+            grid-template-columns: repeat(1,1fr);
+        }
+        #Planning-section .BInvest-grid {
+            grid-template-columns: repeat(1,1fr);
+            grid-gap: 20px;
+        }
+        #BInvest-section .BInvest-grid {
+            grid-template-columns: repeat(1,1fr);
+            grid-gap: 20px;
+        }
+      }
+
+      @media screen and (min-width: 640px) {
+        .swiper-container {
+          width: 200px;
+        }
+      }
+      
+      @media screen and (min-width: 768px) {
+        .swiper-container {
+          width: 300px;
+        }
+      }

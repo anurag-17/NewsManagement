@@ -35,10 +35,7 @@ export const ViewNews = () => {
     }, [newsdata,updatedata])
 
     const deletehandler = async (id) => {
-
         setDeleteid(id)
-        console.log(id);
-
         await axios.post("/api/auth/deletenews", { params: id }).then((res) => {
 
         }).catch((error) => {
@@ -118,24 +115,28 @@ export const ViewNews = () => {
                 <AdminDash />
                 <div className="container scroll-main">
                     <div className='newsbox'><h3>News</h3></div>
-                    <div className='imgcardnews'>
+                    <div className='imgcardnews row'>
                         {newsdata.slice(0).reverse().map((items, index) => {
                             return (
-                                <div className="card mt-3" style={{ "width": "300px" }}>
+                                <div className="card mt-3 col-5 card-main">
+                 <div className='image-center'>
 
                                     <img className="card-img-top cardimgnews" src={items.url} alt="Card image" />
+                 </div>
                                     <div className="card-body">
                                         <h4 className="card-title">{items.title}</h4>
                                         <p className="card-text" dangerouslySetInnerHTML={{ __html: items.description }}></p>
 
                                     </div>
-                                    <div className='card-footer'>
+                                    <div className='card-bottom'>
+                                        <div>
                                         <button className='btn' onClick={() => deletehandler(items._id)}>
                                             <i className="fa fa-trash" aria-hidden="true"></i>
                                         </button>
-                                        <button type="button" className="btn" data-toggle="modal" data-target="#myModal" onClick={() => edithandler(items._id)}>
+                                        <button type="button" className="btn mt-1" data-toggle="modal" data-target="#myModal" onClick={() => edithandler(items._id)}>
                                             <i className="fa fa-pencil-square-o" aria-hidden="true"></i>
                                         </button>
+                                        </div>
                                         <p>{items.date}</p>
                                     </div>
                                 </div>

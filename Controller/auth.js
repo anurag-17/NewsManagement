@@ -3,6 +3,7 @@ const News = require("../Model/News");
 const Blogs = require("../Model/Blogs");
 const catchAsyncError = require("../Errorhandlers/catchAsyncError");
 const ErrorResponse = require("../Utlis/errorresponse");
+const Content = require("../Model/Content")
 const jwt = require("jsonwebtoken");
 const { query } = require("express");
 var ObjectId = require('mongodb').ObjectId
@@ -192,3 +193,39 @@ exports.editblogs = catchAsyncError(
         }
     }
 )
+
+exports.addcontent = catchAsyncError(
+    async(req,res,next)=>{
+      const data =   await Content.create({
+            logo:req.body.logo,
+            main_title:req.body.main_title,
+            main_subtitle:req.body.main_subtitle,
+            main_btn_text:req.body.main_btn_text,
+            main_image:req.body.main_image,
+            tagline:req.body.tagline
+        })
+        return res.status(201).json(data)
+    }
+)
+
+
+exports.updateContent = catchAsyncError(
+    async(req,res,next)=>{
+        console.log(req.body)
+      const data =   await Content.findByIdAndUpdate(req.body.id,{
+            logo:req.body.logo,
+            main_title:req.body.main_title,
+            main_subtitle:req.body.main_subtitle,
+            main_btn_text:req.body.main_btn_text,
+            main_image:req.body.main_image,
+            tagline:req.body.tagline
+        })
+        return res.status(200).json(data)
+    }
+)
+
+
+exports.getcontent = catchAsyncError(   async(req,res,next)=>{
+    const data =  await Content.find()
+      return res.status(200).json(data)
+  })

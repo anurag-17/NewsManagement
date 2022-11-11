@@ -48,14 +48,14 @@ const Footer = () => {
                     </div>
                     <div className='col-lg-3 col-md-3 footer-first'>
                         <div className='footer-2'>
-                          <img src={downlaodimg1} alt='footerimg'></img>
+                          <img src={downlaodimg1} alt='footerimg' className='downlod'></img>
                           
                         </div>
                     </div>
                    </div>
-                   <hr className='hr-foot'></hr>
+                   {/* <hr className='hr-foot'></hr> */}
                    <div className='row footer-bottm'>
-                    <div className='col-lg-12 col-md-12'>
+                    <div className='col-lg-12 col-md-12 footer-bottm1'>
                       <p>© 2022 All rights reserved : Dados Technologies Private Limited (Formerly known as (Wu Quickcash Credit Solutions Private Limited) CIN: U65100MH2019FTC329281 AMFI Registration Number: ARN – 245733
                   Registered Office: No.404, 4th Floor, Kamla Charan, CHS Plot No.178, Jawahar Nagar 
                   Road, Goregaon West Mumbai MH 400104 Corporate Office: Ashoka Fortune, NO 3/1-11ST Main, Next to Dailyhunt, Jakkasandra, Kormangala,  Bangalore, Karnataka – 560034</p>
@@ -65,16 +65,17 @@ const Footer = () => {
                     registering or accessing any materials (information) on Bullsmart.</p>
                     </div>
                    </div>
-                   <hr className='hr-foot'></hr>
+                   {/* <hr className='hr-foot'></hr> */}
                    <div className='row footer-copyright'>
                     <div className='col-lg-6 col-md-6'>
-                      <p>ⓒ 2022 Bullsmart. All right reserved, Made with Love ♥ in India</p>
+                      <p className='copyicon'>ⓒ 2022 Bullsmart. All right reserved, Made with Love <i class="fa fa-heart"></i> in India</p>
                     </div>
                     <div className='col-lg-6 col-md-6'>
                      <div className='social-menu'>
                       <ul className='socillist'>
-                        <li><a href='#'><i class="fa fa-facebook-f"></i></a></li>
+                       
                         <li><a href='#'><i class="fa fa-youtube-play"></i></a></li>
+                        <li><a href='#'><i class="fa fa-facebook-f"></i></a></li>
                         <li><a href='#'><i class="fa fa-twitter"></i></a></li>
                         <li><a href='#'><i class="fa fa-linkedin"></i></a></li>
                         <li><a href='#'><i class="fa fa-instagram"></i></a></li>
