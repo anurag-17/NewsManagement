@@ -54,7 +54,7 @@ ul.main-menu {
 }
 .Menualin {
   align-items: center;
-  padding-top:12px;
+  padding-top:10px;
 }
 
 ul.main-menu>li.menu-item:first-child {
@@ -193,7 +193,7 @@ li {
 
 .header__middle__logo img{
   max-width:189px;
-  margin: 10px 0 0 0;
+  /* margin: 10px 0 0 0; */
 }
 
 
