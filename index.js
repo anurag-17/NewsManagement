@@ -11,7 +11,7 @@ app.use(cors())
 app.use('/api/auth', require('./Routes/routes'))
 
 const connectDB=async ()=>{
-    await mongoose.connect('mongodb://localhost:27017/newsmanagement',{
+    await mongoose.connect('mongodb://18.141.230.123:27017/newsmanagement',{
         useNewUrlParser: true, useUnifiedTopology: true
     }).then(()=>{
         console.log("db connected")
