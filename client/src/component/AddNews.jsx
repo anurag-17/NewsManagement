@@ -79,13 +79,13 @@ export const AddNews = () => {
     <>
       <div className='flex_news bgnews'>
         <AdminDash />
-        <div style={{ height: "97vh" }} className="container scroll-main mt-3">
+        <div  className="container adminnews scroll-main mt-3">
           <h2 style={{ fontSize: "1.5rem" }}>Add News</h2>
           <div>
             <form action="">
               <div className='flex-image'>
                 <input type="text" name="title" id="" placeholder='Title' onChange={Input_handler} className="title_input mt-4" />
-                <div style={{ position: "relative", bottom: "2rem" }} className='ml-4'>
+                <div style={{ position: "relative", bottom: "2rem" }} className='ml-4 mt-5'>
                   <h4 className='ml-2'>Feature Image</h4>
                   <div className='flex-file file_input'>
                     <img className="mt-3" style={{ width: "3.2rem", height: "3.1rem", marginLeft: "10px", borderRadius: "50%" }} src={avtarpreview} />

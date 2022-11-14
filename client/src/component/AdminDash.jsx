@@ -7,17 +7,17 @@ import logo from "./Images/logo.png"
 import "./Admindash.css"
 export const AdminDash = () => {
   const [token, setToken] = useState(JSON.parse(localStorage.getItem("newstoken")))
-
+  const [cssnav, setCssnav] = useState(false)
   const navigate = useNavigate()
   useEffect(() => {
-      axios.get("/api/auth/adminin", { params:token!==null?token.token:""}).then((res) => {
-        console.log(res);
-        if (res.data.message == "error") {
-          navigate("/admin")
-        }
-      }).catch((error) => {
-        console.log(error);
-      })
+    axios.get("/api/auth/adminin", { params: token !== null ? token.token : "" }).then((res) => {
+      console.log(res);
+      if (res.data.message == "error") {
+        navigate("/admin")
+      }
+    }).catch((error) => {
+      console.log(error);
+    })
   }, [])
 
   const logout = () => {
@@ -35,8 +35,12 @@ export const AdminDash = () => {
 <Card />
 <Card/>
 </div> */}
-          <div className="sideNavbar">
-            <nav>
+
+
+          <div >
+            <i class="fa fa-bars iconbar" aria-hidden="true" onClick={()=>{setCssnav(true)}}></i>
+            <nav className={cssnav? "sideNavbar2": "sideNavbar"}>
+            <i class="fa fa-times iconcross" aria-hidden="true" onClick={()=>{setCssnav(false)}}></i>
               <div className="navcontent">
                 <ul>
                   <Link className="logoimg" to="/">
@@ -69,8 +73,8 @@ export const AdminDash = () => {
                   <a href="">Demo</a>
                 </li>
                 <br /> */}
-                  <li className='logoutadmin'>
-                    <i class="fa fa-sign-out iconA ad" aria-hidden="true" /><button className='btn adt ad' onClick={logout}>Logout</button>
+                  <li >
+                    <i class="fa fa-sign-out iconA ad" aria-hidden="true" /><span className='adt ad' onClick={logout}>Logout</span>
                   </li>
                 </ul>
               </div>

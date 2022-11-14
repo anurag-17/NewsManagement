@@ -75,13 +75,13 @@ export const AddBlogs = () => {
       <div className="flex_blog">
         <AdminDash />
         <div className="container scroll-main">
-          <h2 className='mt-3 mb-2'>Add Blogs</h2>
+          <h2 className='mt-3 mb-2' style={{ fontSize: "1.5rem" }}>Add Blogs</h2>
           <div>
             <form action="">
               <div className='mb-2 flex-image'>
                 <input type="text" name="title" id="" placeholder='Title' className='blog_title mt-4' onChange={Input_handler} />
                        <div style = {{position:"relative",bottom:"2rem"}} className='ml-4'>
-              <h4 className='ml-2'>Feature Image</h4>
+              <h4 className='ml-2 mt-5'>Feature Image</h4>
               <div className='flex-file file_input'>
                   <img className="mt-3" style={{ width: "3.2rem", height: "3.1rem", marginLeft: "10px", borderRadius: "50%" }} src={avtarpreview} />
                <input className="file" type="file" name="url" id="file" onChange={input_file} />

@@ -19,6 +19,7 @@ background: linear-gradient(to left, #F0F0F0, #FFFFFF);
 }
 .flex-image{
     display: flex;
+    flex-wrap: wrap;
 }
 
 .file {
@@ -47,4 +48,12 @@ background: linear-gradient(to left, #F0F0F0, #FFFFFF);
 
   .flex-file{
     display:flex;
+    flex-wrap: wrap;
+  }
+  @media (max-width: 581px) {
+    .flex_news{
+      display: flex;
+      flex-direction: column !important;
+      
+  }
   }

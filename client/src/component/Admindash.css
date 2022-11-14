@@ -9,97 +9,171 @@
     color: white;
     margin-bottom: 50px;
 }
-.displaybr{
+
+.displaybr {
     display: block;
 }
 
 
-.sideNavbar {
-  
+.sideNavbar, .sideNavbar2 {
+
     height: 100vh;
-   width: 20vw ;
-   /* background: rgb(2,0,36);
+    width: 20vw;
+    /* background: rgb(2,0,36);
    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
 Created with https://www.css-gradient.com */
 
-/* Created with https://www.css-gradient.com */
-/* Created with https://www.css-gradient.com */
-background: #010101;
-background: -webkit-linear-gradient(bottom left, #010101, #0661FF);
-background: -moz-linear-gradient(bottom left, #010101, #0661FF);
-background: linear-gradient(to top right, #010101, #0661FF);
+    /* Created with https://www.css-gradient.com */
+    /* Created with https://www.css-gradient.com */
+    background: #010101;
+    background: -webkit-linear-gradient(bottom left, #010101, #0661FF);
+    background: -moz-linear-gradient(bottom left, #010101, #0661FF);
+    background: linear-gradient(to top right, #010101, #0661FF);
 }
-.navcontent{
+
+.navcontent {
     padding-top: 30px;
 }
-.adt{
+
+.adt {
     margin-left: 20px;
     color: white;
     text-decoration: none;
 }
-.adt2{
+
+.adt2 {
     margin-left: 13px;
     color: white;
     text-decoration: none;
 }
-.adt23{
+
+.adt23 {
     margin-left: 11px;
     color: white;
     text-decoration: none;
 }
-.logoutadmin{
-  position: fixed;
-  bottom: 20px;
-  
-}
-.iconA{
+
+
+
+.iconA {
     color: white;
 }
-.ad{
+
+.ad {
     color: red;
     font-weight: 800;
 }
 
+.iconbar {
+    display: none;
+}
+.iconcross{
+    display: none;
+}
+
 /* .................media start..................... */
-@media (max-width: 950px){
-    .logoimg img{
+@media (max-width: 950px) {
+    .logoimg img {
         width: 13vw;
     }
 }
+
 @media (max-width: 700px) {
-    .iconA{
+    .iconA {
         display: none;
     }
-    .adt,  .adt23{
+
+    .adt, .adt23 {
         margin-left: 0px;
     }
-    .adt2{
+
+    .adt2 {
         margin-left: 0px;
-        
+
     }
-    .logoimg img{
+
+    .logoimg img {
         width: 13vw;
     }
+
     @media (max-width: 580px) {
-        .logoimg img{
-            width: 13vw;
-        }  
+        .iconA {
+            display: block;
+        }
+        .logoimg img {
+            width: 20vw;
+        }
+
         .adt, .adt2, .adt23 {
-         font-size: 15px;
+            font-size: 15px;
+        }
+
+        .iconbar {
+            display: block;
+            /* position: relative;
+            top: 10px;
+            left: 20px; */
+            margin-top: 10px;
+            margin-left: 10px;
+            font-size: 20px;
+            color: blue;
+
+        }
+
+        .sideNavbar {
+            position: absolute;
+            left: -1000px;
+            
+        }
+
+        .sideNavbar2 {
+            position: relative;
+            top: -30px;
+            left: 0;
+            height: 130vh;
+            width: 100%;
+            background: #010101;
+            background: -webkit-linear-gradient(bottom left, #010101, #0661FF);
+            background: -moz-linear-gradient(bottom left, #010101, #0661FF);
+            background: linear-gradient(to top right, #010101, #0661FF);
+            z-index: 9999;
+
+        }
+        .iconcross{
+            display: block;
+            position: absolute;
+            right: 0;
+            color: white;
         }
     }
-    @media (max-width: 490px) {
-        .logoimg img{
-            display: none;
-        }  
-        .adt, .adt2 , .adt23{
-         font-size: 10px;
+        /* @media (max-width: 490px) {
+            .logoimg img {
+                display: none;
+            }
+
+            .adt, .adt2, .adt23 {
+                font-size: 10px;
+            }
+        } */
+
+        @media(max-width: 461px) {
+            .sideNavbar {
+                height: 125vh;
+            }
+
+            .logoutadmin {
+                position: fixed;
+                bottom: 20px;
+                left: 20px;
+
+            }
+
+        }
+
+        @media (max-width: 375px) {
+
+            .adt, .adt2, .adt23 {
+                font-size: 8px;
+            }
         }
     }
-    @media (max-width: 375px) {
-       
-        .adt, .adt2 , .adt23{
-         font-size: 8px;
-        }
-    }
-}
