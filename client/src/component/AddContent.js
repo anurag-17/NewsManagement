@@ -120,7 +120,7 @@ export const AddContent = () => {
               </label>
             </div>
           </div>
-<input type="submit" className='submitbtn'/>
+          <input type="submit" className='submitbtn'/>
         </form>
         </div>
 

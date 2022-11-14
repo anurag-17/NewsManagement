@@ -51,7 +51,6 @@ const Blog = () => {
         </div>
       </section>
 
-    
       <section id='Blog-slider'>
       <div className='container'>
         <div className='Latest-title'>
