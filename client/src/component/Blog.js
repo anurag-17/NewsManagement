@@ -57,8 +57,7 @@ const Blog = () => {
           <h3>Latest Stories</h3>
         </div>
         <div className='letslider2'>
-          <Letestslider/> 
-      
+          <Letestslider/>       
         </div>
       </div>
       </section>

@@ -1,8 +1,13 @@
 #Blog-sewction {
     padding: 60px 0px 60px 0px;
 }
+.Blog-right {
+    border-top: 2px solid #000;
+    padding-top: 25px;
+}
 #Blog-sewction .Blog-left {
     position: relative;
+    padding-right: 30px;    
 }
 #Blog-sewction .BContent {
     position: absolute;
@@ -21,7 +26,7 @@
     text-transform: uppercase;
     color: #8c8c8c;
     font-weight: 700;
-    font-family: "Montserrat";
+    font-family: 'Arial Bold', sans-serif;
     margin-bottom: 0px;
 }
 
@@ -38,11 +43,12 @@
     font-size: 24px;
     line-height: 35px;
     font-weight: 600;
-    font-family: 'Montserrat';
+    font-family: 'Arial Bold', sans-serif;
     text-transform: capitalize;
     max-width: 465px;
     margin: auto;
     color: #000;
+    text-decoration: none;
 }
 #Blog-sewction .BContent i {
     background-color: #012f8d;
@@ -76,7 +82,7 @@
     text-transform: uppercase;
     color: #8c8c8c;
     font-weight: 600;
-    font-family: "Montserrat";
+    font-family: 'Arial Bold', sans-serif;
 }
 .Blog-mread1 p {
     font-size: 16px;
@@ -99,21 +105,49 @@
 
 #BInvest-section {
     padding: 40px 0px 40px 0px;
-    background-image: url(./Images/Invets-shap.png);   
+    /* background-image: url(./Images/Invets-shap.png);    */
     background-size: auto;
     background-position: left;
     background-repeat: no-repeat;
-    padding: 40px 0px 40px 0px;
+    padding: 40px 0px 0px 0px;
     margin: 40px 0px;
+}
+#BInvest-section .Binveshape {
+    position: relative;
+}
+#BInvest-section .Binveshape:before {
+    content: '';
+    background-color: #fff;
+    width: 1152px;
+    height: auto;
+    position: absolute;
+    box-shadow: -80px -80px 100px rgb(0 0 0 / 4%);
+    top: 73px;
+    left: 0;
 }
 #BInvest-section .BInvest-rigth{
     background-image: url(./Images/Invest-bg.png);
     background-size: auto;
     background-position: top right;
     background-repeat: no-repeat;
-    padding: 40px 0px 40px 0px;
+    padding: 40px 0px 0px 0px;
 }
-
+#BInvest-section .Binveshape{
+    position: relative;
+}
+#BInvest-section .Binveshape:before {
+    content: '';
+    background-color: #fff;
+    width: 1152px;
+    height:100%;
+    position: absolute;
+    box-shadow: -80px -80px 100px rgb(0 0 0 / 4%);
+    top: 65px;
+    right: 0;
+}
+#BInvest-section .section-head {
+    position: relative;
+}
 #BInvest-section .section-head h2 {
     color: #1F286F;
     font-family: "Montserrat", Sans-serif;
@@ -121,7 +155,7 @@
     font-weight: 700;
     padding-bottom: 50px;
     text-transform: uppercase;
-
+   padding-left: 50px;
 }
 #BInvest-section .BInvest-grid {
     display: grid;
@@ -137,8 +171,9 @@
     text-transform: uppercase;
     color: #8c8c8c;
     font-weight: 600;
-    font-family: "Montserrat";
+    font-family: 'Arial Bold', sans-serif;
     margin-bottom: 0px;
+    margin-top: 10px;
 }
 
 #BInvest-section .Binvest-item1 p {
@@ -157,10 +192,10 @@
     color: #f7f7f7;
     font-weight: 800;
     font-family: "Montserrat";
-    transform: rotate(-90deg);
+    transform: rotate(90deg);
     position: absolute;
-    top: 201px;
-    right: -94px;
+    top: 121px;
+    right: -157px;
 }
 #BInvest-section .BInvest-btn {
     padding-top: 40px;
@@ -207,9 +242,8 @@ h4.time-head {
     font-size: 12px;
     line-height: 35px;
     text-transform: uppercase;
-    color: #8c8c8c;
+    color: #C79F62;
     font-weight: 600;
-    font-family: "Montserrat";
     margin-bottom: 0px;
     padding-top: 20px;
 }
@@ -226,8 +260,11 @@ div#Latest-slider h3 {
     -webkit-box-orient: vertical;
     padding-bottom: 0px;
 }
-#Blog-slider h3{
+ /* h3{
     padding-bottom: 40px;
+} */
+#Blog-slider .Latest-title{
+    padding-bottom:0px;
 }
 div#Latest-slider p {
     font-size: 14px;
@@ -252,14 +289,19 @@ div#Latest-slider {
 
 #Blog-slider .guidslide {
     padding-left:0px;
+    margin-top: -35px;
 }
+#Blog-slider .swiper-button-next, .swiper-button-prev {
+    position: absolute;
+    top: -1% !important;
+}   
 #Blog-slider .guidslide .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after {
     content: 'next';
-    font-size: 15px;
+    font-size: 12px;
 }
 #Blog-slider .guidslide .swiper-button-prev:after, .swiper-rtl .swiper-button-next:after {
     content: 'prev';
-    font-size: 15px;
+    font-size: 12px;
 }
 #Blog-slider .guidslide .swiper-button-prev, .swiper-rtl .swiper-button-next {
     left: 15%;
@@ -281,7 +323,7 @@ div#Latest-slider {
 }
 #Blog-slider .swiper-button-next, .swiper-button-prev {
     position: absolute;
-    top: -14% !important;
+    top: 5% !important;
 }
 
 /* blog letetst slider end */
@@ -297,9 +339,24 @@ div#Latest-slider {
     background-size: auto;
     background-position: top left;
     background-repeat: no-repeat;
-    padding: 40px 0px 40px 0px;
+    padding:40px 0px 0px 0px;
 }
-
+#Planning-section .Binveshape{
+    position: relative;
+}
+#Planning-section .Binveshape:before {
+    content: '';
+    background-color: #fff;
+    width: 1152px;
+    height: 100%;
+    position: absolute;
+    box-shadow: -80px -80px 100px rgb(0 0 0 / 4%);
+    top:65px;
+    right: 0;
+}
+#Planning-section .section-head {
+    position: relative;
+}
 #Planning-section .section-head h2 {
     color: #1A3073;
     font-family: "Montserrat", Sans-serif;
@@ -308,6 +365,7 @@ div#Latest-slider {
     padding-bottom: 50px;
     text-transform: uppercase;
     text-align: right;
+    padding-right: 50px;
 
 }
 #Planning-section .BInvest-grid {
@@ -326,6 +384,7 @@ div#Latest-slider {
     font-weight: 600;
     font-family: 'Arial Bold', sans-serif;
     margin-bottom: 0px;
+    margin-top: 10px;
 }
 
 #Planning-section .Binvest-item1 p {
@@ -346,15 +405,15 @@ div#Latest-slider {
     font-family: 'Arial Bold', sans-serif;
     transform: rotate(-90deg);
     position: absolute;
-    top: 196px;
-    right: -219px;
+    top: 95px;
+    right: -138px;
 }
 #Planning-section .BInvest-btn a {
     font-size: 14px;
     line-height: 28px;
     color: #1A3073;
-    font-weight: 600;
-    font-family: "Montserrat";
+    font-weight: 600;    
+    text-decoration: none;
 }
 #Planning-section button.BInvst {
     padding: 6px 20px;
@@ -385,21 +444,36 @@ div#Latest-slider {
 
 #Saving-section{
     padding: 40px 0px 40px 0px;
-    background-image: url(./Images/Invets-shap.png);   
+    /* background-image: url(./Images/Invets-shap.png);    */
     background-size: auto;
     background-position: left;
     background-repeat: no-repeat;
     padding: 5px 0px 40px 0px;
     margin: 40px 0px;
 }
+#Saving-section  .Binveshape{
+    position: relative;
+}
+#Saving-section  .Binveshape:before {
+    content: '';
+    background-color:#fff;
+    width: 1152px;
+    height: 100%;
+    position: absolute;
+    box-shadow: -80px -80px 100px rgb(0 0 0 / 4%);
+    left: 0px;
+    top: 65px;
+}
 #Saving-section .BInvest-rigth{
     background-image: url(./Images/Invest-bg.png);
     background-size: auto;
     background-position: top right;
     background-repeat: no-repeat;
-    padding: 40px 0px 40px 0px;
+    padding: 40px 0px 0px 0px;
 }
-
+#Saving-section .section-head {
+    position: relative;
+}
 #Saving-section .section-head h2 {
     color: #1A3073;
     font-family: "Montserrat", Sans-serif;
@@ -407,7 +481,7 @@ div#Latest-slider {
     font-weight: 700;
     padding-bottom: 50px;
     text-transform: uppercase;
-
+    padding-left: 50px;
 }
 #Saving-section .BInvest-grid {
     display: grid;
@@ -425,6 +499,7 @@ div#Latest-slider {
     font-weight: 600;
     font-family: 'Arial Bold', sans-serif;
     margin-bottom: 0px;
+    margin-top: 10px;
 }
 
 #Saving-section .Binvest-item1 p {
@@ -445,7 +520,7 @@ div#Latest-slider {
     font-family: 'Arial Bold', sans-serif;
     transform: rotate(90deg);
     position: absolute;
-    top: 125px;
+    top: 39px;
     right: -94px;
 }
 #Saving-section .BInvest-btn a {
@@ -481,8 +556,10 @@ div#Latest-slider {
 
   /* planing section satrt */
   #Industry-section {
-    padding: 40px 0px 0px 0px;
-    margin: 40px 0px;
+    padding: 40px 0px 30px 0px;
+    margin: 40px 0px;   
+    margin-top: -80px;
+
 }
 #Industry-section .BInvest-rigth{
     background-image: url(./Images/planing-shape.png);
@@ -491,7 +568,23 @@ div#Latest-slider {
     background-repeat: no-repeat;
     padding: 40px 0px 40px 0px;
 }
+#Industry-section  .Binveshape{
+    position: relative;
+}
+#Industry-section .Binveshape:before {
+    content: '';
+    background-color: #fff;
+    width: 1152px;
+    height:100%;
+    position: absolute;
+    box-shadow: -80px -80px 100px rgb(0 0 0 / 4%);
+    right: 0px;  
+    top: 65px;  
+}
 
+#Industry-section .section-head h2 {
+    position: relative;
+}
 #Industry-section .section-head h2 {
     color: #1A3073;
     font-family: "Montserrat", Sans-serif;
@@ -500,6 +593,7 @@ div#Latest-slider {
     padding-bottom: 50px;
     text-transform: uppercase;
     text-align: right;
+    padding-right: 50px;
 
 }
 #Industry-section .BInvest-grid {
@@ -518,6 +612,7 @@ div#Latest-slider {
     font-weight: 600;
     font-family: 'Arial Bold', sans-serif;
     margin-bottom: 0px;
+    margin-top: 10px;
 }
 
 #Industry-section .Binvest-item1 p {
@@ -538,15 +633,15 @@ div#Latest-slider {
     font-family: 'Arial Bold', sans-serif;
     transform: rotate(-90deg);
     position: absolute;
-    top: 407px;
-    right: -419px;
+    top: 300px;
+    right: -335px;  
 }
 #Industry-section .BInvest-btn a {
     font-size: 14px;
     line-height: 28px;
     color: #1A3073;
     font-weight: 600;
-    font-family: "Montserrat";
+    text-decoration: none;
 }
 #Industry-section button.BInvst {
     padding: 6px 20px;
@@ -569,9 +664,13 @@ div#Latest-slider {
     font-family: 'Arial Bold', sans-serif;
 }
 #Industry-section .BInvest-btn {
-    padding-top: 110px;
+    padding-top: 30px;
 }
-   /* Industry  section end */
+#Guidsldier-sec .guidslide .swiper {
+    padding-top:0px;
+}
+     
+ /* Industry  section end */
 
 
    /* guid sldier Start*/
@@ -624,9 +723,9 @@ div#Latest-slider {
         position: absolute;
         content: '';
         width: 78px;
-        height: 3px;
+        height: 2px;
         background-color: #02318e;
-        bottom: -30%;
+        bottom: 20%;
     }
      /* .Letestslide  .swiper-wrapper {
         transform: translate3d(-1204.5px, 0px, 0px) !important;
@@ -671,7 +770,7 @@ div#Latest-slider {
     }
       .guidslide .swiper-button-next, .swiper-button-prev {
         position: absolute;
-        top: -14% !important;
+        top: 5% !important;
         width: 45px;
         height: 45px;
         margin-top: calc(0px - (var(--swiper-navigation-size)/ 2));
@@ -686,11 +785,11 @@ div#Latest-slider {
     }
     .guidslide .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after {
         content: 'next';
-        font-size: 15px;
+        font-size: 12px;
     }
     .guidslide .swiper-button-prev:after, .swiper-rtl .swiper-button-next:after {
         content: 'prev';
-        font-size: 15px;
+        font-size: 12px;
     }
     .guidslide .swiper-button-prev, .swiper-rtl .swiper-button-next {
         left: 90%;
@@ -701,10 +800,11 @@ div#Latest-slider {
         margin-left: auto;
         margin-right: auto;
         position: relative;
-        overflow: inherit;
+        overflow:inherit;
         list-style: none;
         padding: 0;
         z-index: 1;
+        padding-top:72px;  
     }
     .guid-ct h3 {
         font-size: 30px;
@@ -713,30 +813,36 @@ div#Latest-slider {
         font-weight: 600;
         font-family: 'Arial Bold', sans-serif;
     }
-    .guid-ct span {
-        color: #02318e;;
+    #Guid-section .latest-img img {
+        width: 37%;
     }
-.guid-ct p {
-    font-size: 14px;
-    line-height: 24px;
-}
-.slide-btn a {
-    color: #02318e;
-}
-button.guidbr {
-    border: none;
-    background-color: transparent;
-    font-size: 12px;
-    line-height: 35px;
-    text-transform: uppercase;
-    color: #02318e;
-    font-weight: 600;
-    font-family: "Montserrat";
-    border-bottom: 3px solid;
-    padding: 0px;
-    padding-top: 20px;
-    margin-bottom: 29px;
-}
+    .guid-ct span {
+        color: #1F286F;
+        display: block;
+        margin-top: -30px;
+    }
+    .guid-ct p {
+        font-size: 14px;
+        line-height: 24px;
+    }
+    .slide-btn a {
+        color: #1F286F;
+        text-decoration: none;
+    }
+    button.guidbr {
+        border: none;
+        background-color: transparent;
+        font-size: 12px;
+        line-height: 24px;
+        text-transform: uppercase;
+        color: #02318e;
+        font-weight: 600;
+        font-family: "Montserrat";
+        border-bottom: 1px solid;
+        padding: 0px;
+        padding-top: 20px;
+        margin-bottom: 28px;
+    }
 
     .latest-img {
         text-align: right;
@@ -757,6 +863,7 @@ button.guidbr {
         color: #f8f8f8;
         font-weight: 900;
         font-family: 'Arial Bold', sans-serif;
+        position: absolute;
         
     }
     /* Guid sldier  End */
@@ -812,6 +919,7 @@ button.guidbr {
         border: 1px solid #ddd;
         width: 40px !important;
         height: 40px !important;
+        color: #000 !important;
     }
     /* .swiper {
         overflow: hidden !important;
@@ -830,6 +938,10 @@ button.guidbr {
     }
 
     /* resposnive */
+   
+
+
+
     @media (max-width:992px) {
         #Planning-section .BInvest-grid {
             grid-template-columns: repeat(2,1fr);

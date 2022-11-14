@@ -17,9 +17,9 @@ const Guidslider = () => {
     <div>
       <div className='guidslide'>
       <Swiper
-        slidesPerView={3}
+        slidesPerView={2}
         spaceBetween={30}
-        slidesPerGroup={3}
+        slidesPerGroup={2}
         loop={true}
         loopFillGroupWithBlank={true}
         pagination={{
@@ -46,7 +46,7 @@ const Guidslider = () => {
         <SwiperSlide>
         <div id='guid-slider'>   
             <div className='guid-ct'> 
-              <h3>Guide to Financial Health</h3>
+              <h3><span>Guide to </span> Financial Health</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore..</p>
             </div>  
             <div className='slide-btn'>
@@ -60,7 +60,7 @@ const Guidslider = () => {
         <SwiperSlide>
         <div id='guid-slider'>   
             <div className='guid-ct'>   
-              <h3>Guide to Financial Health</h3>
+              <h3><span>Guide to </span> Financial Health</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore..</p>
             </div>  
             <div className='slide-btn'>
@@ -88,7 +88,7 @@ const Guidslider = () => {
         <SwiperSlide>
         <div id='guid-slider'>   
             <div className='guid-ct'>   
-              <h3>Guide to Financial Health</h3>
+              <h3><span>Guide to </span> Financial Health</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore..</p>
             </div>  
             <div className='slide-btn'>
