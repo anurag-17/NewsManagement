@@ -20,6 +20,21 @@
 #Blog-sewction .BlogImg img {
     width: 100%;
 }
+
+#Blog-sewction .BContent a:after {
+    content: '';
+    position: absolute;
+    width: 35px;
+    height: 33px;
+    background: #0c298d;
+    background-image: url(../component/Images/right-arrow.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 0px 0px;
+}
+
+
 #Blog-sewction .BContent h3 {
     font-size: 12px;
     line-height: 35px;
@@ -940,7 +955,20 @@ div#Latest-slider {
     
     /* resposnive */
    
-
+    @media (max-width:1200px) {
+        #BInvest-section .Binveshape:before {
+            width: 88%;
+        }
+        #Planning-section .Binveshape:before {
+            width: 90%;
+        }
+        #Saving-section .Binveshape:before {
+            width: 90%;
+        }
+        #Industry-section .Binveshape:before {
+            width: 90%;
+        }
+    }
 
 
     @media (max-width:992px) {
@@ -972,10 +1000,24 @@ div#Latest-slider {
             grid-gap: 20px;
             grid-template-columns: repeat(2,1fr);
         }
-      
+        #BInvest-section .Binveshape:before {
+            width: 95%;
+        }
+        #Planning-section .Binveshape:before {
+            width: 95%;
+        }
+        #Saving-section .Binveshape:before {
+            width: 95%;
+        }
+        #Industry-section .Binveshape:before {
+            width: 95%;
+        }
       }
 
       @media (max-width:767px) {
+        .Binvest-item1 {
+            background-color: #fff !important;
+        }
         #Saving-section {
             padding: 30px 0px;
         }

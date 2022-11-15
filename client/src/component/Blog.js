@@ -3,7 +3,7 @@ import './Blog.css';
 import blogImg1 from './Images/blog-img1.png';
 import Guidslider from './Guidslider';
 import Letestslider from './Letestslider';
-import SlderLet from './slider/SlderLet';
+import SlderLet from './SlderLet.js';
 import Investblog1 from './Images/BlogInvest-img1.png';
 import Investblog2 from './Images/BlogInvest-img2.png';
 import Investblog3 from './Images/BlogInvest-img3.png';
@@ -23,7 +23,7 @@ const Blog = () => {
                 </div>
                 <div className='BContent'>
                   <h3>2 Min Read</h3>
-                 <a href='#'>Digital payment initiatives of – मेरे नए  भारत का Fin-Tech <i class='fas fa-arrow-right'></i></a> <p></p>
+                 <a href='#'>Digital payment initiatives of – मेरे नए  भारत का Fin-Tech </a> <p></p>
                 </div>
               </div>
             </div>
@@ -43,8 +43,7 @@ const Blog = () => {
                   </div>
                   <div className='Blog-mread1'>
                     <h3>SEPTEMBER 02</h3>
-                    <p>Mutual Funds: The Definitive Guide to
-Building Your Portfolio</p>
+                    <p>Mutual Funds: The Definitive Guide to Building Your Portfolio</p>
                   </div>
                 </div>
               </div>
@@ -52,9 +51,9 @@ Building Your Portfolio</p>
           </div>
         </div>
       </section>
-      <SlderLet/>
+ 
 
-      {/* <section id='Blog-slider'>
+      <section id='Blog-slider'>
       <div className='container'>
         <div className='Latest-title'>
           <h3>Latest Stories</h3>
@@ -63,10 +62,10 @@ Building Your Portfolio</p>
           <Letestslider/>       
         </div>
       </div>
-      </section> */}
+      </section>
 
 
-     {/* <section id='Guid-section'>
+    <section id='Guid-section'>
       <div className='container'>
       <div className='Guidsldier-sec'>
         <div className='Guid-head'>
@@ -75,7 +74,7 @@ Building Your Portfolio</p>
         <Guidslider/>
         </div>      
       </div>
-     </section>  */}
+     </section>  
 
     <section id='BInvest-section'>
       <div className='Binveshape'>

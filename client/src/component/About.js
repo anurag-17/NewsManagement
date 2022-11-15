@@ -3,6 +3,9 @@ import about1 from './Images/who-about.jpg';
 import './About.css';
 import Liveimg6 from './Images/livepay.png';
 import {AnimatedOnScroll} from "react-animated-css-onscroll";
+import valueImg1 from './Images/Equality.svg';
+import valueImg2 from './Images/Easy.svg';
+import valueImg3 from './Images/Empowerment.svg';
 
 
 
@@ -97,7 +100,7 @@ const About = () => {
         <div className='Value-main'>
           <div className='Vauleitem1'>
             <div className='value-img'>
-               <i class="fa fa-tv"></i>
+              <img src={valueImg1} alt='valueimg'></img>
             </div>
             <h3>Equality</h3>
             <p>We provide equal investment service opportunities to beginners who can enjoy all our premier 
@@ -105,7 +108,7 @@ const About = () => {
           </div>
           <div className='Vauleitem1'>
             <div className='value-img'>
-            <i class='fas fa-award'></i>
+            <img src={valueImg2} alt='valueimg'></img>
             </div>
             <h3>Easy</h3>
             <p>We offer abundant investment tools to guide investors to discover investment opportunities and make 
@@ -113,7 +116,7 @@ const About = () => {
           </div>
           <div className='Vauleitem1'>
             <div className='value-img'>             
-            <i class='fas fa-layer-group'></i>
+            <img src={valueImg3} alt='valueimg'></img>
             </div>
             <h3>Empowerment</h3>
             <p>We deeply care about the growth of our investors. We wish to support them in understanding how to invest 

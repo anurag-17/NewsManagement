@@ -44,7 +44,7 @@ br {
     line-height: 24px;
 }
 .who-img {
-    text-align: center;
+    text-align: right;
 }
 .Mission {
     padding: 60px 0px 60px 0px;
@@ -99,6 +99,13 @@ section#Value-section {
 .value-img i {
     font-size: 50px;
     color: #4af8d5;
+}
+.value-img img {
+    height: 66px;
+    object-fit: contain;
+}
+.value-img {
+    text-align: left;
 }
 /* value section start */
 
