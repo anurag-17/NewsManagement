@@ -111,8 +111,8 @@ export const AddContent = () => {
     setText(text);
   };
   const style = {
-    height: "200px",
     width: "300px",
+    paddingBottom:"20px",
     borderStyle: "double"
   };
 
