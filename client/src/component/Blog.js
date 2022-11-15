@@ -54,7 +54,7 @@ Building Your Portfolio</p>
       </section>
       <SlderLet/>
 
-      {/* <section id='Blog-slider'>
+      <section id='Blog-slider'>
       <div className='container'>
         <div className='Latest-title'>
           <h3>Latest Stories</h3>
@@ -63,10 +63,10 @@ Building Your Portfolio</p>
           <Letestslider/>       
         </div>
       </div>
-      </section> */}
+      </section>
 
 
-     {/* <section id='Guid-section'>
+     <section id='Guid-section'>
       <div className='container'>
       <div className='Guidsldier-sec'>
         <div className='Guid-head'>
@@ -75,7 +75,7 @@ Building Your Portfolio</p>
         <Guidslider/>
         </div>      
       </div>
-     </section>  */}
+     </section> 
 
     <section id='BInvest-section'>
       <div className='Binveshape'>
