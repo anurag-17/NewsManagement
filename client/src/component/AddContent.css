@@ -28,7 +28,51 @@
     
 }
 
+.ql-container.ql-snow{
+display:none;
+}
+
+.imageinputflex{
+  display: flex; 
+}
+.imageinputflex .flex-file,.quillclass{
+  width: 350px;
+}
+.quillclass{
+  margin-right: 90px;
+}
+
+.doubleinput{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
   
+.inputflex{
+  display: flex;
+}
+.doubleinput label{
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  width: 90%;
+  margin:5px 20px;
+}
+.inputflex input{
+  width: 400px;
+ 
+}
+
+.submitbtn{
+  display:flex;
+  margin: 0 auto;
+  background:linear-gradient(to top right, #010101, #0661FF);
+  border: none;
+  padding: 10px 50px;
+  border-radius: 5px;
+  color: white;
+}
   /* .editor-wrapper {
     width: 768px;
     border: 1px solid black;

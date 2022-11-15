@@ -66,7 +66,7 @@ export const AdminDash = () => {
                   </li>
                   <br className='displaybr' />
                   <li>
-                    <i class="fa fa-file iconA" aria-hidden="true"></i>  <Link className='adt2' to='/addcontent'>Add Content</Link>
+                  <i class="fa fa-plus iconA" aria-hidden="true"></i> <Link className='adt2' to='/addcontent'>Add Content</Link>
                   </li>
                   <br className='displaybr' />
                   {/* <li>
