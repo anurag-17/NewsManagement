@@ -13,7 +13,6 @@ var ObjectId = require('mongodb').ObjectId
 exports.adminlogin = catchAsyncError(
     async (req, res, next) => {
         const { email, password } = req.body;
-        console.log(req.body);
        try {
         if (!email || !password) {
             return next(new ErrorResponse("please provide email or password", 400))
@@ -46,7 +45,6 @@ exports.adminlogin = catchAsyncError(
 )
 exports.addnews = catchAsyncError(
     async(req, res, next)=>{
-        console.log(req.body);
         const {title ,  description, url, date }= req.body;
         try {
             let newsdata = new News({
@@ -65,7 +63,6 @@ exports.addnews = catchAsyncError(
 )
 exports.addblog = catchAsyncError(
     async(req, res, next)=>{
-        console.log(req.body);
         const {title ,  description, url }= req.body;
         try {
             let blogdata = new Blogs({
@@ -85,7 +82,7 @@ exports.addblog = catchAsyncError(
 exports.viewnews = catchAsyncError(
     async(req, res)=>{
         try {
-            await News.find({}, (error, result)=>{
+           News.find({}, (error, result)=>{
                 if (error) {console.log(error , "viewnews error")}
                 res.send({result})
             } )
@@ -139,7 +136,6 @@ exports.editidnews = catchAsyncError(
     async(req, res, next)=>{
         try {
             let uid = req.body.params
-            console.log(req.body.params);
            await News.findById({_id: uid},(error,result)=>{
                 if (error) {
                     console.log(error, "editidnews");
@@ -198,8 +194,10 @@ exports.addcontent = catchAsyncError(
     async(req,res,next)=>{
       const data =   await Content.create({
             logo:req.body.logo,
-            main_title:req.body.main_title,
-            main_subtitle:req.body.main_subtitle,
+            main_title_1:req.body.main_title_1,
+            main_title_2:req.body.main_title_2,
+            main_subtitle_1:req.body.main_subtitle_1,
+            main_subtitle_2:req.body.main_subtitle_2,
             main_btn_text:req.body.main_btn_text,
             main_image:req.body.main_image,
             tagline:req.body.tagline
@@ -211,14 +209,15 @@ exports.addcontent = catchAsyncError(
 
 exports.updateContent = catchAsyncError(
     async(req,res,next)=>{
-        console.log(req.body)
       const data =   await Content.findByIdAndUpdate(req.body.id,{
-            logo:req.body.logo,
-            main_title:req.body.main_title,
-            main_subtitle:req.body.main_subtitle,
-            main_btn_text:req.body.main_btn_text,
-            main_image:req.body.main_image,
-            tagline:req.body.tagline
+        logo:req.body.logo,
+        main_title_1:req.body.main_title_1,
+        main_title_2:req.body.main_title_2,
+        main_subtitle_1:req.body.main_subtitle_1,
+        main_subtitle_2:req.body.main_subtitle_2,
+        main_btn_text:req.body.main_btn_text,
+        main_image:req.body.main_image,
+        tagline:req.body.tagline
         })
         return res.status(200).json(data)
     }

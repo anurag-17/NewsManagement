@@ -65,7 +65,7 @@ const Blog = () => {
       </section>
 
 
-    <section id='Guid-section'>
+     <section id='Guid-section'>
       <div className='container'>
       <div className='Guidsldier-sec'>
         <div className='Guid-head'>

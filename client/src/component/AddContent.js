@@ -13,14 +13,17 @@ export const AddContent = () => {
   const [content,setContent] = useState("")
   const [data, setData] = useState({
     logo: "",
-    main_title: "",
+    main_title_1: "",
+    main_title_2:"",
     tagline: "",
-    main_subtitle: "",
+    main_subtitle_1: "",
+    main_subtitle_2:"",
     main_btn_text: "",
     main_image: "",
-    id:"636e15b91b10152061f717c0"
+    id:"63733a31ca305b1233680676"
   })
   const [avatarpreview, setAvatarpreview] = useState()
+  const [imagepreview,setimagePreview] = useState()
   const [text, setText] = React.useState("");
 
   const editor = useRef(null);
@@ -82,17 +85,17 @@ export const AddContent = () => {
 
   const modules = {
     toolbar: [
-      [{ header: "1" }, { header: "2" }, { font: [] }],
-      [{ size: [] }],
-      ["bold", "italic", "underline", "strike", "blockquote"],
-      [
-        { list: "ordered" },
-        { list: "bullet" },
-        { indent: "-1" },
-        { indent: "+1" }
-      ],
-      ["link", "image", "video"],
-      ["clean"]
+      // [{ header: "1" }, { header: "2" }, { font: [] }],
+      // [{ size: [] }],
+      // ["bold", "italic", "underline", "strike", "blockquote"],
+      // [
+      //   { list: "ordered" },
+      //   { list: "bullet" },
+      //   { indent: "-1" },
+      //   { indent: "+1" }
+      // ],
+      ["image"],
+      // ["link","clean","code-block"]
     ],
     clipboard: {
       // toggle to add extra line breaks when pasting HTML:
@@ -102,85 +105,59 @@ export const AddContent = () => {
 
   const getdata = async()=>{
     const res = await axios.get("/api/auth/getcontent")
-    if(res.data){
-      setContent(res.data[0]._id)
-    }
+    console.log(res.data)
+    res.data.map((items,index)=>{
+      setData({
+        logo: items.logo,
+        main_title_1: items.main_title_1,
+        main_title_2:items.main_title_2,
+        tagline: items.tagline,
+        main_subtitle_1: items.main_subtitle_1,
+        main_subtitle_2:items.main_subtitle_2,
+        main_btn_text: items.main_btn_text,
+        main_image: items.main_image,
+        id:"63733a31ca305b1233680676"
+      })
+    })
+
   }
 
   const onChange = (text) => {
-    setText(text);
+    setData({...data,main_title_1:text})
   };
+
+  console.log(text)
   const style = {
-    width: "300px",
+    width: "400px",
     paddingBottom:"20px",
-    borderStyle: "double"
+    borderStyle: "double",
+    marginTop:"20px",
+    height:"300px"
   };
 
   const updatecontent = async(e)=>{
        e.preventDefault()
     const res = await axios.post("/api/auth/content",data).then(()=>console.log("updated successfully")).catch((error)=>console.log(error))
     console.log(res)
+    
+      setData({
+        logo: "",
+        main_title_1: "",
+        main_title_2:"",
+        tagline: "",
+        main_subtitle_1: "",
+        main_subtitle_2:"",
+        main_btn_text: "",
+        main_image: "",
+        id:"63733a31ca305b1233680676"
+      })
   }
-
-  // const styleMap = {
-  //   CODE: {
-  //     backgroundColor: "rgba(0, 0, 0, 0.05)",
-  //     fontFamily: '"Inconsolata", "Menlo", "Consolas", monospace',
-  //     fontSize: 16,
-  //     padding: 2,
-  //   },
-  //   HIGHLIGHT: {
-  //     backgroundColor: "#F7A5F7",
-  //   },
-  //   UPPERCASE: {
-  //     textTransform: "uppercase",
-  //   },
-  //   LOWERCASE: {
-  //     textTransform: "lowercase",
-  //   },
-  //   CODEBLOCK: {
-  //     fontFamily: '"fira-code", "monospace"',
-  //     fontSize: "inherit",
-  //     background: "#ffeff0",
-  //     fontStyle: "italic",
-  //     lineHeight: 1.5,
-  //     padding: "0.3rem 0.5rem",
-  //     borderRadius: " 0.2rem",
-  //   },
-  //   SUPERSCRIPT: {
-  //     verticalAlign: "super",
-  //     fontSize: "80%",
-  //   },
-  //   SUBSCRIPT: {
-  //     verticalAlign: "sub",
-  //     fontSize: "80%",
-  //   },
-  // };
-
-  // const myBlockStyleFn = (contentBlock) => {
-  //   const type = contentBlock.getType();
-  //   switch (type) {
-  //     case "blockQuote":
-  //       return "superFancyBlockquote";
-  //     case "leftAlign":
-  //       return "leftAlign";
-  //     case "rightAlign":
-  //       return "rightAlign";
-  //     case "centerAlign":
-  //       return "centerAlign";
-  //     case "justifyAlign":
-  //       return "justifyAlign";
-  //     default:
-  //       break;
-  //   }
-  // };
-
 
 
   useEffect(()=>{
     getdata()
     // focusEditor();
-  },[])
+  },[data])
 
 
   const handleChange = (e) => {
@@ -188,18 +165,46 @@ export const AddContent = () => {
   }
 
   console.log(data)
-  const input_file = (e) => {
-    console.log(e.target.value)
-    encodefile(e.target.files[0]);
+
+  const encodefile2 = (file) => {
+    if (file) {
+      try {
+        Resizer.imageFileResizer(
+          file,
+          300,
+          300,
+          "jpg",
+          100,
+          0,
+          (uri) => {
+            data.main_image = uri
+          },
+          "base64",
+          200,
+          200
+        );
+      } catch (err) {
+        console.log(err);
+      }
+    }
+  };
+
+
+  const handleimage =  (e)=>{
+
     const reader = new FileReader();
     reader.onload = () => {
       if (reader.readyState === 2) {
         // setavatarPreview(reader.result);
-        setAvatarpreview(reader.result);
+        setimagePreview(reader.result);
       }
     };
     reader.readAsDataURL(e.target.files[0]);
+
+encodefile2(e.target.files[0])
   }
+
+
 
   const encodefile = (file) => {
     if (file) {
@@ -224,22 +229,28 @@ export const AddContent = () => {
     }
   };
 
+  const input_file = (e) => {
+    console.log(e.target.value)
+    encodefile(e.target.files[0]);
+    const reader = new FileReader();
+    reader.onload = () => {
+      if (reader.readyState === 2) {
+        // setavatarPreview(reader.result);
+        setAvatarpreview(reader.result);
+      }
+    };
+    reader.readAsDataURL(e.target.files[0]);
+  }
+
   return (
     <>
       <div className='flex_blog'>
         <AdminDash/>
         <div className='container'>
         <form onSubmit={updatecontent} action="">
-          <div style={{ width: "90%", margin: "0 auto" }} className="mb-4">
+          <div style={{margin: "0 auto" }} className="mb-4">
 
-          <ReactQuill
-      theme="snow"
-      placeholder="Type here"
-      value={text}
-      onChange={onChange}
-      modules={modules}
-      style={style}
-    />
+     
 
 
 {/* 
@@ -262,38 +273,65 @@ export const AddContent = () => {
       </div>
     </div> */}
             
-{/*         
-            <label className="inputlabel mt-2" htmlFor="title">Main Title
+        
+        <div className="doubleinput">
+        <div className='inputflex'>
+            <label className="inputlabel mt-2" htmlFor="title">Main Title One
+            <input value={data.main_title_1} onChange={handleChange} type="text" name="main_title_1" id="" placeholder='Main Title' className="title_input mt-1" />
             </label>
-            <input onChange={handleChange} type="text" name="main_title" id="" placeholder='Main Title' className="title_input mt-1" />
-            <br /> */}
-           <br />
-            {/* <div className='flex-file file_input'>
-              <img className="mt-3" style={{ width: "3.2rem", height: "3.1rem", marginLeft: "10px", borderRadius: "50%" }} />
-              <input onChange={(e)=>newencodefile(e.target.files[0])} className="file" type="file" name="main_image" id="file" />
-              <label className='ml-3' htmlFor="file">
-                Main Image
-              </label>
-            </div> */}
-            {/* <label className="inputlabel mt-2" htmlFor="title">Sub Title
+            <label className="inputlabel mt-2" htmlFor="title">Main Tile Two
+            <input value={data.main_title_2} onChange={handleChange} type="text" name="main_title_2" id="" placeholder='Main Title Two' className="title_input mt-1" />
             </label>
-            <input onChange={handleChange} type="text" name="main_subtitle" id="" placeholder='Sub Title' className="title_input mt-1" /> */}
+        </div>
+            <div className="inputflex">
+            <label className="inputlabel mt-2" htmlFor="title">Sub Title One
+            <input value={data.main_subtitle_1} onChange={handleChange} type="text" name="main_subtitle_1" id="" placeholder='Sub Title' className="title_input mt-1" />
+            </label>
+            <label className="inputlabel mt-2" htmlFor="title">Sub Title Two
+            <input  value={data.main_subtitle_2} onChange={handleChange} type="text" name="main_subtitle_2" id="" placeholder='Sub Title Two' className="title_input mt-1" />
+            </label>
+            </div>
+<div className="inputflex">
 
             <label className="inputlabel mt-2" htmlFor="title">Tagline
+            <input value = {data.tagline} onChange={handleChange} type="text" name="tagline" id="" placeholder='Tagline' className="title_input mt-" />
             </label>
-            <input onChange={handleChange} type="text" name="tagline" id="" placeholder='Tagline' className="title_input mt-" />
 
             <label className="inputlabel mt-2" htmlFor="title">Button Text
+            <input value = {data.main_btn_text} onChange={handleChange} type="text" name="main_btn_text" id="" placeholder='Button Text' className="title_input mt-1" />
             </label>
-            <input onChange={handleChange} type="text" name="main_btn_text" id="" placeholder='Button Text' className="title_input mt-1" />
 
-            <div style= {{display:"flex",alignItems:"center"}} className='flex-file file_in'>
-              <img src = {avatarpreview} className="mt-3" style={{ width: "3.2rem", height: "3.1rem", marginLeft: "10px", borderRadius: "50%" }} />
+</div>
+
+<div className="imageinputflex">
+<div style= {{display:"flex",alignItems:"center",justifyContent:"center"}} className='flex-file file_in' >
+<img src = {!imagepreview?data.main_image:imagepreview} className="mt-3" style={{ width: "3.2rem", height: "3.1rem", marginLeft: "10px", borderRadius: "50%" }} alt="mainimage" />
+<input className='files' type="file" name="" id="files" onChange={handleimage}/>
+<label className='ml-3' htmlFor="files">
+                Banner Image
+              </label>
+</div>
+
+  {/* <div className='quillclass' style = {{width:"400px"}}>
+<ReactQuill
+      theme="snow"
+      placeholder="Type here"
+      value={data.main_title_1}
+      onChange={onChange}
+      modules={modules}
+      style={style}
+      name="main_title"
+    />
+  </div> */}
+            <div style= {{display:"flex",alignItems:"center",justifyContent:"center"}} className='flex-file file_in'>
+              <img src = {!avatarpreview?data.logo:avatarpreview} className="mt-3" style={{ width: "3.2rem", height: "3.1rem", marginLeft: "10px", borderRadius: "50%" }} alt ="logoimage"/>
               <input className="files" type="file" name="logo" id="file" onChange={input_file}/>
               <label className='ml-3' htmlFor="file">
                 Choose Logo
               </label>
             </div>
+</div>
+        </div>
           </div>
           <input type="submit" className='submitbtn'/>
         </form>

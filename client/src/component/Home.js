@@ -44,7 +44,7 @@ setContent(res.data)
         <div className='container'>
           <div className='Home-slide'>
             <div className='row home-alin'>
-              <div className='col-lg-8 col-md-6 slideb1'>
+            <div className='col-lg-8 col-md-6 slideb1'>
               <AnimatedOnScroll animationIn="fadeIn" animationOut="fadeIn"> 
               <h2>Smart <span>People. </span></h2>
                 <h2>Smart <span>Investment.</span> </h2>
@@ -59,6 +59,15 @@ setContent(res.data)
                 <img src={Bnnerimg} alt='bannerimg'></img>
                </div>
               </div>
+              {
+content.map((items,index)=>{
+  return(
+    <>
+    </>
+  )
+})
+              }
+            
             </div>
           </div>
         </div>

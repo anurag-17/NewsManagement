@@ -5,14 +5,19 @@ const contentSchema = new mongoose.Schema({
 logo:{
     type:String
 },
-
-main_title:{
+main_title_1:{
+    type:String
+},
+main_title_2:{
     type:String
 },
 tagline:{
     type:String
 },
-main_subtitle:{
+main_subtitle_1:{
+    type:String
+},
+main_subtitle_2:{
     type:String
 },
 main_btn_text:{
