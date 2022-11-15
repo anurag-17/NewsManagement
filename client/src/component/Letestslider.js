@@ -28,7 +28,6 @@ const Letestslider = () => {
         pagination={{
           clickable: true,
         }}
-        navigation={true}
         breakpoints={{
           "@0.00": {
             slidesPerView: 1,
@@ -40,13 +39,14 @@ const Letestslider = () => {
           },
           "@1.00": {
             slidesPerView: 3,
-            spaceBetween: 20,
+            spaceBetween: 40,
           },
           "@1.50": {
             slidesPerView: 4,
-            spaceBetween: 30,
+            spaceBetween: 50,
           },
         }}
+        navigation={true}        
         modules={[Pagination, Navigation]}
         className="mySwiper"  
       >        
