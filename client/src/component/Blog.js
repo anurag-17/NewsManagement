@@ -3,6 +3,7 @@ import './Blog.css';
 import blogImg1 from './Images/blog-img1.png';
 import Guidslider from './Guidslider';
 import Letestslider from './Letestslider';
+import SlderLet from './slider/SlderLet';
 import Investblog1 from './Images/BlogInvest-img1.png';
 import Investblog2 from './Images/BlogInvest-img2.png';
 import Investblog3 from './Images/BlogInvest-img3.png';
@@ -15,7 +16,7 @@ const Blog = () => {
       <section id='Blog-sewction'>
         <div className='container'>
           <div className='row'>
-            <div className='col-lg-8 col-md-8'>
+            <div className='col-lg-9 col-md-8'>
               <div className='Blog-left'>
                 <div className='BlogImg'>
                   <img src={blogImg1} alt='blog-img'></img>
@@ -26,7 +27,7 @@ const Blog = () => {
                 </div>
               </div>
             </div>
-            <div className='col-lg-4 col-md-4'>           
+            <div className='col-lg-3 col-md-4'>           
               <div className='Blog-right'>
                 <div className='Blog-heading'>
                   <h3>Must Read</h3>
@@ -38,11 +39,12 @@ const Blog = () => {
                   </div>
                   <div className='Blog-mread1'>
                     <h3>SEPTEMBER 02</h3>
-                    <p>Getting started in the stock market:things to consider</p>
+                    <p>Mutual Funds: The Definitive Guide to Building Your Portfolio</p>
                   </div>
                   <div className='Blog-mread1'>
                     <h3>SEPTEMBER 02</h3>
-                    <p>Getting started in the stock market:things to consider</p>
+                    <p>Mutual Funds: The Definitive Guide to
+Building Your Portfolio</p>
                   </div>
                 </div>
               </div>
@@ -50,8 +52,9 @@ const Blog = () => {
           </div>
         </div>
       </section>
+      <SlderLet/>
 
-      <section id='Blog-slider'>
+      {/* <section id='Blog-slider'>
       <div className='container'>
         <div className='Latest-title'>
           <h3>Latest Stories</h3>
@@ -60,10 +63,10 @@ const Blog = () => {
           <Letestslider/>       
         </div>
       </div>
-      </section>
+      </section> */}
 
 
-     <section id='Guid-section'>
+     {/* <section id='Guid-section'>
       <div className='container'>
       <div className='Guidsldier-sec'>
         <div className='Guid-head'>
@@ -72,7 +75,7 @@ const Blog = () => {
         <Guidslider/>
         </div>      
       </div>
-     </section> 
+     </section>  */}
 
     <section id='BInvest-section'>
       <div className='Binveshape'>

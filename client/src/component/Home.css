@@ -408,6 +408,65 @@ button.Blog-btn a {
     letter-spacing: .02em;
     text-transform: uppercase;
 }
+
+/* news title */
+.strike {
+    display: block;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 20px;
+}
+.strike span h2 {
+    color: #4af8d5;
+    font-size: 30px;
+    line-height: 48px;
+    font-weight: 600;
+}
+
+.strike span:before {
+    content: '';
+    position: absolute;
+    width: 438px;
+    border-left: 4px solid #1F286F;
+    height: 70px;
+    border-top: 4px solid #1F286F;
+    top: 38%;
+}
+.strike span:after {
+    content: '';
+    position: absolute;
+    width: 438px;
+    border-right: 4px solid #1F286F;
+    height: 70px;
+    border-top: 4px solid #1F286F;
+    top: 38%;
+}
+.strike > span {
+    position: relative;
+    display: inline-block;
+}
+
+/* .strike > span:before,
+.strike > span:after {
+    content: "";
+    position: absolute;
+    top:0%;
+    width: 9999px;
+  
+    border-top: 4px solid #4af8d5;
+} 
+*/
+.strike > span:before {
+    right: 100%;
+    margin-right: 15px;
+}
+
+.strike > span:after {
+    left: 100%;
+    margin-left: 15px;
+}
+/* news title */
 .Topnews-1 {
     display: grid;
     grid-template-columns: repeat(1,1fr);

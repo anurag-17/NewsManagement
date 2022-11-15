@@ -10,6 +10,8 @@ import guidslid1 from './Images/guid-slide1.png';
 import guidslid2 from './Images/guid-slide2.png';
 import { Navigation, Pagination } from "swiper";
 
+
+
 const Letestslider = () => {
   return (
     <div>
@@ -98,8 +100,8 @@ const Letestslider = () => {
             <p>Let’s break the 5 common myths that are stopping you from getting started with your investment journey...</p>
           </div>
         </SwiperSlide>
-       
       </Swiper>
+     
       </div>
     </div>
     </div>

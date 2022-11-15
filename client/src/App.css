@@ -18,17 +18,11 @@ a {
     text-decoration: none;
 }
 p{
- font-size: 14px;
+ font-size: 16px;
  line-height: 24px;
- overflow: hidden;
- text-overflow: ellipsis;
- display: -webkit-box;
- -webkit-line-clamp: 3;
- -webkit-box-orient: vertical;
- margin-bottom:0px;
 }
 .body-main {
-    padding-top: 95px;
+    padding-top: 90px;
 }
 
 h3 {

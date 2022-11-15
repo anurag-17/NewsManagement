@@ -8,7 +8,7 @@
     width: 100%;
 }
 .Banner-main {
-    padding:140px 0px;
+    padding:165px 0px;
     text-align: center;
 }
 .Banner-title h2 {
@@ -44,7 +44,7 @@ br {
     line-height: 24px;
 }
 .who-img {
-    text-align: right;
+    text-align: center;
 }
 .Mission {
     padding: 60px 0px 60px 0px;
@@ -65,6 +65,45 @@ br {
     line-height: 24px;
 }
 /* who we are end */
+
+/* value section start */
+section#Value-section {
+    padding: 60px 0px 60px 0px;
+}
+#Value-section .section-head h2 {
+    color: #1F286F;
+    font-family: Arial , sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+}
+.Value-main {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 30px;
+    padding: 30px 0px 0px 0px;
+
+}
+.Vauleitem1 h3 {
+    color: #1F286F;
+    font-size: 26px;
+    line-height: 30px;
+    font-weight: 600;
+    font-family: 'Arial Bold', sans-serif;
+    padding:20px 0px 20px 0px;
+}
+.Vauleitem1 p {
+    font-size: 16px;
+    line-height: 24px;
+    overflow: hidden;
+}
+.value-img i {
+    font-size: 50px;
+    color: #4af8d5;
+}
+/* value section start */
+
+
+
 
 
 

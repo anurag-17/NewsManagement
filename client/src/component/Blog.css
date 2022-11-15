@@ -94,9 +94,8 @@
 .Blog-mread1 {
     padding-bottom: 20px;
     border-bottom: dotted 2px #ddd;
-    padding-top: 20px;
+    padding-top:20px;
 }
-
 
 /* blog slider  */
 
@@ -669,7 +668,9 @@ div#Latest-slider {
 #Guidsldier-sec .guidslide .swiper {
     padding-top:0px;
 }
-     
+#Guid-section .swiper {
+    overflow: hidden;
+}   
  /* Industry  section end */
 
 
@@ -936,7 +937,7 @@ div#Latest-slider {
     .slick-track{
         width:100%;
     }
-
+    
     /* resposnive */
    
 

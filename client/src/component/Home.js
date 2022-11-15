@@ -15,7 +15,7 @@ import './Home.css';
 import axios from 'axios';
 import Navbarmenu from './menu/Navbarmenu';
 import HomeNav from './menu/HomeNav';
-
+import {AnimatedOnScroll} from "react-animated-css-onscroll";
 
 const Home = () => {
  const [newsdata,setNewsdata] = useState([])
@@ -45,8 +45,10 @@ setContent(res.data)
           <div className='Home-slide'>
             <div className='row home-alin'>
               <div className='col-lg-8 col-md-6 slideb1'>
-                <h2>Smart <span>People . </span></h2>
-                <h2>Smart <span>Investment  .</span> </h2>
+              <AnimatedOnScroll animationIn="fadeIn" animationOut="fadeIn"> 
+              <h2>Smart <span>People. </span></h2>
+                <h2>Smart <span>Investment.</span> </h2>
+              </AnimatedOnScroll>               
                 <p>We use technology to help young investors invest smartly.</p>
                 <div className='bannerbtn'>
                    <button className='know-btn'><a href='#'>KNOW MORE</a></button>
@@ -64,16 +66,9 @@ setContent(res.data)
 
       <section id='Top-News'>        
         <div className='container'>
-        <div className='titl-shape'>
-           <div className='shape'>
-            <h3>TOP News</h3>
+          <div class="strike">
+              <span><h2>TOP NEWS</h2></span>
           </div>
-          <div className='top-title'>
-            <h3></h3>
-          </div>
-
-          </div> 
-          
           
           
           <div className='row top-sec'>
@@ -168,72 +163,7 @@ setContent(res.data)
         </div>
       </section>
 
-      {/* <section id='New-section'>
-        <div className='container'>
-          <div className='New-main'>
-            <div className='row Newalin'>
-              <div className='col-lg-8 col-md-8'>
-                <div className='Newsleft'>
-                  <div className='new-Head'>
-                    <h3>News</h3>
-                  </div>
-                  <div className='news-img'>
-                  </div>
-                  <div className='nes-des'>
-                    <div className='News-title'>
-                       <h2>China's trade unexpectedly drops for first time since 2020: Report</h2>
-                    </div>
-                    <div className='News-ct'>
-                        <p>Tirumala Tirupati Devasthanams (TTD) is growing richer and richer as the cash and gold offerings made by devotees at the hill temple continue to rise and fixed deposits in banks are also generating more income in view of increase in interest rates, a temple official said.</p>
-                   </div>
-                  </div>
-                </div>
-              </div>
-              <div className='col-lg-4 col-md-4'>
-                <div className='Newsright'>
-                  <div className='News_sub'>
-                    <h3>Top News</h3>
-                  </div>
-                  <div className='Newsright-ct'>
-                    <div className="News-box">
-                      <div className="float-left blogR-img">
-                        <img src={newsimg3}></img>
-                      </div>
-                      <div className="newsR-ct">
-                        <h3>Bank Holidays this week: Guru Nanak Jayanti, 3 others. Details here</h3>
-                        <p>Bank Holidays this week: Guru Nanak Jayanti falls fifteen days after Diwali on the auspicious occasion of Kartik Purnima</p>
-                      </div>
-                    </div>
-                    <div className="News-box">
-                      <div className="float-left blogR-img">
-                        <img src={newsimg4}></img>
-                      </div>
-                      <div className="newsR-ct">
-                        <h3>As Ukraine war rages, Jaishankar to begin his two-day Russia visit today</h3>
-                        <p>During his Russia visit, Jaishankar is scheduled to meet Deputy Prime Minister of the Russian Federation and Minister of Trade and Industry, Denis Manturov, his counterpart for the India-Russia Inter-Governmental Commission on Trade, Economic, Scientific, Technological and Cultural Cooperation (IRIGC-TEC).</p>
-                      </div>
-                    </div>
-                    <div className="News-box">
-                      <div className="float-left blogR-img">
-                        <img src={newsimg5}></img>
-                      </div>
-                      <div className="newsR-ct">
-                        <h3>Bank Holidays this week: Guru Nanak Jayanti, 3 others. Details here</h3>
-                        <p>Bank Holidays this week: Guru Nanak Jayanti falls fifteen days after Diwali on the auspicious occasion of Kartik Purnima</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className='news-btn'>
-                    <button><a href='#'>Explore more <i class="fa fa-angle-right"></i></a></button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
-
+      
       <section id='live-section'>
       <div className='container'>
         <div className='Live-main'>
