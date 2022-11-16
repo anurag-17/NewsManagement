@@ -29,7 +29,8 @@
     "react-scripts": "5.0.1",
     "react-xml-parser": "^1.1.8",
     "swiper": "^8.4.4",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "xml-js": "^1.6.11"
   },
   "scripts": {
     "start": "react-scripts start",

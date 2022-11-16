@@ -14,6 +14,8 @@ import { Viewblogs } from './component/Viewblogs';
 import Blog from './component/Blog';
 import { Loader } from './component/Common/Loader';
 import { AddContent } from './component/AddContent';
+import { Xmltojson } from './component/Xmltojson';
+import News from './component/News';
 
 function App() {
   let location = useLocation()
@@ -38,11 +40,13 @@ if(data !== null){
             <Route path='/admindash' element={<AddNews/>} />
             <Route path='/addblogs' element={<AddBlogs />} />
             <Route path='/viewnews' element={<ViewNews />} />
+            <Route path='/News' element={<News/>} />
+          
             <Route path='/viewblogs' element={<Viewblogs />} />
             <Route path='/loader' element={<Loader/>} />
             <Route path='/addcontent' element={<AddContent/>} />
-
-            
+            <Route path='/xml' element={<Xmltojson/>} />
+      
         </Routes>
           {location.pathname !== "/admin" && location.pathname !== "/admindash" && location.pathname !== "/addblogs" && location.pathname !== "/viewnews" && location.pathname !== "/viewblogs" && location.pathname !== "/addnews"&&location.pathname!=="/addcontent" && <Footer/>}
       </div>

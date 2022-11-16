@@ -1,0 +1,27 @@
+/* blog banner start */
+#Blog-banner .banner-bg{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../component/Images/Blog-Page-Banner-1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+}
+#Blog-banner .Banner-main {
+    padding:165px 0px;
+    text-align: center;
+}
+#Blog-banner .Banner-title h2 {
+    font-family: "Montserrat", Sans-serif;
+    font-size: 65px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #fff;
+    line-height: 76px;
+}
+#Blog-banner .Banner-title span {
+    display: block;
+    color: #fff;
+}
+br {
+    display:none;
+}

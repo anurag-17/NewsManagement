@@ -65,10 +65,10 @@ Created with https://www.css-gradient.com */
 }
 
 .iconbar {
-    display: none;
+    display: none !important;
 }
 .iconcross{
-    display: none;
+    display: none !important;
 }
 
 /* .................media start..................... */
@@ -109,7 +109,7 @@ Created with https://www.css-gradient.com */
         }
 
         .iconbar {
-            display: block;
+            display: block !important;
             /* position: relative;
             top: 10px;
             left: 20px; */
@@ -140,7 +140,7 @@ Created with https://www.css-gradient.com */
 
         }
         .iconcross{
-            display: block;
+            display: block !important;
             position: absolute;
             right: 0;
             color: white;

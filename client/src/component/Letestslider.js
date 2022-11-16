@@ -11,13 +11,16 @@ import guidslid2 from './Images/guid-slide2.png';
 import { Navigation, Pagination } from "swiper";
 
 
+const Letestslider = ({apidata}) => {
+  if(apidata){
+    var parsed = apidata.rss.channel.item
+    console.log(apidata.rss.channel.item)
+  }
 
-const Letestslider = () => {
   return (
     <div>
       <div className='guidslide'>
       <div className='Let-slider1'>
-
 
      <Swiper  
       slidesPerView={4}
@@ -50,17 +53,26 @@ const Letestslider = () => {
         modules={[Pagination, Navigation]}
         className="mySwiper"  
       >        
+    
+    {
+      parsed&&
+      parsed.map((items,index)=>{
+        console.log(items["media:content"]._attributes)
+        return(
         <SwiperSlide>
         <div id='Latest-slider'>
             <div className='latest-img'>
-              <img src={letestslide1} alt='slide'></img>
+              <img src={items["media:content"]._attributes.url} alt='slide'></img>
             </div>
             <h4 className='time-head'>2 min read1</h4>
-            <h3>SEBI Chairperson spoke to Fintech Participants at the Global Fintech Fest   GFF 2022)</h3>
+            <h3>{items.title._cdata}</h3>
             <p>Smt. Madhabi Puri Buch, the...</p>
           </div>
         </SwiperSlide>
-        <SwiperSlide>
+        )
+      })
+    }
+        {/* <SwiperSlide>
         <div id='Latest-slider'>
             <div className='latest-img'>
               <img src={letestslide2} alt='slide'></img>
@@ -99,7 +111,7 @@ const Letestslider = () => {
             <h3>Top myths about investing in the stock market</h3>
             <p>Let’s break the 5 common myths that are stopping you from getting started with your investment journey...</p>
           </div>
-        </SwiperSlide>
+        </SwiperSlide> */}
       </Swiper>
      
       </div>
