@@ -23,6 +23,7 @@
     "mongoose": "^6.7.1",
     "moongoose": "^0.0.5",
     "node": "^19.0.1",
+    "nodemailer": "^6.8.0",
     "nodemon": "^2.0.20",
     "react-animate-on-scroll": "^2.1.5",
     "react-fade-in": "^2.0.1",

@@ -74,7 +74,9 @@ export const AdminDash = () => {
                 </li>
                 <br /> */}
                   <li >
+                  
                     <i class="fa fa-sign-out iconA ad" aria-hidden="true" /><span className='adt ad' onClick={logout}>Logout</span>
+                    {/* <i class="fa fa-sign-out" aria-hidden="true"></i> */}
                   </li>
                 </ul>
               </div>
