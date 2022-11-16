@@ -27,6 +27,7 @@
     "react-animate-on-scroll": "^2.1.5",
     "react-fade-in": "^2.0.1",
     "react-rss": "^2.0.1",
-    "react-transitions": "^1.0.0"
+    "react-transitions": "^1.0.0",
+    "react-xml-parser": "^1.1.8"
   }
 }

@@ -4,13 +4,52 @@ import blogImg1 from './Images/blog-img1.png';
 import Guidslider from './Guidslider';
 import Letestslider from './Letestslider';
 import SlderLet from './SlderLet.js';
+import Post from './Post';
 import Investblog1 from './Images/BlogInvest-img1.png';
 import Investblog2 from './Images/BlogInvest-img2.png';
 import Investblog3 from './Images/BlogInvest-img3.png';
 import Investblog4 from './Images/BlogInvest-img4.png';
 import Investblog5 from './Images/BlogInvest-img5.png';
+import XMLParser from 'react-xml-parser';
+
 
 const Blog = () => {
+
+  const blogPosts = [
+    {
+      title: "Getting started in the stock market:things to consider",
+      body: `Getting started in the stock market:things to consider`,
+      // author: "Nishant Singh ",
+      imgUrl:
+        "https://images.livemint.com/img/2022/11/15/1600x900/Side-Angle_Car_1663835603343_1668514522120_1668514522120.jpg",
+    },
+    {
+      title: "Data Structure ",
+      body: `There are many order.`,
+      author: "Suresh Kr",
+      imgUrl:
+        "https://images.livemint.com/img/2022/11/15/1600x900/ofc_1656532093318_1668514115239_1668514115239.jpg",
+    },
+    {
+      title: "Algorithm",
+      body: `The word Algorithm means “a process 
+      or set of rules to be  to get the expected 
+      results. `,
+      author: "Monu Kr",
+      imgUrl:
+        "https://images.livemint.com/img/2022/11/15/1600x900/TWITTER-MUSK-FTC-0_1668513144006_1668513144006_1668513164230_1668513164230.JPG",
+    },
+    {
+      title: "Computer Network",
+      body: `An interconnection of multiple devices, 
+      also known as hosts,  such as routers, switches,
+      hubs, and bridges. `, 
+      author: "Sonu Kr",
+      imgUrl:
+        "https://images.livemint.com/img/2022/11/15/1600x900/IRCTC_1668513685044_1668513685271_1668513685271.jpg",
+    },
+  ];
+
   return (
     <div className='body-main'>
       <section id='Blog-sewction'>
@@ -50,8 +89,18 @@ const Blog = () => {
             </div>
           </div>
         </div>
+     
       </section>
- 
+
+      {/* <section id='Blogpost'>
+        <div className='container'>
+        <div className="posts-container">
+          {blogPosts.map((post, index) => (
+            <Post key={index} index={index} post={post} />
+          ))}
+        </div>
+        </div>
+      </section> */}
 
       <section id='Blog-slider'>
       <div className='container'>
