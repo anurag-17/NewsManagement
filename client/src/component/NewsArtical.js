@@ -31,23 +31,20 @@ const Letestslider = ({apidata}) => {
               <>
                  <a href= {items.link._cdata}>
                 <div className='letest-artical'>
-                <div className='LetestArtical1'>
-                <div className='LetestArticalImg'>
-                <img src={items["media:content"]._attributes.url} alt='slide'></img>
-                </div>
-                <div className='LetestArticalDes'>
-                    <div className='newsArtical-title'>
-                 
-
-                    <h3>{items.title._cdata}</h3>
-                  
+                   <div className='LetestArtical1'>
+                    <div className='LetestArticalImg'>
+                    <img src={items["media:content"]._attributes.url} alt='slide'></img>
                     </div>
-                    <div className='newsArtical-des'>
-                    <p>In the 2021-22 fiscal, Century Plyboards posted a net profit of ₹313.15 crore over a turnover of ₹3,050.09 crore and is expecting a 20-25 per cent growth in 
-                    revenue this fiscal.</p>
-                    </div>                 
-                </div>
-                </div>
+                    <div className='LetestArticalDes'>
+                        <div className='newsArtical-title'>
+                        <h3>{items.title._cdata}</h3>
+                        </div>
+                        <div className='newsArtical-des'>
+                        <p>In the 2021-22 fiscal, Century Plyboards posted a net profit of ₹313.15 crore over a turnover of ₹3,050.09 crore and is expecting a 20-25 per cent growth in 
+                        revenue this fiscal.</p>
+                        </div>                 
+                    </div>
+                  </div>
             </div>
             </a>
             </>

@@ -78,8 +78,8 @@ const News = () => {
               <div className='col-lg-4 col-md-4'>
                 <div className='newsright'>
                   <div className='newdgrid'> 
-                  
-                    <div class="NewsCT">
+                  <NewsArticalInvest apidata={data}/>
+                    {/* <div class="NewsCT">
                       <div className='NewsImg2'>
                       <img src={NewsImg2} alt='News-img2'></img>
                       </div>
@@ -99,7 +99,7 @@ const News = () => {
                       </div>
                       <span className='newsTitle'>Republicans win control of the US House with narrow margin</span> 
                       <span className='news-des'>More than a week after Election Day and with several seats still not called, the party gained the 218 seats needed to control the chamber</span> 
-                    </div>
+                    </div> */}
                   </div>
                   <div className='slide-btn'>
                       <button className='Newsbtn'><a href='guid-bt1'>Explore more  </a></button>

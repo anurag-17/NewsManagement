@@ -21,7 +21,7 @@ const NewsArticalInvest = ({apidata}) => {
   return (
     <div>
       
-     <div className='letestartical-grid'>       
+     <div className='letestartical-grid1'>       
     
     {
         parsed&&
@@ -30,8 +30,7 @@ const NewsArticalInvest = ({apidata}) => {
         return(
               <>
                  <a href= {items.link._cdata}>
-                 <div className='newdgrid'> 
-                  
+                 <div className='newdgrid'>                   
                   <div class="NewsCT">
                     <div className='NewsImg2'>
                     <img src={items["media:content"]._attributes.url} alt='slide'></img>

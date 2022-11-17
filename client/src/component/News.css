@@ -105,15 +105,19 @@ br {
 #News-section .NewsCT {
     overflow: auto;
     border-bottom: 1px solid #ddd;
-    padding-bottom: 20px;
+    padding-bottom: 30px;
+}
+#News-section button.Newsbtn {
+    padding-top: 90px;
 }
 #News-section .NewsCT .img {
     float: right;
 }
 .NewsImg2 img {
     width: 160px;
-    height: 90px;
+    height: 130px;
     padding-right: 15px;
+    object-fit: cover;
 }
 #News-section span.newsTitle {
     font-size: 16px;
@@ -137,6 +141,19 @@ br {
     display: -webkit-box;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
+}
+.letestartical-grid1 a{
+    display:none;
+    text-decoration: none;
+}
+.letestartical-grid1 a:nth-child(1){
+    display: block;
+}
+.letestartical-grid1 a:nth-child(2){
+    display: block;
+}
+.letestartical-grid1 a:nth-child(3){
+    display: block;
 }
 /* news section End */
 
@@ -252,5 +269,6 @@ br {
     padding-top: 20px;
     margin-bottom: 28px;
 }
+
 
 /* LetNews-section End */
