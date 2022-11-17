@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import NewsArtical from './NewsArtical';
+import NewsArticalInvest from './NewsArticalInvest';
 import NewsImg1 from './Images/NewsImg1.webp';
 import NewsImg2 from './Images/NewsImg2.webp';
 import NewsImg3 from './Images/NewsImg3.webp';
@@ -48,18 +49,7 @@ const News = () => {
           </div>
         </div>
       </section>
-
-      {/* <section id='Blog-banner'>
-          <div className='container-fluid banner-bg'>
-            <div className='row Banner-main'>
-            <div className='Banner-title'>
-              <AnimatedOnScroll animationIn="fadeInUp" animationOut="fadeInUp"> <h2>News </h2>
-              </AnimatedOnScroll>
-            </div>
-            </div>
-          </div>
-      </section> */}
-
+      
       <section id='News-section'>
         <div className='container'>
           <div className='NewsMain'>
@@ -76,8 +66,9 @@ const News = () => {
               </div>
               <div className='col-lg-4 col-md-4'>
                 <div className='newsright'>
-                  <div className='newdgrid'>  
-                    <div class="NewsCT">
+                  <div className='newdgrid'> 
+                  <NewsArticalInvest apidata={data}/>
+                    {/* <div class="NewsCT">
                       <div className='NewsImg2'>
                       <img src={NewsImg2} alt='News-img2'></img>
                       </div>
@@ -97,7 +88,7 @@ const News = () => {
                       </div>
                       <span className='newsTitle'>Republicans win control of the US House with narrow margin</span> 
                       <span className='news-des'>More than a week after Election Day and with several seats still not called, the party gained the 218 seats needed to control the chamber</span> 
-                    </div>
+                    </div> */}
                   </div>
                   <div className='slide-btn'>
                       <button className='Newsbtn'><a href='guid-bt1'>Explore more  </a></button>
@@ -111,7 +102,7 @@ const News = () => {
       <section id='LetNews-section'>
       <div className='container'>
         <div className='row'>
-          <div className='col-lg-8 col-md-8 LetNews1'>
+          <div className='col-lg-8 col-md-8 LetNews'>
             <div class="Newtext-divider">
              LATEST
             </div>
@@ -185,16 +176,16 @@ const News = () => {
       </div>
       </section>
 
-      <section id='Blog-slider'>
+      {/* <section id='Blog-slider'>
       <div className='container'>
         <div className='Latest-title'>
           <h3>Latest News</h3>
         </div>
         <div className='letslider2'>
-          {/* <Letestslider apidata={data}/>        */}
+          <Letestslider apidata={data}/>       
         </div>
       </div>
-      </section>
+      </section> */}
     </div>
   )
 }

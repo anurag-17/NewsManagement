@@ -16,6 +16,7 @@ import { Loader } from './component/Common/Loader';
 import { AddContent } from './component/AddContent';
 import { Xmltojson } from './component/Xmltojson';
 import News from './component/News';
+import Learn from './component/Learn';
 
 function App() {
   let location = useLocation()
@@ -41,7 +42,7 @@ if(data !== null){
             <Route path='/addblogs' element={<AddBlogs />} />
             <Route path='/viewnews' element={<ViewNews />} />
             <Route path='/News' element={<News/>} />
-          
+            <Route path='/Learn' element={<Learn/>} />
             <Route path='/viewblogs' element={<Viewblogs />} />
             <Route path='/loader' element={<Loader/>} />
             <Route path='/addcontent' element={<AddContent/>} />

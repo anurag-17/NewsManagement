@@ -21,6 +21,9 @@
 
 
 /* blog banner start */
+section#LetNews-section {
+    padding: 40px 0px 40px 0px;
+}
 #Blog-banner .banner-bg{
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../component/Images/Blog-Page-Banner-1.jpg);
     background-size: cover;
@@ -105,15 +108,19 @@ br {
 #News-section .NewsCT {
     overflow: auto;
     border-bottom: 1px solid #ddd;
-    padding-bottom: 20px;
+    padding-bottom: 30px;
+}
+#News-section button.Newsbtn {
+    padding-top: 90px;
 }
 #News-section .NewsCT .img {
     float: right;
 }
 .NewsImg2 img {
     width: 160px;
-    height: 90px;
+    height: 130px;
     padding-right: 15px;
+    object-fit: cover;
 }
 #News-section span.newsTitle {
     font-size: 16px;
@@ -138,6 +145,19 @@ br {
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
 }
+.letestartical-grid1 a{
+    display:none;
+    text-decoration: none;
+}
+.letestartical-grid1 a:nth-child(1){
+    display: block;
+}
+.letestartical-grid1 a:nth-child(2){
+    display: block;
+}
+.letestartical-grid1 a:nth-child(3){
+    display: block;
+}
 /* news section End */
 
 /* LetNews-section start */
@@ -150,11 +170,11 @@ br {
     color: #1F286F;
     font-size: 26px;
     font-weight: bold;
-    padding-top: 40px;
     font-family: 'Arial Bold', sans-serif;
-
   }
-  
+  .letestartical-grid a {
+    text-decoration: none;
+  }
   .Newtext-divider::before {
     margin-right: var(--text-divider-gap);
     
@@ -189,6 +209,7 @@ br {
     font-size: 14px;
     line-height: 24px;
     font-family: Arial , sans-serif;
+    color: #212529;
 }
 .letestartical-grid {
     display: grid;
@@ -235,7 +256,7 @@ br {
 #LetNews-section .slide-btn {
     padding-top: 40px;
 }
-#LetNews-section button.Newsbtn {
+ button.Newsbtn {
     border: none;
     background-color: transparent;
     font-size: 12px;
@@ -250,4 +271,29 @@ br {
     margin-bottom: 28px;
 }
 
+
 /* LetNews-section End */
+
+
+/* responsive */
+@media (max-width:992px) {
+    #News-section {
+        padding: 30px 0px 30px 0px;
+    }
+    .newsleft1 {
+        padding-right: 30px;
+    }
+    .NewsImg2 img {
+        width: 86px;
+        height: 80px;
+        object-fit: cover;
+    }
+    #News-section .NewsImg img {
+        height: auto;
+        object-fit: cover;
+    }
+}
+
+@media (max-width:767px) {
+   
+}
