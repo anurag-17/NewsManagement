@@ -49,18 +49,7 @@ const News = () => {
           </div>
         </div>
       </section>
-
-      {/* <section id='Blog-banner'>
-          <div className='container-fluid banner-bg'>
-            <div className='row Banner-main'>
-            <div className='Banner-title'>
-              <AnimatedOnScroll animationIn="fadeInUp" animationOut="fadeInUp"> <h2>News </h2>
-              </AnimatedOnScroll>
-            </div>
-            </div>
-          </div>
-      </section> */}
-
+      
       <section id='News-section'>
         <div className='container'>
           <div className='NewsMain'>

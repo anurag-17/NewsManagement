@@ -21,6 +21,9 @@
 
 
 /* blog banner start */
+section#LetNews-section {
+    padding: 40px 0px 40px 0px;
+}
 #Blog-banner .banner-bg{
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../component/Images/Blog-Page-Banner-1.jpg);
     background-size: cover;
@@ -167,9 +170,7 @@ br {
     color: #1F286F;
     font-size: 26px;
     font-weight: bold;
-    padding-top: 40px;
     font-family: 'Arial Bold', sans-serif;
-
   }
   .letestartical-grid a {
     text-decoration: none;
