@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import NewsArtical from './NewsArtical';
+import NewsArticalInvest from './NewsArticalInvest';
 import NewsImg1 from './Images/NewsImg1.webp';
 import NewsImg2 from './Images/NewsImg2.webp';
 import NewsImg3 from './Images/NewsImg3.webp';
@@ -76,7 +77,8 @@ const News = () => {
               </div>
               <div className='col-lg-4 col-md-4'>
                 <div className='newsright'>
-                  <div className='newdgrid'>  
+                  <div className='newdgrid'> 
+                  
                     <div class="NewsCT">
                       <div className='NewsImg2'>
                       <img src={NewsImg2} alt='News-img2'></img>
@@ -111,7 +113,7 @@ const News = () => {
       <section id='LetNews-section'>
       <div className='container'>
         <div className='row'>
-          <div className='col-lg-8 col-md-8 LetNews1'>
+          <div className='col-lg-8 col-md-8 LetNews'>
             <div class="Newtext-divider">
              LATEST
             </div>
@@ -185,16 +187,16 @@ const News = () => {
       </div>
       </section>
 
-      <section id='Blog-slider'>
+      {/* <section id='Blog-slider'>
       <div className='container'>
         <div className='Latest-title'>
           <h3>Latest News</h3>
         </div>
         <div className='letslider2'>
-          {/* <Letestslider apidata={data}/>        */}
+          <Letestslider apidata={data}/>       
         </div>
       </div>
-      </section>
+      </section> */}
     </div>
   )
 }

@@ -12,7 +12,7 @@ import { Navigation, Pagination } from "swiper";
 import { Link } from 'react-router-dom';
 
 
-const Letestslider = ({apidata}) => {
+const NewsArticalInvest = ({apidata}) => {
   if(apidata){
     var parsed = apidata.rss.channel.item
     console.log(apidata.rss.channel.item)
@@ -30,25 +30,16 @@ const Letestslider = ({apidata}) => {
         return(
               <>
                  <a href= {items.link._cdata}>
-                <div className='letest-artical'>
-                <div className='LetestArtical1'>
-                <div className='LetestArticalImg'>
-                <img src={items["media:content"]._attributes.url} alt='slide'></img>
-                </div>
-                <div className='LetestArticalDes'>
-                    <div className='newsArtical-title'>
-                 
-
-                    <h3>{items.title._cdata}</h3>
+                 <div className='newdgrid'> 
                   
+                  <div class="NewsCT">
+                    <div className='NewsImg2'>
+                    <img src={items["media:content"]._attributes.url} alt='slide'></img>
                     </div>
-                    <div className='newsArtical-des'>
-                    <p>In the 2021-22 fiscal, Century Plyboards posted a net profit of ₹313.15 crore over a turnover of ₹3,050.09 crore and is expecting a 20-25 per cent growth in 
-                    revenue this fiscal.</p>
-                    </div>                 
+                    <span className='newsTitle'>{items.title._cdata}</span> 
+                    <span className='news-des'>The list shines a spotlight on influential individuals shaping business in 2022.</span> 
+                  </div>                 
                 </div>
-                </div>
-            </div>
             </a>
             </>
         )
@@ -59,4 +50,4 @@ const Letestslider = ({apidata}) => {
   )
 }
 
-export default Letestslider;
+export default NewsArticalInvest;

@@ -154,7 +154,9 @@ br {
     font-family: 'Arial Bold', sans-serif;
 
   }
-  
+  .letestartical-grid a {
+    text-decoration: none;
+  }
   .Newtext-divider::before {
     margin-right: var(--text-divider-gap);
     
@@ -189,6 +191,7 @@ br {
     font-size: 14px;
     line-height: 24px;
     font-family: Arial , sans-serif;
+    color: #212529;
 }
 .letestartical-grid {
     display: grid;
@@ -235,7 +238,7 @@ br {
 #LetNews-section .slide-btn {
     padding-top: 40px;
 }
-#LetNews-section button.Newsbtn {
+ button.Newsbtn {
     border: none;
     background-color: transparent;
     font-size: 12px;
