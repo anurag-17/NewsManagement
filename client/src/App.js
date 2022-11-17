@@ -17,6 +17,7 @@ import { AddContent } from './component/AddContent';
 import { Xmltojson } from './component/Xmltojson';
 import News from './component/News';
 import Learn from './component/Learn';
+import { AboutContent } from './component/AboutContent';
 
 function App() {
   let location = useLocation()
@@ -31,7 +32,7 @@ if(data !== null){
   return (
     <>
       <div className='App'>
-          {location.pathname !== "/admin" && location.pathname !== "/admindash" && location.pathname !== "/addblogs" && location.pathname !== "/viewnews" && location.pathname !== "/viewblogs" && location.pathname !== "/addnews" && location.pathname !=="/"&&location.pathname!=="/addcontent" &&<Navbarmenu/>}
+          {location.pathname !== "/admin" && location.pathname !== "/admindash" && location.pathname !== "/addblogs" && location.pathname !== "/viewnews" && location.pathname !== "/viewblogs" && location.pathname !== "/addnews" && location.pathname !=="/"&&location.pathname!=="/addcontent" && location.pathname!=="/aboutcontent"&&<Navbarmenu/>}
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/blog' element={<Blog/>} />
@@ -46,10 +47,11 @@ if(data !== null){
             <Route path='/viewblogs' element={<Viewblogs />} />
             <Route path='/loader' element={<Loader/>} />
             <Route path='/addcontent' element={<AddContent/>} />
+            <Route  path = "/aboutcontent" element={<AboutContent/>}/>
             <Route path='/xml' element={<Xmltojson/>} />
       
         </Routes>
-          {location.pathname !== "/admin" && location.pathname !== "/admindash" && location.pathname !== "/addblogs" && location.pathname !== "/viewnews" && location.pathname !== "/viewblogs" && location.pathname !== "/addnews"&&location.pathname!=="/addcontent" && <Footer/>}
+          {location.pathname !== "/admin" && location.pathname !== "/admindash" && location.pathname !== "/addblogs" && location.pathname !== "/viewnews" && location.pathname !== "/viewblogs" && location.pathname !== "/addnews"&&location.pathname!=="/addcontent" && location.pathname!=="/aboutcontent"&&<Footer/>}
       </div>
     </>
   );

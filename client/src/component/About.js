@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import about1 from './Images/who-about.jpg';
 import './About.css';
 import Liveimg6 from './Images/livepay.png';
@@ -6,60 +6,85 @@ import {AnimatedOnScroll} from "react-animated-css-onscroll";
 import valueImg1 from './Images/Equality.svg';
 import valueImg2 from './Images/Easy.svg';
 import valueImg3 from './Images/Empowerment.svg';
+import axios from 'axios';
+import { Loader } from './Common/Loader';
 
 
 
 const About = () => {
+const [content,setContent] = useState([])
+const [loading,setLoading] = useState(false)
+const getaboutdata = async()=>{
+  setLoading(true)
+  const res = await axios.get("/api/auth/getaboutcontent")
+  if(res){
+    setContent(res.data)
+    setLoading(false)
+  }
+}
+
+
+useEffect(()=>{
+getaboutdata()
+},[])
+
   return (
+    <>
+    {
+      loading?<Loader/>:
     <div className='body-main'>
-      <section id='banner'>
-          <div className='container-fluid banner-bg'>
-            <div className='row Banner-main'>
-            <div className='Banner-title'>
-              <AnimatedOnScroll animationIn="fadeInUp" animationOut="fadeInUp"> <h2>KNOW US BETTER</h2>
-</AnimatedOnScroll>
-            </div>
-            </div>
-          </div>
-      </section>
-
-      <section id='AbWho-section'>
-        <div className='container'>
-          <div className='Who-About'>
-            <div className='row who-alin'>
-              <div className='col-lg-6 col-md-6'>
-                <h3>Who we are</h3>
-                 <p>Bullsmart is driven by the vision of developing an investment platform with cutting edge investment tools, machine learning, smart financial & investment technologies provider in
-                   Asia & in demand by retail stock investors from the millennial circle.  </p>
-                 <p>Bullsmart is committed to reliability, trustworthy, affordable & safe instruments for all the young investors. Bullsmart’s Stock Academy, Stocks & Mutual Fund Services can be accessed online at various levels of our society.</p>  
+      {
+        content.map((items,index)=>{
+          return(
+            <div>
+            <section id='banner'>
+                <div className='container-fluid banner-bg'>
+                  <div className='row Banner-main'>
+                  <div className='Banner-title'>
+                    <AnimatedOnScroll animationIn="fadeInUp" animationOut="fadeInUp"> <h2>{items.headline}</h2>
+                    </AnimatedOnScroll>
+                  </div>
+                  </div>
+                </div>
+            </section>
+      
+            <section id='AbWho-section'>
+              <div className='container'>
+                <div className='Who-About'>
+                  <div className='row who-alin'>
+                    <div className='col-lg-6 col-md-6'>
+                      <h3>{items.title_1}</h3>
+                       <p style={{whiteSpace:"pre-wrap"}}>{items.description_1}</p>
+                    </div>
+                    <div className='col-lg-6 col-md-6'>
+                     <div className='who-img'>
+                      <img src={items.main_image} alt='aboutimg'></img>
+                     </div>
+                    </div>
+                  </div>
+                </div>
+      
+                <div className='Mission'>
+                  <div className='row'>
+                    <div className='col-lg-6 col-md-6'>
+                      <h3>{items.title_2}</h3>
+                      <p>{items.description_2}</p>
+                    </div>
+                    <div className='col-lg-6 col-md-6'>
+                      <h3>{items.title_3}</h3>
+                      <p>{items.description_3}
+      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className='col-lg-6 col-md-6'>
-               <div className='who-img'>
-                <img src={about1} alt='aboutimg'></img>
-               </div>
-              </div>
+            </section>
+          
             </div>
-          </div>
-
-          <div className='Mission'>
-            <div className='row'>
-              <div className='col-lg-6 col-md-6'>
-                <h3>Our Mission</h3>
-                <p>We are new age startup that uses technology to help young investors to start investing and help them save their money in the most 
-                  efficient and effective manner.</p>
-              </div>
-              <div className='col-lg-6 col-md-6'>
-                <h3>Our Vision</h3>
-                <p>To become Asia’s Most desirable securities market company and participate in the developement of the indian capital market to be a world-renowned investment service 
-                  provider.
-
-</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    
+          )
+        })
+      }
+  
       <section id='live-section'>
       <div className='container'>
         <div className='Live-main'>
@@ -126,6 +151,9 @@ const About = () => {
       </div>
       </section>
     </div>
+    }
+    </>
+
   )
 }
 

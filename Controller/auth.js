@@ -4,6 +4,7 @@ const Blogs = require("../Model/Blogs");
 const catchAsyncError = require("../Errorhandlers/catchAsyncError");
 const ErrorResponse = require("../Utlis/errorresponse");
 const Content = require("../Model/Content")
+const About = require("../Model/Aboutcontent")
 const jwt = require("jsonwebtoken");
 const { query } = require("express");
 var ObjectId = require('mongodb').ObjectId
@@ -206,7 +207,6 @@ exports.addcontent = catchAsyncError(
     }
 )
 
-
 exports.updateContent = catchAsyncError(
     async(req,res,next)=>{
       const data =   await Content.findByIdAndUpdate(req.body.id,{
@@ -223,8 +223,52 @@ exports.updateContent = catchAsyncError(
     }
 )
 
-
 exports.getcontent = catchAsyncError(   async(req,res,next)=>{
     const data =  await Content.find()
       return res.status(200).json(data)
   })
+
+
+
+exports.aboutcontent = catchAsyncError(
+    async(req,res,next)=>{
+      const data =   await About.create({
+         headline:req.body.headline,
+         title_1:req.body.title_1,
+         title_2:req.body.title_2,
+         title_3:req.body.title_3,
+         description_1:req.body.description_1,
+         description_2:req.body.description_2,
+         description_3:req.body.description_3,
+         banner_image:req.body.banner_image,
+         main_image:req.body.main_image
+        })
+        return res.status(201).json(data)
+    }
+)
+
+exports.updateabout = catchAsyncError(
+    async(req,res,next)=>{
+        const data = await About.findByIdAndUpdate(req.body.id,{
+            headline:req.body.headline,
+            title_1:req.body.title_1,
+            title_2:req.body.title_2,
+            title_3:req.body.title_3,
+            description_1:req.body.description_1,
+            description_2:req.body.description_2,
+            description_3:req.body.description_3,
+            banner_image:req.body.banner_image,
+            main_image:req.body.main_image
+        })
+        return res.status(200).json(data)
+    }
+
+)
+
+exports.getaboutcontent= catchAsyncError(
+    async(req,res,next)=>{
+        const data = await About.find()
+        return res.status(200).json(data)
+    }
+
+)
