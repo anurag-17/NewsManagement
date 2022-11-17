@@ -273,3 +273,27 @@ br {
 
 
 /* LetNews-section End */
+
+
+/* responsive */
+@media (max-width:992px) {
+    #News-section {
+        padding: 30px 0px 30px 0px;
+    }
+    .newsleft1 {
+        padding-right: 30px;
+    }
+    .NewsImg2 img {
+        width: 86px;
+        height: 80px;
+        object-fit: cover;
+    }
+    #News-section .NewsImg img {
+        height: auto;
+        object-fit: cover;
+    }
+}
+
+@media (max-width:767px) {
+   
+}
