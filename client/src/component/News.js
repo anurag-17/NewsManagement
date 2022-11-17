@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import NewsArtical from './NewsArtical';
+import TypeAnimation from './TypeAnimation';
 import NewsArticalInvest from './NewsArticalInvest';
 import NewsImg1 from './Images/NewsImg1.webp';
 import NewsImg2 from './Images/NewsImg2.webp';
@@ -38,7 +39,8 @@ const News = () => {
           <div class="typewriter">
             <Typewriter
             onInit={(typewriter)=> {
-            typewriter              
+            typewriter     
+                    
             .typeString("Smart People")              
             .pauseFor(1000)
             .deleteAll()            
@@ -46,7 +48,9 @@ const News = () => {
             .start();
             }}
             />
+          
           </div>
+          <TypeAnimation/>
         </div>
       </section>
       
