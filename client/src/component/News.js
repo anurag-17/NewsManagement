@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import NewsArtical from './NewsArtical';
+import TypeAnimation from './TypeAnimation';
 import NewsArticalInvest from './NewsArticalInvest';
 import NewsImg1 from './Images/NewsImg1.webp';
 import NewsImg2 from './Images/NewsImg2.webp';
@@ -10,6 +11,7 @@ import Liveimg6 from './Images/livepay.png';
 import axios from 'axios';
 import './News.css'
 import { AnimatedOnScroll } from 'react-animated-css-onscroll';
+import Typical from 'react-typical'
 
 import Typewriter from "typewriter-effect";
 const convert = require("xml-js")
@@ -36,16 +38,14 @@ const News = () => {
       <section id='News-Title'>
         <div className='container'>
           <div class="typewriter">
-            <Typewriter
-            onInit={(typewriter)=> {
-            typewriter              
-            .typeString("Smart People")              
-            .pauseFor(1000)
-            .deleteAll()            
-            .typeString("Investment")
-            .start();
+          <h2>Smart</h2>            
+          <Typewriter
+            options={{
+              strings: ['People', 'Investment'],
+              autoStart: true,
+              loop: true,
             }}
-            />
+          />             
           </div>
         </div>
       </section>
@@ -64,7 +64,7 @@ const News = () => {
                   in revenue this fiscal.</p>
               </div>
               </div>
-              <div className='col-lg-4 col-md-4'>
+              <div className='col-lg-4 col-md-4 newsleft2'>
                 <div className='newsright'>
                   <div className='newdgrid'> 
                   <NewsArticalInvest apidata={data}/>
