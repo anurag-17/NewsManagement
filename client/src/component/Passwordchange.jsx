@@ -60,7 +60,8 @@ export const Passwordchange = () => {
                     <div className="avatar">
                         <img src={avatar} />
                     </div>
-                    <h2>OTP</h2>
+                    <h2 className={display ? "abc" : ""}>OTP</h2>
+                    <h2 className={display ? "" : "abc"}>New Password</h2>
                     <h3 className={display ? "abc" : ""}>Enter recieved otp</h3>
                     <h3 className={display ? "" : "abc"}>Enter new password</h3>
 
