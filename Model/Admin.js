@@ -9,6 +9,9 @@ const adminSchema = new mongoose.Schema({
         type : String,
         required: [true, "Provide passcode"],
         
+    },
+    "otp" : {
+        type : String
     }
 })
 const Admin = mongoose.model("Admin", adminSchema)

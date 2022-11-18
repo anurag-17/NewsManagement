@@ -16,39 +16,42 @@ import { Loader } from './component/Common/Loader';
 import { AddContent } from './component/AddContent';
 import { Xmltojson } from './component/Xmltojson';
 import News from './component/News';
+import { ForgotPassword } from './component/ForgotPassword';
+import { Passwordchange } from './component/Passwordchange';
 
 function App() {
   let location = useLocation()
 
-const data = JSON.parse(localStorage.getItem('newstoken'))
+  const data = JSON.parse(localStorage.getItem('newstoken'))
 
-if(data !== null){
-  if(Date.now()>data.expiry){
-    localStorage.removeItem("newstoken")
+  if (data !== null) {
+    if (Date.now() > data.expiry) {
+      localStorage.removeItem("newstoken")
+    }
   }
-}
   return (
     <>
       <div className='App'>
-          {location.pathname !== "/admin" && location.pathname !== "/admindash" && location.pathname !== "/addblogs" && location.pathname !== "/viewnews" && location.pathname !== "/viewblogs" && location.pathname !== "/addnews" && location.pathname !=="/"&&location.pathname!=="/addcontent" &&<Navbarmenu/>}
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/blog' element={<Blog/>} />
-            <Route path='/about' element={<About />} />
-            <Route path='/addnews' element={<AddNews />} />
-            <Route path='/admin' element={<Admin />} />
-            <Route path='/admindash' element={<AddNews/>} />
-            <Route path='/addblogs' element={<AddBlogs />} />
-            <Route path='/viewnews' element={<ViewNews />} />
-            <Route path='/News' element={<News/>} />
-          
-            <Route path='/viewblogs' element={<Viewblogs />} />
-            <Route path='/loader' element={<Loader/>} />
-            <Route path='/addcontent' element={<AddContent/>} />
-            <Route path='/xml' element={<Xmltojson/>} />
-      
+        {location.pathname !== "/admin" && location.pathname !== "/admindash" && location.pathname !== "/addblogs" && location.pathname !== "/viewnews" && location.pathname !== "/viewblogs" && location.pathname !== "/addnews" && location.pathname !== "/" && location.pathname !== "/addcontent" && location.pathname !== "/forgotpassword" && location.pathname !== "/passwordchange"  && <Navbarmenu />}
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/blog' element={<Blog />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/addnews' element={<AddNews />} />
+          <Route path='/admin' element={<Admin />} />
+          <Route path='/admindash' element={<AddNews />} />
+          <Route path='/addblogs' element={<AddBlogs />} />
+          <Route path='/viewnews' element={<ViewNews />} />
+          <Route path='/News' element={<News />} />
+
+          <Route path='/viewblogs' element={<Viewblogs />} />
+          <Route path='/loader' element={<Loader />} />
+          <Route path='/addcontent' element={<AddContent />} />
+          <Route path='/xml' element={<Xmltojson />} />
+          <Route path='/forgotpassword' element={<ForgotPassword />} />
+          <Route path='/passwordchange' element={<Passwordchange/>}/>
         </Routes>
-          {location.pathname !== "/admin" && location.pathname !== "/admindash" && location.pathname !== "/addblogs" && location.pathname !== "/viewnews" && location.pathname !== "/viewblogs" && location.pathname !== "/addnews"&&location.pathname!=="/addcontent" && <Footer/>}
+        {location.pathname !== "/admin" && location.pathname !== "/admindash" && location.pathname !== "/addblogs" && location.pathname !== "/viewnews" && location.pathname !== "/viewblogs" && location.pathname !== "/addnews" && location.pathname !== "/addcontent" && location.pathname !== "/forgotpassword" && location.pathname !== "/passwordchange" && <Footer />}
       </div>
     </>
   );
