@@ -1363,9 +1363,7 @@ div#Latest-slider {
     #Industry-section .text-vertical h3 {
         font-size: 33px;
     }
-    h3 {
-        text-align: center;
-    }
+  
 }
 
       @media (max-width:500px) {

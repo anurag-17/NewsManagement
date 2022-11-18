@@ -781,6 +781,9 @@ section#New-section {
     font-size: 40px;
     line-height: 52px;
 }
+#live-section {
+    margin: 0px 0px 30px 0px;
+}
 }
 
 
