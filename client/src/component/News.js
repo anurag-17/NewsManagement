@@ -38,24 +38,15 @@ const News = () => {
       <section id='News-Title'>
         <div className='container'>
           <div class="typewriter">
-            {/* <Typewriter
-            onInit={(typewriter)=> {
-            typewriter   
-            .typeString("Smart People")              
-            .pauseFor(1000)
-            .deleteAll()            
-            .typeString("Smart Investment")
-            .start();
+          <h2>Smart</h2>            
+          <Typewriter
+            options={{
+              strings: ['People', 'Investment'],
+              autoStart: true,
+              loop: true,
             }}
-            /> */}
-          
+          />             
           </div>
-          <TypeAnimation/>
-          <Typical
-        steps={['Smart People', 2000,'Smart Investment', 2000]}
-        loop={Infinity}
-        wrapper="p" className='typeword'
-      />
         </div>
       </section>
       
