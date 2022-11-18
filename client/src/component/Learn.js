@@ -24,6 +24,23 @@ const Learn = () => {
             </div>
           </div>
         </section>
+        <section id='LearnAbout-sec'>
+        <div className='container'>
+          <div className='learnabout'>
+            <div className='row L-aboutAlin'>
+              <div className='col-lg-6 col-md-6'>
+                  <h3>The building blocks of your financial journey</h3>
+                  <p>What you need to know about investing from the get-go.</p>
+              </div>
+              <div className='col-lg-6 col-md-6'>
+                  <div className='learnaboutImg1'>
+                 <img src={tranding1}></img>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </section>
 
         <section id='tranding-section'>
           <div className='container'>

@@ -50,6 +50,22 @@ section#Learn-banner {
     flex-grow: 1;
   }
 
+/* Learn About section start */
+section#LearnAbout-sec {
+    padding: 30px 0px 0px 0px;
+}
+.L-aboutAlin {
+    align-items: center;
+}
+.learnabout h3 {
+    color: #1A3073;
+    font-size: 40px;
+    line-height: 40px;
+    font-weight: 700;
+    font-family: "Montserrat", Sans-serif;
+    padding-bottom: 15px;
+}
+
 
 /* tranding-section start */
 

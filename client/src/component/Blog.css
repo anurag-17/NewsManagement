@@ -1248,7 +1248,7 @@ div#Latest-slider {
             text-align: center;
         }
         #Planning-section ,  #BInvest-section ,  #Saving-section , #Industry-section {
-            padding: 30px 0px !important;
+            padding: 30px 15px !important;
             margin: 0px !important;
         }   
         #Blog-sewction .BContent {
@@ -1300,7 +1300,9 @@ div#Latest-slider {
         #Slider1 .latest-img img {
             text-align: center;
             width: 100%;
-            height: auto;
+            height: 150px;
+            max-width: 100%;
+            object-fit: cover;
         }
         #Slider2 .rec-arrow-left {
             position: inherit;
@@ -1363,7 +1365,16 @@ div#Latest-slider {
     #Industry-section .text-vertical h3 {
         font-size: 33px;
     }
-  
+    .Latest-title h3 {
+        text-align: center;
+    }
+    #Blog-banner .Banner-main {
+        padding: 100px 0px !important; 
+    }
+    #Blog-banner .Banner-title h2 {
+        font-size: 35px !important;
+        line-height: 46px !important;
+    }
 }
 
       @media (max-width:500px) {
@@ -1382,6 +1393,9 @@ div#Latest-slider {
         #BInvest-section .BInvest-grid {
             grid-template-columns: repeat(1,1fr);
             grid-gap: 20px;
+        }
+        #Industry-section .Binveshape:before {
+            height: auto;
         }
       }
 

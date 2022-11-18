@@ -77,7 +77,7 @@ const News = () => {
                   <NewsArticalInvest apidata={data}/>                 
                   </div>
                   <div className='slide-btn'>
-                      <button className='Newsbtn'><a href='guid-bt1'>Explore more  </a></button>
+                      <button className='Newsbtn'><a to={`/News`} >Explore more  </a></button>
                   </div>
                 </div>
               </div>
@@ -141,7 +141,7 @@ const News = () => {
              LATEST
             </div>
             <LetestNewstab/>
-            
+             
           </div>
         </div>
       </section>

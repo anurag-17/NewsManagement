@@ -46,28 +46,11 @@ export const Blogslider = () => {
       navigation={true}        
       modules={[Pagination, Navigation]}
       className="mySwiper"  
-    >        
+     >        
   
-  {/* {
-    parsed&&
-    parsed.map((items,index)=>{
-      console.log(items["media:content"]._attributes)
-      return(
-      <SwiperSlide>
-      <div id='Latest-slider'>
-          <div className='latest-img'>
-            <img src={items["media:content"]._attributes.url} alt='slide'></img>
-          </div>
-          <h4 className='time-head'>2 min read1</h4>
-          <h3>{items.title._cdata}</h3>
-          <p>Smt. Madhabi Puri Buch, the...</p>
-        </div>
-      </SwiperSlide>
-      )
-    })
-  } */}
 
-<SwiperSlide>
+
+       <SwiperSlide>
         <div id='Latest-slider'>
             <div className='latest-img'>
               <img src={letestslide1} alt='slide'></img>
