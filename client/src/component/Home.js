@@ -43,7 +43,7 @@ setContent(res.data)
         <div className='container'>
           <div className='Home-slide'>
             <div className='row home-alin'>
-            {/* <div className='col-lg-8 col-md-6 slideb1'>
+            <div className='col-lg-8 col-md-6 slideb1'>
               <AnimatedOnScroll animationIn="fadeIn" animationOut="fadeIn"> 
               <h2>Smart <span>People. </span></h2>
                 <h2>Smart <span>Investment.</span> </h2>
@@ -57,29 +57,29 @@ setContent(res.data)
                <div className='Banner-img'>
                 <img src={Bnnerimg} alt='bannerimg'></img>
                </div>
-              </div> */}
+              </div>
               {
-content.map((items,index)=>{
-  return(
-    <>
-          <div className='col-lg-8 col-md-6 slideb1'>
-              <AnimatedOnScroll animationIn="fadeIn" animationOut="fadeIn"> 
-              <h2>{items.main_title_1}  <span>{items.main_title_2}</span></h2>
-                <h2>{items.main_subtitle_1}  <span>{items.main_subtitle_2}</span> </h2>
-              </AnimatedOnScroll>               
-                <p>{items.tagline}</p>
-                <div className='bannerbtn'>
-                   <button className='know-btn'><a href='#'>KNOW MORE</a></button>
-                </div>
-              </div>
-              <div className='col-lg-4 col-md-6'>
-               <div className='Banner-img'>
-                <img src={Bnnerimg} alt='bannerimg'></img>
-               </div>
-              </div>
-    </>
-  )
-})
+// content.map((items,index)=>{
+//   return(
+//     <>
+//           <div className='col-lg-8 col-md-6 slideb1'>
+//               <AnimatedOnScroll animationIn="fadeIn" animationOut="fadeIn"> 
+//               <h2>{items.main_title_1}  <span>{items.main_title_2}</span></h2>
+//                 <h2>{items.main_subtitle_1}  <span>{items.main_subtitle_2}</span> </h2>
+//               </AnimatedOnScroll>               
+//                 <p>{items.tagline}</p>
+//                 <div className='bannerbtn'>
+//                    <button className='know-btn'><a href='#'>KNOW MORE</a></button>
+//                 </div>
+//               </div>
+//               <div className='col-lg-4 col-md-6'>
+//                <div className='Banner-img'>
+//                 <img src={Bnnerimg} alt='bannerimg'></img>
+//                </div>
+//               </div>
+//     </>
+//   )
+// })
               }
             
             </div>
