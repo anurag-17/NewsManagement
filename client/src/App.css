@@ -37,6 +37,8 @@ h3 {
     padding: 90px 10px 0px 10px;
 }
 }
-.loader{
-    
+@media (max-width:992px) {
+.body-main {
+    padding: 67px 0px 0px 0px;
+}
 }
