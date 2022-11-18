@@ -6,7 +6,7 @@
  .Typewriter__wrapper {
     font-size: 39px;
     line-height: 56px;
-    color: #1F286F !important;
+    color: #4af8d5;
     font-weight: bold;
     padding-top: 40px;
 }
@@ -22,8 +22,22 @@ p.typeword {
     font-size: 40px;
     font-weight: 600;
 }
-.styles_typicalWrapper__1_Uvh::after{
-    color: #24ffc4;
+
+.typewriter {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.typewriter h2{
+    color: #21246f;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 56px;
+}
+.Typemain {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
 }
 /* news title start */
 

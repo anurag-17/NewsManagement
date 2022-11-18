@@ -208,18 +208,16 @@ li {
   margin:0px 0 0 0;
 }
 .main-nav .menubar__button:hover {
-  /* background-color: #0f71f2; */
   background-color: transparent !important;
 }
 .main-nav .menu-item:hover > a {
-  /* color: #07a8ff !important; */
   color: #fff !important;
   border-bottom: 2px solid #4AF8D5;
 }
 .main-nav .menubar__button {
   display: block!important;
   float: right;
-  background-color: #0f2c90;
+  /* background-color: #0f2c90; */
   color: #fff;
   padding: 6px 7px;
   border-radius: 5px;
