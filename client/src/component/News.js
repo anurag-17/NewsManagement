@@ -11,6 +11,7 @@ import Liveimg6 from './Images/livepay.png';
 import axios from 'axios';
 import './News.css'
 import { AnimatedOnScroll } from 'react-animated-css-onscroll';
+import Typical from 'react-typical'
 
 import Typewriter from "typewriter-effect";
 const convert = require("xml-js")
@@ -37,20 +38,24 @@ const News = () => {
       <section id='News-Title'>
         <div className='container'>
           <div class="typewriter">
-            <Typewriter
+            {/* <Typewriter
             onInit={(typewriter)=> {
-            typewriter     
-                    
+            typewriter   
             .typeString("Smart People")              
             .pauseFor(1000)
             .deleteAll()            
-            .typeString("Investment")
+            .typeString("Smart Investment")
             .start();
             }}
-            />
+            /> */}
           
           </div>
           <TypeAnimation/>
+          <Typical
+        steps={['Smart People', 2000,'Smart Investment', 2000]}
+        loop={Infinity}
+        wrapper="p" className='typeword'
+      />
         </div>
       </section>
       
@@ -68,7 +73,7 @@ const News = () => {
                   in revenue this fiscal.</p>
               </div>
               </div>
-              <div className='col-lg-4 col-md-4'>
+              <div className='col-lg-4 col-md-4 newsleft2'>
                 <div className='newsright'>
                   <div className='newdgrid'> 
                   <NewsArticalInvest apidata={data}/>

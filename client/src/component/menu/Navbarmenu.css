@@ -208,7 +208,8 @@ li {
   margin:0px 0 0 0;
 }
 .main-nav .menubar__button:hover {
-  background-color: #0f71f2;
+  /* background-color: #0f71f2; */
+  background-color: transparent !important;
 }
 .main-nav .menu-item:hover > a {
   /* color: #07a8ff !important; */
@@ -218,11 +219,11 @@ li {
 .main-nav .menubar__button {
   display: block!important;
   float: right;
-  background-color: #080808;
+  background-color: #0f2c90;
   color: #fff;
   padding: 6px 7px;
   border-radius: 5px;
-  margin: 8px auto 0;
+  margin: 0px auto 0;
   cursor: pointer;
   position: relative;
   z-index: 10037;
@@ -231,7 +232,6 @@ li {
   font-size: 27px;
 }
 .main-nav ul.menuq2 {
-
   display: block!important;
   position: absolute;
   left: 0;
@@ -240,7 +240,9 @@ li {
   border-bottom: 3px solid #0f71f2;
   right: 0;
   padding-bottom: 17px;
-  padding-top: 57px;
+  padding-top: 15px;
+  width: 100%;
+  top: 67px;
 }
 .main-nav .menu-item a {
   margin: 10px 17px;
@@ -271,5 +273,23 @@ li {
 .menu-item .sub__menus__full a {
   text-align: left;
 }
+.menu-item a {
+  font-size: 14px;
+  line-height: 26px;
+  padding: 0px;
+}
+.menuq1 .active {
+  color: #1F286F !important;
+  border-bottom: 2px solid transparent;
+}
+}
+
+
+@media(max-width:767px){
+
+}
+
+
+@media(max-width:667px){
 
 }
