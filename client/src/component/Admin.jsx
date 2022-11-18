@@ -4,7 +4,7 @@ import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom'
 import avatar from "./Images/logo_crop.png"
 import "./Admin.css"
-
+import swal from 'sweetalert';
 export const Admin = () => {
 
 const [token, setToken] = useState(JSON.parse(localStorage.getItem("newstoken")))
@@ -40,7 +40,7 @@ useEffect(()=>{
             navigate("/addnews")
          }).catch((e)=>{
            
-            alert(e.response.data)
+            swal(e.response.data)
          })
 
     }

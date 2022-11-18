@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import emailjs from '@emailjs/browser'
 import "./ForgotPassword.css"
+import swal from 'sweetalert';
 
 export const ForgotPassword = () => {
     const [admindata, setAdmindata] = useState({
