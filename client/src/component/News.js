@@ -40,22 +40,12 @@ const News = () => {
           <div class="typewriter">
           <h2>Smart</h2>            
           <Typewriter
-            onInit={(typewriter)=> {
-            typewriter   
-            .typeString(" People")        
-            .pauseFor(1000)
-            .deleteAll()            
-            .typeString(" Investment")
-            .start();
+            options={{
+              strings: ['People', 'Investment'],
+              autoStart: true,
+              loop: true,
             }}
-            loop={true}
-            cursor
-            cursorStyle="|"
-            typeSpeed={70}
-            deleteSpeed={50}
-            delaySpeed={1000}
-            />  
-            
+          />             
           </div>
         </div>
       </section>
