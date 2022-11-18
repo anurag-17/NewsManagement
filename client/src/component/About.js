@@ -10,7 +10,6 @@ import axios from 'axios';
 import { Loader } from './Common/Loader';
 
 
-
 const About = () => {
 const [content,setContent] = useState([])
 const [loading,setLoading] = useState(false)
