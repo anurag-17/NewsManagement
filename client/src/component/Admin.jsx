@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
 import axios from 'axios';
-import { useNavigate } from 'react-router';
+import { Link, useNavigate } from 'react-router-dom'
 import avatar from "./Images/logo_crop.png"
 import "./Admin.css"
-
+import swal from 'sweetalert';
 export const Admin = () => {
 
 const [token, setToken] = useState(JSON.parse(localStorage.getItem("newstoken")))
@@ -38,7 +38,11 @@ useEffect(()=>{
              }
             localStorage.setItem("newstoken", JSON.stringify(item))
             navigate("/addnews")
+         }).catch((e)=>{
+           
+            swal(e.response.data)
          })
+
     }
     return (
         <>
@@ -53,14 +57,14 @@ useEffect(()=>{
                     <form className="login-form">
                         <div className="textbox">
                             <input type="email" placeholder="Username" id="uname" name="email" onChange={input_handler} required />
-                            <span class="material-symbols-outlined"> <i class="fa fa-user-circle-o" aria-hidden="true"></i> </span>
+                            <span class="material-symbols-outlined"> <i class='fas fa-user-alt'></i> </span>
                         </div>
                         <div class="textbox">
                             <input type="password" placeholder="Password" id="pwd" name="password" onChange={input_handler} required />
                             <span class="material-symbols-outlined"><i class="fa fa-lock" aria-hidden="true"></i></span>
                         </div>
                         <button type="submit" onClick={form_handler}>LOGIN</button>
-                        {/* <a href="">Forgot your credentials?</a> */}
+                        <Link to="/forgotpassword"><a href="">Forgot your credentials?</a></Link>
                     </form>
                 </div>
             </div>

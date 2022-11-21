@@ -40,8 +40,7 @@ const Letestslider = ({apidata}) => {
                         <h3>{items.title._cdata}</h3>
                         </div>
                         <div className='newsArtical-des'>
-                        <p>In the 2021-22 fiscal, Century Plyboards posted a net profit of ₹313.15 crore over a turnover of ₹3,050.09 crore and is expecting a 20-25 per cent growth in 
-                        revenue this fiscal.</p>
+                        <p>{items.description._cdata}</p>
                         </div>                 
                     </div>
                   </div>

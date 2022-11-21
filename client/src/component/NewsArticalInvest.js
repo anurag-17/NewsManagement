@@ -15,7 +15,6 @@ import { Link } from 'react-router-dom';
 const   NewsArticalInvest = ({apidata}) => {
   if(apidata){
     var parsed = apidata.rss.channel.item
-    console.log(apidata.rss.channel.item)
   }
 
   return (
@@ -26,7 +25,6 @@ const   NewsArticalInvest = ({apidata}) => {
     {
         parsed&&
         parsed.map((items,index)=>{
-        console.log(items["media:content"]._attributes)
         return(
               <>
                  <a href= {items.link._cdata}>
