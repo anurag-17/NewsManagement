@@ -73,6 +73,12 @@ display:none;
   border-radius: 5px;
   color: white;
 }
+
+.content-box li{
+ color: white;
+}
+
+
   /* .editor-wrapper {
     width: 768px;
     border: 1px solid black;

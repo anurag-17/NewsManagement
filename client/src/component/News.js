@@ -25,14 +25,23 @@ const convert = require("xml-js")
 const News = () => {
 
   const[data,setdata] = useState()
+  const [mintdata,setMintData] = useState()
   const newApi = async()=>{
 
     const res =  await axios.get("https://corsanywhere.herokuapp.com/https://www.hindustantimes.com/feeds/rss/business/rssfeed.xml")
+    const response = await axios.get("https://corsanywhere.herokuapp.com/https://www.livemint.com/rssfeeds/news")
     const result1 = convert.xml2json(res.data,{compact: true, spaces: 4})
+    const result2 = convert.xml2json(response.data,{compact:true,spaces:4})
+    setMintData(JSON.parse(result2))
     setdata(JSON.parse(result1))
    }
-    
 
+  if(data){
+  var arr=data.rss.channel.item[0]
+    console.log(data.rss.channel.item[0])
+  
+  }
+ 
    useEffect(()=>{
     newApi()
     },[])
@@ -63,19 +72,52 @@ const News = () => {
           <div className='NewsMain'>
             <div className='row NewsAlign'>
               <div className='col-lg-8 col-md-8 newsleft1'>
-              <div className='NewsLeft'>
-                <div className='NewsImg'>
-                  <img src={NewsImg1} alt='Nes-img'></img>
-                </div>
-                <h2> Plyboards’ Keshav Bhajanka on innovation, future plans</h2>
-                <p>In the 2021-22 fiscal, Century Plyboards posted a net profit of ₹313.15 crore over a turnover of ₹3,050.09 crore and is expecting a 20-25 per cent growth 
-                  in revenue this fiscal.</p>
-              </div>
+               
+    
+                   {
+                     data&&
+                     <a style = {{textDecoration:"none"}} href={arr.link._cdata}>
+                     <div className='NewsLeft'>
+                      <div className='NewsImg'>
+                        <img src={arr["media:content"]._attributes.url} alt='Nes-img'></img>
+                      </div>
+                      <h2> {arr.title._cdata}</h2>
+                      <p style = {{color:"black"}}>{arr.description._cdata}</p>
+                    </div>
+                     </a>
+                   }
+                    
+              
+    
+
               </div>
               <div className='col-lg-4 col-md-4 newsleft2'>
                 <div className='newsright'>
                   <div className='newdgrid'> 
+
                   <NewsArticalInvest apidata={data}/>                 
+                  <NewsArticalInvest apidata={mintdata}/>
+                    {/* <div class="NewsCT">
+                      <div className='NewsImg2'>
+                      <img src={NewsImg2} alt='News-img2'></img>
+                      </div>
+                      <span className='newsTitle'>Delhi University notifies batch sizes for UG, PG courses, plans to hike PhD thesis evaluation fees</span> 
+                      <span className='news-des'>The list shines a spotlight on influential individuals shaping business in 2022.</span> 
+                    </div>
+                    <div class="NewsCT">
+                      <div className='NewsImg2'>
+                      <img src={NewsImg3} alt='News-img2'></img>
+                      </div>
+                      <span className='newsTitle'>Delhi University notifies batch sizes for UG, PG courses, plans to hike PhD thesis evaluation fees</span> 
+                      <span className='news-des'>Registrar Vikas Gupta said the university came up with the rule to observe uniformity in the teacher-student ratio across all the programmes it offers</span> 
+                    </div>
+                    <div class="NewsCT">
+                      <div className='NewsImg2'>
+                      <img src={NewsImg4} alt='News-img2'></img>
+                      </div>
+                      <span className='newsTitle'>Republicans win control of the US House with narrow margin</span> 
+                      <span className='news-des'>More than a week after Election Day and with several seats still not called, the party gained the 218 seats needed to control the chamber</span> 
+                    </div> */}
                   </div>
                   <div className='slide-btn'>
                       <button className='Newsbtn'><a to={`/News`} >Explore more  </a></button>

@@ -36,9 +36,8 @@ const Home = () => {
   }
 
    useEffect(()=>{
-   newsres()
    viewdata()
-   },[newsdata])
+   },[])
   
 
    const[data,setdata] = useState()

@@ -23,7 +23,7 @@ exports.adminlogin = catchAsyncError(
         }
         const isMatch = await Admin.findOne({ password });
         if (!isMatch) {
-            return res.status(500).json("password is not valid please register")
+            return res.status(500).json("Invalid Credentials")
         }
         const key = "asdcc345uub44200hg4ff6ujv46784ecb"
         const token = jwt.sign({
@@ -228,3 +228,76 @@ exports.getcontent = catchAsyncError(   async(req,res,next)=>{
     const data =  await Content.find()
       return res.status(200).json(data)
   })
+
+exports.validadmin = catchAsyncError (
+    async(req, res, next)=>{
+        const {email} = req.body;
+        try {
+            const admin = await Admin.findOne({email})
+            if (!admin) {
+                return res.status(500).send("Invalid email")
+            }
+        } catch (error) {
+            console.log(error);
+        }
+        res.send("otp send")
+    }
+
+) 
+exports.optsave = catchAsyncError (
+    async(req, res, next)=>{
+        const {otp ,email} = req.body
+        try {
+            await Admin.findOneAndUpdate({email}, {otp})
+        } catch (error) {
+         console.log(error);   
+        }
+        
+    }
+
+) 
+exports.otpvalid = catchAsyncError(
+    async(req, res, next)=>{
+        const {otp} = req.body
+        if (otp) {
+            try {
+                const adminotp =   await Admin.findOne({otp})
+                console.log(adminotp);
+              //   return  res.json(adminotp)
+                if (!adminotp) {
+                  return res.status(500).json("Invalid Otp")
+                }
+                if (adminotp) {
+                  return res.json(adminotp)
+                }
+              } catch (error) {
+                  console.log(error);
+              }
+              res.send("valid") 
+        }
+       if (!otp) {
+         return res.status(500).json("Invalid Otp")
+       }
+       
+    }
+    
+)
+exports.passwordchange = catchAsyncError(
+    async(req, res, next)=>{
+        const {id, newpassword} = req.body
+        console.log(req.body);
+        try {
+            await Admin.findByIdAndUpdate({_id: new ObjectId(req.body._id)},{password: newpassword, otp: ""}, (error, result)=>{
+                if (error) {
+                    console.log(error);
+                }
+                if (result) {
+                 console.log(result)   
+                 res.send("updated")
+                }
+            })
+        } catch (error) {
+            console.log(error);
+        }
+    }
+)
