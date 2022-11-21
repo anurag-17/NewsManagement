@@ -10,14 +10,17 @@ import blog1 from './Images/blog_img1.jpg';
 import blog2 from './Images/blog-img2.png';
 import blog3 from './Images/blog-img3.png';
 import blog4 from './Images/bottom-news1.webp';
-import blog5 from './Images/blog_img5.jpg';
+import blog5 from './Images/blog_img5.jpg'
 import './Home.css';
 import axios from 'axios';
 import Navbarmenu from './menu/Navbarmenu';
 import HomeNav from './menu/HomeNav';
 import {AnimatedOnScroll} from "react-animated-css-onscroll";
+import Topnews from './Topnews';
+const convert = require("xml-js")
 
 const Home = () => {
+
  const [newsdata,setNewsdata] = useState([])
  const [content,setContent] = useState([])
   const newsres = async()=>{
@@ -27,16 +30,29 @@ const Home = () => {
    })
    }
    
-const viewdata = async()=>{
-const res = await axios.get("/api/auth/getcontent")
-setContent(res.data)
-}
+  const viewdata = async()=>{
+  const res = await axios.get("/api/auth/getcontent")
+  setContent(res.data)
+  }
 
    useEffect(()=>{
    newsres()
    viewdata()
    },[newsdata])
   
+
+   const[data,setdata] = useState()
+   const newApi = async()=>{
+ 
+     const res =  await axios.get("https://corsanywhere.herokuapp.com/https://www.hindustantimes.com/feeds/rss/business/rssfeed.xml")
+     const result1 = convert.xml2json(res.data,{compact: true, spaces: 4})
+     setdata(JSON.parse(result1))
+    }
+     
+ 
+    useEffect(()=>{
+     newApi()
+     },[])
   return (
 <div className='homepage'>
       <HomeNav/>
@@ -90,12 +106,17 @@ setContent(res.data)
 
       <section id='Top-News'>        
         <div className='container'>
-          <div class="strike">
+          <div class="TopAriclnew">
               <span><h2>TOP NEWS</h2></span>
           </div>
+
+          <div className='home-news'>
+          <div className='Homenews-grid'> 
+                  <Topnews apidata={data}/>                 
+                  </div>
+          </div>
           
-          
-          <div className='row top-sec'>
+          {/* <div className='row top-sec'>
             <div className='col-md-3'>
               <div className='Topnews-1'>
                 <div className='Topnews-item'>
@@ -183,7 +204,7 @@ setContent(res.data)
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
 

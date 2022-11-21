@@ -68,15 +68,15 @@ const Blog = () => {
       </section>
 
       <section id='Blog-slider'>
-      <div className='container'>
-        <div className='Latest-title'>
-          <h3>Latest Stories</h3>
+        <div className='container'>
+          <div className='Latest-title'>
+            <h3>Latest Stories</h3>
+          </div>
+          <div className='letslider2'>
+            <Blogslider/>       
+          </div>
         </div>
-        <div className='letslider2'>
-          <Blogslider/>       
-        </div>
-      </div>
-      </section> 
+        </section>  
 
      <section id='Guid-section'>
       <div className='container'>

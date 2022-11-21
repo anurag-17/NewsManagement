@@ -174,4 +174,8 @@ ul.socillist {
     .footer-first:nth-child(1) {
         padding: 0px 0px 0px 0px;
     }
+    .footer-bottm1 {
+        padding: initial;
+    }
+    
  }

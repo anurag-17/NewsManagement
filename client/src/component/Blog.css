@@ -1403,13 +1403,13 @@ div#Latest-slider {
         .swiper-container {
           width: 200px;
         }
-        #Industry-section .text-vertical h3 {
+        /* #Industry-section .text-vertical h3 {
             transform: rotate(360deg);
             top: -82px;
             right: 0px;
             font-size: 33px;
             line-height: 83px;
-        }
+        } */
       }
       
       @media screen and (min-width: 768px) {
