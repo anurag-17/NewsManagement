@@ -34,7 +34,7 @@ const   Topnews = ({apidata}) => {
                       <img src={items["media:content"]._attributes.url} alt='slide'></img>
                     </div>
                     <h3 className='newsTitle'>{items.title._cdata}</h3> 
-                    <p className='news-des'>The list shines a spotlight on influential individuals shaping business in 2022.</p> 
+                    <p className='news-des'>{items.description._cdata}</p> 
                     <h4>By Umair Irfan</h4> 
                   </div>                 
                 </div>

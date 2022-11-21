@@ -8,6 +8,7 @@ import NewsImg3 from './Images/NewsImg3.webp';
 import NewsImg4 from './Images/NewsImg4.webp';
 import LearnImg5 from './Images/learnmore_img.png';
 import Liveimg6 from './Images/livepay.png';
+import newsvideo1 from './Images/nes-video.webp';
 import axios from 'axios';
 import './News.css'
 import LetestNewstab from './LetestNewstab';
@@ -86,7 +87,29 @@ const News = () => {
         </div>
       </section>
 
-      {/* <section id='LetNews-section'>
+      {/* <section id='newsvideo-sec'>
+        <div className='container'>
+          <div className='row video-Align'>
+            <div className='col-lg-6 col-md-6 video-left'>
+              <h4>UNDERSTAND THE NEWS WITH</h4>
+              <h3>Today, Explained</h3>
+              <button className='subcrie-btn'>subscribe</button>
+              <img src={newsvideo1} class='newsvideo1'></img>
+            </div>
+
+            <div className='col-lg-6 col-md-6 video-right'>
+              <h4>LISTEN NOW IN APP OR ON PUBLIC RADIO</h4>
+              <h3>World Cup: How 2 B a legend</h3>
+            <p>Pelé. Maradona. Ronaldo. Soccer’s greats are so good, they’re typically known by one name. How winning the World Cup can turn a player into a legend.
+
+           </p>
+              <button className='subcrie-btn'>subscribe</button>
+            </div>
+          </div>
+        </div>
+
+      </section> */}
+      <section id='LetNews-section'>
       <div className='container'>
         <div className='row'>
           <div className='col-lg-8 col-md-8 LetNews'>
@@ -132,19 +155,19 @@ const News = () => {
           </div>
         </div>
       </div>
-      </section> */}
+      </section>
 
-      <section id='Newstab-sec'>
+      {/* <section id='Newstab-sec'>
         <div className='container'>
-          <div className='Newstab-cat'>
-          <div class="Newtext-divider">
+             <div className='Newstab-cat'>
+             <div class="Newtext-divider">
              LATEST
             </div>
             <LetestNewstab/>
              
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section id='live-section'>
       <div className='container'>

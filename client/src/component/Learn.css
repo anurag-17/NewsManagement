@@ -1,8 +1,6 @@
 
 /* blog banner start */
-section#Learn-banner {
-    padding-bottom: 30px;
-}
+
 
 #Learn-banner .banner-bg{
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../component/Images/learn-Banner.jpg);
@@ -52,23 +50,217 @@ section#Learn-banner {
 
 /* Learn About section start */
 section#LearnAbout-sec {
-    padding: 30px 0px 0px 0px;
+    background-image: url(../component/Images/learn-banner-bg3.png);   
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #F3F0E6;
+}
+
+.learnabout {
+    padding: 150px 0px 230px 0px;
 }
 .L-aboutAlin {
     align-items: center;
+    text-align: center;
+    max-width: 448px;
+    margin: auto;
 }
 .learnabout h3 {
     color: #1A3073;
-    font-size: 40px;
-    line-height: 40px;
-    font-weight: 700;
-    font-family: "Montserrat", Sans-serif;
+    font-size: 137px;
+    line-height: 90px;
+    font-weight: 400;
+    font-family: 'Arial Bold', sans-serif;
     padding-bottom: 15px;
 }
+.L-aboutAlin p {
+    font-size: 24px;
+    line-height: 36px;
+    padding-top: 20px;
+}
+.learn-body {
+    background-color: #F3F0E6;
+}
+section#investing-learn {
+    padding: 60px 0px 60px 0px;
+}
+.learninvesAlign {
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    background-color: #1F286F;
+    color: #fff;
+}
+.l-invesleft {
+    width: 50%;
+    text-align: center;
+}
+.l-investdes {
+    padding: 0px 30px;
+}
+.l-investdes  h3 {
+    font-size: 40px;
+    line-height: 48px;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 10px;
+    font-family: 'Arial Bold', sans-serif;
+}
+.l-invesleft.l-investdes h4 {
+    font-size: 25px;
+    line-height: 30px;
+    padding-bottom: 30px;
+}
+.l-investdes p {
+    font-size: 18px;
+    line-height: 24px;
+}
+.learninvestimg img {
+    border-radius: 0px 10px 10px 0px;
+}
+button.neain-invst {
+    background-color: transparent;
+    border: navajowhite;
+    color: #fff;
+    font-weight: 700;
+}
+/* Topic sec section start */
 
+#topic-sec {
+    padding:0px 0px 60px 0px;
+}
+#topic-sec .Newstab-cat {
+    padding-top: 30px;
+}
+#topic-sec .nav-tabs .nav-link {
+    color: #000;
+    font-size: 14px;
+    line-height: 24px;
+    text-transform: capitalize;
+    font-family: 'Arial Bold', sans-serif;
+    font-weight: 600;
+}
+#topic-sec .Newstab-cat ul li {
+    padding-right: 15px;
+}
+#topic-sec .nav-link {
+    display: block;
+    padding: 0.5rem 1rem;
+    border-radius: 25px !important;
+    border: 1px solid #000;
+}
+#topic-sec .letest-St-date {
+    display: none;
+}
+#topic-sec  .view-btn {
+    text-align: right;
+}
+#topic-sec  button.view-btn {
+    border: none;
+}
+#topic-sec .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: #fff !important;
+    border-color: #1F286F;
+    color: #fff !important;
+    border-radius: 25px;
+    background-color: #1F286F;
+}
+#topic-sec.nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
+    color: #fff !important;
+    border-color: #1F286F;
+    border-radius: 25px;
+    background-color: #1F286F;
+}
+#topic-sec .nav-tabs {
+    border-bottom: 1px solid transparent;
+}
+
+#topic-sec .letest-Story-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 30px;
+    padding-top: 25px;
+    grid-row-gap: 50px;
+}
+#topic-sec .letest-StImg img {
+    border-radius: 15px;
+    padding-bottom: 10px;
+    height: 300px;
+    object-fit: cover;
+}
+#topic-sec .letest-Story-grid a {
+    text-decoration: none;
+}
+#topic-sec  .letestSt-cat h3 {
+    font-size: 24px;
+    line-height: 36px;
+    color: #212529;
+    font-family: Arial , sans-serif;
+    font-weight: 600;
+}
+#topic-sec .letest-St-date p {
+    font-size: 14px;
+    line-height: 24px;
+    font-style: normal;
+    color: #C79F62;
+    font-weight: 700;
+}
+/* Topic section end */
 
 /* tranding-section start */
 
+
+
+/* Learn categroies start */
+section#learnCat-sec {
+    padding: 60px 0px 60px 0px;
+}
+#learnCat-sec .section-head {
+    text-align: center;
+}
+#learnCat-sec .section-head h2 {
+    color: #1F286F;
+    font-family: Arial , sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+#learnCat-sec .learncat-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 20px;
+    max-width: 992px;
+    margin: auto;
+    padding-top: 25px;
+}
+.learnCat1 {
+    padding: 28px 15px 24px 15px;
+    box-shadow: 0 4px 20px 0 rgb(0 0 0 / 15%);
+    border-radius: 6px;
+    background-color: #fff;
+    text-align: center;
+}
+.learnCat1 h3 {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 700;
+    font-style: normal;
+    font-family: 'Arial Bold', sans-serif;
+    color: #1F286F;
+    padding: 10px 0px;
+}
+.learnCat1 p {
+    color: #616161;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    overflow: hidden;
+    margin-bottom: 5px;
+    font-family: Arial , sans-serif;
+}
+
+/* Learn categroies End */
   /* tranding start */
   #tranding-section {
     padding: 60px 0px 30px 0px;

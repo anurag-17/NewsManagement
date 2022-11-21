@@ -36,7 +36,7 @@ const   NewsArticalInvest = ({apidata}) => {
                     <img src={items["media:content"]._attributes.url} alt='slide'></img>
                     </div>
                     <span className='newsTitle'>{items.title._cdata}</span> 
-                    <span className='news-des'>The list shines a spotlight on influential individuals shaping business in 2022.</span> 
+                    <span className='news-des'>{items.description._cdata}</span> 
                   </div>                 
                 </div>
             </a>
