@@ -13,7 +13,6 @@ import { Blogslider } from './Blogslider';
 
 
 const Blog = () => {
-
   return (
     <div className='body-main'>
        <section id='Blog-banner'>

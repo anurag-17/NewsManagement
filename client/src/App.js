@@ -48,7 +48,7 @@ if(data !== null){
             <Route path='/viewblogs' element={<Viewblogs />} />
             <Route path='/loader' element={<Loader/>} />
             <Route path='/addcontent' element={<AddContent/>} />
-            <Route  path = "/aboutcontent" element={<AboutContent/>}/>
+            <Route path="/aboutcontent "element={<AboutContent/>}/>
             <Route path='/xml' element={<Xmltojson/>} />
             <Route path='/forgotpassword' element={<ForgotPassword/>} />
             <Route path='/passwordchange' element={<Passwordchange/>}/>

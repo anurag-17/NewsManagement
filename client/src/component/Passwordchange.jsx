@@ -23,8 +23,7 @@ export const Passwordchange = () => {
 
     const form_submit = async (e) => {
         e.preventDefault()
-        await axios.post("/api/auth/otpvalid", recievedOtp, { headers: { "Content-Type": "application/json" } }).then((res) => {
-
+        await axios.post("/api/auth/otpvalid",recievedOtp,{ headers: { "Content-Type": "application/json" } }).then((res) => {
             const response = res
             if (response) {
                 setDisplay(true)

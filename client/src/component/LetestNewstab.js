@@ -12,7 +12,6 @@ import Breakingviews from './newstab/Breakingviews';
 const LetestNewstab = () => {
     const [key, setKey] = useState('home');
    
-
   return (
     <div>
       <div className='Newstab-cat'>
