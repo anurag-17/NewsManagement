@@ -98,8 +98,7 @@ const Guidslider = () => {
               <img src={guidslid1} alt='slide'></img>
             </div>
           </div>
-        </SwiperSlide>
-     
+        </SwiperSlide>     
       </Swiper>
     </div>
     </div>

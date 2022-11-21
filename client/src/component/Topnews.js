@@ -12,29 +12,30 @@ import { Navigation, Pagination } from "swiper";
 import { Link } from 'react-router-dom';
 
 
-const   NewsArticalInvest = ({apidata}) => {
+const   Topnews = ({apidata}) => {
   if(apidata){
     var parsed = apidata.rss.channel.item
+    console.log(apidata.rss.channel.item)
   }
 
   return (
-    <div>
-      
-     <div className='letestartical-grid1'>       
+     <div className='topNewsdata'>       
     
     {
         parsed&&
         parsed.map((items,index)=>{
+        console.log(items["media:content"]._attributes)
         return(
               <>
                  <a href= {items.link._cdata}>
                  <div className='newdgrid'>                   
                   <div class="NewsCT">
                     <div className='NewsImg2'>
-                    <img src={items["media:content"]._attributes.url} alt='slide'></img>
+                      <img src={items["media:content"]._attributes.url} alt='slide'></img>
                     </div>
-                    <span className='newsTitle'>{items.title._cdata}</span> 
-                    <span className='news-des'>The list shines a spotlight on influential individuals shaping business in 2022.</span> 
+                    <h3 className='newsTitle'>{items.title._cdata}</h3> 
+                    <p className='news-des'>The list shines a spotlight on influential individuals shaping business in 2022.</p> 
+                    <h4>By Umair Irfan</h4> 
                   </div>                 
                 </div>
             </a>
@@ -43,8 +44,7 @@ const   NewsArticalInvest = ({apidata}) => {
       })
     }
     </div>
-    </div>
   )
 }
 
-export default NewsArticalInvest;
+export default Topnews;

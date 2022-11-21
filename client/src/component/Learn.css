@@ -50,6 +50,22 @@ section#Learn-banner {
     flex-grow: 1;
   }
 
+/* Learn About section start */
+section#LearnAbout-sec {
+    padding: 30px 0px 0px 0px;
+}
+.L-aboutAlin {
+    align-items: center;
+}
+.learnabout h3 {
+    color: #1A3073;
+    font-size: 40px;
+    line-height: 40px;
+    font-weight: 700;
+    font-family: "Montserrat", Sans-serif;
+    padding-bottom: 15px;
+}
+
 
 /* tranding-section start */
 
@@ -140,6 +156,15 @@ section#Learn-banner {
 
 
 /* responsive */
+@media (max-width:1200px) {
+#Learn-banner .Banner-main {
+    height: 20px;
+}
+.Banner-title h2 {
+    font-size: 52px;
+    line-height: 61px;
+}
+}
 @media (max-width:992px) {
     .Banner-title h2 {
         font-size: 50px;
@@ -177,6 +202,9 @@ section#Learn-banner {
     #recommand-sec .traningimg {
         padding-bottom: 6px;
     }
+    #tranding-section {
+        padding: 30px 0px 30px 0px;
+    }
 }
 
 
@@ -187,7 +215,7 @@ section#Learn-banner {
         line-height: 46px;
     }
     #Learn-banner .Banner-main {
-        height: 200px;
+        height: 230px;
     }
     #tranding-section {
         padding: 30px 0px 30px 0px;

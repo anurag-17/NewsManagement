@@ -10,8 +10,12 @@ import LearnImg5 from './Images/learnmore_img.png';
 import Liveimg6 from './Images/livepay.png';
 import axios from 'axios';
 import './News.css'
+import LetestNewstab from './LetestNewstab';
 import { AnimatedOnScroll } from 'react-animated-css-onscroll';
 import Typical from 'react-typical'
+import Tab from 'react-bootstrap/Tab';
+import Tabs from 'react-bootstrap/Tabs';
+import World from './newstab/World';
 
 import Typewriter from "typewriter-effect";
 const convert = require("xml-js")
@@ -30,6 +34,7 @@ const News = () => {
     setMintData(JSON.parse(result2))
     setdata(JSON.parse(result1))
    }
+
   if(data){
   var arr=data.rss.channel.item[0]
     console.log(data.rss.channel.item[0])
@@ -39,7 +44,10 @@ const News = () => {
    useEffect(()=>{
     newApi()
     },[])
+    
 
+    // tab section
+    const [key, setKey] = useState('home');
 
   return (
     <div className='body-main'>
@@ -85,6 +93,8 @@ const News = () => {
               <div className='col-lg-4 col-md-4 newsleft2'>
                 <div className='newsright'>
                   <div className='newdgrid'> 
+
+                  <NewsArticalInvest apidata={data}/>                 
                   <NewsArticalInvest apidata={mintdata}/>
                     {/* <div class="NewsCT">
                       <div className='NewsImg2'>
@@ -109,7 +119,7 @@ const News = () => {
                     </div> */}
                   </div>
                   <div className='slide-btn'>
-                      <button className='Newsbtn'><a href='guid-bt1'>Explore more  </a></button>
+                      <button className='Newsbtn'><a to={`/News`} >Explore more  </a></button>
                   </div>
                 </div>
               </div>
@@ -117,7 +127,8 @@ const News = () => {
           </div>
         </div>
       </section>
-      <section id='LetNews-section'>
+
+      {/* <section id='LetNews-section'>
       <div className='container'>
         <div className='row'>
           <div className='col-lg-8 col-md-8 LetNews'>
@@ -134,26 +145,26 @@ const News = () => {
             <div className='news_vedio'>
               <div className='LearnVideo'>
                 <div className='Learnimg'>
-                  <a href='https://www.livemint.com/news/india/delhi-university-notifies-batch-sizes-for-ug-pg-courses-plans-to-hike-phd-thesis-evaluation-fees-11668642455129.html'><img src={LearnImg5} alt='learnimg'></img></a>
+                  <a href='https://www.youtube.com/watch?v=btfIcDqH2nY'><img src={LearnImg5} alt='learnimg'></img></a>
                 </div>
                 <div className='Learnimg'>
-                  <a href='https://www.livemint.com/news/india/delhi-university-notifies-batch-sizes-for-ug-pg-courses-plans-to-hike-phd-thesis-evaluation-fees-11668642455129.html'><h3>Is your money depreciating?</h3></a>
-                </div>
-              </div>
-              <div className='LearnVideo'>
-                <div className='Learnimg'>
-                  <a href='https://www.livemint.com/news/india/these-2-indian-origin-entrepreneurs-feature-in-fortune-s-40-under-40-list-11668642349691.html'><img src={LearnImg5} alt='learnimg'></img></a>
-                </div>
-                <div className='Learnimg'>
-                  <a href='https://www.livemint.com/news/india/these-2-indian-origin-entrepreneurs-feature-in-fortune-s-40-under-40-list-11668642349691.html'><h3>Short Sales</h3></a>
+                  <a href='https://www.youtube.com/watch?v=btfIcDqH2nY'><h3>Is your money depreciating?</h3></a>
                 </div>
               </div>
               <div className='LearnVideo'>
                 <div className='Learnimg'>
-                  <a href='https://www.livemint.com/news/world/republicans-win-control-of-the-us-house-with-narrow-margin-11668643570725.html'><img src={LearnImg5} alt='learnimg'></img></a>
+                  <a href='https://www.youtube.com/watch?v=UW3iiGyaiv0'><img src={LearnImg5} alt='learnimg'></img></a>
                 </div>
                 <div className='Learnimg'>
-                  <a href='https://www.livemint.com/news/world/republicans-win-control-of-the-us-house-with-narrow-margin-11668643570725.html'><h3>Taxation of Mutual Fund Income.</h3></a>
+                  <a href='https://www.youtube.com/watch?v=UW3iiGyaiv0'><h3>Short Sales</h3></a>
+                </div>
+              </div>
+              <div className='LearnVideo'>
+                <div className='Learnimg'>
+                  <a href='https://www.youtube.com/watch?v=THabF_twN-w'><img src={LearnImg5} alt='learnimg'></img></a>
+                </div>
+                <div className='Learnimg'>
+                  <a href='https://www.youtube.com/watch?v=THabF_twN-w'><h3>Taxation of Mutual Fund Income.</h3></a>
                 </div>
               </div>
             </div>
@@ -163,6 +174,18 @@ const News = () => {
           </div>
         </div>
       </div>
+      </section> */}
+
+      <section id='Newstab-sec'>
+        <div className='container'>
+          <div className='Newstab-cat'>
+          <div class="Newtext-divider">
+             LATEST
+            </div>
+            <LetestNewstab/>
+             
+          </div>
+        </div>
       </section>
 
       <section id='live-section'>
