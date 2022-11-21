@@ -10,7 +10,14 @@ import recommand1 from './Images/recommanded1.png';
 import recommand2 from './Images/recommanded2.png';
 import recommand3 from './Images/recommanded3.png';
 import learninvest1 from './Images/how-to-start-investing.webp';
-import learnCat1 from './Images/Learn-Investing-Icon.webp';
+import learnCat1 from './Images/learn-cat/learn-cat1.png';
+import learnCat2 from './Images/learn-cat/learn-cat2.png';
+import learnCat3 from './Images/learn-cat/learn-cat3.png';
+import learnCat4 from './Images/learn-cat/learn-cat4.png';
+import learnCat5 from './Images/learn-cat/learn-cat5.png';
+import learnCat6 from './Images/learn-cat/learn-cat6.png';
+import learnCat7 from './Images/learn-cat/learn-cat7.png';
+import learnCat8 from './Images/learn-cat/learn-cat8.png';
 import './Learn.css';
 import LetestNewstab from './LetestNewstab';
 
@@ -90,49 +97,49 @@ const Learn = () => {
             </div>            
             <div className='learnCat1'>
               <div className='leancatimg'>
-                <img src={learnCat1} alt='cat-img'></img>
+                <img src={learnCat2} alt='cat-img'></img>
               </div>
               <h3>Retiring</h3>
               <p>Start preparing for life down the road with primers on 401Ks, IRAs, and Social Security.</p>
             </div>
             <div className='learnCat1'>
               <div className='leancatimg'>
-                <img src={learnCat1} alt='cat-img'></img>
+                <img src={learnCat3} alt='cat-img'></img>
               </div>
               <h3>Saving</h3>
               <p>Find tips for managing your checking and savings accounts, budgeting, and building an emergency fund.</p>
             </div>
             <div className='learnCat1'>
               <div className='leancatimg'>
-                <img src={learnCat1} alt='cat-img'></img>
+                <img src={learnCat4} alt='cat-img'></img>
               </div>
               <h3>Borrowing</h3>
               <p>Dig into every detail of debt — credit cards, student loans, mortgages, & more.</p>
             </div>
             <div className='learnCat1'>
               <div className='leancatimg'>
-                <img src={learnCat1} alt='cat-img'></img>
+                <img src={learnCat5} alt='cat-img'></img>
               </div>
               <h3>Earning</h3>
               <p>See how a side hustle (or two) can help you earn more. Plus, we’ll help you get a handle on your taxes.</p>
             </div>
             <div className='learnCat1'>
               <div className='leancatimg'>
-                <img src={learnCat1} alt='cat-img'></img>
+                <img src={learnCat6} alt='cat-img'></img>
               </div>
               <h3>Planning</h3>
               <p>Learn how insurance and estate planning can keep you and your loved ones covered.</p>
             </div>
             <div className='learnCat1'>
               <div className='leancatimg'>
-                <img src={learnCat1} alt='cat-img'></img>
+                <img src={learnCat7} alt='cat-img'></img>
               </div>
               <h3>Acorns</h3>
               <p>Make sure you’re getting the most out of Acorns and staying up-to-date on our newest features.</p>
             </div>
             <div className='learnCat1'>
               <div className='leancatimg'>
-                <img src={learnCat1} alt='cat-img'></img>
+                <img src={learnCat8} alt='cat-img'></img>
               </div>
               <h3>Market Updates</h3>
               <p>Learn about what’s happening in the market so you can stay in the know.</p>
