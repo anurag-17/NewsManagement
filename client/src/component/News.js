@@ -8,6 +8,10 @@ import NewsImg3 from './Images/NewsImg3.webp';
 import NewsImg4 from './Images/NewsImg4.webp';
 import LearnImg5 from './Images/learnmore_img.png';
 import Liveimg6 from './Images/livepay.png';
+import Videoimg1 from './Images/newsvideo-img1.webp';
+import Videoimg2 from './Images/newsvideo-img2.webp';
+import Videoimg3 from './Images/newsvideo-img3.webp';
+
 import newsvideo1 from './Images/nes-video.webp';
 import axios from 'axios';
 import './News.css'
@@ -17,9 +21,10 @@ import Typical from 'react-typical'
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import World from './newstab/World';
+import Topnews from './Topnews';
 
 import Typewriter from "typewriter-effect";
-const convert = require("xml-js")
+const convert = require("xml-js");  
 
 
 const News = () => {
@@ -52,7 +57,7 @@ const News = () => {
 
   return (
     <div className='body-main'>
-      <section id='News-Title'>
+      {/* <section id='News-Title'>
         <div className='container'>
           <div class="typewriter">
           <h2>Smart</h2>            
@@ -65,15 +70,26 @@ const News = () => {
           />             
           </div>
         </div>
+      </section> */}
+      <section id='Top-News'>        
+        <div className='container'>
+          <div class="TopAriclnew">
+              <span><h2>TOP NEWS</h2></span>
+          </div>
+
+          <div className='home-news'>
+          <div className='Homenews-grid'> 
+                  <Topnews apidata={data}/>                 
+            </div>
+          </div>     
+        </div>
       </section>
-      
+{/* 
       <section id='News-section'>
         <div className='container'>
           <div className='NewsMain'>
             <div className='row NewsAlign'>
               <div className='col-lg-8 col-md-8 newsleft1'>
-               
-    
                    {
                      data&&
                      <a style = {{textDecoration:"none"}} href={arr.link._cdata}>
@@ -87,37 +103,13 @@ const News = () => {
                      </a>
                    }
                     
-              
-    
-
               </div>
               <div className='col-lg-4 col-md-4 newsleft2'>
                 <div className='newsright'>
                   <div className='newdgrid'> 
 
                   <NewsArticalInvest apidata={data}/>                 
-                  <NewsArticalInvest apidata={mintdata}/>
-                    {/* <div class="NewsCT">
-                      <div className='NewsImg2'>
-                      <img src={NewsImg2} alt='News-img2'></img>
-                      </div>
-                      <span className='newsTitle'>Delhi University notifies batch sizes for UG, PG courses, plans to hike PhD thesis evaluation fees</span> 
-                      <span className='news-des'>The list shines a spotlight on influential individuals shaping business in 2022.</span> 
-                    </div>
-                    <div class="NewsCT">
-                      <div className='NewsImg2'>
-                      <img src={NewsImg3} alt='News-img2'></img>
-                      </div>
-                      <span className='newsTitle'>Delhi University notifies batch sizes for UG, PG courses, plans to hike PhD thesis evaluation fees</span> 
-                      <span className='news-des'>Registrar Vikas Gupta said the university came up with the rule to observe uniformity in the teacher-student ratio across all the programmes it offers</span> 
-                    </div>
-                    <div class="NewsCT">
-                      <div className='NewsImg2'>
-                      <img src={NewsImg4} alt='News-img2'></img>
-                      </div>
-                      <span className='newsTitle'>Republicans win control of the US House with narrow margin</span> 
-                      <span className='news-des'>More than a week after Election Day and with several seats still not called, the party gained the 218 seats needed to control the chamber</span> 
-                    </div> */}
+                  <NewsArticalInvest apidata={mintdata}/>                   
                   </div>
                   <div className='slide-btn'>
                       <button className='Newsbtn'><a to={`/News`} >Explore more  </a></button>
@@ -127,73 +119,99 @@ const News = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      {/* <section id='newsvideo-sec'>
+      <section id='newsvideo-sec'>
         <div className='container'>
           <div className='row video-Align'>
-            <div className='col-lg-6 col-md-6 video-left'>
+            <div className='col-lg-4 col-md-4 video-left'>
               <h4>UNDERSTAND THE NEWS WITH</h4>
               <h3>Today, Explained</h3>
-              <button className='subcrie-btn'>subscribe</button>
-              <img src={newsvideo1} class='newsvideo1'></img>
+              <button className='subcrie-btn'>subscribe</button>             
             </div>
 
-            <div className='col-lg-6 col-md-6 video-right'>
+            <div className='col-lg-8 col-md-8 video-right'>
+            <img src={newsvideo1} class='newsvideo1'></img>
               <h4>LISTEN NOW IN APP OR ON PUBLIC RADIO</h4>
               <h3>World Cup: How 2 B a legend</h3>
-            <p>Pelé. Maradona. Ronaldo. Soccer’s greats are so good, they’re typically known by one name. How winning the World Cup can turn a player into a legend.
+              <p>Pelé. Maradona. Ronaldo. Soccer’s greats are so good, they’re typically known by one name. How winning the World Cup can turn a player into a legend.
+               </p>            
 
-           </p>
-              <button className='subcrie-btn'>subscribe</button>
+              <div className='today-explain'>
+                <div className='today-video'>                 
+                  <i class="fa fa-play-circle"></i>
+                </div>
+                <div className='today-video'>
+                 <p>Today, Explained</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-      </section> */}
+      </section>
       <section id='LetNews-section'>
       <div className='container'>
         <div className='row'>
           <div className='col-lg-8 col-md-8 LetNews'>
             <div class="Newtext-divider">
-             LATEST
+            THE LATEST
             </div>
             <NewsArtical apidata={data}/>
           </div>
 
           <div className='col-lg-4 col-md-4'>
             <div class="Newtext-divider">
-             LEARN MORE
+             VIDEO
             </div>
             <div className='news_vedio'>
               <div className='LearnVideo'>
                 <div className='Learnimg'>
-                  <a href='https://www.youtube.com/watch?v=btfIcDqH2nY'><img src={LearnImg5} alt='learnimg'></img></a>
+                  <a href='https://www.youtube.com/watch?v=btfIcDqH2nY'><img src={Videoimg1} alt='learnimg'></img></a>
                 </div>
                 <div className='Learnimg'>
-                  <a href='https://www.youtube.com/watch?v=btfIcDqH2nY'><h3>Is your money depreciating?</h3></a>
-                </div>
-              </div>
-              <div className='LearnVideo'>
-                <div className='Learnimg'>
-                  <a href='https://www.youtube.com/watch?v=UW3iiGyaiv0'><img src={LearnImg5} alt='learnimg'></img></a>
-                </div>
-                <div className='Learnimg'>
-                  <a href='https://www.youtube.com/watch?v=UW3iiGyaiv0'><h3>Short Sales</h3></a>
+                  <a href='https://www.youtube.com/watch?v=btfIcDqH2nY'><h3>Why so many “election deniers” lost in 2022</h3></a>
                 </div>
               </div>
               <div className='LearnVideo'>
                 <div className='Learnimg'>
-                  <a href='https://www.youtube.com/watch?v=THabF_twN-w'><img src={LearnImg5} alt='learnimg'></img></a>
+                  <a href='https://www.youtube.com/watch?v=UW3iiGyaiv0'><img src={Videoimg2} alt='learnimg'></img></a>
                 </div>
                 <div className='Learnimg'>
-                  <a href='https://www.youtube.com/watch?v=THabF_twN-w'><h3>Taxation of Mutual Fund Income.</h3></a>
+                  <a href='https://www.youtube.com/watch?v=UW3iiGyaiv0'><h3>It’s not you — movies are getting darker</h3></a>
+                </div>
+              </div>
+              <div className='LearnVideo'>
+                <div className='Learnimg'>
+                  <a href='https://www.youtube.com/watch?v=THabF_twN-w'><img src={Videoimg3} alt='learnimg'></img></a>
+                </div>
+                <div className='Learnimg'>
+                  <a href='https://www.youtube.com/watch?v=THabF_twN-w'><h3>Sign up for the Vox video newsletter</h3></a>
                 </div>
               </div>
             </div>
              <div className='slide-btn'>
-                  <button className='Newsbtn'><a href='guid-bt1'>Explore more  </a></button>
+                  <button className='Newsbtn'><a href='guid-bt1'>More in Video  </a></button>
+             </div>
+
+             <div className='Future-main'>
+              <div className='v-shape'>
+                <h2>V</h2>
               </div>
+                <h4>Future Perfect</h4>
+                <p>Each week, we explore unique solutions to some of the world's biggest problems.</p>
+               
+              <form id="stripe-login">                
+                <div class="field">
+                  <label for="email">Email</label>
+                  <input type="email" name="email" className='email-form'/>
+                  <p>By submitting your email, you agree to our Terms and Privacy Notice. You can opt out at any time. This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.
+                   For more newsletters, check out our newsletters page.</p>
+                  <input type="submit" value="Submit" className='sub-btn'/>
+                </div>     
+              </form>
+              
+             </div>
           </div>
         </div>
       </div>
