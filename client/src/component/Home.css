@@ -638,9 +638,12 @@ font-family: 'Arial Bold', sans-serif;
 .Homenews-grid {
     padding-top: 30px;
 }
-.topNewsdata .NewsImg2 img{
-padding-right: 0px;
+.topNewsdata .NewsImg2 img {
+    padding-right: 0px;
+    padding-bottom: 15px;
 }
+
+
 .topNewsdata a:nth-child(2) {
     width: 525px;
     text-align: center;
@@ -656,7 +659,7 @@ padding-right: 0px;
     text-align: center;
 }
 .topNewsdata a:nth-child(4) {
-    margin-top: -180px;
+    margin-top: -230px;
 }
 .topNewsdata a:nth-child(4) img {
     display: none;
@@ -674,7 +677,7 @@ padding-right: 0px;
     display: none;
 }
 .topNewsdata a:nth-child(6) {
-    margin-top: -180px;
+    margin-top: -230px;
 }
 .topNewsdata a:nth-child(6) img {
     display: none;
