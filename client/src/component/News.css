@@ -337,11 +337,16 @@ input.sub-btn {
 }
 .v-shape h2 {
     background-color: #fff;
-    top: 0;
-    max-width: 95%;
+    top: 35px;
+    max-width: 34%;
     margin-top: -32px;
     text-align: center;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    left: 50%;
+    padding: 0px 25px;
 }
+
 /* LetNews-section End */
 
 
