@@ -32,8 +32,11 @@ export const Passwordchange = () => {
             setAdmindata(res.data)
             // console.log(admindata);
         }).catch((e) => {
+            console.log(e);
             alert(e.response.data)
-            console.log(e)
+            if (e.response.status == 500) {
+                navigate("/forgotpassword")
+            }
         })
 
 
@@ -44,13 +47,19 @@ export const Passwordchange = () => {
     }
     const password_submit = (e) => {
         e.preventDefault()
-        axios.post("/api/auth/passwordchange", admindata, { headers: { "Content-Type": "application/json" } }).then((res) => {
-            console.log(res);
-            swal("Updated Successfully")
-            navigate("/admin")
-        }).catch((e) => {
-            console.log(e);
-        })
+        if (admindata.newpassword) {
+            axios.post("/api/auth/passwordchange", admindata, { headers: { "Content-Type": "application/json" } }).then((res) => {
+                console.log(res);
+                swal("Updated Successfully")
+                navigate("/admin")
+            }).catch((e) => {
+                console.log(e);
+            })
+        }
+        else{
+            alert("Enter password")
+        }
+       
     }
 
     return (
@@ -71,7 +80,7 @@ export const Passwordchange = () => {
                             <span class="material-symbols-outlined"><i class='fas fa-key'></i></span>
                         </div>
                         <div class={display ? "textbox" : "abc"}>
-                            <input type="password" placeholder="Password" id="pwd" name="password" onChange={password_handler} required />
+                            <input type="password" placeholder="Password" id="pwd" name="newpassword" onChange={password_handler} required />
                             <span class="material-symbols-outlined"><i class="fa fa-lock" aria-hidden="true"></i></span>
                         </div>
                         <button type="submit" className={display ? "abc" : ""} onClick={form_submit} >Submit</button>

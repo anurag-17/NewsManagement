@@ -12,6 +12,9 @@ const adminSchema = new mongoose.Schema({
     },
     "otp" : {
         type : String
+    },
+    "otp_time": {
+        type :String
     }
 })
 const Admin = mongoose.model("Admin", adminSchema)

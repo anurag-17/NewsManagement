@@ -10,7 +10,7 @@ export const ForgotPassword = () => {
         email: '',
         otp: ''
     })
-const navigate = useNavigate()
+    const navigate = useNavigate()
     const Input_handler = (e) => {
         setAdmindata({ ...admindata, [e.target.name]: e.target.value })
         console.log(admindata);
@@ -21,25 +21,28 @@ const navigate = useNavigate()
         axios.post("/api/auth/validadmin", admindata, { headers: { "Content-Type": "application/json" } }).then((res) => {
             console.log(res.data);
             alert(res.data)
-            admindata.otp = Math.floor(1000 + Math.random() * 9000);
+            // admindata.otp = Math.floor(1000 + Math.random() * 9000);
             // console.log(admindata.otp);
             axios.post("/api/auth/otpsave", admindata, { headers: { "Content-Type": "application/json" } }).then((res) => {
-              
+
+                let otp_o = ((res.data - 9756) / 98)
+                admindata.otp = otp_o
+                emailjs.send(
+                    "service_gv50nwn",
+                    "template_l4ydu4s",
+                    admindata,
+                    "cdnwdKhKt0gj3lcT3"
+                ).then((result) => {
+                    navigate("/passwordchange")
+                    console.log(result, "emailjs");
+                }).catch((e) => {
+                    console.log(e, "emailjs");
+                })
 
             }).catch((e) => {
                 console.log(e);
             })
-            emailjs.send(
-                "service_gv50nwn",
-                "template_l4ydu4s",
-                admindata,
-                "cdnwdKhKt0gj3lcT3"
-            ).then((result) => {
-                navigate("/passwordchange")
-                console.log(result, "emailjs");
-            }).catch((e) => {
-                console.log(e, "emailjs");
-            })
+
         }).catch((e) => {
             console.log(e.response.data);
             alert(e.response.data)
