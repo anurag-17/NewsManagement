@@ -11,6 +11,19 @@ import Liveimg6 from './Images/livepay.png';
 import Videoimg1 from './Images/newsvideo-img1.webp';
 import Videoimg2 from './Images/newsvideo-img2.webp';
 import Videoimg3 from './Images/newsvideo-img3.webp';
+import explain from "./Images/explainer.webp"
+import swiper1 from "./Images/swiper1.jpg"
+import swiper2 from "./Images/swiper2.jpg"
+import swiper3 from "./Images/swiper3.jpg"
+import swiper4 from "./Images/swiper4.jpg"
+import swiper5 from "./Images/swiper5.jpg"
+import swiper6 from "./Images/swiper6.jpg"
+import "swiper/css";
+import "swiper/css/scrollbar";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "./styles.css";
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 import newsvideo1 from './Images/nes-video.webp';
 import axios from 'axios';
@@ -24,8 +37,12 @@ import World from './newstab/World';
 import Topnews from './Topnews';
 
 import Typewriter from "typewriter-effect";
+import { Autoplay, Keyboard, Navigation, Pagination, Scrollbar } from 'swiper';
 const convert = require("xml-js");  
-
+const imagearr = [{
+  images:[swiper1,swiper2,swiper3,swiper4,swiper5,swiper6],
+  description:["Are 8 Billion People too many - or too few","The World to come","How to cook and eat well when food is more expensive than ever","Black Panther","this","this"]
+}]
 
 const News = () => {
 
@@ -207,15 +224,81 @@ const News = () => {
                   <input type="email" name="email" className='email-form'/>
                   <p>By submitting your email, you agree to our Terms and Privacy Notice. You can opt out at any time. This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.
                    For more newsletters, check out our newsletters page.</p>
-                  <input type="submit" value="Submit" className='sub-btn'/>
+                  <input type="submit" value="Subscribe" className='sub-btn'/>
                 </div>     
               </form>
-              
+
              </div>
+<div className="explainer">
+  <div className='ex-main'>
+  <h3 className='ex-heading'>Explainers</h3>
+  <div className="explain_image">
+  <img src = {explain} alt = "explainer image"/>
+  </div>
+  <div className="explain-des">
+ <p>Here are the first moon photos from NASA's </p>
+ <p>Artemis I Mission</p>
+  </div>
+  </div>
+</div>
+             
           </div>
         </div>
       </div>
       </section>
+
+
+<section id ="slider-section">
+<div className="container">
+<Swiper
+     slidesPerView={1}
+     centeredSlides={true}
+     loop={true}
+     grabCursor={true}
+     spaceBetween={0}
+     autoplay={{
+      delay: 2500,
+    }}
+     keyboard={{
+       enabled: true,
+     }}
+      pagination={{
+        type: "progressbar",
+      }}
+  
+     breakpoints={{
+       769: {
+         slidesPerView: 1,
+         slidesPerGroup: 1,
+       },
+     }}
+     modules={[Autoplay, Pagination,Navigation]}
+     className="mySwiper"
+>
+  {
+    imagearr.map((items,index)=>{
+      console.log(items)
+   return(
+
+     items.images.map((items,index)=>{
+       return(
+         <SwiperSlide>
+         <img src = {items}/>
+         </SwiperSlide>
+       )
+     })
+   )
+        
+
+          
+    
+    })
+  }
+
+</Swiper>
+</div>
+</section>
+
 
       {/* <section id='Newstab-sec'>
         <div className='container'>

@@ -246,13 +246,11 @@ exports.validadmin = catchAsyncError (
 ) 
 exports.optsave = catchAsyncError (
     async(req, res, next)=>{
+        console.log(req.body)
         const {otp ,email} = req.body
-        try {
-            await Admin.findOneAndUpdate({email}, {otp})
-        } catch (error) {
-         console.log(error);   
-        }
-        
+       const data = await Admin.findOneAndUpdate({email}, {otp})
+
+    return res.send(data)
     }
 
 ) 
