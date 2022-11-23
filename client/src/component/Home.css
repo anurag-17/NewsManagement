@@ -430,18 +430,20 @@ button.Blog-btn a {
     content: '';
     position: absolute;
     width: 438px;
-    border-left: 4px solid #1F286F;
+    /* border-left: 4px solid #1F286F; */
+    border-left: 4px solid #4af8d5;
     height: 70px;
-    border-top: 4px solid #1F286F;
+    /* border-top: 4px solid #1F286F; */
+    border-top: 4px solid #4af8d5;
     top: 38%;
 }
 .TopAriclnew span:after {
     content: '';
     position: absolute;
     width: 438px;
-    border-right: 4px solid #1F286F;
+    border-right: 4px solid #4af8d5;
     height: 70px;
-    border-top: 4px solid #1F286F;
+    border-top: 4px solid #4af8d5;
     top: 38%;
 }
 .TopAriclnew > span {

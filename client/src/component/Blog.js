@@ -78,7 +78,7 @@ const Blog = () => {
         </div>
         </section>  
 
-     <section id='Guid-section'>
+     {/* <section id='Guid-section'>
       <div className='container'>
       <div className='Guidsldier-sec'>
         <div className='Guid-head'>
@@ -87,7 +87,7 @@ const Blog = () => {
         <Guidslider/>
         </div>      
       </div>
-     </section>  
+     </section>  */}
 
     <section id='BInvest-section'>
       <div className='Binveshape'>
