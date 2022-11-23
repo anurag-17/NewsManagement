@@ -58,7 +58,7 @@ const Footer = () => {
                     <div className='col-lg-12 col-md-12 footer-bottm1'>
                       <p>© 2022 All rights reserved : Dados Technologies Private Limited (Formerly known as (Wu Quickcash Credit Solutions Private Limited) CIN: U65100MH2019FTC329281 AMFI Registration Number: ARN – 245733
                   Registered Office: No.404, 4th Floor, Kamla Charan, CHS Plot No.178, Jawahar Nagar 
-                  Road, Goregaon West Mumbai MH 400104 Corporate Office: Ashoka Fortune, NO 3/1-11ST Main, Next to Dailyhunt, Jakkasandra, Kormangala,  Bangalore, Karnataka – 560034</p>
+                  Road, Goregaon West Mumbai MH 400104 Corporate Office: Ashoka Fortune, NO 3/1-11ST Main,Jakkasandra, Kormangala,  Bangalore, Karnataka – 560034</p>
                   <p>Disclaimer: Investments in securities market are subject to market risk, read
                      all the related documents carefully before investing.</p>
                   <p>Email: <span><a href='mailto:compliance@dadostech.in'>compliance@dadostech.in</a></span> Please read the <span><a href='#'>terms and conditions</a></span> before 

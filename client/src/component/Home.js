@@ -106,7 +106,7 @@ const Home = () => {
       <section id='Top-News'>        
         <div className='container'>
           <div class="TopAriclnew">
-              <span><h2>TOP NEWS</h2></span>
+              <span><h2 style = {{color:"black"}}>TOP NEWS</h2></span>
           </div>
 
           <div className='home-news'>
@@ -228,9 +228,9 @@ const Home = () => {
               </div>
             </div>
             <div className='col-lg-7 col-md-7'>
-              <div className='LiveImg'>
+              <a href="https://play.google.com/store/apps/details?id=in.bullsmart" className='LiveImg'>
                 <img src={Liveimg6}></img>
-              </div>
+              </a>
             </div>
           </div>
         </div>
