@@ -15,106 +15,144 @@ import './Home.css';
 import axios from 'axios';
 import Navbarmenu from './menu/Navbarmenu';
 import HomeNav from './menu/HomeNav';
-import {AnimatedOnScroll} from "react-animated-css-onscroll";
+import { AnimatedOnScroll } from "react-animated-css-onscroll";
 import Topnews from './Topnews';
+import { Link } from 'react-router-dom';
+import swal from 'sweetalert';
 const convert = require("xml-js")
 
 const Home = () => {
 
- const [newsdata,setNewsdata] = useState([])
- const [content,setContent] = useState([])
-  const newsres = async()=>{
-    await axios.get("/api/auth/viewnews").then((res)=>{
-     console.log(res.data)
-       setNewsdata(res.data.result)
-   })
-   }
-   
-  const viewdata = async()=>{
-  const res = await axios.get("/api/auth/getcontent")
-  setContent(res.data)
+  const [useremail, setUseremail] = useState({
+    email:""
+  })
+  const [newsdata, setNewsdata] = useState([])
+  const [content, setContent] = useState([])
+  const [show, setShow] = useState(false)
+  const [message, setMessage] = useState("")
+  const newsres = async () => {
+    await axios.get("/api/auth/viewnews").then((res) => {
+      console.log(res.data)
+      setNewsdata(res.data.result)
+    })
   }
 
-   useEffect(()=>{
-   viewdata()
-   },[])
-  
+  const viewdata = async () => {
+    const res = await axios.get("/api/auth/getcontent")
+    setContent(res.data)
+  }
 
-   const[data,setdata] = useState()
-   const newApi = async()=>{
- 
-     const res =  await axios.get("https://corsanywhere.herokuapp.com/https://www.hindustantimes.com/feeds/rss/business/rssfeed.xml")
-     const result1 = convert.xml2json(res.data,{compact: true, spaces: 4})
-     setdata(JSON.parse(result1))
-    }
-     
- 
-    useEffect(()=>{
-     newApi()
-     },[])
+  useEffect(() => {
+    viewdata()
+window.scrollTo(0,0)
+  }, [])
+
+
+  const [data, setdata] = useState()
+  const newApi = async () => {
+
+    const res = await axios.get("https://corsanywhere.herokuapp.com/https://www.hindustantimes.com/feeds/rss/business/rssfeed.xml")
+    const result1 = convert.xml2json(res.data, { compact: true, spaces: 4 })
+    setdata(JSON.parse(result1))
+  }
+  const Input_handler = (e) =>{
+   setUseremail({...useremail, [e.target.name]: e.target.value})
+  }
+  const handleclick = async(e) => {
+    e.preventDefault()
+     setShow(true)
+     axios.post("/api/auth//useremail", useremail, { headers: { "Content-Type": "application/json" } }).then((res)=>{
+      console.log(res);
+      // swal(res.data,"" ,"success")
+      setUseremail({
+        email:""
+      })
+      setShow(false)
+      setMessage(` ✓ ${res.data}`)
+      setTimeout(()=>{
+        setMessage("")
+      },2000)
+     }).catch((e)=>{
+      console.log(e);
+     })
+    
+    // setShow(true)
+    // setTimeout(() => {
+    //   setShow(false)
+    //   setMessage("✓ The form was sent successfully")
+    //   setTimeout(() => {
+    //     setMessage("")
+    //   }, 3000)
+    // }, 2000)
+  }
+
+  useEffect(() => {
+    newApi()
+  }, [])
   return (
-<div className='homepage'>
-      <HomeNav/>
+    <div className='homepage'>
+      <HomeNav />
       <section id='home-banner'>
         <div className='container'>
           <div className='Home-slide'>
             <div className='row home-alin'>
-            <div className='col-lg-8 col-md-6 slideb1'>
-              <AnimatedOnScroll animationIn="fadeIn" animationOut="fadeIn"> 
-              <h2>Smart <span>People. </span></h2>
-                <h2>Smart <span>Investment.</span> </h2>
-              </AnimatedOnScroll>               
+              <div className='col-lg-8 col-md-6 slideb1'>
+                <AnimatedOnScroll animationIn="fadeIn" animationOut="fadeIn">
+                  <h2>Smart <span>People. </span></h2>
+                  <h2>Smart <span>Investment.</span> </h2>
+                </AnimatedOnScroll>
                 <p>We use technology to help young investors invest smartly.</p>
                 <div className='bannerbtn'>
-                   <button className='know-btn'><a href='#'>KNOW MORE</a></button>
+                  <Link to="/About"><button className='know-btn'>KNOW MORE</button></Link>
                 </div>
               </div>
               <div className='col-lg-4 col-md-6'>
-               <div className='Banner-img'>
-                <img src={Bnnerimg} alt='bannerimg'></img>
-               </div>
+                <div className='Banner-img'>
+                  <img src={Bnnerimg} alt='bannerimg'></img>
+                </div>
               </div>
               {
-// content.map((items,index)=>{
-//   return(
-//     <>
-//           <div className='col-lg-8 col-md-6 slideb1'>
-//               <AnimatedOnScroll animationIn="fadeIn" animationOut="fadeIn"> 
-//               <h2>{items.main_title_1}  <span>{items.main_title_2}</span></h2>
-//                 <h2>{items.main_subtitle_1}  <span>{items.main_subtitle_2}</span> </h2>
-//               </AnimatedOnScroll>               
-//                 <p>{items.tagline}</p>
-//                 <div className='bannerbtn'>
-//                    <button className='know-btn'><a href='#'>KNOW MORE</a></button>
-//                 </div>
-//               </div>
-//               <div className='col-lg-4 col-md-6'>
-//                <div className='Banner-img'>
-//                 <img src={Bnnerimg} alt='bannerimg'></img>
-//                </div>
-//               </div>
-//     </>
-//   )
-// })
+                // content.map((items,index)=>{
+                //   return(
+                //     <>
+                //           <div className='col-lg-8 col-md-6 slideb1'>
+                //               <AnimatedOnScroll animationIn="fadeIn" animationOut="fadeIn"> 
+                //               <h2>{items.main_title_1}  <span>{items.main_title_2}</span></h2>
+                //                 <h2>{items.main_subtitle_1}  <span>{items.main_subtitle_2}</span> </h2>
+                //               </AnimatedOnScroll>               
+                //                 <p>{items.tagline}</p>
+                //                 <div className='bannerbtn'>
+                //                    <button className='know-btn'><a href='#'>KNOW MORE</a></button>
+                //                 </div>
+                //               </div>
+                //               <div className='col-lg-4 col-md-6'>
+                //                <div className='Banner-img'>
+                //                 <img src={Bnnerimg} alt='bannerimg'></img>
+                //                </div>
+                //               </div>
+                //     </>
+                //   )
+                // })
               }
-            
+
             </div>
           </div>
         </div>
       </section>
 
-      <section id='Top-News'>        
+      <section id='Top-News'>
         <div className='container'>
           <div class="TopAriclnew">
-              <span><h2 style = {{color:"black"}}>TOP NEWS</h2></span>
+            <span><h2 style={{ color: "black" }}>TOP NEWS</h2></span>
           </div>
 
           <div className='home-news'>
-          <div className='Homenews-grid'> 
-                  <Topnews apidata={data}/>                 
-                  </div>
+            <div className='Homenews-grid'>
+              <Topnews apidata={data}/>
+
+            </div>
           </div>
-          
+
           {/* <div className='row top-sec'>
             <div className='col-md-3'>
               <div className='Topnews-1'>
@@ -207,86 +245,91 @@ const Home = () => {
         </div>
       </section>
 
-      
+
       <section id='live-section'>
-      <div className='container'>
-        <div className='Live-main'>
-          <div className='row Live-alin'>
-            <div className='col-lg-5 col-md-5'>
-              <div className='Live-ct'>
-                <h3>
-                  We are <span>LIVE! </span>
-                </h3>
-                <p>Our App is <span>READY</span>  to help you <br></br> on your investment journey <br></br></p>
-                <h4><span>#Investmentkanayadaur</span></h4>
-                <div class="input-group newsform">
-                    <input type="email" class="form-control" placeholder="Enter your email for newsletter"/>
-                    <span class="input-group-btn">
-                    <button class="btn" type="submit"><i class="fa fa-arrow-right"></i></button>
-                    </span>
-                      </div>
+        <div className='container'>
+          <div className='Live-main'>
+            <div className='row Live-alin'>
+              <div className='col-lg-5 col-md-5'>
+                <div className='Live-ct'>
+                  <h3>
+                    We are <span>LIVE! </span>
+                  </h3>
+                  <p style={{ marginBottom: "-8px", width: "90%" }} >Our App is <span>READY</span>  to help you <br></br> on your investment journey <br></br></p>
+                  <h4><span className='investhashtag'>#Investmentkanayadaur</span></h4>
+                  <form onSubmit={handleclick} action="">
+                    <div class="input-group newsform">
+                      <input style={{ fontSize: "14px" }} required type="email" className="form-control form_bg" name='email' value={useremail.email} onChange={Input_handler} placeholder="Enter your email for newsletter" />
+                      <span className={show ? "input-click" : "input-group-btn"}>
+                        <button className="btn d-flex" type="submit"> {show && <i style={{marginRight:"5px",color: "#003AAD",marginTop:"1px"}} class="fas fa-spinner fa-spin"></i>} <i style={{ padding: "3px", color: "#003AAD", marginLeft: "-4px" }} class="fa fa-arrow-right"></i></button>
+                      </span>
+                    </div>
+                  </form>
+                  <p style={{ fontSize: "17px", fontWeight: "500", fontFamily: "sans-serif", color: "rgba(255, 255, 255, 0.637)", marginTop: "10px" }} >{message}</p>
+                </div>
               </div>
-            </div>
-            <div className='col-lg-7 col-md-7'>
-              <a href="https://play.google.com/store/apps/details?id=in.bullsmart" className='LiveImg'>
-                <img src={Liveimg6}></img>
-              </a>
+              <div className='col-lg-7 col-md-7'>
+                <a href="https://play.google.com/store/apps/details?id=in.bullsmart" className='LiveImg'>
+                  <img src={Liveimg6}></img>
+                </a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
       </section>
 
       <div className='Invest-HT'>
-      <section id='Investing-sec'>
-        <div className='container'>
-          <div className='section-title'>
-            <div className='section-head'>
-              <h2>Investing 101</h2>
+        <section id='Investing-sec'>
+          <div className='container'>
+            <div className='section-title'>
+              <div className='section-head'>
+                <h2>Investing 101</h2>
+              </div>
             </div>
-          </div>
 
-          <div className='learn-head'>
-            <h3>What You Learn</h3>
-          </div>
-          <div className='Investing-grid'>
-            <div className='Investing-1'>
-              <div className='invest-content'>
-                <h3>Basic Lessons</h3>
-                <p>Start your investment journey with confidence</p>
-                <div className='Invest-btn'>
-                    <button><a href='#'>Learn MORE <i class="fa fa-angle-right"></i></a></button>
-                  </div>
-              </div>
+            <div className='learn-head'>
+              <h3>What You Learn</h3>
             </div>
-            <div className='Investing-1'>
-              <div className='invest-content'>
-                <h3>General Investment</h3>
-                <p>Start your investment journey with confidence</p>
-                <div className='Invest-btn'>
-                    <button><a href='#'>Learn MORE <i class="fa fa-angle-right"></i></a></button>
-                  </div>
-              </div>
-            </div>
-            <div className='Investing-1'>
-              <div className='invest-content'>
-                <h3>Mutual Funds</h3>
-                <p>Start your investment journey with confidence</p>
+            <div className='Investing-grid'>
+              <div className='Investing-1'>
+                <div className='invest-content'>
+                  <h3>Basic Lessons</h3>
+                  <p>Start your investment journey with confidence</p>
                   <div className='Invest-btn'>
-                    <button><a href='#'>Learn MORE <i class="fa fa-angle-right"></i></a></button>
+                    <button><a href='https://www.youtube.com/playlist?list=PLQ0dEPuPJTIVcQcqhKQUe8dseABAT4Sm0'>Learn MORE <i class="fa fa-angle-right"></i></a></button>
                   </div>
+                </div>
+              </div>
+              <div className='Investing-1'>
+                <div className='invest-content'>
+                  <h3>General Investment</h3>
+                  <p>Start your investment journey with confidence</p>
+                  <div className='Invest-btn'>
+                    <button><a href='https://www.youtube.com/playlist?list=PLQ0dEPuPJTIVDt8hyT30jUdQVueMutYBm'>Learn MORE <i class="fa fa-angle-right"></i></a></button>
+                  </div>
+                </div>
+              </div>
+              <div className='Investing-1'>
+                <div className='invest-content'>
+                  <h3>Mutual Funds</h3>
+                  <p>Start your investment journey with confidence</p>
+                  <div className='Invest-btn'>
+                    <button><a href='https://www.youtube.com/playlist?list=PLQ0dEPuPJTIU-ykMY5JtIdTxA9s-Ai44A'>Learn MORE <i class="fa fa-angle-right"></i></a></button>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-           <div className='view-btn'>
-                   <button className='view-btn'><a href='#'>VIEW MORE</a></button>
+            <div className='view-btn'>
+              <Link to="/Learn">
+                <button className='view-btn'>VIEW MORE</button>
+              </Link>
             </div>
-        </div>
-      </section>
+          </div>
+        </section>
       </div>
       <section id='blof-sec'>
         <div className='container'>
-         <div className='learn-head'>
+          <div className='learn-head'>
             <h3>Blog</h3>
           </div>
           <div className='blog-grid'>
@@ -296,10 +339,12 @@ const Home = () => {
                   <img src={blog1}></img>
                 </div>
                 <div className='blod-des'>
-                <h3>SEBI Chairperson spoke to Fintech Participants at the Global Fintech Fest (GFF 2022)</h3>
-                <div className='blog-btn'>
-                    <button className='Blog-btn'><a href='#'>VIEW MORE <i class="fa fa-angle-double-right"></i></a></button>
-                </div>
+                  <h3>SEBI Chairperson spoke to Fintech Participants at the Global Fintech Fest (GFF 2022)</h3>
+                  <div className='blog-btn'>
+                    <Link to = "/Blog_1">
+                    <button className='Blog-btn'><a href='#'>Read MORE <i class="fa fa-angle-double-right"></i></a></button>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
@@ -310,10 +355,12 @@ const Home = () => {
                   <img src={blog2}></img>
                 </div>
                 <div className='blod-des'>
-                <h3>Things to know before you start investing</h3>
-                <div className='blog-btn'>
-                    <button className='Blog-btn'><a href='#'>VIEW MORE <i class="fa fa-angle-double-right"></i></a></button>
-                </div>
+                  <h3>Things to know before you start investing</h3>
+                  <div className='blog-btn'>
+                    <Link to = "/Blog_2">
+                    <button className='Blog-btn'><a href='#'>Read MORE <i class="fa fa-angle-double-right"></i></a></button>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
@@ -323,18 +370,22 @@ const Home = () => {
                   <img src={blog3}></img>
                 </div>
                 <div className='blod-des'>
-                <h3>Mutual Funds Terminologies: Your Complete Guide</h3>
-                <div className='blog-btn'>
-                    <button className='Blog-btn'><a href='#'>VIEW MORE <i class="fa fa-angle-double-right"></i></a></button>
-                </div>
+                  <h3>Mutual Funds Terminologies: Your Complete Guide</h3>
+                  <div className='blog-btn'>
+                    <Link to = "/Blog" >
+                    <button className='Blog-btn'><a href='#'>Read MORE <i class="fa fa-angle-double-right"></i></a></button>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
-            
+
           </div>
           <div className='view-btn'>
-                   <button className='view-btn'><a href='#'>VIEW MORE</a></button>
-            </div>
+            <Link to="/Blog">
+              <button className='view-btn'>VIEW MORE</button>
+            </Link>
+          </div>
         </div>
       </section>
     </div>

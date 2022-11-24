@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { AnimatedOnScroll } from 'react-animated-css-onscroll';
 import tranding1 from './Images/tranding-img1.png';
 import tranding2 from './Images/tranding-img2.png';
@@ -24,6 +24,9 @@ import LetestNewstab from './LetestNewstab';
 
 
 const Learn = () => {
+  useEffect(()=>{
+    window.scrollTo(0,0)
+    },[])
   return (
     <div className='body-main learn-body'>
         {/* <section id='Learn-banner'>

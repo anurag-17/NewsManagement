@@ -1,0 +1,22 @@
+.blog2_head h2{
+    font-size: 40px;
+    line-height: 60px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+.blog2_body p{
+    margin: 0 0 14.4px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+.dot_li{
+    list-style: disc;
+}
+.br_display{
+    display: block;
+}
+.font_i{
+    font-style: italic;
+    color: black;
+}

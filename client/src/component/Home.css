@@ -6,6 +6,10 @@ section#home-banner {
 .home-alin {
     /* align-items: center; */
 }
+
+input[type=email]:focus{
+    outline: .5px solid rgba(0, 0, 0, 0.11);
+  }
 section#home-banner .container {
     max-width: 1140px;
     margin: auto;
@@ -44,31 +48,32 @@ section#home-banner .container {
 }
 
 button.know-btn {
-    border: 2px solid #4af8d5;
+    border: 2.5px solid #4af8d5;
     font-size: 14px;
-    line-height: 14px;
-    padding: 14px 25px;
-    border-radius: 5px;
+    line-height: 12px;
+    padding: 13px 25px;
+    border-radius:7px;
     background-color: transparent;
+    color:#4af8d5;
+    font-weight: 500;
 }
 .know-btn a {
     color: #4af8d5;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 500;
 }
 .bannerbtn {
-    padding-top: 20px;
+    padding-top: 10px;
 }
-.bannerbtn:hover button.know-btn{
+/* .bannerbtn:hover button.know-btn{
     background-color: #0F71F2;
     border: 2px solid #0F71F2;
-}
+} */
 .bannerbtn:hover .know-btn a {
     color: #fff;
 }
 
 /* banner section end */
-
 
 
 /* Live section */
@@ -97,12 +102,19 @@ font-family: Arial , sans-serif;
     color: #FFFFFF;
 font-family: Arial , sans-serif;
     font-size: 26px;
-    font-weight: 700;
+    font-weight: 900;
     line-height: 1.1em;
 }
 .Live-main span {
     color: #4af8d5;
 }
+
+.investhashtag{
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    font-weight: 800;
+}
+
 .Live-main h4 {
     color: #FFFFFF;
 font-family: Arial , sans-serif;
@@ -113,14 +125,19 @@ font-family: Arial , sans-serif;
 }
 .input-group {
     max-width: 355px;
+
 }
    .newsletter {
     padding: 80px 0;
     background: #19beda;
     }
     .input-group-btn {
-        background-color: #27F2B9;
+        background-color:#27F2B9;
         width: 33px;
+    }
+    .input-click{
+        background-color: #27F2B9;
+        width: 45px;
     }
    .newsform {
         padding-top:30px;
@@ -220,7 +237,9 @@ font-family: Arial , sans-serif;
 .Investing-1 {
     background-color: #3FD8DE !important;
 }
-
+.invest-content{
+    text-align: center;
+}
 #Investing-sec .invest-content h3 {
     color: #FFFFFF;
     font-size: 28px;
@@ -271,6 +290,8 @@ button.view-btn{
     padding: 14px 25px;
     border-radius: 5px;
     background-color: transparent;
+
+
 }
 button.view-btn {
     border: 2px solid #1A3073;
@@ -342,7 +363,7 @@ button.Blog-btn a {
     padding: 80px 0px 0px 0px;
     max-width: 1100px;
     margin: auto;
-    margin-bottom: -180px;
+    /* margin-bottom: -180px; */
 }
 .top-story-title h2 {
     text-align: center;
@@ -700,13 +721,25 @@ font-family: 'Arial Bold', sans-serif;
 }
 .topNewsdata a:nth-child(9) {
     margin-top: -190px;
+    width: 49%;
+    position: relative;
+    left: 109%;
 }
 .topNewsdata a:nth-child(8) {
     background-color: gray;
-    visibility: hidden;
+    display: none;
 }
 .topNewsdata a{
     display:none;
+}
+.view-btn button:hover{
+    color: #0693e3;
+    border: 2px solid #0693e3;
+}
+
+#hoverclass button:hover{
+    color: #0693e3;
+    border: 2px solid #0693e3;
 }
 /* top news css end */
 

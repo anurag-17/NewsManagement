@@ -39,6 +39,8 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./styles.css";
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 import newsvideo1 from './Images/nes-video.webp';
 import axios from 'axios';
@@ -56,28 +58,28 @@ import { Autoplay, Keyboard, Navigation, Pagination, Scrollbar } from 'swiper';
 const convert = require("xml-js");
 const imagearr = [
   {
-    image:swiper1,
-    description:"Are 8 Billion People too many - or too few"
+    image: swiper1,
+    description: "Are 8 Billion People too many - or too few"
   },
   {
-    image:swiper2,
-    description:"The World to come"
+    image: swiper2,
+    description: "The World to come"
   },
   {
-    image:swiper3,
-    description:"How to cook and eat well when food is more expensive than ever"
+    image: swiper3,
+    description: "How to cook and eat well when food is more expensive than ever"
   },
   {
-    image:swiper4,
-    description:"Black Panther: Wakanda Forever unearthed deep colourism within Latino communities"
+    image: swiper4,
+    description: "Black Panther: Wakanda Forever unearthed deep colourism within Latino communities"
   },
   {
-    image:swiper5,
-    description:"The Incredible shrinking future of college"
+    image: swiper5,
+    description: "The Incredible shrinking future of college"
   },
   {
-    image:swiper6,
-    description:"Despite it's brutal tactics Iran regime failed to mass protests"
+    image: swiper6,
+    description: "Despite it's brutal tactics Iran regime failed to mass protests"
   },
 ]
 
@@ -103,6 +105,7 @@ const News = () => {
 
   useEffect(() => {
     newApi()
+    window.scrollTo(0,0)
   }, [])
 
 
@@ -111,7 +114,7 @@ const News = () => {
 
   return (
     <div className='body-main'>
-      {/* <section id='News-Title'>
+      <section id='News-Title'>
         <div className='container'>
           <div class="typewriter">
           <h2>Smart</h2>            
@@ -124,11 +127,11 @@ const News = () => {
           />             
           </div>
         </div>
-      </section> */}
-      <section id='Top-News'>
+      </section>
+      <section style = {{paddingTop:"40px"}} id='Top-News'>
         <div className='container'>
           <div class="TopAriclnew">
-            <span><h2>TOP NEWS</h2></span>
+            <span ><h2 style= {{color:'black'}}>TOP NEWS</h2></span>
           </div>
 
           <div className='home-news'>
@@ -138,6 +141,9 @@ const News = () => {
           </div>
         </div>
       </section>
+
+
+      {/* ////////////////////////////////////////////////not included */}
       {/* 
       <section id='News-section'>
         <div className='container'>
@@ -174,8 +180,8 @@ const News = () => {
           </div>
         </div>
       </section> */}
-
-      <section id='newsvideo-sec'>
+      {/* //////////////////////////////////////////////included */}
+      {/* <section id='newsvideo-sec'>
         <div className='container'>
           <div className='row video-Align'>
             <div className='col-lg-4 col-md-4 video-left'>
@@ -203,7 +209,7 @@ const News = () => {
           </div>
         </div>
 
-      </section>
+      </section> */}
       <section id='LetNews-section'>
         <div className='container'>
           <div className='row'>
@@ -216,7 +222,7 @@ const News = () => {
 
             <div className='col-lg-4 col-md-4'>
               <div class="Newtext-divider">
-                VIDEO
+                VIDEOS
               </div>
               <div className='news_vedio'>
                 <div className='LearnVideo'>
@@ -248,7 +254,7 @@ const News = () => {
                 <button className='Newsbtn'><a href='guid-bt1'>More in Video  </a></button>
               </div>
 
-              <div className='Future-main'>
+              {/* <div className='Future-main'>
                 <div className='v-shape'>
                   <h2>V</h2>
                 </div>
@@ -265,7 +271,7 @@ const News = () => {
                   </div>
                 </form>
 
-              </div>
+              </div> */}
               <div className="explainer">
                 <div className='ex-main'>
                   <h3 className='ex-heading'>Explainers</h3>
@@ -283,61 +289,110 @@ const News = () => {
           </div>
         </div>
       </section>
+      {/* ////slider not responsive omitted */}
+
+      {/* <section id="slider-section">
+        <div className="container ">
+          <Swiper
+            slidesPerView={1}
+            centeredSlides={true}
+            loop={true}
+            grabCursor={true}
+            spaceBetween={0}
+            autoplay={{
+              delay: 2500,
+            }}
+            keyboard={{
+              enabled: true,
+            }}
+            pagination={{
+              type: "progressbar",
+            }}
+
+            breakpoints={{
+              769: {
+                slidesPerView: 1,
+                slidesPerGroup: 1,
+              },
+            }}
+            modules={[Autoplay, Pagination, Navigation]}
+            className="mySwiper"
+          >
+            {
+              imagearr.map((items, index) => {
+                console.log(items)
+                return (
+
+                  items.images.map((items, index) => {
+                    return (
+                      <SwiperSlide>
+                        <img src={items} />
+                      </SwiperSlide>
+                    )
+                  })
+                )
+              })
+            }
+
+          </Swiper>
+        </div>
+      </section> */}
+      <div className='container'>
+      <Carousel 
+      autoPlay 
+      infiniteLoop 
+   
+      >
+
+        {
+          imagearr.map((items, index) => {
+            console.log(items.description)
+            return (
+              <>
 
 
-      <section id ="slider-section">
-<div className="container">
-<Swiper
-     slidesPerView={1}
-     centeredSlides={true}
-     loop={true}
-     grabCursor={true}
-     spaceBetween={0}
-     autoplay={{
-      delay: 2000,
-    }}
-     keyboard={{
-       enabled: true,
-     }}
-      pagination={{
-        type: "progressbar",
-      }}
-  
-     breakpoints={{
-       769: {
-         slidesPerView: 1,
-         slidesPerGroup: 1,
-       },
-     }}
-     modules={[Autoplay, Pagination,Navigation]}
-     className="mySwiper"
->
-  {
+                <div className='swiperbox' style={{ display: "flex", flexDirection: "column" }}>
+                  <img src={items.image} />
+                  <strong className="swiper-head"><p>{items.description}</p></strong>
+                </div>
 
-  
-imagearr.map((items,index)=>{
-  console.log(items.description)
-  return(
-    <>
-  
-  <SwiperSlide>
-    <div className='swiperbox' style = {{display:"flex",flexDirection:"column"}}>
-  <img src = {items.image}/>
-    <strong className ="swiper-head"><p>{items.description}</p></strong>
-    </div>
-  </SwiperSlide>
-  </>
-  )
-})
-  }
+              </>
+            )
+          })
+        }
 
-</Swiper>
 
-</div>
-</section>
+      </Carousel>
+      </div>
+
+      {/* <Swiper
+        pagination={{
+          type: "progressbar",
+        }}
+        navigation={true}
+        modules={[Pagination, Navigation]}
+        className="mySwiper"
+      >
+        {
+              imagearr.map((items, index) => {
+                console.log(items)
+                return (
+
+                  items.images.map((items, index) => {
+                    return (
+                      <SwiperSlide>
+                        <img src={items} />
+                      </SwiperSlide>
+                    )
+                  })
+                )
 
 
 
+
+              })
+            }
+      </Swiper> */}
 
 
       <section>
@@ -345,11 +400,9 @@ imagearr.map((items,index)=>{
           <div className='row'>
             <div className='col-lg-8 col-md-8 LetNews'>
               <hr />
-              {/* <div class="Newtext-divider">
-                THE LATEST
-              </div> */}
+
               <NewsArtical apidata={data} />
-              <div className="news_contentbox">
+              {/* <div className="news_contentbox">
                 <div className='contentbox_logo'><img src={logobox} alt="" srcset="" /></div>
                 <div className="contentbox_body">
                   <div className="contentbox_bodyA">
@@ -369,13 +422,11 @@ imagearr.map((items,index)=>{
                     <p>The incridible shrinking future of college</p>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
 
             <div className='col-lg-4 col-md-4'>
-              {/* <div class="Newtext-divider">
-                VIDEO
-              </div> */}
+
 
               <div className='news_vedio'>
                 <div className='LearnVideo'>
@@ -416,7 +467,7 @@ imagearr.map((items,index)=>{
                         </div>
                         <div className="explain-des podB">
                           <p>Embrace uncertainty</p>
-                          {/* <p>Artemis I Mission</p> */}
+
                         </div>
                       </div>
                     </div>
@@ -455,17 +506,7 @@ imagearr.map((items,index)=>{
           </div>
         </div>
       </section>
-      {/* <section id='Newstab-sec'>
-        <div className='container'>
-             <div className='Newstab-cat'>
-             <div class="Newtext-divider">
-             LATEST
-            </div>
-            <LetestNewstab/>
-             
-          </div>
-        </div>
-      </section> */}
+{/* 
       <section className="sponser">
         <div className="container">
           <div className="sponser_head">
@@ -506,9 +547,9 @@ imagearr.map((items,index)=>{
           </div>
         </div>
 
-      </section>
+      </section> */}
 
-      <section id='live-section'>
+      {/* <section id='live-section'>
         <div className='container'>
           <div className='Live-main'>
             <div className='row Live-alin'>
@@ -535,18 +576,9 @@ imagearr.map((items,index)=>{
             </div>
           </div>
         </div>
-      </section>
-
-      {/* <section id='Blog-slider'>
-      <div className='container'>
-        <div className='Latest-title'>
-          <h3>Latest News</h3>
-        </div>
-        <div className='letslider2'>
-          <Letestslider apidata={data}/>       
-        </div>
-      </div>
       </section> */}
+
+
 
 
     </div>

@@ -10,6 +10,7 @@ import guidslid1 from './Images/guid-slide1.png';
 import guidslid2 from './Images/guid-slide2.png';
 import { Navigation, Pagination } from "swiper";
 import { Link } from 'react-router-dom';
+import "./Home.css"
 
 
 const   Topnews = ({apidata}) => {
@@ -19,6 +20,7 @@ const   Topnews = ({apidata}) => {
   }
 
   return (
+    <>
      <div className='topNewsdata'>       
     
     {
@@ -35,15 +37,24 @@ const   Topnews = ({apidata}) => {
                     </div>
                     <h3 className='newsTitle'>{items.title._cdata}</h3> 
                     <p className='news-des'>{items.description._cdata}</p> 
-                    <h4>By Umair Irfan</h4> 
+                    {/* <h4>By Umair Irfan</h4>  */}
                   </div>                 
                 </div>
+
             </a>
             </>
         )
       })
     }
+    
     </div>
+    <div className='d-flex justify-content-center'>
+    <Link to = "News">
+    <button id = "hoverclass" style = {{border:"2px solid #1A3073",color:"#1A3073"}} className='view-btn mb-4'>KNOW MORE</button>
+    </Link>
+    </div>
+
+    </>
   )
 }
 

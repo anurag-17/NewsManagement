@@ -4,6 +4,7 @@ const Blogs = require("../Model/Blogs");
 const catchAsyncError = require("../Errorhandlers/catchAsyncError");
 const ErrorResponse = require("../Utlis/errorresponse");
 const Content = require("../Model/Content")
+const Email = require("../Model/Email")
 const jwt = require("jsonwebtoken");
 const { query } = require("express");
 var ObjectId = require('mongodb').ObjectId
@@ -296,6 +297,39 @@ exports.passwordchange = catchAsyncError(
             })
         } catch (error) {
             console.log(error);
+        }
+    }
+)
+
+exports.useremail = catchAsyncError(
+    async(req, res, next)=>{
+        console.log(req.body);
+        const {email} = req.body
+        try {
+            let useremail = new Email({email})
+
+            useremail.save().then((result)=>{
+                res.send("Submitted Successfully")
+                console.log("successfully feeded email");
+            }).catch((err)=>{
+                console.log(err, " email feederrror");
+            })
+        } catch (error) {
+            console.log(error);
+        }
+    }
+)
+exports.viewemail = catchAsyncError(
+    async(req,res, next)=>{
+        try {
+           await Email.find({}, (error, result)=>{
+            if (error) {
+                console.log(error, "viewemail");
+            }
+            res.send({result})
+           }) 
+        } catch (error) {
+            console.log(error, "viewemail_catch");
         }
     }
 )

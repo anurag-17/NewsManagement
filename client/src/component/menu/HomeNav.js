@@ -58,8 +58,6 @@ const Navbarmenu = () => {
     <header className="header__middle header-section HomeNav" id='HomeNav'>
         <div className="container">
             <div className="row Menualin">
-
-               
                 <div className="header__middle__logo">
                     <NavLink activeClassName='is-active' to="/">
                       <img src={logo} alt='logo'></img>

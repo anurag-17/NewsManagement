@@ -20,8 +20,16 @@ import Learn from './component/Learn';
 import { AboutContent } from './component/AboutContent';
 import { ForgotPassword } from './component/ForgotPassword';
 import { Passwordchange } from './component/Passwordchange';
+import { Terms } from './component/Common/Terms';
+import Career from './component/Career';
+import { Blog_1 } from './component/Blogpages/Blog_1';
+import { Blog2 } from './component/Blogpages/Blog2';
+import { useEffect } from 'react';
 
 function App() {
+  useEffect(() => {
+window.scrollTo(0,0)
+  }, [])
   let location = useLocation()
   const data = JSON.parse(localStorage.getItem('newstoken'))
 
@@ -38,6 +46,7 @@ if(data !== null){
             <Route path='/' element={<Home />} />
             <Route path='/blog' element={<Blog/>} />
             <Route path='/about' element={<About />} />
+            <Route path='/career' element={<Career/>} />
             <Route path='/addnews' element={<AddNews />} />
             <Route path='/admin' element={<Admin />} />
             <Route path='/admindash' element={<AddNews/>} />
@@ -52,6 +61,13 @@ if(data !== null){
             <Route path='/xml' element={<Xmltojson/>} />
             <Route path='/forgotpassword' element={<ForgotPassword/>} />
             <Route path='/passwordchange' element={<Passwordchange/>}/>
+            <Route path='/privacy-policy' element={<Terms/>}/>
+            <Route path='/Blog_1' element={<Blog_1/>}/>
+            <Route path='/Blog_2' element={<Blog2/>}/>
+
+
+
+          
         </Routes>
           {location.pathname !== "/admin" && location.pathname !== "/admindash" && location.pathname !== "/forgotpassword" && location.pathname !== "/passwordchange"&& location.pathname !== "/addblogs" && location.pathname !== "/viewnews" && location.pathname !== "/viewblogs" && location.pathname !== "/addnews"&&location.pathname!=="/addcontent" && location.pathname!=="/aboutcontent"&&<Footer/>}
       </div>

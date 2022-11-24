@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Blog.css';
 import blogImg1 from './Images/blog-img1.png';
 import Guidslider from './Guidslider';
@@ -10,23 +10,39 @@ import Investblog3 from './Images/BlogInvest-img3.png';
 import Investblog4 from './Images/BlogInvest-img4.png';
 import Investblog5 from './Images/BlogInvest-img5.png';
 import { Blogslider } from './Blogslider';
+import Typewriter from "typewriter-effect";
 
 
 const Blog = () => {
-
+  useEffect(() => {
+   window.scrollTo(0, 0)
+  }, [])
   return (
     <div className='body-main'>
        <section id='Blog-banner'>
           <div className='container-fluid banner-bg'>
             <div className='row Banner-main'>
             <div className='Banner-title'>
-              <AnimatedOnScroll animationIn="fadeInUp" animationOut="fadeInUp"> <h2>YOUR FINANCIAL <span>GUIDE</span> </h2>
-     </AnimatedOnScroll>
+              <AnimatedOnScroll animationIn="fadeInUp" animationOut="fadeInUp"> <h2>YOUR FINANCIAL GUIDE </h2>
+              </AnimatedOnScroll>
             </div>
             </div>
           </div>
       </section>
-
+      <section id='News-Title'>
+        <div className='container'>
+          <div class="typewriter">
+          <h2>Smart</h2>            
+          <Typewriter
+            options={{
+              strings: ['People', 'Investment'],
+              autoStart: true,
+              loop: true,
+            }}
+          />             
+          </div>
+        </div>
+      </section>
       <section id='Blog-sewction'>
         <div className='container'>
           <div className='row'>
@@ -152,9 +168,9 @@ const Blog = () => {
               </div>
             </div>
           </div>
-          <div className='BInvest-btn'>
+          {/* <div className='BInvest-btn'>
             <button className='BInvst'><a href='#'>SEE MORE</a></button>
-          </div>
+          </div> */}
       </div>
       </div>
     </section>
@@ -221,9 +237,9 @@ const Blog = () => {
                 <p>Getting started in stock market: things to consider</p>
                </div>
               </div>   
-              <div className='BInvest-btn'>
+              {/* <div className='BInvest-btn'>
             <button className='BInvst'><a href='#'>SEE MORE</a></button>
-            </div>
+            </div> */}
             </div>
           </div>
       </div>
@@ -293,9 +309,9 @@ const Blog = () => {
                  <h3>SAVING</h3>
               </div>
             </div>
-            <div className='BInvest-btn'>
+            {/* <div className='BInvest-btn'>
             <button className='BInvst'><a href='#'>SEE MORE</a></button>
-          </div>
+          </div> */}
           </div>
           
       </div>
@@ -363,9 +379,9 @@ const Blog = () => {
                 <p>Getting started in stock market: things to consider</p>
                </div>
               </div>   
-              <div className='BInvest-btn'>
+              {/* <div className='BInvest-btn'>
             <button className='BInvst'><a href='#'>SEE MORE</a></button>
-            </div>
+            </div> */}
             </div>
           </div>
       </div>
