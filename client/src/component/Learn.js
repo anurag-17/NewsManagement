@@ -81,7 +81,7 @@ const Learn = () => {
             <LetestNewstab/>
             </div>
         </section>
-
+{/* 
         <section id='learnCat-sec'>
           <div className='container'>
             <div className='section-title'>
@@ -149,7 +149,7 @@ const Learn = () => {
             </div>
           </div>
           </div>
-        </section>
+        </section> */}
 
         {/* <section id='tranding-section'>
           <div className='container'>

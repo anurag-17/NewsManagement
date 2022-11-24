@@ -89,7 +89,7 @@ window.scrollTo(0,0)
             <div className='row Banner-main'>
             <div className='Banner-title'>
               <AnimatedOnScroll animationIn="fadeInUp" animationOut="fadeInUp"> <h2>KNOW US BETTER</h2>
-      </AnimatedOnScroll>
+         </AnimatedOnScroll>
             </div>
             </div>
           </div>
@@ -152,7 +152,10 @@ window.scrollTo(0,0)
             </div>
             <div className='col-lg-7 col-md-7'>
               <div className='LiveImg'>
+              <a href="https://play.google.com/store/apps/details?id=in.bullsmart" className='LiveImg'>
                 <img src={Liveimg6}></img>
+              </a>
+
               </div>
             </div>
           </div>
