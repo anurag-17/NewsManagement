@@ -46,11 +46,7 @@ if(apidata){
     }
     
     </div>
-    <div className='d-flex justify-content-center'>
-    <Link to = "News">
-    <button id = "hoverclass" style = {{border:"2px solid #1A3073",color:"#1A3073"}} className='view-btn mb-4'>KNOW MORE</button>
-    </Link>
-    </div>
+
 
     </>
   )

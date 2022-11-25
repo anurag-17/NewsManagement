@@ -162,7 +162,11 @@ window.scrollTo(0,0)
           <div className='home-news'>
             <div className='Homenews-grid'>
               <Topnews apidata={data}/>
-
+              <div className='d-flex justify-content-center'>
+    <Link to = "/News">
+    <button className='view-btn mb-4 hoverclass'>KNOW MORE</button>
+    </Link>
+    </div>
             </div>
           </div>
 
