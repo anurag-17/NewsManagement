@@ -10,24 +10,25 @@ import guidslid1 from './Images/guid-slide1.png';
 import guidslid2 from './Images/guid-slide2.png';
 import { Navigation, Pagination } from "swiper";
 import { Link } from 'react-router-dom';
+import "./Home.css"
 
 
 const   Topnews = ({apidata}) => {
-  if(apidata){
-    var parsed = apidata.rss.channel.item
-    console.log(apidata.rss.channel.item)
-  }
+if(apidata){
+  console.log(apidata)
 
+}
   return (
+    <>
      <div className='topNewsdata'>       
     
     {
-        parsed&&
-        parsed.map((items,index)=>{
-        console.log(items["media:content"]._attributes)
+        apidata&&
+        apidata.map((items,index)=>{
+        console.log(items)
         return(
               <>
-                 <a href= {items.link._cdata}>
+                 <a target="blank" href= {items.link._cdata}>
                  <div className='newdgrid'>                   
                   <div class="NewsCT">
                     <div className='NewsImg2'>
@@ -35,7 +36,7 @@ const   Topnews = ({apidata}) => {
                     </div>
                     <h3 className='newsTitle'>{items.title._cdata}</h3> 
                     <p className='news-des'>{items.description._cdata}</p> 
-                    <h4>By Umair Irfan</h4> 
+                    {/* <h4>By Umair Irfan</h4>  */}
                   </div>                 
                 </div>
             </a>
@@ -43,7 +44,15 @@ const   Topnews = ({apidata}) => {
         )
       })
     }
+    
     </div>
+    <div className='d-flex justify-content-center'>
+    <Link to = "News">
+    <button id = "hoverclass" style = {{border:"2px solid #1A3073",color:"#1A3073"}} className='view-btn mb-4'>KNOW MORE</button>
+    </Link>
+    </div>
+
+    </>
   )
 }
 

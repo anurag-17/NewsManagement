@@ -11,7 +11,23 @@ import Breakingviews from './newstab/Breakingviews';
 
 const LetestNewstab = () => {
     const [key, setKey] = useState('home');
-   
+
+    const[data,setdata] = useState()
+    // const newApi = async()=>{
+  
+  
+    //   var myHeaders = new Headers();
+    //   myHeaders.append("Content-Type", "application/json");
+    //       var requestOptions = {
+    //         method: "get",
+    //         headers: myHeaders,
+    //         redirect: "follow",
+    //     };
+    //       fetch("https://v1.nocodeapi.com/reshu123/xml_to_json/oWCHkdvXGxhsYoto?url=https://www.livemint.com/rssfeeds/news", requestOptions)
+    //       .then(response => response.text())
+    //       .then(result => setdata(JSON.parse(result)))
+    //       .catch(error => console.log('error', error));
+    //  }
   return (
     <div>
       <div className='Newstab-cat'>
@@ -22,22 +38,22 @@ const LetestNewstab = () => {
             className="mb-3"
             >
             <Tab eventKey="home" title="World">
-                <World />
+                <World  apidata={data}/>
             </Tab>
             <Tab eventKey="Business" title="Business">
-                <Business />
+                <Business  apidata={data}/>
             </Tab>
             <Tab eventKey="Legal" title="Legal">
-                <Legal />
+                <Legal  apidata={data}/>
             </Tab>
             <Tab eventKey="Breakingviews" title="Breakingviews">
-                <Breakingviews />
+                <Breakingviews  apidata = {data}/>
             </Tab>
             <Tab eventKey="Technology" title="Technology">
-                <Technology />
+                <Technology  apidata={data}/>
             </Tab>
             <Tab eventKey="Sports" title="Sports">
-                <Sports />
+                <Sports  apidata={data}/>
             </Tab>
             </Tabs>
       </div>

@@ -13,10 +13,10 @@ import { Link } from 'react-router-dom';
 
 
 const Letestslider = ({apidata}) => {
-  if(apidata){
-    var parsed = apidata.rss.channel.item
-    console.log(apidata.rss.channel.item)
-  }
+  // if(apidata){
+  //   var parsed = apidata.rss.channel.item
+  //   console.log(apidata.rss.channel.item)
+  // }
 
   return (
     <div>
@@ -24,9 +24,8 @@ const Letestslider = ({apidata}) => {
      <div className='letestartical-grid'>       
     
     {
-        parsed&&
-        parsed.map((items,index)=>{
-        console.log(items["media:content"]._attributes)
+        apidata&&
+        apidata.map((items,index)=>{
         return(
               <>
                  <a href= {items.link._cdata}>

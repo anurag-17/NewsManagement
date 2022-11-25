@@ -2,6 +2,7 @@ import React from 'react';
 import logo from '../Images/logo.png';
 import downlaodimg1 from '../Images/google-playstore.png';
 import './Footer.css';
+import { Link } from 'react-router-dom';
 const Footer = () => {
   return (
     <div>
@@ -27,11 +28,21 @@ const Footer = () => {
                               <h3>Company</h3>
                           </div>
                           <ul className='footerlist'>
+                            <Link to = "/News">
                             <li> <a href='#'>News</a></li>
+                            </Link>
+                            <Link to = "/Learn">
                             <li> <a href='#'>Learn</a></li>
+                            </Link>
+                            <Link to = "/Blog">
                             <li> <a href='#'>Blog</a></li>
+                            </Link>
+                            <Link to = "/About">
                             <li> <a href='#'>About Us</a></li>
+                            </Link>
+                            <Link to = "/Career">
                             <li> <a href='#'>Career</a></li>
+                            </Link>
                           </ul>
                         </div>
                     </div>
@@ -61,7 +72,7 @@ const Footer = () => {
                   Road, Goregaon West Mumbai MH 400104 Corporate Office: Ashoka Fortune, NO 3/1-11ST Main,Jakkasandra, Kormangala,  Bangalore, Karnataka – 560034</p>
                   <p>Disclaimer: Investments in securities market are subject to market risk, read
                      all the related documents carefully before investing.</p>
-                  <p>Email: <span><a href='mailto:compliance@dadostech.in'>compliance@dadostech.in</a></span> Please read the <span><a href='#'>terms and conditions</a></span> before 
+                  <p>Email: <span><a href='mailto:compliance@dadostech.in'>compliance@dadostech.in</a></span> Please read the <span><Link to="/privacy-policy">terms and conditions</Link></span> before 
                     registering or accessing any materials (information) on Bullsmart.</p>
                     </div>
                    </div>

@@ -115,11 +115,11 @@ li {
   margin-top: 33px;
 }
 .active {
-  color: #fff !important;
+  color: #0F71F2 !important;
   /* padding-bottom: 20px; */
 }
 .menuq1 .active {
-  color: #fff !important;
+  color: #0F71F2 !important;
   border-bottom: 2px solid #4AF8D5;
 }
 .header__middle__menus span.text {
@@ -183,7 +183,7 @@ li {
 }
 .menu-item:hover > a{
   transition: .2s;
-  color: #fff !important;
+  color: #0F71F2 !important;
   border-bottom: 2px solid #4af8d5;
 }
 .menu-item .sub__menus li:hover a{

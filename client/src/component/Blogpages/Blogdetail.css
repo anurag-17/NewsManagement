@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+.blog-main{
+font-family: "Montserrat", Sans-serif;
+width: 100%;
+}
+.blog-main h2,h1{
+    font-family: "Montserrat", Sans-serif;
+}
+.blog-main p{
+font-size: 1rem;
+line-height: 1.5rem;
+}
+.blog-main h2{
+    font-weight: 500;
+}
+.blog-heading{
+    line-height: 4.8rem;
+    font-weight: 500;
+    font-size: 65px;
+}
+.second-heading{
+    font-size: 40px;
+    font-weight: 500;
+    margin-top: 0.5rem;
+    line-height: 48px;
+}
+.bloglist li{
+    list-style:disc;
+}
+.blog-form textarea,input{
+    width: 100%;
+    margin-bottom: 1rem;
+}
+.blog-form input{
+    padding: 0.5rem 1rem;
+}
+.ckh_blog1{
+    margin-right: auto;
+}
+.ckh_blog1 input{ 
+width: 20px;
+}

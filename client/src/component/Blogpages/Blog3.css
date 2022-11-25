@@ -1,0 +1,77 @@
+/* .blog3_head{
+    width: 90vw;
+} */
+.blog3_head h1{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 65px;
+    
+}
+.blog3_body p{
+    margin: 0 0 14.4px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #847b7d;
+}
+.invesment_img{
+    margin-bottom: 16px;
+}
+.br_display{
+    display: block;
+}
+#color_h2{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    color: #747474;
+}
+.blog-form textarea,input{
+    width: 100%;
+    margin-bottom: 1rem;
+}
+.blog-form input{
+    padding: 0.5rem 1rem;
+}
+.ckh_blog1{
+    margin-right: auto;
+}
+.ckh_blog1 input{ 
+width: 20px;
+}
+.sub-btn input{
+    width: 9rem;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    border: 1px solid #c36;
+    border-radius: 3px;
+    color:#c36;
+    background-color: white;
+}
+
+.comment_btn{
+    padding: 8px 15px;
+    border: 1pt solid #c36;
+    border-radius: 4px;
+    background-color: white;
+    color: #c36;
+    margin-bottom: 20px;
+}
+.comment_btn:hover {
+    color: white;
+    background-color: #c36;
+    
+    transition-duration: 0.5s;
+}
+
+
+
+@media (max-width: 767px) {
+    .invesment_img img{
+        width: 90%;
+        margin: 0 auto;
+        margin-bottom: 16px;
+    }
+    .blog3_head{
+        width: 100%;
+    }
+    .blog3_head h1{
+        font-size: 40px;
+    }
+}

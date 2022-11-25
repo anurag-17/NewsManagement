@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+.terms_heading h1{
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-weight: 700;
+    color: #1A3073;
+}
+.terms_heading p{
+    font-size: 16px;
+    font-weight: 900;
+    border-bottom: 1.8px solid;
+    font-family: 'Montserrat', sans-serif;
+    display: inline;
+}
+.artical strong{
+font-weight: 900;
+color: black;
+font-size: 16px;
+}
+
+.artical p{
+    font-size: 17px;
+    line-height:1.6rem;
+}
