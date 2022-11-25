@@ -19,14 +19,13 @@ const navigate = useNavigate()
 
     const form_handler = async (e) => {
         e.preventDefault()
-        axios.post("/api/auth/validadmin", admindata, { headers: { "Content-Type": "application/json" } }).then((res) => {
+       await axios.post("/api/auth/validadmin", admindata, { headers: { "Content-Type": "application/json" } }).then(async(res) => {
             console.log(res.data);
             alert(res.data)
             admindata.otp = Math.floor(1000 + Math.random() * 9000);
             // console.log(admindata.otp);
-            axios.post("/api/auth/otpsave", admindata, { headers: { "Content-Type": "application/json" } }).then((res) => {
-              
-
+       await axios.post("/api/auth/otpsave", admindata, { headers: { "Content-Type": "application/json" } }).then((res) => {
+            console.log(res);
             }).catch((e) => {
                 console.log(e);
             })
@@ -48,7 +47,6 @@ const navigate = useNavigate()
     }
     return (
         <>
-
             <div className="contentAdmin">
                 <div className="login">
                     <div className="avatar">
@@ -56,7 +54,6 @@ const navigate = useNavigate()
                     </div>
                     <h2>Forgot Password</h2>
                     <h3>Enter registered email</h3>
-
                     <form className="login-form">
                         <div className="textbox">
                             <input type="email" placeholder="Registered email" id="uname" name="email" onChange={Input_handler} required />
@@ -71,7 +68,6 @@ const navigate = useNavigate()
                     </form>
                 </div>
             </div>
-
         </>
     )
 }

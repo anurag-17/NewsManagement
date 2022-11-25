@@ -39,7 +39,6 @@ useEffect(()=>{
             localStorage.setItem("newstoken", JSON.stringify(item))
             navigate("/addnews")
          }).catch((e)=>{
-           
             swal(e.response.data)
          })
 
