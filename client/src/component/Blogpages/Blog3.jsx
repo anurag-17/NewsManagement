@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
 import "./Blog3.css"
 import investment from "../Images/blog-img3.png"
 
 export const Blog3 = () => {
+    useEffect(() => {
+        window.scrollTo(0,0)
+          }, [])
     const [comment, setComment] = useState({
         message: "",
         uname: "",

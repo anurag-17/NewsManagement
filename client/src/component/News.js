@@ -241,26 +241,26 @@ setdata(res.data.rss.channel.item)
               <div className='news_vedio'>
                 <div className='LearnVideo'>
                   <div className='Learnimg'>
-                    <a href='https://www.youtube.com/watch?v=btfIcDqH2nY'><img src={Videoimg1} alt='learnimg'></img></a>
+                    <a target="blank" href='https://www.youtube.com/watch?v=btfIcDqH2nY'><iframe width="370" height="209" src="https://www.youtube.com/embed/btfIcDqH2nY" title="Is your money depreciating?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></a>
                   </div>
                   <div className='Learnimg'>
-                    <a href='https://www.youtube.com/watch?v=btfIcDqH2nY'><h3>Why so many “election deniers” lost in 2022</h3></a>
-                  </div>
-                </div>
-                <div className='LearnVideo'>
-                  <div className='Learnimg'>
-                    <a href='https://www.youtube.com/watch?v=UW3iiGyaiv0'><img src={Videoimg2} alt='learnimg'></img></a>
-                  </div>
-                  <div className='Learnimg'>
-                    <a href='https://www.youtube.com/watch?v=UW3iiGyaiv0'><h3>It’s not you — movies are getting darker</h3></a>
+                    <a target="blank" href='https://www.youtube.com/watch?v=btfIcDqH2nY'><h3>Why so many “election deniers” lost in 2022</h3></a>
                   </div>
                 </div>
                 <div className='LearnVideo'>
                   <div className='Learnimg'>
-                    <a href='https://www.youtube.com/watch?v=THabF_twN-w'><img src={Videoimg3} alt='learnimg'></img></a>
+                    <a target="blank" href='https://www.youtube.com/watch?v=UW3iiGyaiv0'><iframe width="370" height="209" src="https://www.youtube.com/embed/UW3iiGyaiv0" title="Short Sales" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></a>
                   </div>
                   <div className='Learnimg'>
-                    <a href='https://www.youtube.com/watch?v=THabF_twN-w'><h3>Sign up for the Vox video newsletter</h3></a>
+                    <a target="blank" href='https://www.youtube.com/watch?v=UW3iiGyaiv0'><h3>It’s not you — movies are getting darker</h3></a>
+                  </div>
+                </div>
+                <div className='LearnVideo'>
+                  <div className='Learnimg'>
+                    <a target="blank" href='https://www.youtube.com/watch?v=THabF_twN-w'><iframe width="370" height="209" src="https://www.youtube.com/embed/THabF_twN-w" title="Taxation of Mutual Fund Income." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></a>
+                  </div>
+                  <div className='Learnimg'>
+                    <a target="blank" href='https://www.youtube.com/watch?v=THabF_twN-w'><h3>Sign up for the Vox video newsletter</h3></a>
                   </div>
                 </div>
               </div>
