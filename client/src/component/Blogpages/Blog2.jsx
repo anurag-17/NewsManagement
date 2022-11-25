@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "./Blog2.css"
 import goals from "../Images/goals2.png"
 import wallet from "../Images/wallets23.png"
@@ -12,6 +12,9 @@ const [comment, setComment] = useState({
     uemail:"",
     uweb:""
 })
+useEffect(() => {
+    window.scrollTo(0,0)
+      }, [])
 const Input_handler = (e) =>{
   setComment({...comment, [e.target.name]: e.target.value})
 }
