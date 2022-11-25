@@ -737,9 +737,10 @@ font-family: 'Arial Bold', sans-serif;
     border: 2px solid #0693e3;
 }
 
-#hoverclass button:hover{
-    color: #0693e3;
-    border: 2px solid #0693e3;
+.hoverclass:hover{
+    color: #0693e3 !important;
+    /* color: black; */
+    border: 2px solid #0693e3 !important;
 }
 /* top news css end */
 

@@ -57,7 +57,6 @@ function verifytoken(req, res, next) {
         method: 'GET',
     }
     const response = await axios.get("https://www.hindustantimes.com/feeds/rss/business/rssfeed.xml",fetchOptions)
-    console.log(response.data)
     var result1 = convert.xml2json(response.data, { compact: true, spaces: 4 });
 return res.status(200).send(result1)
 
@@ -69,7 +68,6 @@ return res.status(200).send(result1)
         method: 'GET',
     }
     const response = await axios.get("https://www.livemint.com/rssfeeds/news",fetchOptions)
-    console.log(response.data)
     var result1 = convert.xml2json(response.data, { compact: true, spaces: 4 });
 return res.status(200).send(result1)
 
