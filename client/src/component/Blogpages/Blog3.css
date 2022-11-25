@@ -1,24 +1,26 @@
-.blog2_head h2{
-    font-size: 40px;
-    line-height: 60px;
+/* .blog3_head{
+    width: 90vw;
+} */
+.blog3_head h1{
     font-family: 'Montserrat', sans-serif;
+    font-size: 65px;
+    
 }
-
-
-.blog2_body p{
+.blog3_body p{
     margin: 0 0 14.4px;
     font-family: Arial, Helvetica, sans-serif;
-
+    color: #847b7d;
 }
-.dot_li{
-    list-style: disc;
+.invesment_img{
+    margin-bottom: 16px;
 }
 .br_display{
     display: block;
 }
-.font_i{
-    font-style: italic;
-    color: black;
+#color_h2{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    color: #747474;
 }
 .blog-form textarea,input{
     width: 100%;
@@ -42,6 +44,7 @@ width: 20px;
     color:#c36;
     background-color: white;
 }
+
 .comment_btn{
     padding: 8px 15px;
     border: 1pt solid #c36;
@@ -58,9 +61,17 @@ width: 20px;
 }
 
 
-/* ****responsive */
+
 @media (max-width: 767px) {
-    .blog2_img img{
-        width: 90% !important;
+    .invesment_img img{
+        width: 90%;
+        margin: 0 auto;
+        margin-bottom: 16px;
+    }
+    .blog3_head{
+        width: 100%;
+    }
+    .blog3_head h1{
+        font-size: 40px;
     }
 }

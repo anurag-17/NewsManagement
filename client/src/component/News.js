@@ -87,24 +87,38 @@ const News = () => {
 
   const [data, setdata] = useState()
   const [mintdata, setMintData] = useState()
+
+  const mintapi  = async()=>{
+    const response = await axios.get("/api/auth/xmlmint")
+    setMintData(response.data.rss.channel.item)
+  }
+
   const newApi = async () => {
+const res = await axios.get("/api/auth/xml")
+console.log(res.data.rss.channel.item)
+setdata(res.data.rss.channel.item)
 
-    const res = await axios.get("https://corsanywhere.herokuapp.com/https://www.hindustantimes.com/feeds/rss/business/rssfeed.xml")
-    const response = await axios.get("https://corsanywhere.herokuapp.com/https://www.livemint.com/rssfeeds/news")
-    const result1 = convert.xml2json(res.data, { compact: true, spaces: 4 })
-    const result2 = convert.xml2json(response.data, { compact: true, spaces: 4 })
-    setMintData(JSON.parse(result2))
-    setdata(JSON.parse(result1))
+// var myHeaders = new Headers();
+// myHeaders.append("Content-Type", "application/json");
+//     var requestOptions = {
+//       method: "get",
+//       headers: myHeaders,
+//       redirect: "follow",
+      
+//   };
+//     fetch("https://v1.nocodeapi.com/reshu123/xml_to_json/oWCHkdvXGxhsYoto?url=https://www.livemint.com/rssfeeds/news", requestOptions)
+//     .then(response => response.text())
+//     .then(result => setdata(JSON.parse(result)))
+//     .catch(error => console.log('error', error));
+    // const res = await axios.get("https://corsanywhere.herokuapp.com/https://www.hindustantimes.com/feeds/rss/business/rssfeed.xml")
+    // const res = await axios.get("https://www.hindustantimes.com/feeds/rss/business/rssfeed.xml")
+
   }
 
-  if (data) {
-    var arr = data.rss.channel.item[0]
-    console.log(data.rss.channel.item[0])
-
-  }
 
   useEffect(() => {
     newApi()
+    mintapi()
     window.scrollTo(0,0)
   }, [])
 
@@ -339,9 +353,9 @@ const News = () => {
       </section> */}
       <div className='container'>
       <Carousel 
+      showThumbs = {false}
       autoPlay 
       infiniteLoop 
-   
       >
 
         {
@@ -349,13 +363,10 @@ const News = () => {
             console.log(items.description)
             return (
               <>
-
-
                 <div className='swiperbox' style={{ display: "flex", flexDirection: "column" }}>
                   <img src={items.image} />
                   <strong className="swiper-head"><p>{items.description}</p></strong>
                 </div>
-
               </>
             )
           })
@@ -401,7 +412,7 @@ const News = () => {
             <div className='col-lg-8 col-md-8 LetNews'>
               <hr />
 
-              <NewsArtical apidata={data} />
+              <NewsArtical apidata={data}/>
               {/* <div className="news_contentbox">
                 <div className='contentbox_logo'><img src={logobox} alt="" srcset="" /></div>
                 <div className="contentbox_body">

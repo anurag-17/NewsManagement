@@ -51,9 +51,22 @@ window.scrollTo(0,0)
   const [data, setdata] = useState()
   const newApi = async () => {
 
-    const res = await axios.get("https://corsanywhere.herokuapp.com/https://www.hindustantimes.com/feeds/rss/business/rssfeed.xml")
-    const result1 = convert.xml2json(res.data, { compact: true, spaces: 4 })
-    setdata(JSON.parse(result1))
+    const res = await axios.get("/api/auth/xml")
+    console.log(res.data.rss.channel.item)
+    setdata(res.data.rss.channel.item)
+
+// var myHeaders = new Headers();
+// myHeaders.append("Content-Type", "application/json");
+//     var requestOptions = {
+//       method: "get",
+//       headers: myHeaders,
+//       redirect: "follow",
+      
+//   };
+//     fetch("https://v1.nocodeapi.com/reshu123/xml_to_json/oWCHkdvXGxhsYoto?url=https://www.hindustantimes.com/feeds/rss/business/rssfeed.xml", requestOptions)
+//     .then(response => response.text())
+//     .then(result => console.log(JSON.parse(result)))
+//     .catch(error => console.log('error', error));
   }
   const Input_handler = (e) =>{
    setUseremail({...useremail, [e.target.name]: e.target.value})
@@ -372,7 +385,7 @@ window.scrollTo(0,0)
                 <div className='blod-des'>
                   <h3>Mutual Funds Terminologies: Your Complete Guide</h3>
                   <div className='blog-btn'>
-                    <Link to = "/Blog" >
+                    <Link to = "/Blog_3" >
                     <button className='Blog-btn'><a href='#'>Read MORE <i class="fa fa-angle-double-right"></i></a></button>
                     </Link>
                   </div>

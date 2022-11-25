@@ -14,7 +14,7 @@ import { Viewblogs } from './component/Viewblogs';
 import Blog from './component/Blog';
 import { Loader } from './component/Common/Loader';
 import { AddContent } from './component/AddContent';
-import { Xmltojson } from './component/Xmltojson';
+import { DefaultRSSComponent, Xmltojson } from './component/Xmltojson';
 import News from './component/News';
 import Learn from './component/Learn';
 import { AboutContent } from './component/AboutContent';
@@ -25,6 +25,7 @@ import Career from './component/Career';
 import { Blog_1 } from './component/Blogpages/Blog_1';
 import { Blog2 } from './component/Blogpages/Blog2';
 import { useEffect } from 'react';
+import { Blog3 } from './component/Blogpages/Blog3';
 
 function App() {
   useEffect(() => {
@@ -58,12 +59,16 @@ if(data !== null){
             <Route path='/loader' element={<Loader/>} />
             <Route path='/addcontent' element={<AddContent/>} />
             <Route  path = "/aboutcontent" element={<AboutContent/>}/>
-            <Route path='/xml' element={<Xmltojson/>} />
             <Route path='/forgotpassword' element={<ForgotPassword/>} />
             <Route path='/passwordchange' element={<Passwordchange/>}/>
             <Route path='/privacy-policy' element={<Terms/>}/>
             <Route path='/Blog_1' element={<Blog_1/>}/>
             <Route path='/Blog_2' element={<Blog2/>}/>
+            <Route path='/Blog_3' element={<Blog3/>}/>
+
+            {/* <Route path='/rss' element={<DefaultRSSComponent/>}/> */}
+
+
 
 
 

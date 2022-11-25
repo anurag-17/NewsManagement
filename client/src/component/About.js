@@ -9,8 +9,12 @@ import valueImg3 from './Images/Empowerment.svg';
 import axios from 'axios';
 import { Loader } from './Common/Loader';
 
-
 const About = () => {
+  const [useremail, setUseremail] = useState({
+    email:""
+  })
+  const [show, setShow] = useState(false)
+  const [message, setMessage] = useState("")
 const [content,setContent] = useState([])
 const [loading,setLoading] = useState(false)
 const getaboutdata = async()=>{
@@ -21,7 +25,36 @@ const getaboutdata = async()=>{
     setLoading(false)
   }
 }
-
+const Input_handler = (e) =>{
+  setUseremail({...useremail, [e.target.name]: e.target.value})
+ }
+const handleclick = async(e) => {
+  e.preventDefault()
+   setShow(true)
+   axios.post("/api/auth//useremail",useremail,{headers:{"Content-Type": "application/json" } }).then((res)=>{
+    console.log(res);
+    // swal(res.data,"" ,"success")
+    setUseremail({
+      email:""
+    })
+    setShow(false)
+    setMessage(` ✓ ${res.data}`)
+    setTimeout(()=>{
+      setMessage("")
+    },2000)
+   }).catch((e)=>{
+    console.log(e);
+   })
+  
+  // setShow(true)
+  // setTimeout(() => {
+  //   setShow(false)
+  //   setMessage("✓ The form was sent successfully")
+  //   setTimeout(() => {
+  //     setMessage("")
+  //   }, 3000)
+  // }, 2000)
+}
 
 useEffect(()=>{
 getaboutdata()
@@ -124,7 +157,6 @@ window.scrollTo(0,0)
                 <h3>Our Vision</h3>
                 <p>To become Asia’s Most desirable securities market company and participate in the developement of the indian capital market to be a world-renowned investment service 
                   provider.
-
 </p>
               </div>
             </div>
@@ -132,35 +164,35 @@ window.scrollTo(0,0)
         </div>
       </section>
       <section id='live-section'>
-      <div className='container'>
-        <div className='Live-main'>
-          <div className='row Live-alin'>
-            <div className='col-lg-5 col-md-5'>
-              <div className='Live-ct'>
-                <h3>
-                  We are <span>LIVE! </span>
-                </h3>
-                <p>Our App is <span>READY</span>  to help you <br></br> on your investment journey <br></br></p>
-                <h4><span>#Investmentkanayadaur</span></h4>
-                <div class="input-group newsform">
-                    <input type="email" class="form-control" placeholder="Enter your email for newsletter"/>
-                    <span class="input-group-btn">
-                    <button class="btn" type="submit"><i class="fa fa-arrow-right"></i></button>
-                    </span>
-                      </div>
+        <div className='container'>
+          <div className='Live-main'>
+            <div className='row Live-alin'>
+              <div className='col-lg-5 col-md-5'>
+                <div className='Live-ct'>
+                  <h3>
+                    We are <span>LIVE! </span>
+                  </h3>
+                  <p style={{ marginBottom: "-8px", width: "90%" }} >Our App is <span>READY</span>  to help you <br></br> on your investment journey <br></br></p>
+                  <h4><span className='investhashtag'>#Investmentkanayadaur</span></h4>
+                  <form onSubmit={handleclick} action="">
+                    <div class="input-group newsform">
+                      <input style={{ fontSize: "14px" }} required type="email" className="form-control form_bg" name='email' value={useremail.email} onChange={Input_handler} placeholder="Enter your email for newsletter" />
+                      <span className={show ? "input-click" : "input-group-btn"}>
+                        <button className="btn d-flex" type="submit"> {show && <i style={{marginRight:"5px",color: "#003AAD",marginTop:"1px"}} class="fas fa-spinner fa-spin"></i>} <i style={{ padding: "3px", color: "#003AAD", marginLeft: "-4px" }} class="fa fa-arrow-right"></i></button>
+                      </span>
+                    </div>
+                  </form>
+                  <p style={{ fontSize: "17px", fontWeight: "500", fontFamily: "sans-serif", color: "rgba(255, 255, 255, 0.637)", marginTop: "10px" }} >{message}</p>
+                </div>
               </div>
-            </div>
-            <div className='col-lg-7 col-md-7'>
-              <div className='LiveImg'>
-              <a href="https://play.google.com/store/apps/details?id=in.bullsmart" className='LiveImg'>
-                <img src={Liveimg6}></img>
-              </a>
-
+              <div className='col-lg-7 col-md-7'>
+                <a href="https://play.google.com/store/apps/details?id=in.bullsmart" className='LiveImg'>
+                  <img src={Liveimg6}></img>
+                </a>
               </div>
             </div>
           </div>
         </div>
-      </div>
       </section>
 
       <section id='Value-section'>

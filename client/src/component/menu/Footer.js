@@ -28,11 +28,21 @@ const Footer = () => {
                               <h3>Company</h3>
                           </div>
                           <ul className='footerlist'>
+                            <Link to = "/News">
                             <li> <a href='#'>News</a></li>
+                            </Link>
+                            <Link to = "/Learn">
                             <li> <a href='#'>Learn</a></li>
+                            </Link>
+                            <Link to = "/Blog">
                             <li> <a href='#'>Blog</a></li>
+                            </Link>
+                            <Link to = "/About">
                             <li> <a href='#'>About Us</a></li>
+                            </Link>
+                            <Link to = "/Career">
                             <li> <a href='#'>Career</a></li>
+                            </Link>
                           </ul>
                         </div>
                     </div>

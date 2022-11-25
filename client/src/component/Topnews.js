@@ -14,22 +14,21 @@ import "./Home.css"
 
 
 const   Topnews = ({apidata}) => {
-  if(apidata){
-    var parsed = apidata.rss.channel.item
-    console.log(apidata.rss.channel.item)
-  }
+if(apidata){
+  console.log(apidata)
 
+}
   return (
     <>
      <div className='topNewsdata'>       
     
     {
-        parsed&&
-        parsed.map((items,index)=>{
-        console.log(items["media:content"]._attributes)
+        apidata&&
+        apidata.map((items,index)=>{
+        console.log(items)
         return(
               <>
-                 <a href= {items.link._cdata}>
+                 <a target="blank" href= {items.link._cdata}>
                  <div className='newdgrid'>                   
                   <div class="NewsCT">
                     <div className='NewsImg2'>
@@ -40,7 +39,6 @@ const   Topnews = ({apidata}) => {
                     {/* <h4>By Umair Irfan</h4>  */}
                   </div>                 
                 </div>
-
             </a>
             </>
         )

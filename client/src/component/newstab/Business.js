@@ -5,20 +5,8 @@ const convert = require("xml-js")
 
 
 
-const Business = () => {
+const Business = ({data}) => {
 
-  const[data,setdata] = useState()
-  const newApi = async()=>{
-
-    const res =  await axios.get("https://corsanywhere.herokuapp.com/https://www.hindustantimes.com/feeds/rss/business/rssfeed.xml")
-    const result1 = convert.xml2json(res.data,{compact: true, spaces: 4})
-    setdata(JSON.parse(result1))
-   }
-    
-
-   useEffect(()=>{
-    newApi()
-    },[])
 
   return (
     <div>

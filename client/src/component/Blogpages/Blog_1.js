@@ -64,7 +64,8 @@ export const Blog_1 = () => {
 <input type="checkbox"/>  Save my name, email, and website in this browser for the next time I comment.
 </div>
 <div className="sub-btn">
-<input type="submit" value="Post Comment"/>
+<button type="submit" className='comment_btn'>Post Comment</button>
+
 </div>
 
   </form>
