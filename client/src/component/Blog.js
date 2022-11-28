@@ -1,9 +1,12 @@
 import React, { useEffect } from 'react';
 import './Blog.css';
 import blogImg1 from './Images/blog-img1.png';
+
+import { useState } from 'react'
+import axios from 'axios';
 import Guidslider from './Guidslider';
 import Letestslider from './Letestslider';
-import {AnimatedOnScroll} from "react-animated-css-onscroll";
+import { AnimatedOnScroll } from "react-animated-css-onscroll";
 import Investblog1 from './Images/BlogInvest-img1.png';
 import Investblog2 from './Images/BlogInvest-img2.png';
 import Investblog3 from './Images/BlogInvest-img3.png';
@@ -14,33 +17,37 @@ import Typewriter from "typewriter-effect";
 
 
 const Blog = () => {
-
+  const [blogdata, setBlogdata] = useState([])
   useEffect(() => {
-   window.scrollTo(0, 0)
+    window.scrollTo(0, 0)
+    axios.get("/api/auth/viewblogs").then((res) => {
+      // console.log(res.data.result);
+      setBlogdata(res.data.result)
+    })
   }, [])
   return (
     <div className='body-main'>
-       <section id='Blog-banner'>
-          <div className='container-fluid banner-bg'>
-            <div className='row Banner-main'>
+      <section id='Blog-banner'>
+        <div className='container-fluid banner-bg'>
+          <div className='row Banner-main'>
             <div className='Banner-title'>
               <AnimatedOnScroll animationIn="fadeInUp" animationOut="fadeInUp"> <h2>YOUR FINANCIAL GUIDE </h2>
               </AnimatedOnScroll>
             </div>
-            </div>
           </div>
+        </div>
       </section>
       <section id='News-Title'>
         <div className='container'>
           <div class="typewriter">
-          <h2>Smart</h2>            
-          <Typewriter
-            options={{
-              strings: ['People', 'Investment'],
-              autoStart: true,
-              loop: true,
-            }}
-          />             
+            <h2>Smart</h2>
+            <Typewriter
+              options={{
+                strings: ['People', 'Investment'],
+                autoStart: true,
+                loop: true,
+              }}
+            />
           </div>
         </div>
       </section>
@@ -54,11 +61,11 @@ const Blog = () => {
                 </div>
                 <div className='BContent'>
                   <h3>2 Min Read</h3>
-                 <a href='#'>Digital payment initiatives of – मेरे नए  भारत का Fin-Tech </a> <p></p>
+                  <a href='#'>Digital payment initiatives of – मेरे नए  भारत का Fin-Tech </a> <p></p>
                 </div>
               </div>
             </div>
-            <div className='col-lg-3 col-md-4'>           
+            <div className='col-lg-3 col-md-4'>
               <div className='Blog-right'>
                 <div className='Blog-heading'>
                   <h3>Must Read</h3>
@@ -81,7 +88,7 @@ const Blog = () => {
             </div>
           </div>
         </div>
-     
+
       </section>
 
       <section id='Blog-slider'>
@@ -90,12 +97,12 @@ const Blog = () => {
             <h3>Latest Stories</h3>
           </div>
           <div className='letslider2'>
-            <Blogslider/>       
+            <Blogslider />
           </div>
         </div>
-        </section>  
+      </section>
 
-     {/* <section id='Guid-section'>
+      {/* <section id='Guid-section'>
       <div className='container'>
       <div className='Guidsldier-sec'>
         <div className='Guid-head'>
@@ -106,288 +113,302 @@ const Blog = () => {
       </div>
      </section>  */}
 
-    <section id='BInvest-section'>
-      <div className='Binveshape'>
-      <div className='container BInvest-rigth'>
-         <div className='section-head'>
+      <section id='BInvest-section'>
+        <div className='Binveshape'>
+          <div className='container BInvest-rigth'>
+            <div className='section-head'>
               <h2>Investing 101</h2>
-          </div>
-          <div className='row Binvest-alin'>
-            <div className='col-lg-10 col-md-10'>
-             <div className='BInvest-grid'>
-               <div className='Binvest-item1'>
-                <div className='bInvest-img'>
-                  <img src={Investblog1} alt='Blog-Invest'></img>
-                </div>
-                <h4>2 min read</h4>
-                <p>Mutual Funds: The Definitive Guide to Building Your Portfolio</p>
-               </div>
-
-               <div className='Binvest-item1'>
-                <div className='bInvest-img'>
-                  <img src={Investblog2} alt='Blog-Invest'></img>
-                </div>
-                <h4>2 min read</h4>
-                <p>Investing in the Stock Market: Why You Should Start Today</p>
-               </div>
-
-               <div className='Binvest-item1'>
-                <div className='bInvest-img'>
-                  <img src={Investblog3} alt='Blog-Invest'></img>
-                </div>
-                <h4>2 min read</h4>
-                <p>The stock market explained!</p>
-               </div>
-
-               <div className='Binvest-item1'>
-                <div className='bInvest-img'>
-                  <img src={Investblog4} alt='Blog-Invest'></img>
-                </div>
-                <h4>2 min read</h4>
-                <p>MHello world!</p>
-               </div>
-
-               <div className='Binvest-item1'>
-                <div className='bInvest-img'>
-                  <img src={Investblog5} alt='Blog-Invest'></img>
-                </div>
-                <h4>2 min read</h4>
-                <p>Know the available investing instruments</p>
-               </div>
-               <div className='Binvest-item1'>
-                <div className='bInvest-img'>
-                  <img src={Investblog3} alt='Blog-Invest'></img>
-                </div>
-                <h4>2 min read</h4>
-                <p>Getting started in stock market: things to consider</p>
-               </div>
-              </div>   
             </div>
-            <div className='col-ld-2 col-md-2'>
-              <div className='text-vertical'>
-                 <h3>INVESTING</h3>
+
+            <div className='row Binvest-alin'>
+              <div className='col-lg-10 col-md-10'>
+                <div className='BInvest-grid'>
+                  {
+                    blogdata.slice(0).reverse().map((items, index) => {
+                      return (
+                        <div className='Binvest-item1'>
+                          <div className='bInvest-img'>
+                            <img src={items.url} alt='Blog-Invest' style={{height:"250px"}}></img>
+                          </div>
+                          <h4>2 min read</h4>
+                          <p>{items.title}</p>
+                        </div>
+                      )
+                    })
+                  }
+                  <div className='Binvest-item1'>
+                    <div className='bInvest-img'>
+                      <img src={Investblog1} alt='Blog-Invest'></img>
+                    </div>
+                    <h4>2 min read</h4>
+                    <p>Mutual Funds: The Definitive Guide to Building Your Portfolio</p>
+                  </div>
+
+                  <div className='Binvest-item1'>
+                    <div className='bInvest-img'>
+                      <img src={Investblog2} alt='Blog-Invest'></img>
+                    </div>
+                    <h4>2 min read</h4>
+                    <p>Investing in the Stock Market: Why You Should Start Today</p>
+                  </div>
+
+                  <div className='Binvest-item1'>
+                    <div className='bInvest-img'>
+                      <img src={Investblog3} alt='Blog-Invest'></img>
+                    </div>
+                    <h4>2 min read</h4>
+                    <p>The stock market explained!</p>
+                  </div>
+
+                  <div className='Binvest-item1'>
+                    <div className='bInvest-img'>
+                      <img src={Investblog4} alt='Blog-Invest'></img>
+                    </div>
+                    <h4>2 min read</h4>
+                    <p>MHello world!</p>
+                  </div>
+
+                  <div className='Binvest-item1'>
+                    <div className='bInvest-img'>
+                      <img src={Investblog5} alt='Blog-Invest'></img>
+                    </div>
+                    <h4>2 min read</h4>
+                    <p>Know the available investing instruments</p>
+                  </div>
+                  <div className='Binvest-item1'>
+                    <div className='bInvest-img'>
+                      <img src={Investblog3} alt='Blog-Invest'></img>
+                    </div>
+                    <h4>2 min read</h4>
+                    <p>Getting started in stock market: things to consider</p>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-          {/* <div className='BInvest-btn'>
-            <button className='BInvst'><a href='#'>SEE MORE</a></button>
-          </div> */}
-      </div>
-      </div>
-    </section>
-      
-
-     <section id='Planning-section'>
-     <div className='Binveshape'>
-      <div className='container BInvest-rigth'>
-         <div className='section-head'>
-              <h2>Planning</h2>
-          </div>
-          <div className='row Binvest-alin'>
-            <div className='col-ld-2 col-md-2'>
-              <div className='text-vertical'>
-                 <h3>PLANNING</h3>
-              </div>
-            </div>
-            <div className='col-lg-10 col-md-10'>
-             <div className='BInvest-grid'>
-               <div className='Binvest-item1'>
-                <div className='bInvest-img'>
-                  <img src={Investblog1} alt='Blog-Invest'></img>
+              <div className='col-ld-2 col-md-2'>
+                <div className='text-vertical'>
+                  <h3>INVESTING</h3>
                 </div>
-                <h4>2 min read</h4>
-                <p>Mutual Funds: The Definitive Guide to Building Your Portfolio</p>
-               </div>
-
-               <div className='Binvest-item1'>
-                <div className='bInvest-img'>
-                  <img src={Investblog2} alt='Blog-Invest'></img>
-                </div>
-                <h4>2 min read</h4>
-                <p>Investing in the Stock Market: Why You Should Start Today</p>
-               </div>
-
-               <div className='Binvest-item1'>
-                <div className='bInvest-img'>
-                  <img src={Investblog3} alt='Blog-Invest'></img>
-                </div>
-                <h4>2 min read</h4>
-                <p>The stock market explained!</p>
-               </div>
-
-               <div className='Binvest-item1'>
-                <div className='bInvest-img'>
-                  <img src={Investblog4} alt='Blog-Invest'></img>
-                </div>
-                <h4>2 min read</h4>
-                <p>MHello world!</p>
-               </div>
-
-               <div className='Binvest-item1'>
-                <div className='bInvest-img'>
-                  <img src={Investblog5} alt='Blog-Invest'></img>
-                </div>
-                <h4>2 min read</h4>
-                <p>Know the available investing instruments</p>
-               </div>
-               <div className='Binvest-item1'>
-                <div className='bInvest-img'>
-                  <img src={Investblog3} alt='Blog-Invest'></img>
-                </div>
-                <h4>2 min read</h4>
-                <p>Getting started in stock market: things to consider</p>
-               </div>
-              </div>   
-              {/* <div className='BInvest-btn'>
-            <button className='BInvst'><a href='#'>SEE MORE</a></button>
-            </div> */}
-            </div>
-          </div>
-      </div>
-      </div>
-      </section> 
-
-
-      <section id='Saving-section'>
-      <div className='Binveshape'>
-      <div className='container BInvest-rigth'>
-         <div className='section-head'>
-              <h2>SAVING</h2>
-          </div>
-          <div className='row Binvest-alin'>
-            <div className='col-lg-10 col-md-10'>
-             <div className='BInvest-grid'>
-               <div className='Binvest-item1'>
-                <div className='bInvest-img'>
-                  <img src={Investblog1} alt='Blog-Invest'></img>
-                </div>
-                <h4>2 min read</h4>
-                <p>Mutual Funds: The Definitive Guide to Building Your Portfolio</p>
-               </div>
-
-               <div className='Binvest-item1'>
-                <div className='bInvest-img'>
-                  <img src={Investblog2} alt='Blog-Invest'></img>
-                </div>
-                <h4>2 min read</h4>
-                <p>Investing in the Stock Market: Why You Should Start Today</p>
-               </div>
-
-               <div className='Binvest-item1'>
-                <div className='bInvest-img'>
-                  <img src={Investblog3} alt='Blog-Invest'></img>
-                </div>
-                <h4>2 min read</h4>
-                <p>The stock market explained!</p>
-               </div>
-
-               <div className='Binvest-item1'>
-                <div className='bInvest-img'>
-                  <img src={Investblog4} alt='Blog-Invest'></img>
-                </div>
-                <h4>2 min read</h4>
-                <p>MHello world!</p>
-               </div>
-
-               <div className='Binvest-item1'>
-                <div className='bInvest-img'>
-                  <img src={Investblog5} alt='Blog-Invest'></img>
-                </div>
-                <h4>2 min read</h4>
-                <p>Know the available investing instruments</p>
-               </div>
-               <div className='Binvest-item1'>
-                <div className='bInvest-img'>
-                  <img src={Investblog3} alt='Blog-Invest'></img>
-                </div>
-                <h4>2 min read</h4>
-                <p>Getting started in stock market: things to consider</p>
-               </div>
-              </div>   
-            </div>
-            <div className='col-ld-2 col-md-2'>
-              <div className='text-vertical'>
-                 <h3>SAVING</h3>
               </div>
             </div>
             {/* <div className='BInvest-btn'>
             <button className='BInvst'><a href='#'>SEE MORE</a></button>
           </div> */}
           </div>
-          
-      </div>
-      </div>
+        </div>
+      </section>
+
+
+      <section id='Planning-section'>
+        <div className='Binveshape'>
+          <div className='container BInvest-rigth'>
+            <div className='section-head'>
+              <h2>Planning</h2>
+            </div>
+            <div className='row Binvest-alin'>
+              <div className='col-ld-2 col-md-2'>
+                <div className='text-vertical'>
+                  <h3>PLANNING</h3>
+                </div>
+              </div>
+              <div className='col-lg-10 col-md-10'>
+                <div className='BInvest-grid'>
+                  <div className='Binvest-item1'>
+                    <div className='bInvest-img'>
+                      <img src={Investblog1} alt='Blog-Invest'></img>
+                    </div>
+                    <h4>2 min read</h4>
+                    <p>Mutual Funds: The Definitive Guide to Building Your Portfolio</p>
+                  </div>
+
+                  <div className='Binvest-item1'>
+                    <div className='bInvest-img'>
+                      <img src={Investblog2} alt='Blog-Invest'></img>
+                    </div>
+                    <h4>2 min read</h4>
+                    <p>Investing in the Stock Market: Why You Should Start Today</p>
+                  </div>
+
+                  <div className='Binvest-item1'>
+                    <div className='bInvest-img'>
+                      <img src={Investblog3} alt='Blog-Invest'></img>
+                    </div>
+                    <h4>2 min read</h4>
+                    <p>The stock market explained!</p>
+                  </div>
+
+                  <div className='Binvest-item1'>
+                    <div className='bInvest-img'>
+                      <img src={Investblog4} alt='Blog-Invest'></img>
+                    </div>
+                    <h4>2 min read</h4>
+                    <p>MHello world!</p>
+                  </div>
+
+                  <div className='Binvest-item1'>
+                    <div className='bInvest-img'>
+                      <img src={Investblog5} alt='Blog-Invest'></img>
+                    </div>
+                    <h4>2 min read</h4>
+                    <p>Know the available investing instruments</p>
+                  </div>
+                  <div className='Binvest-item1'>
+                    <div className='bInvest-img'>
+                      <img src={Investblog3} alt='Blog-Invest'></img>
+                    </div>
+                    <h4>2 min read</h4>
+                    <p>Getting started in stock market: things to consider</p>
+                  </div>
+                </div>
+                {/* <div className='BInvest-btn'>
+            <button className='BInvst'><a href='#'>SEE MORE</a></button>
+            </div> */}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section id='Saving-section'>
+        <div className='Binveshape'>
+          <div className='container BInvest-rigth'>
+            <div className='section-head'>
+              <h2>SAVING</h2>
+            </div>
+            <div className='row Binvest-alin'>
+              <div className='col-lg-10 col-md-10'>
+                <div className='BInvest-grid'>
+                  <div className='Binvest-item1'>
+                    <div className='bInvest-img'>
+                      <img src={Investblog1} alt='Blog-Invest'></img>
+                    </div>
+                    <h4>2 min read</h4>
+                    <p>Mutual Funds: The Definitive Guide to Building Your Portfolio</p>
+                  </div>
+
+                  <div className='Binvest-item1'>
+                    <div className='bInvest-img'>
+                      <img src={Investblog2} alt='Blog-Invest'></img>
+                    </div>
+                    <h4>2 min read</h4>
+                    <p>Investing in the Stock Market: Why You Should Start Today</p>
+                  </div>
+
+                  <div className='Binvest-item1'>
+                    <div className='bInvest-img'>
+                      <img src={Investblog3} alt='Blog-Invest'></img>
+                    </div>
+                    <h4>2 min read</h4>
+                    <p>The stock market explained!</p>
+                  </div>
+
+                  <div className='Binvest-item1'>
+                    <div className='bInvest-img'>
+                      <img src={Investblog4} alt='Blog-Invest'></img>
+                    </div>
+                    <h4>2 min read</h4>
+                    <p>MHello world!</p>
+                  </div>
+
+                  <div className='Binvest-item1'>
+                    <div className='bInvest-img'>
+                      <img src={Investblog5} alt='Blog-Invest'></img>
+                    </div>
+                    <h4>2 min read</h4>
+                    <p>Know the available investing instruments</p>
+                  </div>
+                  <div className='Binvest-item1'>
+                    <div className='bInvest-img'>
+                      <img src={Investblog3} alt='Blog-Invest'></img>
+                    </div>
+                    <h4>2 min read</h4>
+                    <p>Getting started in stock market: things to consider</p>
+                  </div>
+                </div>
+              </div>
+              <div className='col-ld-2 col-md-2'>
+                <div className='text-vertical'>
+                  <h3>SAVING</h3>
+                </div>
+              </div>
+              {/* <div className='BInvest-btn'>
+            <button className='BInvst'><a href='#'>SEE MORE</a></button>
+          </div> */}
+            </div>
+
+          </div>
+        </div>
       </section>
 
       <section id='Industry-section'>
-     <div className='Binveshape'>
-      <div className='container BInvest-rigth'>
-         <div className='section-head'>
+        <div className='Binveshape'>
+          <div className='container BInvest-rigth'>
+            <div className='section-head'>
               <h2>INDUSTRY INSIGHTS</h2>
-          </div>
-          <div className='row Binvest-alin'>
-            <div className='col-ld-2 col-md-2'>
-              <div className='text-vertical'>
-                 <h3>INDUSTRYINSIGHTS</h3>
-              </div>
             </div>
-            <div className='col-lg-10 col-md-10'>
-             <div className='BInvest-grid'>
-               <div className='Binvest-item1'>
-                <div className='bInvest-img'>
-                  <img src={Investblog1} alt='Blog-Invest'></img>
+            <div className='row Binvest-alin'>
+              <div className='col-ld-2 col-md-2'>
+                <div className='text-vertical'>
+                  <h3>INDUSTRYINSIGHTS</h3>
                 </div>
-                <h4>2 min read</h4>
-                <p>Mutual Funds: The Definitive Guide to Building Your Portfolio</p>
-               </div>
+              </div>
+              <div className='col-lg-10 col-md-10'>
+                <div className='BInvest-grid'>
+                  <div className='Binvest-item1'>
+                    <div className='bInvest-img'>
+                      <img src={Investblog1} alt='Blog-Invest'></img>
+                    </div>
+                    <h4>2 min read</h4>
+                    <p>Mutual Funds: The Definitive Guide to Building Your Portfolio</p>
+                  </div>
 
-               <div className='Binvest-item1'>
-                <div className='bInvest-img'>
-                  <img src={Investblog2} alt='Blog-Invest'></img>
-                </div>
-                <h4>2 min read</h4>
-                <p>Investing in the Stock Market: Why You Should Start Today</p>
-               </div>
+                  <div className='Binvest-item1'>
+                    <div className='bInvest-img'>
+                      <img src={Investblog2} alt='Blog-Invest'></img>
+                    </div>
+                    <h4>2 min read</h4>
+                    <p>Investing in the Stock Market: Why You Should Start Today</p>
+                  </div>
 
-               <div className='Binvest-item1'>
-                <div className='bInvest-img'>
-                  <img src={Investblog3} alt='Blog-Invest'></img>
-                </div>
-                <h4>2 min read</h4>
-                <p>The stock market explained!</p>
-               </div>
+                  <div className='Binvest-item1'>
+                    <div className='bInvest-img'>
+                      <img src={Investblog3} alt='Blog-Invest'></img>
+                    </div>
+                    <h4>2 min read</h4>
+                    <p>The stock market explained!</p>
+                  </div>
 
-               <div className='Binvest-item1'>
-                <div className='bInvest-img'>
-                  <img src={Investblog4} alt='Blog-Invest'></img>
-                </div>
-                <h4>2 min read</h4>
-                <p>MHello world!</p>
-               </div>
+                  <div className='Binvest-item1'>
+                    <div className='bInvest-img'>
+                      <img src={Investblog4} alt='Blog-Invest'></img>
+                    </div>
+                    <h4>2 min read</h4>
+                    <p>MHello world!</p>
+                  </div>
 
-               <div className='Binvest-item1'>
-                <div className='bInvest-img'>
-                  <img src={Investblog5} alt='Blog-Invest'></img>
+                  <div className='Binvest-item1'>
+                    <div className='bInvest-img'>
+                      <img src={Investblog5} alt='Blog-Invest'></img>
+                    </div>
+                    <h4>2 min read</h4>
+                    <p>Know the available investing instruments</p>
+                  </div>
+                  <div className='Binvest-item1'>
+                    <div className='bInvest-img'>
+                      <img src={Investblog3} alt='Blog-Invest'></img>
+                    </div>
+                    <h4>2 min read</h4>
+                    <p>Getting started in stock market: things to consider</p>
+                  </div>
                 </div>
-                <h4>2 min read</h4>
-                <p>Know the available investing instruments</p>
-               </div>
-               <div className='Binvest-item1'>
-                <div className='bInvest-img'>
-                  <img src={Investblog3} alt='Blog-Invest'></img>
-                </div>
-                <h4>2 min read</h4>
-                <p>Getting started in stock market: things to consider</p>
-               </div>
-              </div>   
-              {/* <div className='BInvest-btn'>
+                {/* <div className='BInvest-btn'>
             <button className='BInvst'><a href='#'>SEE MORE</a></button>
             </div> */}
+              </div>
             </div>
           </div>
-      </div>
-      </div>
-      </section> 
+        </div>
+      </section>
     </div>
   )
 }
