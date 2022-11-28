@@ -96,7 +96,7 @@ exports.viewnews = catchAsyncError(
 exports.viewblogs = catchAsyncError(
     async(req, res)=>{
         try {
-            await Blogs.find({}, (error, result)=>{
+             Blogs.find({}, (error, result)=>{
                 if (error) {console.log(error , "viewblog error")}
                 res.send({result})
             } )

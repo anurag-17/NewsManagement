@@ -26,55 +26,56 @@ import { Blog_1 } from './component/Blogpages/Blog_1';
 import { Blog2 } from './component/Blogpages/Blog2';
 import { useEffect } from 'react';
 import { Blog3 } from './component/Blogpages/Blog3';
+import { Condition } from './component/Common/Condition';
 
 function App() {
   useEffect(() => {
-window.scrollTo(0,0)
+    window.scrollTo(0, 0)
   }, [])
   let location = useLocation()
   const data = JSON.parse(localStorage.getItem('newstoken'))
 
-if(data !== null){
-  if(Date.now()>data.expiry){
-    localStorage.removeItem("newstoken")
+  if (data !== null) {
+    if (Date.now() > data.expiry) {
+      localStorage.removeItem("newstoken")
+    }
   }
-}
   return (
     <>
       <div className='App'>
-          {location.pathname !== "/admin"  && location.pathname !== "/forgotpassword" && location.pathname !== "/passwordchange" && location.pathname !== "/admindash" && location.pathname !== "/addblogs" && location.pathname !== "/viewnews" && location.pathname !== "/viewblogs" && location.pathname !== "/addnews" && location.pathname !=="/"&&location.pathname!=="/addcontent" && location.pathname!=="/aboutcontent"&&<Navbarmenu/>}
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/blog' element={<Blog/>} />
-            <Route path='/about' element={<About />} />
-            <Route path='/career' element={<Career/>} />
-            <Route path='/addnews' element={<AddNews />} />
-            <Route path='/admin' element={<Admin />} />
-            <Route path='/admindash' element={<AddNews/>} />
-            <Route path='/addblogs' element={<AddBlogs />} />
-            <Route path='/viewnews' element={<ViewNews />} />
-            <Route path='/News' element={<News/>} />
-            <Route path='/Learn' element={<Learn/>} />
-            <Route path='/viewblogs' element={<Viewblogs />} />
-            <Route path='/loader' element={<Loader/>} />
-            <Route path='/addcontent' element={<AddContent/>} />
-            <Route  path = "/aboutcontent" element={<AboutContent/>}/>
-            <Route path='/forgotpassword' element={<ForgotPassword/>} />
-            <Route path='/passwordchange' element={<Passwordchange/>}/>
-            <Route path='/privacy-policy' element={<Terms/>}/>
-            <Route path='/Blog_1' element={<Blog_1/>}/>
-            <Route path='/Blog_2' element={<Blog2/>}/>
-            <Route path='/Blog_3' element={<Blog3/>}/>
-
-            {/* <Route path='/rss' element={<DefaultRSSComponent/>}/> */}
-
-
+        {location.pathname !== "/admin" && location.pathname !== "/forgotpassword" && location.pathname !== "/passwordchange" && location.pathname !== "/admindash" && location.pathname !== "/addblogs" && location.pathname !== "/viewnews" && location.pathname !== "/viewblogs" && location.pathname !== "/addnews" && location.pathname !== "/" && location.pathname !== "/addcontent" && location.pathname !== "/aboutcontent" && <Navbarmenu />}
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/blog' element={<Blog />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/career' element={<Career />} />
+          <Route path='/addnews' element={<AddNews />} />
+          <Route path='/admin' element={<Admin />} />
+          <Route path='/admindash' element={<AddNews />} />
+          <Route path='/addblogs' element={<AddBlogs />} />
+          <Route path='/viewnews' element={<ViewNews />} />
+          <Route path='/News' element={<News />} />
+          <Route path='/Learn' element={<Learn />} />
+          <Route path='/viewblogs' element={<Viewblogs />} />
+          <Route path='/loader' element={<Loader />} />
+          <Route path='/addcontent' element={<AddContent />} />
+          <Route path="/aboutcontent" element={<AboutContent />} />
+          <Route path='/forgotpassword' element={<ForgotPassword />} />
+          <Route path='/passwordchange' element={<Passwordchange />} />
+          <Route path='/privacy-policy' element={<Terms />} />
+          <Route path='/Blog_1' element={<Blog_1 />} />
+          <Route path='/Blog_2' element={<Blog2 />} />
+          <Route path='/Blog_3' element={<Blog3 />} />
+          <Route path='/terms-condition' element={<Condition />} />
+          {/* <Route path='/rss' element={<DefaultRSSComponent/>}/> */}
 
 
 
-          
+
+
+
         </Routes>
-          {location.pathname !== "/admin" && location.pathname !== "/admindash" && location.pathname !== "/forgotpassword" && location.pathname !== "/passwordchange"&& location.pathname !== "/addblogs" && location.pathname !== "/viewnews" && location.pathname !== "/viewblogs" && location.pathname !== "/addnews"&&location.pathname!=="/addcontent" && location.pathname!=="/aboutcontent"&&<Footer/>}
+        {location.pathname !== "/admin" && location.pathname !== "/admindash" && location.pathname !== "/forgotpassword" && location.pathname !== "/passwordchange" && location.pathname !== "/addblogs" && location.pathname !== "/viewnews" && location.pathname !== "/viewblogs" && location.pathname !== "/addnews" && location.pathname !== "/addcontent" && location.pathname !== "/aboutcontent" && <Footer />}
       </div>
     </>
   );

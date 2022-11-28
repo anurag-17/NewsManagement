@@ -1,6 +1,6 @@
 /* blog banner start */
 #Blog-banner .banner-bg{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../component/Images/Blog-Page-Banner-1.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../component/Images/blogimage.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

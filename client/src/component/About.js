@@ -31,20 +31,22 @@ const Input_handler = (e) =>{
 const handleclick = async(e) => {
   e.preventDefault()
    setShow(true)
-   axios.post("/api/auth//useremail",useremail,{headers:{"Content-Type": "application/json" } }).then((res)=>{
-    console.log(res);
-    // swal(res.data,"" ,"success")
-    setUseremail({
-      email:""
-    })
-    setShow(false)
-    setMessage(` ✓ ${res.data}`)
-    setTimeout(()=>{
-      setMessage("")
-    },2000)
-   }).catch((e)=>{
-    console.log(e);
-   })
+  setTimeout(()=>{
+    axios.post("/api/auth//useremail",useremail,{headers:{"Content-Type": "application/json" } }).then((res)=>{
+      console.log(res);
+      // swal(res.data,"" ,"success")
+      setUseremail({
+        email:""
+      })
+      setShow(false)
+      setMessage(` ✓ ${res.data}`)
+      setTimeout(()=>{
+        setMessage("")
+      },2000)
+     }).catch((e)=>{
+      console.log(e);
+     })
+  },500)
   
   // setShow(true)
   // setTimeout(() => {
@@ -178,15 +180,15 @@ window.scrollTo(0,0)
                     <div class="input-group newsform">
                       <input style={{ fontSize: "14px" }} required type="email" className="form-control form_bg" name='email' value={useremail.email} onChange={Input_handler} placeholder="Enter your email for newsletter" />
                       <span className={show ? "input-click" : "input-group-btn"}>
-                        <button className="btn d-flex" type="submit"> {show && <i style={{marginRight:"5px",color: "#003AAD",marginTop:"1px"}} class="fas fa-spinner fa-spin"></i>} <i style={{ padding: "3px", color: "#003AAD", marginLeft: "-4px" }} class="fa fa-arrow-right"></i></button>
+                        <button className="btn d-flex" type="submit"> {show && <i style={{marginRight:"5px",color: "#003AAD",marginTop:"1px"}} class="fas fa-spinner fa-spin"></i>} <i style={{ padding: "3px", color: "#003AAD", marginLeft: "-4px" }} class="fa fa-arrow-right "></i></button>
                       </span>
                     </div>
                   </form>
                   <p style={{ fontSize: "17px", fontWeight: "500", fontFamily: "sans-serif", color: "rgba(255, 255, 255, 0.637)", marginTop: "10px" }} >{message}</p>
                 </div>
-              </div>
+              </div>  
               <div className='col-lg-7 col-md-7'>
-                <a href="https://play.google.com/store/apps/details?id=in.bullsmart" className='LiveImg'>
+                <a href="https://play.google.com/store/apps/details?id=in.bullsmart" target="blank" className='LiveImg'>
                   <img src={Liveimg6}></img>
                 </a>
               </div>
