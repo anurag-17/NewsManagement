@@ -44,6 +44,7 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 import newsvideo1 from './Images/nes-video.webp';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import './News.css'
 import LetestNewstab from './LetestNewstab';
 import { AnimatedOnScroll } from 'react-animated-css-onscroll';
@@ -85,31 +86,32 @@ const imagearr = [
 
 const News = () => {
 
-  const [data, setdata] = useState()
+  const [data, setdata] = useState([])
   const [mintdata, setMintData] = useState()
 
-  const mintapi  = async()=>{
+  const mintapi = async () => {
     const response = await axios.get("/api/auth/xmlmint")
     setMintData(response.data.rss.channel.item)
+
   }
 
   const newApi = async () => {
-const res = await axios.get("/api/auth/xml")
-console.log(res.data.rss.channel.item)
-setdata(res.data.rss.channel.item)
+    const res = await axios.get("/api/auth/xml")
+    console.log(res.data.rss.channel.item)
+    setdata(res.data.rss.channel.item)
 
-// var myHeaders = new Headers();
-// myHeaders.append("Content-Type", "application/json");
-//     var requestOptions = {
-//       method: "get",
-//       headers: myHeaders,
-//       redirect: "follow",
-      
-//   };
-//     fetch("https://v1.nocodeapi.com/reshu123/xml_to_json/oWCHkdvXGxhsYoto?url=https://www.livemint.com/rssfeeds/news", requestOptions)
-//     .then(response => response.text())
-//     .then(result => setdata(JSON.parse(result)))
-//     .catch(error => console.log('error', error));
+    // var myHeaders = new Headers();
+    // myHeaders.append("Content-Type", "application/json");
+    //     var requestOptions = {
+    //       method: "get",
+    //       headers: myHeaders,
+    //       redirect: "follow",
+
+    //   };
+    //     fetch("https://v1.nocodeapi.com/reshu123/xml_to_json/oWCHkdvXGxhsYoto?url=https://www.livemint.com/rssfeeds/news", requestOptions)
+    //     .then(response => response.text())
+    //     .then(result => setdata(JSON.parse(result)))
+    //     .catch(error => console.log('error', error));
     // const res = await axios.get("https://corsanywhere.herokuapp.com/https://www.hindustantimes.com/feeds/rss/business/rssfeed.xml")
     // const res = await axios.get("https://www.hindustantimes.com/feeds/rss/business/rssfeed.xml")
 
@@ -119,7 +121,7 @@ setdata(res.data.rss.channel.item)
   useEffect(() => {
     newApi()
     mintapi()
-    window.scrollTo(0,0)
+    window.scrollTo(0, 0)
   }, [])
 
 
@@ -131,21 +133,21 @@ setdata(res.data.rss.channel.item)
       <section id='News-Title'>
         <div className='container'>
           <div class="typewriter">
-          <h2>Smart</h2>            
-          <Typewriter
-            options={{
-              strings: ['People', 'Investment'],
-              autoStart: true,
-              loop: true,
-            }}
-          />             
+            <h2>Smart</h2>
+            <Typewriter
+              options={{
+                strings: ['People', 'Investment'],
+                autoStart: true,
+                loop: true,
+              }}
+            />
           </div>
         </div>
       </section>
-      <section style = {{paddingTop:"40px"}} id='Top-News'>
+      <section style={{ paddingTop: "40px" }} id='Top-News'>
         <div className='container'>
           <div class="TopAriclnew">
-            <span ><h2 style= {{color:'black'}}>TOP NEWS</h2></span>
+            <span ><h2 style={{ color: 'black' }}>TOP NEWS</h2></span>
           </div>
 
           <div className='home-news'>
@@ -244,7 +246,7 @@ setdata(res.data.rss.channel.item)
                     <a target="blank" href='https://www.youtube.com/watch?v=btfIcDqH2nY'><iframe width="370" height="209" src="https://www.youtube.com/embed/btfIcDqH2nY" title="Is your money depreciating?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></a>
                   </div>
                   <div className='Learnimg'>
-                    <a target="blank" href='https://www.youtube.com/watch?v=btfIcDqH2nY'><h3>Why so many “election deniers” lost in 2022</h3></a>
+                    <a target="blank" href='https://www.youtube.com/watch?v=btfIcDqH2nY'><h3>Is your money depreciating?</h3></a>
                   </div>
                 </div>
                 <div className='LearnVideo'>
@@ -252,7 +254,7 @@ setdata(res.data.rss.channel.item)
                     <a target="blank" href='https://www.youtube.com/watch?v=UW3iiGyaiv0'><iframe width="370" height="209" src="https://www.youtube.com/embed/UW3iiGyaiv0" title="Short Sales" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></a>
                   </div>
                   <div className='Learnimg'>
-                    <a target="blank" href='https://www.youtube.com/watch?v=UW3iiGyaiv0'><h3>It’s not you — movies are getting darker</h3></a>
+                    <a target="blank" href='https://www.youtube.com/watch?v=UW3iiGyaiv0'><h3>Short Sales.</h3></a>
                   </div>
                 </div>
                 <div className='LearnVideo'>
@@ -260,14 +262,14 @@ setdata(res.data.rss.channel.item)
                     <a target="blank" href='https://www.youtube.com/watch?v=THabF_twN-w'><iframe width="370" height="209" src="https://www.youtube.com/embed/THabF_twN-w" title="Taxation of Mutual Fund Income." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></a>
                   </div>
                   <div className='Learnimg'>
-                    <a target="blank" href='https://www.youtube.com/watch?v=THabF_twN-w'><h3>Sign up for the Vox video newsletter</h3></a>
+                    <a target="blank" href='https://www.youtube.com/watch?v=THabF_twN-w'><h3>Taxation of Mutual Fund Income.</h3></a>
                   </div>
                 </div>
               </div>
               <div className='slide-btn'>
-                <button className='Newsbtn'><a href='guid-bt1'>More in Video  </a></button>
-              </div>
 
+                <button className='Newsbtn'><Link to='/Learn'>More in Video  </Link></button>
+              </div>
               {/* <div className='Future-main'>
                 <div className='v-shape'>
                   <h2>V</h2>
@@ -286,7 +288,7 @@ setdata(res.data.rss.channel.item)
                 </form>
 
               </div> */}
-              <div className="explainer">
+              {/* <div className="explainer">
                 <div className='ex-main'>
                   <h3 className='ex-heading'>Explainers</h3>
                   <div className="explain_image">
@@ -297,7 +299,7 @@ setdata(res.data.rss.channel.item)
                     <p>Artemis I Mission</p>
                   </div>
                 </div>
-              </div>
+              </div> */}
 
             </div>
           </div>
@@ -352,28 +354,31 @@ setdata(res.data.rss.channel.item)
         </div>
       </section> */}
       <div className='container'>
-      <Carousel 
-      showThumbs = {false}
-      autoPlay 
-      infiniteLoop 
-      >
+        {/* <Carousel
+          showThumbs={false}
+          autoPlay
+          infiniteLoop
+        >
 
-        {
-          imagearr.map((items, index) => {
-            console.log(items.description)
-            return (
-              <>
-                <div className='swiperbox' style={{ display: "flex", flexDirection: "column" }}>
-                  <img src={items.image} />
-                  <strong className="swiper-head"><p>{items.description}</p></strong>
-                </div>
-              </>
-            )
-          })
-        }
+          {
+            data.map((items, index) => {
+              console.log(items.description)
+              return (
+                <>
+                <a href={items.link._cdata} target="blank">
+                  <div className='swiperbox' style={{ display: "flex", flexDirection: "column" }}>
+                    <img src={items["media:content"]._attributes.url} />
+                    <strong className="swiper-head"><p>{items.title._cdata}</p></strong>
+                  </div>
+                  </a>
+                </>
+              )
+            })
+          }
 
 
-      </Carousel>
+        </Carousel> */}
+        
       </div>
 
       {/* <Swiper
@@ -412,7 +417,7 @@ setdata(res.data.rss.channel.item)
             <div className='col-lg-8 col-md-8 LetNews'>
               <hr />
 
-              <NewsArtical apidata={data}/>
+              <NewsArtical apidata={data} />
               {/* <div className="news_contentbox">
                 <div className='contentbox_logo'><img src={logobox} alt="" srcset="" /></div>
                 <div className="contentbox_body">
@@ -439,7 +444,7 @@ setdata(res.data.rss.channel.item)
             <div className='col-lg-4 col-md-4'>
 
 
-              <div className='news_vedio'>
+              {/* <div className='news_vedio'>
                 <div className='LearnVideo'>
                   <div className="explainer">
                     <div className='ex-main'>
@@ -485,12 +490,12 @@ setdata(res.data.rss.channel.item)
                   </div>
 
                 </div>
-              </div>
-              <div className='slide-btn'>
+              </div> */}
+              {/* <div className='slide-btn'>
                 <button className='Newsbtn'><a href='guid-bt1'>More In Podcast </a></button>
-              </div>
+              </div> */}
 
-              <div className='Future-main'>
+              {/* <div className='Future-main'>
                 <div className='v-shape'>
                   <h2>V</h2>
                 </div>
@@ -507,17 +512,17 @@ setdata(res.data.rss.channel.item)
                   </div>
                 </form>
 
-              </div>
+              </div> */}
 
 
             </div>
           </div>
-          <div className="lastbtn">
+          {/* <div className="lastbtn">
             <button className='more_btn'>MORE STORIES</button>
-          </div>
+          </div> */}
         </div>
       </section>
-{/* 
+      {/* 
       <section className="sponser">
         <div className="container">
           <div className="sponser_head">

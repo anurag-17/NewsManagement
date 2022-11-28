@@ -1,0 +1,13 @@
+.ul_defintion li{
+    list-style: disc !important;
+    margin: 0;
+}
+.ul_defintion li a{
+    color: rgb(124, 84, 90);
+}
+.underline_term{
+   text-decoration: underline;
+}
+.display_br{
+    display: block !important;
+}

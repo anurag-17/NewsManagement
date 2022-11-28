@@ -65,15 +65,15 @@ const Blog = () => {
                 </div>
                 <div className='Blog-MRead'>
                   <div className='Blog-mread1'>
-                    <h3>SEPTEMBER 02</h3>
+                    {/* <h3>SEPTEMBER 02</h3> */}
                     <p>Getting started in the stock market:things to consider</p>
                   </div>
                   <div className='Blog-mread1'>
-                    <h3>SEPTEMBER 02</h3>
+                    {/* <h3>SEPTEMBER 02</h3> */}
                     <p>Mutual Funds: The Definitive Guide to Building Your Portfolio</p>
                   </div>
                   <div className='Blog-mread1'>
-                    <h3>SEPTEMBER 02</h3>
+                    {/* <h3>SEPTEMBER 02</h3> */}
                     <p>Mutual Funds: The Definitive Guide to Building Your Portfolio</p>
                   </div>
                 </div>

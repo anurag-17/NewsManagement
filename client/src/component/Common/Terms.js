@@ -11,23 +11,15 @@ export const Terms = () => {
             <div className="container">                
                 <div className='terms_heading' style={{ textAlign: "center" }}>
                     <h1>PRIVACY POLICY</h1>
-                    <p>PRIVACY POLICY</p>
+                    
                 </div>
                     <div className="uppersection">
-                        <p className='mb-3'>Last updated: November 17, 2022</p>
+                        <p className='mb-3'>Last updated: November 24,2022</p>
                         <br />
                         <p>
-                            This Privacy Policy describes Our policies and procedures on the collection,
-                            use and disclosure of any natural or legal person who has visited the Bullsmart
-                            website/platform and/or the mobile application, and/or who may or may not have
-                            further agreed to initiate the process of opening an account with Bullsmart shall
-                            come under the purview of the scope of this Privacy Policy. Bullsmart shall at all
-                            times follow all such rules prescribed under the Information Technology Act, 2000,
-                            and rules & procedural guidelines set by the Securities Exchange Board of India (“SEBI”) and/or any of
-                            its regulated entities/intermediaries that Bullsmart is a member. Bullsmart is a member
-                            of The Association of Mutual Fund (AMFI) having its Application Reference Number (ARN) 245733.
-                            We use Your Personal data to provide and improve the Service. By using the Service, you agree
-                            to the collection and use of information in accordance with this Privacy Policy.
+                        This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of any natural or legal person who has visited the Bullsmart website/platform and/or the mobile application, and/or who may or may not have further agreed to initiate the process of opening an account with Bullsmart shall come under the purview of the scope of this Privacy Policy. Bullsmart shall at all times follow all such rules prescribed under the Information Technology Act, 2000, and rules & procedural guidelines set by the Securities Exchange Board of India (“SEBI”) and/or any of its regulated entities/intermediaries that Bullsmart is a member. Bullsmart is a member of The Association of Mutual Fund (AMFI) having its Application Reference Number (ARN) 245733.  We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy. 
+
+
                         </p>
 
                         <p>Bullsmart encourages You to carefully review the privacy policies of all Third-Party Services You access through the Platform. </p>
@@ -56,6 +48,7 @@ export const Terms = () => {
                         <p className='mt-2'>We collect information directly from you. We collect information directly from you when you use our website or mobile APP. We also collect information if you post a comment on our websites or ask us a question through phone or email or any other platform provided by us</p>
                     </div>
                     <div className="thirdparty">
+                    <strong>Third party sites</strong>
                         <p>If you click on one of the links to third party websites, you may be taken to websites we do not control. This policy does not apply to the privacy practices of those websites. Read the privacy policy of other websites carefully. We are not responsible for these third-party websites.</p>
                         <p>Mere presence of the link or its listing on this website or mobile App should not be assumed as endorsement of any kind. We cannot guarantee that these links will work all the time and we have no control over availability of linked pages </p>
                         <p>Part of the Platform or the Services may contain advertising information or promotion material, or other material submitted to the Bullsmart by third parties. Responsibility for ensuring that material submitted for inclusion on the platform complies with applicable law is exclusively on the party providing the information/material.</p>
@@ -64,10 +57,11 @@ export const Terms = () => {
                         <p>However, at times, Bullsmart may be required by law or litigation to disclose personal information about the Users. Bullsmart may also disclose information about the Users if Bullsmart determines that for national security, law enforcement, or other issues of public importance that disclosure of information is necessary.</p>
                         <p>Bullsmart reserves the right to transfer Personal Information of users to another party as a result of business partnership, contractual engagement, merger, acquisition, or sale of all or a portion of Bullsmart is asset to another party, and under such a circumstance, the provisions of this privacy policy will continue to apply unless You are notified otherwise. </p>
                         <p>Bullsmart may use a Third-party technology partnership to provide this Platform and its Services to You, to enable such Services, User information including Profile Information, User Content, behavior, technical and/or transaction information may be shared with such third parties. You hereby agree to allow Bullsmart to share such information with such contracted third parties. </p>
-                        <li>• Control over user information
-                            access, correction and probability- edit your account information, ask for verification before enabling the information, the request may be rejected in cases where the request risks the privacy of other user or is unlawful</li>
+                        <p><strong>Control over user information</strong></p>
+                           <p>To access, correction and probability- edit your account information, ask for verification before enabling the information, the request may be rejected in cases where the request risks the privacy of other user or is unlawful</p>
+                    
                     </div>
-                    <div className="grieveance mt-3">
+                    {/* <div className="grieveance mt-3">
                         <strong>G. Grievances </strong>
                         <p>If you have any grievances in relation to the Application or its content, you may send a notice to Grievance Redressal Officer at the below-mentioned email and address. </p>
                         <strong>Details of Grievance officer </strong>
@@ -97,7 +91,7 @@ export const Terms = () => {
                             <strong>Disclaimer:  Investments in securities market are subject to market risk, read all the related documents carefully before investing. </strong>
                         </p>
                         <p><strong>Email:</strong>  compliance@dadostech.in </p>
-                    </div>
+                    </div> */}
             </div>
                 </section>
                 </>

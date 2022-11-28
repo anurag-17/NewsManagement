@@ -24,7 +24,7 @@ const convert = require("xml-js")
 const Home = () => {
 
   const [useremail, setUseremail] = useState({
-    email:""
+    email: ""
   })
   const [newsdata, setNewsdata] = useState([])
   const [content, setContent] = useState([])
@@ -44,7 +44,7 @@ const Home = () => {
 
   useEffect(() => {
     viewdata()
-window.scrollTo(0,0)
+    window.scrollTo(0, 0)
   }, [])
 
 
@@ -55,40 +55,42 @@ window.scrollTo(0,0)
     console.log(res.data.rss.channel.item)
     setdata(res.data.rss.channel.item)
 
-// var myHeaders = new Headers();
-// myHeaders.append("Content-Type", "application/json");
-//     var requestOptions = {
-//       method: "get",
-//       headers: myHeaders,
-//       redirect: "follow",
-      
-//   };
-//     fetch("https://v1.nocodeapi.com/reshu123/xml_to_json/oWCHkdvXGxhsYoto?url=https://www.hindustantimes.com/feeds/rss/business/rssfeed.xml", requestOptions)
-//     .then(response => response.text())
-//     .then(result => console.log(JSON.parse(result)))
-//     .catch(error => console.log('error', error));
+    // var myHeaders = new Headers();
+    // myHeaders.append("Content-Type", "application/json");
+    //     var requestOptions = {
+    //       method: "get",
+    //       headers: myHeaders,
+    //       redirect: "follow",
+
+    //   };
+    //     fetch("https://v1.nocodeapi.com/reshu123/xml_to_json/oWCHkdvXGxhsYoto?url=https://www.hindustantimes.com/feeds/rss/business/rssfeed.xml", requestOptions)
+    //     .then(response => response.text())
+    //     .then(result => console.log(JSON.parse(result)))
+    //     .catch(error => console.log('error', error));
   }
-  const Input_handler = (e) =>{
-   setUseremail({...useremail, [e.target.name]: e.target.value})
+  const Input_handler = (e) => {
+    setUseremail({ ...useremail, [e.target.name]: e.target.value })
   }
-  const handleclick = async(e) => {
+  const handleclick = async (e) => {
     e.preventDefault()
-     setShow(true)
-     axios.post("/api/auth//useremail", useremail, { headers: { "Content-Type": "application/json" } }).then((res)=>{
-      console.log(res);
-      // swal(res.data,"" ,"success")
-      setUseremail({
-        email:""
-      })
-      setShow(false)
-      setMessage(` ✓ ${res.data}`)
-      setTimeout(()=>{
-        setMessage("")
-      },2000)
-     }).catch((e)=>{
-      console.log(e);
-     })
-    
+    setShow(true)
+    setTimeout(()=>{
+      axios.post("/api/auth//useremail",useremail,{headers:{"Content-Type": "application/json" } }).then((res)=>{
+        console.log(res);
+        // swal(res.data,"" ,"success")
+        setUseremail({
+          email:""
+        })
+        setShow(false)
+        setMessage(` ✓ ${res.data}`)
+        setTimeout(()=>{
+          setMessage("")
+        },2000)
+       }).catch((e)=>{
+        console.log(e);
+       })
+    },500)
+
     // setShow(true)
     // setTimeout(() => {
     //   setShow(false)
@@ -161,12 +163,12 @@ window.scrollTo(0,0)
 
           <div className='home-news'>
             <div className='Homenews-grid'>
-              <Topnews apidata={data}/>
+              <Topnews apidata={data} />
               <div className='d-flex justify-content-center'>
-    <Link to = "/News">
-    <button className='view-btn mb-4 hoverclass'>KNOW MORE</button>
-    </Link>
-    </div>
+                <Link to="/News">
+                  <button className='view-btn mb-4 hoverclass'>KNOW MORE</button>
+                </Link>
+              </div>
             </div>
           </div>
 
@@ -278,7 +280,7 @@ window.scrollTo(0,0)
                     <div class="input-group newsform">
                       <input style={{ fontSize: "14px" }} required type="email" className="form-control form_bg" name='email' value={useremail.email} onChange={Input_handler} placeholder="Enter your email for newsletter" />
                       <span className={show ? "input-click" : "input-group-btn"}>
-                        <button className="btn d-flex" type="submit"> {show && <i style={{marginRight:"5px",color: "#003AAD",marginTop:"1px"}} class="fas fa-spinner fa-spin"></i>} <i style={{ padding: "3px", color: "#003AAD", marginLeft: "-4px" }} class="fa fa-arrow-right"></i></button>
+                        <button className="btn d-flex" type="submit"> {show && <i style={{ marginRight: "5px", color: "#003AAD", marginTop: "1px" }} class="fas fa-spinner fa-spin"></i>} <i style={{ padding: "3px", color: "#003AAD", marginLeft: "-4px" }} class="fa fa-arrow-right"></i></button>
                       </span>
                     </div>
                   </form>
@@ -286,7 +288,7 @@ window.scrollTo(0,0)
                 </div>
               </div>
               <div className='col-lg-7 col-md-7'>
-                <a href="https://play.google.com/store/apps/details?id=in.bullsmart" className='LiveImg'>
+                <a href="https://play.google.com/store/apps/details?id=in.bullsmart" target='blank' className='LiveImg'>
                   <img src={Liveimg6}></img>
                 </a>
               </div>
@@ -313,7 +315,7 @@ window.scrollTo(0,0)
                   <h3>Basic Lessons</h3>
                   <p>Start your investment journey with confidence</p>
                   <div className='Invest-btn'>
-                    <button><a href='https://www.youtube.com/playlist?list=PLQ0dEPuPJTIVcQcqhKQUe8dseABAT4Sm0'>Learn MORE <i class="fa fa-angle-right"></i></a></button>
+                  <a href='https://www.youtube.com/playlist?list=PLQ0dEPuPJTIVcQcqhKQUe8dseABAT4Sm0' target="blank"><button>Learn MORE <i class="fa fa-angle-right"></i></button></a>
                   </div>
                 </div>
               </div>
@@ -322,7 +324,7 @@ window.scrollTo(0,0)
                   <h3>General Investment</h3>
                   <p>Start your investment journey with confidence</p>
                   <div className='Invest-btn'>
-                    <button><a href='https://www.youtube.com/playlist?list=PLQ0dEPuPJTIVDt8hyT30jUdQVueMutYBm'>Learn MORE <i class="fa fa-angle-right"></i></a></button>
+                    <a href='https://www.youtube.com/playlist?list=PLQ0dEPuPJTIVDt8hyT30jUdQVueMutYBm' target="blank"><button>Learn MORE <i class="fa fa-angle-right"></i></button></a>
                   </div>
                 </div>
               </div>
@@ -331,7 +333,7 @@ window.scrollTo(0,0)
                   <h3>Mutual Funds</h3>
                   <p>Start your investment journey with confidence</p>
                   <div className='Invest-btn'>
-                    <button><a href='https://www.youtube.com/playlist?list=PLQ0dEPuPJTIU-ykMY5JtIdTxA9s-Ai44A'>Learn MORE <i class="fa fa-angle-right"></i></a></button>
+                  <a href='https://www.youtube.com/playlist?list=PLQ0dEPuPJTIU-ykMY5JtIdTxA9s-Ai44A' target="blank"><button>Learn MORE <i class="fa fa-angle-right"></i></button></a>
                   </div>
                 </div>
               </div>
@@ -351,50 +353,52 @@ window.scrollTo(0,0)
           </div>
           <div className='blog-grid'>
             <div className='blog_item1'>
-              <div className='blog-Ct'>
-                <div className='blogImg'>
-                  <img src={blog1}></img>
-                </div>
-                <div className='blod-des'>
-                  <h3>SEBI Chairperson spoke to Fintech Participants at the Global Fintech Fest (GFF 2022)</h3>
-                  <div className='blog-btn'>
-                    <Link to = "/Blog_1">
-                    <button className='Blog-btn'><a href='#'>Read MORE <i class="fa fa-angle-double-right"></i></a></button>
-                    </Link>
+              <Link to="/Blog_1" target="_blank">
+                <div className='blog-Ct'>
+                  <div className='blogImg'>
+                    <img src={blog1}></img>
+                  </div>
+                  <div className='blod-des'>
+                    <h3>SEBI Chairperson spoke to Fintech Participants at the Global Fintech Fest (GFF 2022)</h3>
+                    <div className='blog-btn'>
+
+                      <button className='Blog-btn'><a href='#'>Read MORE <i class="fa fa-angle-double-right"></i></a></button>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             </div>
 
             <div className='blog_item1'>
-              <div className='blog-Ct'>
-                <div className='blogImg'>
-                  <img src={blog2}></img>
-                </div>
-                <div className='blod-des'>
-                  <h3>Things to know before you start investing</h3>
-                  <div className='blog-btn'>
-                    <Link to = "/Blog_2">
-                    <button className='Blog-btn'><a href='#'>Read MORE <i class="fa fa-angle-double-right"></i></a></button>
-                    </Link>
+              <Link to="/Blog_2" target="_blank">
+                <div className='blog-Ct'>
+                  <div className='blogImg'>
+                    <img src={blog2}></img>
+                  </div>
+                  <div className='blod-des'>
+                    <h3>Things to know before you start investing</h3>
+                    <div className='blog-btn'>
+
+                      <button className='Blog-btn'><a href='#'>Read MORE <i class="fa fa-angle-double-right"></i></a></button>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             </div>
             <div className='blog_item1'>
-              <div className='blog-Ct'>
-                <div className='blogImg'>
-                  <img src={blog3}></img>
-                </div>
-                <div className='blod-des'>
-                  <h3>Mutual Funds Terminologies: Your Complete Guide</h3>
-                  <div className='blog-btn'>
-                    <Link to = "/Blog_3" >
-                    <button className='Blog-btn'><a href='#'>Read MORE <i class="fa fa-angle-double-right"></i></a></button>
-                    </Link>
+              <Link to="/Blog_3" target="_blank">
+                <div className='blog-Ct'>
+                  <div className='blogImg'>
+                    <img src={blog3}></img>
+                  </div>
+                  <div className='blod-des'>
+                    <h3>Mutual Funds Terminologies: Your Complete Guide</h3>
+                    <div className='blog-btn'>
+                      <button className='Blog-btn'><a href='#'>Read MORE <i class="fa fa-angle-double-right"></i></a></button>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             </div>
 
           </div>
