@@ -183,10 +183,25 @@ button.neain-invst {
     padding-top: 25px;
     grid-row-gap: 50px;
 }
+.bottom-grid{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 30px;
+    padding-top: 55px;
+    grid-row-gap: 100px;
+}
+
+.bottom-grid .letest-Img img{
+    border-radius: 15px;
+    padding-bottom: 10px;
+    height: 265px;
+    object-fit: cover;
+}
+
 #topic-sec .letest-StImg img {
     border-radius: 15px;
     padding-bottom: 10px;
-    height: 300px;
+    height: 360px;
     object-fit: cover;
 }
 #topic-sec .letest-Story-grid a {

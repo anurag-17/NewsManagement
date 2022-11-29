@@ -73,14 +73,14 @@ const Learn = () => {
           </div>
         </section>
 
-        {/* <section id='topic-sec'>          
+        <section id='topic-sec'>          
            <div className='container'>
             <div class="Newtext-divider">
               Topics
               </div>
             <LetestNewstab/>
             </div>
-        </section> */}
+        </section>
 
         {/* <section id='learnCat-sec'>
           <div className='container'>
