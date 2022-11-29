@@ -4,6 +4,9 @@ import img1 from "../Images/learnimg1.webp"
 import img2 from "../Images/learnimg2.jpeg"
 import img3 from "../Images/learnimg3.webp"
 import img4 from "../Images/learnimg4.webp"
+import tranding1 from '../Images/topview1.png';
+import tranding2 from '../Images/topview2.png';
+import tranding3 from '../Images/topview3.png';
 
 
 
@@ -17,8 +20,27 @@ const Technology = () => {
 ]
   return (
     <div>
-      <TabworldCat apidata={data}/>
-      <div className='view-btn'>
+            <div className='tranding_1'>
+              <div className='tranding-item1'>
+                <div className='traningimg'>
+                 <a target = "blank" href='https://www.youtube.com/watch?v=btfIcDqH2nY'> <img src={tranding1} alt='trandingimg'></img></a>
+                </div>
+                <a target = "blank" href='https://www.youtube.com/watch?v=btfIcDqH2nY'>Is your money depreciating?</a>
+              </div>
+              <div className='tranding-item1'>
+                <div className='traningimg'>
+                 <a target = "blank" href='https://www.youtube.com/watch?v=UW3iiGyaiv0'> <img src={tranding2} alt='trandingimg'></img></a>
+                </div>
+                <a target = "blank" href='https://www.youtube.com/watch?v=UW3iiGyaiv0'>Short Sales</a>
+              </div>
+              <div className='tranding-item1'>
+                <div className='traningimg'>
+                 <a target = "blank" href='https://www.youtube.com/watch?v=THabF_twN-w'> <img src={tranding3} alt='trandingimg'></img></a>
+                </div>
+                <a target = "blank" href='https://www.youtube.com/watch?v=THabF_twN-w'>Taxation of Mutual Fund Income.</a>
+              </div>
+            </div>    
+              <div className='view-btn'>
                    <button className='view-btn'><a href='#'>Read MORE <i class="fa fa-angle-double-right"></i></a></button>
        </div>
     </div>
