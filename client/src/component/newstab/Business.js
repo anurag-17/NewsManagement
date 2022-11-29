@@ -5,6 +5,9 @@ import img1 from "../Images/learnimg1.webp"
 import img2 from "../Images/learnimg2.jpeg"
 import img3 from "../Images/learnimg3.webp"
 import img4 from "../Images/learnimg4.webp"
+import topview1 from '../Images/topview1.png';
+import topview2 from '../Images/topview2.png';
+import topview3 from '../Images/topview3.png';
 
 
 
@@ -18,7 +21,26 @@ const Business = () => {
 
   return (
     <div>
-      <TabworldCat apidata={data}/>
+            <div className='tranding_1'>
+              <div className='tranding-item1'>
+                <div className='traningimg'>
+                 <a target = "blank" href='https://www.youtube.com/watch?v=OngUXG4BTcs&t=10s'> <img src={topview1} alt='trandingimg'></img></a>
+                </div>
+                <a target = "blank" href='https://www.youtube.com/watch?v=OngUXG4BTcs&t=10s'>Why the poor get poorer and the rich get richer?</a>
+              </div>
+              <div className='tranding-item1'>
+                <div className='traningimg'>
+                 <a target = "blank" href='https://www.youtube.com/watch?v=z3sFCNWV0js'> <img src={topview2} alt='trandingimg'></img></a>
+                </div>
+                <a target = "blank" href='https://www.youtube.com/watch?v=z3sFCNWV0js'>Stock investment basic lessons.</a>
+              </div>
+              <div className='tranding-item1'>
+                <div className='traningimg'>
+                 <a target = "blank" href='https://www.youtube.com/c/BullSmartStockAcademy/videos'> <img src={topview3} alt='trandingimg'></img></a>
+                </div>
+                <a target = "blank" href='https://www.youtube.com/c/BullSmartStockAcademy/videos'>Basic trading skills beginners need to master.</a>
+              </div>
+            </div>
       <div className='view-btn'>
                    <button className='view-btn'><a href='#'>Read MORE <i class="fa fa-angle-double-right"></i></a></button>
        </div>

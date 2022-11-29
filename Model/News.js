@@ -4,14 +4,14 @@ const newsSchema = new mongoose.Schema({
     "title": {
         type: String
     },
-    "description": {
+    "catagory": {
         type: String
     },
     "url":{
         type:String,
       
     },
-    "date":{
+    "img":{
         type: String,
     }
 })

@@ -28,17 +28,19 @@ export const ViewNews = () => {
         await axios.get("/api/auth/viewnews").then((res) => {
             setNewsdata(res.data.result)
             newsdata.reverse()
+            console.log(newsdata);
         })
     }
     useEffect(() => {
         viewnews()
-    }, [newsdata, updatedata])
+    },[newsdata, updatedata])
 
     const deletehandler = async (id) => {
         setDeleteid(id)
-        await axios.post("/api/auth/deletenews", { params: id }).then((res) => {
+        await axios.post("/api/auth/deletenews", { params: id }).then(
+            viewnews()
 
-        }).catch((error) => {
+        ).catch((error) => {
             console.log(error);
         })
 
@@ -121,11 +123,12 @@ export const ViewNews = () => {
                                 <div className="card mt-3 col-5 card-main">
                                     <div className='image-center'>
 
-                                        <img className="card-img-top cardimgnews" src={items.url} alt="Card image" />
+                                        <img className="card-img-top cardimgnews" src={items.img} alt="Card image" />
                                     </div>
                                     <div className="card-body">
                                         <h4 className="card-title">{items.title}</h4>
-                                        <p className="card-text" dangerouslySetInnerHTML={{ __html: items.description }}></p>
+                                        <p className="card-text" dangerouslySetInnerHTML={{ __html: items.url }}></p>
+                                        <p className="card-text" dangerouslySetInnerHTML={{ __html: items.catagory }}></p>
 
                                     </div>
                                     <div className='card-bottom'>

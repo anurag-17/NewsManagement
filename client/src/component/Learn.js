@@ -151,7 +151,7 @@ const Learn = () => {
           </div>
         </section> */}
 
-        <section id='tranding-section'>
+        {/* <section id='tranding-section'>
           <div className='container'>
             <div class="Newtext-divider">
               TRENDING
@@ -239,7 +239,7 @@ const Learn = () => {
                    </a>
             </div>
           </div>
-        </section>
+        </section> */}
     </div>
   )
 }

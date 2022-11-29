@@ -11,14 +11,25 @@ import Investblog4 from './Images/BlogInvest-img4.png';
 import Investblog5 from './Images/BlogInvest-img5.png';
 import { Blogslider } from './Blogslider';
 import './Career.css'
+import axios from 'axios';
 const Career = () => {
 const[value,setvalue] = useState("All Job Department")
+const[data,setdata] = useState([])
 
   const handlechange = (e)=>{
     setvalue(e.target.value)
   }
+
+const getcareer = async()=>{
+  const res= await axios.get("/api/auth/viewcareer")
+  if(res.data){
+    setdata(res.data.result)
+  }
+}
+
   useEffect(() => {
     window.scrollTo(0,0)
+    getcareer()
       }, [])
   return (
     <div className='body-main'>
@@ -52,66 +63,75 @@ const[value,setvalue] = useState("All Job Department")
 </div> 
 <table class="table mt-5 maintable">
   {
-    value==="All Job Department"?
+    // value==="All Job Department"?
   <tbody>
+    {
+      data.map((items,index)=>{
+        return(
     <tr className='table-row '>
-      <td className='td-1'><h4>Content Writer</h4></td>
-      <td> <i class="fa fa-star"></i> Brand And Marketing</td>
-      <td><i class="fa fa-location-arrow" aria-hidden="true"></i> Bangalore</td>
-      <td>More Details→</td>
+      <td className='td-1'><h4>{items.title}</h4></td>
+      <td> <i class="fa fa-star"></i>{items.category}</td>
+      <td><i class="fa fa-location-arrow" aria-hidden="true"></i>{items.location}</td>
+      <a target="blank" href={items.link}><td> More Details→</td></a>
+      
 
     </tr>
-    <tr className='table-row'>
-      <td className='td-1'> <h4>Event Cordinator</h4></td>
-      <td className='td-2'> <i class="fa fa-star"></i> Brand & Marketing</td>
-      <td><i class="fa fa-location-arrow" aria-hidden="true"></i> Bangalore</td>
-      <td>More Details→</td>
+    // <tr className='table-row'>
+    //   <td className='td-1'> <h4>Event Cordinator</h4></td>
+    //   <td className='td-2'> <i class="fa fa-star"></i> Brand & Marketing</td>
+    //   <td><i class="fa fa-location-arrow" aria-hidden="true"></i> Bangalore</td>
+    //   <td>More Details→</td>
 
-    </tr>
+    // </tr>
   
-    <tr className='table-row'>
-      <td className='td-1'><h4>Back end Developer</h4> </td>
-      <td  className='td-2'> <i class="fa fa-star"></i>Engineering</td>
-      <td><i class="fa fa-location-arrow" aria-hidden="true"></i> Bangalore</td>
-      <td>More Details→</td>
-    </tr>
-    <tr className='table-row'>
-      <td className='td-1'><h4>Full Stack Developer</h4> </td>
-      <td className='td-2'> <i class="fa fa-star"></i>Engineering</td>
-      <td><i class="fa fa-location-arrow" aria-hidden="true"></i> Bangalore</td>
-      <td>More Details→</td>
+    // <tr className='table-row'>
+    //   <td className='td-1'><h4>Back end Developer</h4> </td>
+    //   <td  className='td-2'> <i class="fa fa-star"></i>Engineering</td>
+    //   <td><i class="fa fa-location-arrow" aria-hidden="true"></i> Bangalore</td>
+    //   <td>More Details→</td>
+    // </tr>
+    // <tr className='table-row'>
+    //   <td className='td-1'><h4>Full Stack Developer</h4> </td>
+    //   <td className='td-2'> <i class="fa fa-star"></i>Engineering</td>
+    //   <td><i class="fa fa-location-arrow" aria-hidden="true"></i> Bangalore</td>
+    //   <td>More Details→</td>
 
-    </tr>
-  </tbody>:value==="Engineering"?
-  <tbody> 
-    <tr className='table-row'>
-      <td className='td-1'><h4>Back end Developer</h4> </td>
-      <td  className='td-2'> <i class="fa fa-star"></i>Engineering</td>
-      <td><i class="fa fa-location-arrow" aria-hidden="true"></i> Bangalore</td>
-      <td>More Details→</td>
-    </tr>
-    <tr className='table-row'>
-      <td className='td-1'><h4>Full Stack Developer</h4> </td>
-      <td className='td-2'> <i class="fa fa-star"></i>Engineering</td>
-      <td><i class="fa fa-location-arrow" aria-hidden="true"></i> Bangalore</td>
-      <td>More Details→</td>
+    // </tr>
 
-    </tr>
-  </tbody>:<tbody>
-    <tr className='table-row '>
-      <td className='td-1'><h4>Content Writer</h4></td>
-      <td> <i class="fa fa-star"></i> Brand And Marketing</td>
-      <td><i class="fa fa-location-arrow" aria-hidden="true"></i> Bangalore</td>
-      <td>More Details→</td>
+        )
+      })
+    }
+  </tbody>
+  // :value==="Engineering"?
+  // <tbody> 
+  //   <tr className='table-row'>
+  //     <td className='td-1'><h4>Back end Developer</h4> </td>
+  //     <td  className='td-2'> <i class="fa fa-star"></i>Engineering</td>
+  //     <td><i class="fa fa-location-arrow" aria-hidden="true"></i> Bangalore</td>
+  //     <td>More Details→</td>
+  //   </tr>
+  //   <tr className='table-row'>
+  //     <td className='td-1'><h4>Full Stack Developer</h4> </td>
+  //     <td className='td-2'> <i class="fa fa-star"></i>Engineering</td>
+  //     <td><i class="fa fa-location-arrow" aria-hidden="true"></i> Bangalore</td>
+  //     <td>More Details→</td>
 
-    </tr>
-    <tr className='table-row'>
-      <td className='td-1'> <h4>Event Cordinator</h4></td>
-      <td className='td-2'> <i class="fa fa-star"></i> Brand & Marketing</td>
-      <td><i class="fa fa-location-arrow" aria-hidden="true"></i> Bangalore</td>
-      <td>More Details→</td>
+  //   </tr>
+  // </tbody>:<tbody>
+  //   <tr className='table-row '>
+  //     <td className='td-1'><h4>Content Writer</h4></td>
+  //     <td> <i class="fa fa-star"></i> Brand And Marketing</td>
+  //     <td><i class="fa fa-location-arrow" aria-hidden="true"></i> Bangalore</td>
+  //     <td>More Details→</td>
 
-    </tr></tbody>
+  //   </tr>
+  //   <tr className='table-row'>
+  //     <td className='td-1'> <h4>Event Cordinator</h4></td>
+  //     <td className='td-2'> <i class="fa fa-star"></i> Brand & Marketing</td>
+  //     <td><i class="fa fa-location-arrow" aria-hidden="true"></i> Bangalore</td>
+  //     <td>More Details→</td>
+
+  //   </tr></tbody>
   }
 </table>
 

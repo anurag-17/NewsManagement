@@ -21,7 +21,7 @@
 }
 
 .flex-image{
-    display: flex;
+    display: flex;flex-direction: column;
 }
 .model_title{
     width: 85%;
