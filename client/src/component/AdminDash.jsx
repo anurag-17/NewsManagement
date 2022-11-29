@@ -40,7 +40,8 @@ export const AdminDash = () => {
 
 
           <div >
-            <i class="fa fa-bars iconbar" aria-hidden="true" onClick={()=>{setCssnav(true)}}></i>
+
+          <div className='iconbar_bg'><i class="fa fa-bars iconbar" aria-hidden="true" onClick={()=>{setCssnav(true)}}></i></div>  
             <nav className={cssnav? "sideNavbar2": "sideNavbar"}>
             <i class="fa fa-times iconcross" aria-hidden="true" onClick={()=>{setCssnav(false)}}></i>
               <div className="navcontent">
@@ -48,48 +49,53 @@ export const AdminDash = () => {
                   <Link className="logoimg" to="/">
                     <img alt="logo" src={logo} />
                   </Link>
-                  <br className='displaybr' />
-                  <br className='displaybr' />
-                  <li>
-                    <i className="fa fa-plus iconA" aria-hidden="true" /><Link to='/addnews' className='adt'>Add News</Link>
+                  
+                  
+                  <li className='adt'>
+                    <Link to='/addnews' className='adt'>Add News</Link>
                   </li>
-                  <br className='displaybr' />
-                  <li>
-                    <i className="fa fa-newspaper-o iconA" aria-hidden="true" /> <Link className='adt23' to='/viewnews'>News</Link>
+                  
+                  <li className='adt'>
+                  <Link className='adt' to='/viewnews'>News</Link>
                   </li>
-                  <br className='displaybr' />
-                  <li>
-                    <i class="fa fa-plus iconA" aria-hidden="true"></i>  <Link className='adt2' to='/addblogs'>Add Blogs</Link>
+                  
+                  <li className='adt'>
+                      <Link className='adt' to='/addblogs'>Add Blogs</Link>
 
+                  </li >
+                  
+                  <li className='adt' >
+                      <Link className='adt' to='/viewblogs'>Blogs</Link>
                   </li>
-                  <br className='displaybr' />
-                  <li>
-                    <i class="fa fa-file iconA" aria-hidden="true"></i>  <Link className='adt2' to='/viewblogs'>Blogs</Link>
-                  </li>
-                  <br className='displaybr' />
+                  
                   <div className='content-box'>
-                  <li onClick={()=>setShow(!show)}>
-                  <i class="fa fa-plus iconA" aria-hidden="true"></i> Add Content
+                  <li className='adt' onClick={()=>setShow(!show)}>
+                  <Link to="" className='adt'> Add Content</Link>
                   </li>
                   {
                   show&&
               <AnimatedOnScroll animationIn="fadeInUp" animationOut="fadeInUp" animationInDuration={1000} > 
               <div className='mt-2'>
-                  <li  className='ml-3'> <Link style = {{color:"white"}} to = "/addcontent">home</Link> </li>
-                  <li  className='ml-3' ><Link style = {{color:"white"}} to = "/aboutcontent">About us</Link> </li>
+                  <li  className='ml-3'><Link className='adt' style = {{color:"white"}} to = "/addcontent">Home</Link> </li>
+                  <li  className='ml-3'><Link className='adt' style = {{color:"white"}} to = "/aboutcontent">About Us</Link> </li>
               </div>
               </AnimatedOnScroll>               
 
                   }
                   </div>
 
-                  <br className='displaybr' />
-                  {/* <li>
-                  <a href="">Demo</a>
+                  
+                  <li className='adt'>
+                  <Link to='/viewemail' className='adt'>Email</Link>
+
                 </li>
-                <br /> */}
-                  <li >
-                    <i class="fa fa-sign-out iconA ad" aria-hidden="true" /><span className='adt ad' onClick={logout}>Logout</span>
+                  <li className='adt'>
+                  <Link to='/addcareer' className='adt'>Add Jobs</Link>
+
+                </li>
+                <br />
+                  <li className='adt'>
+                    <span className='adt ad' onClick={logout}>Logout</span>
                   </li>
                 </ul>
               </div>

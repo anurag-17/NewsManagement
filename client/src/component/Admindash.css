@@ -36,7 +36,7 @@ Created with https://www.css-gradient.com */
 }
 
 .adt {
-    margin-left: 20px;
+    margin-top: 10px;
     color: white;
     text-decoration: none;
 }
@@ -67,7 +67,8 @@ Created with https://www.css-gradient.com */
 .iconbar {
     display: none !important;
 }
-.iconcross{
+
+.iconcross {
     display: none !important;
 }
 
@@ -100,6 +101,7 @@ Created with https://www.css-gradient.com */
         .iconA {
             display: block;
         }
+
         .logoimg img {
             width: 20vw;
         }
@@ -113,22 +115,41 @@ Created with https://www.css-gradient.com */
             /* position: relative;
             top: 10px;
             left: 20px; */
-            margin-top: 10px;
-            margin-left: 10px;
+            
+            padding: 10px;
+            margin: 0 auto;
+            color: white;
             font-size: 20px;
-            color: blue;
+            /*             
+            background: #010101;
+            background: -webkit-linear-gradient(bottom left, #010101, #0661FF);
+            background: -moz-linear-gradient(bottom left, #010101, #0661FF);
+            background: linear-gradient(to top right, #010101, #0661FF); */
+
+        }
+
+        .iconbar_bg {
+            position: relative;
+            background: #010101;
+            background: -webkit-linear-gradient(bottom left, #010101, #0661FF);
+            background: -moz-linear-gradient(bottom left, #010101, #0661FF);
+            background: linear-gradient(to top right, #010101, #0661FF);
+            width: 40px;
+            margin-left: 5px;
+            margin-top: 10px;
+            border-radius: 5px;
 
         }
 
         .sideNavbar {
             position: absolute;
             left: -1000px;
-            
+
         }
 
         .sideNavbar2 {
             position: relative;
-            top: -30px;
+            top: -50px;
             left: 0;
             height: 130vh;
             width: 100%;
@@ -139,14 +160,16 @@ Created with https://www.css-gradient.com */
             z-index: 9999;
 
         }
-        .iconcross{
+
+        .iconcross {
             display: block !important;
             position: absolute;
             right: 0;
             color: white;
         }
     }
-        /* @media (max-width: 490px) {
+
+    /* @media (max-width: 490px) {
             .logoimg img {
                 display: none;
             }
@@ -156,24 +179,24 @@ Created with https://www.css-gradient.com */
             }
         } */
 
-        @media(max-width: 461px) {
-            .sideNavbar {
-                height: 125vh;
-            }
+    @media(max-width: 461px) {
+        .sideNavbar {
+            height: 125vh;
+        }
 
-            .logoutadmin {
-                position: fixed;
-                bottom: 20px;
-                left: 20px;
-
-            }
+        .logoutadmin {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
 
         }
 
-        @media (max-width: 375px) {
+    }
 
-            .adt, .adt2, .adt23 {
-                font-size: 8px;
-            }
+    @media (max-width: 375px) {
+
+        .adt, .adt2, .adt23 {
+            font-size: 8px;
         }
     }
+}

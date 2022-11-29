@@ -1,0 +1,43 @@
+.flex_email{
+    display: flex;
+
+}
+.tableContainer {
+    height: 100vh;
+    overflow: auto;
+    width: 75vw;
+}
+.tableA {
+    position: sticky;
+    top: 0;
+    width: 100%;
+}
+.tableA th {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    color: white;
+    z-index: 999;
+    background: #010101;
+    background: -webkit-linear-gradient(bottom left, #010101, #0661FF);
+    background: -moz-linear-gradient(bottom left, #010101, #0661FF);
+    background: linear-gradient(to top right, #010101, #0661FF);
+  }
+  .tableA {
+    border-collapse: collapse;
+  }
+  .tableA td{
+    z-index: 1;
+  }
+ 
+  @media (max-width: 581px) {
+    .flex_email{
+      display: flex;
+      flex-direction: column !important;
+      
+  }
+  .tableContainer{
+    margin-top: 30px;
+    width: 90vw;
+  }
+  }

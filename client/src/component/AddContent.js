@@ -10,7 +10,7 @@ import "react-quill/dist/quill.snow.css";
 // import { Toolbaar } from './Toolbaar';
 
 export const AddContent = () => {
-  const [content,setContent] = useState("")
+  const [content,setContent] = useState("this is content")
   const [data, setData] = useState({
     logo: "",
     main_title_1: "",
@@ -85,17 +85,17 @@ export const AddContent = () => {
 
   const modules = {
     toolbar: [
-      // [{ header: "1" }, { header: "2" }, { font: [] }],
-      // [{ size: [] }],
-      // ["bold", "italic", "underline", "strike", "blockquote"],
-      // [
-      //   { list: "ordered" },
-      //   { list: "bullet" },
-      //   { indent: "-1" },
-      //   { indent: "+1" }
-      // ],
+      [{ header: "1" }, { header: "2" }, { font: [] }],
+      [{ size: [] }],
+      ["bold", "italic", "underline", "strike", "blockquote"],
+      [
+        { list: "ordered" },
+        { list: "bullet" },
+        { indent: "-1" },
+        { indent: "+1" }
+      ],
       ["image"],
-      // ["link","clean","code-block"]
+      ["link","clean","code-block"]
     ],
     clipboard: {
       // toggle to add extra line breaks when pasting HTML:
@@ -123,7 +123,8 @@ export const AddContent = () => {
   }
 
   const onChange = (text) => {
-    setData({...data,main_title_1:text})
+    console.log(text)
+    // setData({...data,main_title_1:text})
   };
 
   console.log(text)
@@ -164,7 +165,6 @@ export const AddContent = () => {
     setData({ ...data, [e.target.name]: e.target.value });
   }
 
-  console.log(data)
 
   const encodefile2 = (file) => {
     if (file) {
@@ -316,11 +316,11 @@ encodefile2(e.target.files[0])
 <ReactQuill
       theme="snow"
       placeholder="Type here"
-      value={data.main_title_1}
+      value={content}
       onChange={onChange}
       modules={modules}
       style={style}
-      name="main_title"
+      name="content"
     />
   </div> */}
             <div style= {{display:"flex",alignItems:"center",justifyContent:"center"}} className='flex-file file_in'>
@@ -333,7 +333,7 @@ encodefile2(e.target.files[0])
 </div>
         </div>
           </div>
-          <input type="submit" className='submitbtn'/>
+          <input style= {{width:"64%", }} type="submit" className='submitbtn'/>
         </form>
         </div>
 
