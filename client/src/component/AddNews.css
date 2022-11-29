@@ -9,6 +9,9 @@
     border: 2px solid gray;
     border-radius: 5px;
 }
+.editor-container{
+  width: 50%;
+}
 .bgnews{
     /* Created with https://www.css-gradient.com */
 /* Created with https://www.css-gradient.com */
@@ -49,6 +52,7 @@ background: linear-gradient(to left, #F0F0F0, #FFFFFF);
   .flex-file{
     display:flex;
     flex-wrap: wrap;
+    
   }
   @media (max-width: 581px) {
     .flex_news{

@@ -47,10 +47,10 @@ exports.adminlogin = catchAsyncError(
 )
 exports.addnews = catchAsyncError(
     async(req, res, next)=>{
-        const {title ,  description, url, date }= req.body;
+        const {title ,  catagory, url, img }= req.body;
         try {
             let newsdata = new News({
-                title, description, url, date
+                title, catagory, url, img
             })
             newsdata.save().then((result)=>{
                 console.log("successfully news feeded");
