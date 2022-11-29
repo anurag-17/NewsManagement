@@ -50,6 +50,7 @@ export const ViewNews = () => {
     await axios
       .post("/api/auth/editidnews", { params: id })
       .then((res) => {
+        console.log(res.data.result)
         setEditnewsdata(res.data.result);
         console.log(res.data.result);
         setAvatarpreview(res.data.result.img);

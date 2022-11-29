@@ -29,6 +29,7 @@ import { Blog3 } from './component/Blogpages/Blog3';
 import { Condition } from './component/Common/Condition';
 import { Viewemail } from './component/Viewemail';
 import { Addcareer } from './component/Addcareer';
+import { ViewCareer } from './component/ViewCareer';
 
 function App() {
   useEffect(() => {
@@ -45,7 +46,7 @@ function App() {
   return (
     <>
       <div className='App'>
-        {location.pathname !== "/admin" &&location.pathname !=="/addcareer" && location.pathname !== "/forgotpassword" && location.pathname !== "/passwordchange" && location.pathname !== "/admindash" && location.pathname !== "/addblogs" && location.pathname !== "/viewnews" && location.pathname !== "/viewblogs" && location.pathname !== "/addnews" && location.pathname !== "/" && location.pathname !== "/addcontent" && location.pathname !=="/viewemail" && location.pathname !== "/aboutcontent" && <Navbarmenu />}
+        {location.pathname !== "/admin" &&location.pathname !=="/addcareer" && location.pathname !== "/forgotpassword" && location.pathname !== "/passwordchange" && location.pathname !== "/admindash" && location.pathname !== "/addblogs" && location.pathname !== "/viewnews" && location.pathname !== "/viewblogs" && location.pathname !== "/addnews" && location.pathname !== "/" && location.pathname !== "/addcontent" && location.pathname !=="/viewemail" && location.pathname !== "/aboutcontent" &&location.pathname !=="/viewcareer"&& <Navbarmenu />}
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/blog' element={<Blog />} />
@@ -71,11 +72,14 @@ function App() {
           <Route path='/terms-condition' element={<Condition />} />
           <Route path='/viewemail' element={<Viewemail/>}/>
           <Route path='/addcareer' element={<Addcareer/>}/>
+          <Route path='/viewcareer' element={<ViewCareer/>}/>
+
+        
 
           {/* <Route path='/rss' element={<DefaultRSSComponent/>}/> */}
 
         </Routes>
-        {location.pathname !== "/admin" && location.pathname !== "/admindash" &&location.pathname !=="/addcareer"&& location.pathname !== "/forgotpassword" && location.pathname !== "/passwordchange" && location.pathname !== "/addblogs" && location.pathname !== "/viewnews" && location.pathname !== "/viewblogs" && location.pathname !== "/addnews" && location.pathname !== "/addcontent" && location.pathname !=="/viewemail" &&location.pathname !== "/aboutcontent" && <Footer />}
+        {location.pathname !== "/admin" && location.pathname !== "/admindash" &&location.pathname !=="/addcareer"&& location.pathname !== "/forgotpassword" && location.pathname !== "/passwordchange" && location.pathname !== "/addblogs" && location.pathname !== "/viewnews" && location.pathname !== "/viewblogs" && location.pathname !== "/addnews" && location.pathname !== "/addcontent" && location.pathname !=="/viewemail" &&location.pathname !== "/aboutcontent" && location.pathname !=="viewcareer"&&<Footer />}
       </div>
     </>
   );

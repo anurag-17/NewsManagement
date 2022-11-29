@@ -419,3 +419,37 @@ exports.viewcareer = catchAsyncError(
         }
     }
 )
+
+exports.careeredit = catchAsyncError(
+    async(req, res, next)=>{
+        try {
+            let uid = req.body.params
+            await Career.findById({_id: uid}, (error, result)=>{
+             if (error) {
+                 console.log(error,"editid");
+             }
+             res.send({result})
+            })
+        } catch (error) {
+            console.log(error);
+        }
+       
+       
+    }
+)
+
+
+exports.deletecareer = catchAsyncError(
+    async (req, res, next) => {
+        let uid = req.body.params
+        try {
+           await Career.findByIdAndRemove({ _id: uid }).then((resp) => {
+                res.send("successfully deleted")
+            }).catch((e) => {
+                console.log(e);
+            })
+        } catch (error) {
+            console.log(error, "delete_career");
+        }
+    }
+)
