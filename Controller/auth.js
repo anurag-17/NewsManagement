@@ -140,7 +140,7 @@ exports.editidnews = catchAsyncError(
     async(req, res, next)=>{
         try {
             let uid = req.body.params
-           await News.findById({_id: uid},(error,result)=>{
+            News.findById({_id: uid},(error,result)=>{
                 if (error) {
                     console.log(error, "editidnews");
                 }
@@ -155,7 +155,7 @@ exports.editidnews = catchAsyncError(
 exports.editnews =catchAsyncError(
     async(req, res, next)=>{
         console.log(req.body);
-        await News.findByIdAndUpdate({_id : new ObjectId(req.body._id)},{"title": req.body.title, "description": req.body.description, "url": req.body.url, "date": req.body.date}),(error, data)=>{
+        await News.findByIdAndUpdate({_id : new ObjectId(req.body._id)},{"title": req.body.title, "description": req.body.description, "url": req.body.url, "img": req.body.img}),(error, data)=>{
             if (error) {
                 console.log(error, "updatenews");
             } else {
@@ -416,6 +416,40 @@ exports.viewcareer = catchAsyncError(
             })
         } catch (error) {
             console.log(error,"catch view career");
+        }
+    }
+)
+
+exports.careeredit = catchAsyncError(
+    async(req, res, next)=>{
+        try {
+            let uid = req.body.params
+            await Career.findById({_id: uid}, (error, result)=>{
+             if (error) {
+                 console.log(error,"editid");
+             }
+             res.send({result})
+            })
+        } catch (error) {
+            console.log(error);
+        }
+       
+       
+    }
+)
+
+
+exports.deletecareer = catchAsyncError(
+    async (req, res, next) => {
+        let uid = req.body.params
+        try {
+           await Career.findByIdAndRemove({ _id: uid }).then((resp) => {
+                res.send("successfully deleted")
+            }).catch((e) => {
+                console.log(e);
+            })
+        } catch (error) {
+            console.log(error, "delete_career");
         }
     }
 )
