@@ -140,7 +140,7 @@ exports.editidnews = catchAsyncError(
     async(req, res, next)=>{
         try {
             let uid = req.body.params
-           await News.findById({_id: uid},(error,result)=>{
+            News.findById({_id: uid},(error,result)=>{
                 if (error) {
                     console.log(error, "editidnews");
                 }
@@ -155,7 +155,7 @@ exports.editidnews = catchAsyncError(
 exports.editnews =catchAsyncError(
     async(req, res, next)=>{
         console.log(req.body);
-        await News.findByIdAndUpdate({_id : new ObjectId(req.body._id)},{"title": req.body.title, "description": req.body.description, "url": req.body.url, "date": req.body.date}),(error, data)=>{
+        await News.findByIdAndUpdate({_id : new ObjectId(req.body._id)},{"title": req.body.title, "description": req.body.description, "url": req.body.url, "img": req.body.img}),(error, data)=>{
             if (error) {
                 console.log(error, "updatenews");
             } else {
