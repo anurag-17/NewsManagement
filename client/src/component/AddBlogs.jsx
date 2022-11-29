@@ -33,6 +33,9 @@ export const AddBlogs = () => {
     reader.readAsDataURL(e.target.files[0]);
 
   }
+
+console.log(blogdata)
+
   const encodefile = (file) => {
     if (file) {
       try {
@@ -57,15 +60,12 @@ export const AddBlogs = () => {
   };
   encodefile(selectedimage[0]);
   const log = async (e) => {
-
-    if (editorRef.current) {
-      blogdata.description = editorRef.current.getContent()
+e.preventDefault()
+console.log("ehi")
       console.log(blogdata);
-      await axios.post("/api/auth/addblogs", blogdata, { headers: { "Content-Type": "application/json" } }).then((res) => {
+     await axios.post("/api/auth/addblogs", blogdata).then((res) => {
         console.log(res.data);
-
       })
-    }
   };
 
 
@@ -77,7 +77,7 @@ export const AddBlogs = () => {
         <div className="container scroll-main">
           <h2 className='mt-3 mb-2' style={{ fontSize: "1.5rem" }}>Add Blogs</h2>
           <div>
-            <form action="">
+            <form onSubmit={log} action="">
               <div className='mb-2 flex-image'>
                 <input type="text" name="title" id="" placeholder='Title' className='blog_title mt-4' onChange={Input_handler} />
                        <div style = {{position:"relative",bottom:"2rem"}} className='ml-4'>
@@ -96,24 +96,26 @@ export const AddBlogs = () => {
               <h2>Using CKEditor 5 from online builder in React</h2>
               <CKEditor
                     editor={ Editor }
-                    data="<p>Hello from CKEditor 5!</p>"
+                    data="Write Some Content Here"
+                    config={{placeholder: "write content here",height:"25rem"}} 
                     onReady={ editor => {
                         // You can store the "editor" and use when it is needed.
                         console.log( 'Editor is ready to use!', editor );
                     } }
                     onChange={ ( event, editor ) => {
                         const data = editor.getData();
+                        setBlogdata({ ...blogdata,description:data})
                         console.log( { event, editor, data } );
                     } }
-                    onBlur={ ( event, editor ) => {
-                        console.log( 'Blur.', editor );
-                    } }
-                    onFocus={ ( event, editor ) => {
-                        console.log( 'Focus.', editor );
-                    } }
+                    // onBlur={ ( event, editor ) => {
+                    //     console.log( 'Blur.', editor );
+                    // } }
+                    // onFocus={ ( event, editor ) => {
+                    //     console.log( 'Focus.', editor );
+                    // } }
                 />
                 <div className='btn_box'>
-                <button className='btn btn-primary my-2 give_margin' onClick={log}>Submit</button>
+                <input type="submit" className='btn btn-primary my-2 give_margin' />
               </div>
             </form>
           </div>

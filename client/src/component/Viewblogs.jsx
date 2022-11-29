@@ -118,7 +118,7 @@ e.preventDefault()
                                         </div>
                                         <div className="card-body">
                                             <h4 className="card-title">{items.title}</h4>
-                                            <p className="card-text" dangerouslySetInnerHTML={{ __html: items.description }}></p>
+                                            {/* <p className="card-text" dangerouslySetInnerHTML={{ __html: items.description }}></p> */}
                                         </div>
                                         <div className="card-bottom">
                                             <div>
@@ -178,7 +178,7 @@ e.preventDefault()
                <input className="file" type="file" name="url" id="file" onChange={input_file} />
                 <label className='ml-3' htmlFor="file">
                    Choose Image
-                  </label>
+                </label>
               </div>
               </div>
                                         <div className='btn_box'>

@@ -21,7 +21,6 @@ const Blog = () => {
   useEffect(() => {
     window.scrollTo(0, 0)
     axios.get("/api/auth/viewblogs").then((res) => {
-      // console.log(res.data.result);
       setBlogdata(res.data.result)
     })
   }, [])
