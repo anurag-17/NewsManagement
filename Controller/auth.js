@@ -5,6 +5,7 @@ const catchAsyncError = require("../Errorhandlers/catchAsyncError");
 const ErrorResponse = require("../Utlis/errorresponse");
 const Content = require("../Model/Content")
 const Email = require("../Model/Email")
+const Career = require("../Model/Career")
 const jwt = require("jsonwebtoken");
 const { query } = require("express");
 var ObjectId = require('mongodb').ObjectId
@@ -330,6 +331,86 @@ exports.viewemail = catchAsyncError(
            }) 
         } catch (error) {
             console.log(error, "viewemail_catch");
+        }
+    }
+)
+
+
+exports.useremail = catchAsyncError(
+    async (req, res, next) => {
+        console.log(req.body);
+        const { email } = req.body
+        try {
+            let useremail = new Email({ email })
+
+            useremail.save().then((result) => {
+                res.send("Submitted Successfully")
+                console.log("successfully feeded email");
+            }).catch((err) => {
+                console.log(err, " email feederrror");
+            })
+        } catch (error) {
+            console.log(error);
+        }
+    }
+)
+exports.viewemail = catchAsyncError(
+    async (req, res, next) => {
+        try {
+            Email.find({}, (error, result) => {
+                if (error) {
+                    console.log(error, "viewemail");
+                }
+                res.send({ result })
+            })
+        } catch (error) {
+            console.log(error, "viewemail_catch");
+        }
+    }
+)
+exports.deleteemail = catchAsyncError(
+    async (req, res, next) => {
+        let uid = req.body.params
+        try {
+            Email.findByIdAndRemove({ _id: uid }).then((resp) => {
+                res.send("successfully deleted")
+            }).catch((e) => {
+                console.log(e);
+            })
+        } catch (error) {
+            console.log(error, "delete_email");
+        }
+    }
+)
+exports.addcareer = catchAsyncError(
+    async (req, res, next) => {
+        const { title, category, location, link } = req.body;
+        if (title && category && location && link) {
+            try {
+                let career = new Career({ title, category, location, link })
+                career.save().then((result) => {
+                    console.log("Successfully Submitted");
+                })
+            } catch (error) {
+                console.log(error, "addcareer");
+            }
+        } else {
+            res.send("All field required")
+        }
+    }
+)
+
+exports.viewcareer = catchAsyncError(
+    async(req, res, next)=>{
+        try {
+            await Career.find({}, (error, result)=>{
+                if (error) {
+                    console.log(error, "Viewcareer");
+                }
+                res.send({result})
+            })
+        } catch (error) {
+            console.log(error,"catch view career");
         }
     }
 )

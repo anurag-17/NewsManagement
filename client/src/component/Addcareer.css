@@ -1,0 +1,17 @@
+.career_inp{
+    color: black !important;
+}
+.flex_career{
+    display: flex;
+    
+}
+
+
+
+@media (max-width: 581px) {
+    .flex_career{
+      display: flex;
+      flex-direction: column !important;
+      
+  }
+  }
