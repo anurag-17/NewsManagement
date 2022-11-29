@@ -10,6 +10,7 @@ const jwt = require("jsonwebtoken");
 const { query } = require("express");
 var ObjectId = require('mongodb').ObjectId
 
+
 // dotenv.config({ path: "../config.env" });
 
 exports.adminlogin = catchAsyncError(
@@ -210,6 +211,7 @@ exports.addcontent = catchAsyncError(
 )
 
 
+
 exports.updateContent = catchAsyncError(
     async(req,res,next)=>{
       const data =   await Content.findByIdAndUpdate(req.body.id,{
@@ -231,6 +233,8 @@ exports.getcontent = catchAsyncError(   async(req,res,next)=>{
     const data =  await Content.find()
       return res.status(200).json(data)
   })
+
+
 
 exports.validadmin = catchAsyncError (
     async(req, res, next)=>{
@@ -404,7 +408,7 @@ exports.addcareer = catchAsyncError(
 exports.viewcareer = catchAsyncError(
     async(req, res, next)=>{
         try {
-            await Career.find({}, (error, result)=>{
+             Career.find({}, (error, result)=>{
                 if (error) {
                     console.log(error, "Viewcareer");
                 }
