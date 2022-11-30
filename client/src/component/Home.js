@@ -31,10 +31,9 @@ const Home = () => {
   const [content, setContent] = useState([])
   const [show, setShow] = useState(false)
   const [message, setMessage] = useState("")
-  const newsres = async () => {
-    await axios.post("/api/auth/viewnews").then((res) => {
-      console.log(res.data)
-      setNewsdata(res.data.result)
+  const getblogdata = async () => {
+    axios.get("/api/auth/viewblogs").then((res) => {
+      setBlogdata(res.data.result)
     })
   }
 
@@ -377,6 +376,7 @@ const Home = () => {
                 </div>
               </Link>
             </div>
+
                 )
               })
             }
