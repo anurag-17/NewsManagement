@@ -7,6 +7,9 @@ width: 100%;
 .blog-main h2,h1{
     font-family: "Montserrat", Sans-serif;
 }
+.card-text{
+    padding-top: 120px;
+}
 .blog-main p{
 font-size: 1rem;
 line-height: 1.5rem;

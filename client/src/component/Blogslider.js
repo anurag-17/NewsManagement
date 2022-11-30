@@ -9,8 +9,10 @@ import letestslide5 from './Images/letestSlide5.png';
 import letestslide6 from './Images/letestSlide6.png';
 import guidslid1 from './Images/guid-slide1.png';
 import guidslid2 from './Images/guid-slide2.png';
+import { Link } from 'react-router-dom';
 
-export const Blogslider = () => {
+export const Blogslider = ({blogdata}) => {
+  console.log(blogdata)
   return (
     <div>
     <div className='guidslide'>
@@ -46,22 +48,33 @@ export const Blogslider = () => {
       navigation={true}        
       modules={[Pagination, Navigation]}
       className="mySwiper"  
-     >        
-  
-
-
+     >      
+     {
+      blogdata.map((items,index)=>{
+        const trimtitle = items.title.replace(
+          / +/g,
+          "-"
+        )
+        return(
        <SwiperSlide>
+        <Link to = {`/${trimtitle}`}>
         <div id='Latest-slider'>
-            <div className='latest-img'>
-              <img src={letestslide1} alt='slide'></img>
-            </div>
-            <h4 className='time-head'>2 min read1</h4>
-            <h3>SEBI Chairperson spoke to Fintech Participants at the Global Fintech Fest   GFF 2022)</h3>
-            <p>Smt. Madhabi Puri Buch, the...</p>
-          </div>
-        </SwiperSlide>
+           <div className='latest-img'>
+             <img src={items.url} alt='slide'></img>
+           </div>
+           <h4 className='time-head'>2 min read1</h4>
+           <h3>{items.title}</h3>
+           <p>Smt. Madhabi Puri Buch, the...</p>
+         </div>
+        </Link>
 
-      <SwiperSlide>
+       </SwiperSlide>
+        )
+      })
+     }  
+
+
+      {/* <SwiperSlide>
       <div id='Latest-slider'>
           <div className='latest-img'>
             <img src={letestslide2} alt='slide'></img>
@@ -100,7 +113,7 @@ export const Blogslider = () => {
           <h3>Top myths about investing in the stock market</h3>
           <p>Let’s break the 5 common myths that are stopping you from getting started with your investment journey...</p>
         </div>
-      </SwiperSlide>
+      </SwiperSlide> */}
     </Swiper>
    
     </div>

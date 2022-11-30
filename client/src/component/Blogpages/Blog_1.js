@@ -8,17 +8,16 @@ export const Blog_1 = () => {
   const {blogtitle} = useParams()
   const [blogdata,setBlogdata]  = useState([])
   const trimtitle  = blogtitle.replaceAll('-', ' ');
+  console.log(trimtitle)
 
   const getdata = async()=>{
    await axios.get("/api/auth/viewblogs").then((res) => {
       if(res){
         setBlogdata(res.data.result)
       }
-      
     })
   }
-
-
+  console.log(blogdata)
     useEffect(() => {
         window.scrollTo(0,0)
         getdata()
@@ -58,15 +57,13 @@ export const Blog_1 = () => {
 
 {
   blogdata.filter((items,index)=>{
-    return items.title === trimtitle
+    return items.title.replaceAll("-"," ") === trimtitle
   }).map((item,i)=>{
 return(
  <p  className="card-text" dangerouslySetInnerHTML={{ __html: item.description }}></p> 
 )
   })
 }
-
-
 <section>
     <h2 style = {{fontSize:"40px",}}>Leave a Reply</h2>
     <p>Your email address will not be published. Required fields are marked *</p>

@@ -19,6 +19,7 @@ import { Link } from 'react-router-dom';
 
 const Blog = () => {
   const [blogdata, setBlogdata] = useState([])
+  const reverse  = [...blogdata].reverse();
   useEffect(() => {
     window.scrollTo(0, 0)
     axios.get("/api/auth/viewblogs").then((res) => {
@@ -55,15 +56,29 @@ const Blog = () => {
         <div className='container'>
           <div className='row'>
             <div className='col-lg-9 col-md-8'>
-              <div className='Blog-left'>
-                <div className='BlogImg'>
-                  <img src={blogImg1} alt='blog-img'></img>
-                </div>
-                <div className='BContent'>
-                  <h3>2 Min Read</h3>
-                  <a href='#'>Digital payment initiatives of – मेरे नए  भारत का Fin-Tech </a> <p></p>
-                </div>
-              </div>
+              {
+                reverse.slice(0,1).map((items,index)=>{
+                  const trimtitle = items.title.replace(
+                    / +/g,
+                    "-"
+                  )
+                  return(
+                    <Link to = {`/${trimtitle}`}>
+                    <div className='Blog-left'>
+                    <div className='BlogImg'>
+                      <img src={items.url} alt='blog-img'></img>
+                    </div>
+                    <div className='BContent'>
+                      <h3>2 Min Read</h3>
+                      <p>{items.title}</p>
+                    </div>
+                  </div>
+                    </Link>
+
+                  )
+                })
+              }
+
             </div>
             <div className='col-lg-3 col-md-4'>
               <div className='Blog-right'>
@@ -97,7 +112,7 @@ const Blog = () => {
             <h3>Latest Stories</h3>
           </div>
           <div className='letslider2'>
-            <Blogslider />
+            <Blogslider blogdata = {blogdata}/>
           </div>
         </div>
       </section>
@@ -124,7 +139,9 @@ const Blog = () => {
               <div className='col-lg-10 col-md-10'>
                 <div className='BInvest-grid'>
                   {
-                    blogdata.slice(0).reverse().map((items, index) => {
+                    blogdata.filter((item,index)=>{
+                      return item.category === "investing"
+                    }).slice(0).reverse().map((items, index) => {
                       const trimtitle = items.title.replace(
                         / +/g,
                         "-"
@@ -219,15 +236,30 @@ const Blog = () => {
               </div>
               <div className='col-lg-10 col-md-10'>
                 <div className='BInvest-grid'>
-                  <div className='Binvest-item1'>
-                    <div className='bInvest-img'>
-                      <img src={Investblog1} alt='Blog-Invest'></img>
-                    </div>
-                    <h4>2 min read</h4>
-                    <p>Mutual Funds: The Definitive Guide to Building Your Portfolio</p>
-                  </div>
+                  {
+                    blogdata.filter((items,index)=>{
+                      return items.category ==="planning"
+                    }).slice(0).reverse().map((item,index)=>{
+                      const trimtitle = item.title.replace(
+                        / +/g,
+                        "-"
+                      )
+                      return(
+                        <Link to={`/${trimtitle}`}>
+                        <div className='Binvest-item1'>
+                        <div className='bInvest-img'>
+                          <img src={item.url} alt='Blog-Invest'></img>
+                        </div>
+                        <h4>2 min read</h4>
+                        <p>{item.title}</p>
+                      </div>
+                        </Link>
+                      )
+                    })
+                  }
 
-                  <div className='Binvest-item1'>
+
+                  {/* <div className='Binvest-item1'>
                     <div className='bInvest-img'>
                       <img src={Investblog2} alt='Blog-Invest'></img>
                     </div>
@@ -264,7 +296,7 @@ const Blog = () => {
                     </div>
                     <h4>2 min read</h4>
                     <p>Getting started in stock market: things to consider</p>
-                  </div>
+                  </div> */}
                 </div>
                 {/* <div className='BInvest-btn'>
             <button className='BInvst'><a href='#'>SEE MORE</a></button>
@@ -285,21 +317,32 @@ const Blog = () => {
             <div className='row Binvest-alin'>
               <div className='col-lg-10 col-md-10'>
                 <div className='BInvest-grid'>
-                  <div className='Binvest-item1'>
+                  {/* <div className='Binvest-item1'>
                     <div className='bInvest-img'>
                       <img src={Investblog1} alt='Blog-Invest'></img>
                     </div>
                     <h4>2 min read</h4>
                     <p>Mutual Funds: The Definitive Guide to Building Your Portfolio</p>
-                  </div>
+                  </div> */}
 
+{
+  blogdata.filter((items,index)=>(items.category==="saving")).slice(0).reverse().map((item,index)=>{
+    const trimtitle = item.title.replace(/ +/g,"-")
+    return(
+      <Link to={`/${trimtitle}`}>
                   <div className='Binvest-item1'>
                     <div className='bInvest-img'>
-                      <img src={Investblog2} alt='Blog-Invest'></img>
+                      <img src={item.url} alt='Blog-Invest'></img>
                     </div>
                     <h4>2 min read</h4>
-                    <p>Investing in the Stock Market: Why You Should Start Today</p>
+                    <p>{item.title}</p>
                   </div>
+      </Link>
+    )
+  })
+}
+
+
 
                   <div className='Binvest-item1'>
                     <div className='bInvest-img'>
@@ -361,13 +404,22 @@ const Blog = () => {
               </div>
               <div className='col-lg-10 col-md-10'>
                 <div className='BInvest-grid'>
+                  {
+                  blogdata.filter((items,index)=>(items.category==="industry")).slice(0).reverse().map((item,index)=>{
+                   const trimtitle = item.title.replace(/ +/g,"-")
+                    return(
+                      <Link to={`/${trimtitle}`}>
                   <div className='Binvest-item1'>
                     <div className='bInvest-img'>
-                      <img src={Investblog1} alt='Blog-Invest'></img>
+                      <img src={item.url} alt='Blog-Invest'></img>
                     </div>
                     <h4>2 min read</h4>
-                    <p>Mutual Funds: The Definitive Guide to Building Your Portfolio</p>
-                  </div>
+                    <p>{item.title}</p>
+                  </div>                 
+                      </Link>
+                    )
+                  })
+                  }
 
                   <div className='Binvest-item1'>
                     <div className='bInvest-img'>
