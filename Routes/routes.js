@@ -1,5 +1,5 @@
 const express = require("express")
-const { adminlogin, addnews, addblog, viewnews, viewblogs,  deleteblogs, editblogs, editid, editidnews, editnews, deletenews, addcontent, content, updateContent, getcontent, validadmin, optsave, otpvalid, passwordchange, useremail, viewemail, deleteemail, addcareer, viewcareer, deletecareer, careeredit } = require("../Controller/auth")
+const { adminlogin, addnews, addblog, viewnews, viewblogs,  deleteblogs, editblogs, editid, editidnews, editnews, deletenews, addcontent, content, updateContent, getcontent, validadmin, optsave, otpvalid, passwordchange, useremail, viewemail, deleteemail, addcareer, viewcareer, deletecareer, careeredit, editcareer } = require("../Controller/auth")
 const router = express.Router()
 
 router.route("/admin").post(adminlogin);
@@ -26,6 +26,7 @@ router.route("/addcareer").post(addcareer)
 router.route("/viewcareer").get(viewcareer)
 router.route("/deletecareer").post(deletecareer)
 router.route("/careeredit").post(careeredit)
+router.route("/updatecareer").post(editcareer)
 
 
 module.exports = router;

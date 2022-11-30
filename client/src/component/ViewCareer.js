@@ -34,6 +34,15 @@ export const ViewCareer = () => {
       });
   };
 
+  const log = async (e) => {
+    console.log(editblogdata)
+    e.preventDefault()
+    await axios.post("/api/auth/updatecareer", editblogdata,{ headers: { "Content-Type": "application/json" } }).then((res) => {
+        console.log(res.data);
+
+    })
+};
+
   const edithandler = async (id) => {
     setEditid(id);
     console.log(id);
@@ -50,7 +59,7 @@ export const ViewCareer = () => {
 
   useEffect(() => {
     getcareer();
-  }, []);
+  }, [editblogdata]);
 
   return (
     <>
@@ -185,7 +194,7 @@ export const ViewCareer = () => {
                     <div className="btn_box">
                       <button
                         className="btn btn-primary give_margin mx-auto"
-                        // onClick={log}
+                        onClick={log}
                       >
                         Submit
                       </button>
@@ -195,6 +204,7 @@ export const ViewCareer = () => {
 
                 <div className="modal-footer p-2">
                   <button
+                  onClick={getcareer}
                     type="button"
                     className="btn btn-danger"
                     data-dismiss="modal"
