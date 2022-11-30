@@ -48,8 +48,6 @@ export const Viewblogs = () => {
         await axios.post("/api/auth/editid", { params: id }).then((res) => {
             console.log(res.data.result);
             setEditblogdata(res.data.result)
-
-
             setAvatarpreview(res.data.result.url)
         }).catch((error) => {
             console.log(error);

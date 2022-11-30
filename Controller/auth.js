@@ -67,10 +67,10 @@ exports.addnews = catchAsyncError(
 exports.addblog = catchAsyncError(
     async(req, res, next)=>{
         console.log(req.body)
-        const {title ,description, url,date}= req.body;
+        const {title ,description, url,date,category}= req.body;
         try {
             let blogdata = new Blogs({
-                title, description, url,date
+                title,description,url,date,category
             })
             blogdata.save().then((result)=>{
                 console.log("successfully blog feeded");
@@ -85,8 +85,9 @@ exports.addblog = catchAsyncError(
 )
 exports.viewnews = catchAsyncError(
     async(req, res)=>{
+        console.log(req.body);
         try {
-           News.find({}, (error, result)=>{
+           News.find({catagory:req.body.catagory}, (error, result)=>{
                 if (error) {console.log(error , "viewnews error")}
                 res.send({result})
             } )

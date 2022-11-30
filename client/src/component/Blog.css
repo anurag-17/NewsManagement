@@ -49,8 +49,11 @@ br {
 #Blog-sewction .BlogImg img {
     width: 100%;
 }
+#Blog-sewction .BContent p{
+    color: #000;
+}
 
-#Blog-sewction .BContent a:after {
+#Blog-sewction .BContent p:after {
     content: '';
     position: absolute;
     width: 35px;

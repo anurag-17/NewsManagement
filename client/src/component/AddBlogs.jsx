@@ -13,10 +13,12 @@ export const AddBlogs = () => {
     "title": "",
     "description": "",
     "url": "",
-    "date":new Date().toLocaleDateString()
+    "date":new Date().toLocaleDateString(),
+    "category":""
   })
   const editorRef = useRef(null);
   const Input_handler = (e) => {
+    console.log(e.target.name)
     setBlogdata({ ...blogdata, [e.target.name]: e.target.value })
   }
   const input_file = (e) => {
@@ -79,7 +81,16 @@ console.log("ehi")
           <div>
             <form onSubmit={log} action="">
               <div className='mb-2 flex-image'>
+                <div>
                 <input type="text" name="title" id="" placeholder='Title' className='blog_title mt-4' onChange={Input_handler} />
+                <select style={{width:"30%"}} name ="category" onChange = {Input_handler} className='form-select ml-4' >
+  <option value="investing">INVESTING 101</option>
+  <option value="planning">PLANNING</option>
+  <option value="saving">SAVING</option>
+  <option value="industry">INDUSTRY INSIGHTS</option>
+    </select>
+                </div>
+
                        <div style = {{position:"relative",bottom:"2rem"}} className='ml-4'>
               <h4 className='ml-2 mt-5'>Feature Image</h4>
               <div className='flex-file file_input'>

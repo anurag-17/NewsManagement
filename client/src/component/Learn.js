@@ -15,9 +15,7 @@ import learnCat2 from './Images/learn-cat/learn-cat2.png';
 import learnCat3 from './Images/learn-cat/learn-cat3.png';
 import learnCat4 from './Images/learn-cat/learn-cat4.png';
 import learnCat5 from './Images/learn-cat/learn-cat5.png';
-import learnCat6 from './Images/learn-cat/learn-cat6.png';
-import learnCat7 from './Images/learn-cat/learn-cat7.png';
-import learnCat8 from './Images/learn-cat/learn-cat8.png';
+
 import './Learn.css';
 import LetestNewstab from './LetestNewstab';
 

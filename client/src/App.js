@@ -73,13 +73,9 @@ function App() {
           <Route path='/viewemail' element={<Viewemail/>}/>
           <Route path='/addcareer' element={<Addcareer/>}/>
           <Route path='/viewcareer' element={<ViewCareer/>}/>
-
-        
-
           {/* <Route path='/rss' element={<DefaultRSSComponent/>}/> */}
-
         </Routes>
-        {location.pathname !== "/admin" && location.pathname !== "/admindash" &&location.pathname !=="/addcareer"&& location.pathname !== "/forgotpassword" && location.pathname !== "/passwordchange" && location.pathname !== "/addblogs" && location.pathname !== "/viewnews" && location.pathname !== "/viewblogs" && location.pathname !== "/addnews" && location.pathname !== "/addcontent" && location.pathname !=="/viewemail" &&location.pathname !== "/aboutcontent" && location.pathname !=="viewcareer"&&<Footer />}
+        {location.pathname !== "/admin" && location.pathname !== "/admindash" &&location.pathname !=="/addcareer"&& location.pathname !== "/forgotpassword" && location.pathname !== "/passwordchange" && location.pathname !== "/addblogs" && location.pathname !== "/viewnews" && location.pathname !== "/viewblogs" && location.pathname !== "/addnews" && location.pathname !== "/addcontent" && location.pathname !=="/viewemail" &&location.pathname !== "/aboutcontent" && location.pathname !=="/viewcareer"&&<Footer />}
       </div>
     </>
   );
