@@ -13,7 +13,8 @@ export const AddBlogs = () => {
     "title": "",
     "description": "",
     "url": "",
-    "date":new Date().toLocaleDateString()
+    "date":new Date().toLocaleDateString(),
+    "category":""
   })
   const editorRef = useRef(null);
   const Input_handler = (e) => {
@@ -80,6 +81,7 @@ console.log("ehi")
             <form onSubmit={log} action="">
               <div className='mb-2 flex-image'>
                 <input type="text" name="title" id="" placeholder='Title' className='blog_title mt-4' onChange={Input_handler} />
+                <input type="text" name="category" id="" placeholder='Category' className='blog_title mt-4' onChange={Input_handler} />
                        <div style = {{position:"relative",bottom:"2rem"}} className='ml-4'>
               <h4 className='ml-2 mt-5'>Feature Image</h4>
               <div className='flex-file file_input'>
