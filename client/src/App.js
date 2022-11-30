@@ -66,7 +66,7 @@ function App() {
           <Route path='/forgotpassword' element={<ForgotPassword />} />
           <Route path='/passwordchange' element={<Passwordchange />} />
           <Route path='/privacy-policy' element={<Terms />} />
-          <Route path='/Blog_1' element={<Blog_1 />} />
+          <Route path='/:blogtitle' element={<Blog_1/>} />
           <Route path='/Blog_2' element={<Blog2 />} />
           <Route path='/Blog_3' element={<Blog3 />} />
           <Route path='/terms-condition' element={<Condition />} />

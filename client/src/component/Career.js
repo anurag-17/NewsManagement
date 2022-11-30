@@ -15,15 +15,24 @@ import axios from 'axios';
 const Career = () => {
 const[value,setvalue] = useState("All Job Department")
 const[data,setdata] = useState([])
+const [filterdata,setfilterdata]  = useState(data)
 
   const handlechange = (e)=>{
-    setvalue(e.target.value)
+    if(e.target.value==="All Job Department"){
+      getcareer()
+    }else{
+      setvalue(e.target.value)
+      setfilterdata(data.filter((items,index)=>{
+        return items.category === e.target.value
+      }))
+    }
   }
 
 const getcareer = async()=>{
   const res= await axios.get("/api/auth/viewcareer")
   if(res.data){
     setdata(res.data.result)
+    setfilterdata(res.data.result)
   }
 }
 
@@ -52,11 +61,11 @@ const getcareer = async()=>{
   <option>Brand & Marketing</option>
   <option>Engineering</option>
 </select>
-<select onChange={handlechange} className='form-select ml-4' aria-label="Default select example">
+<select className='form-select ml-4' aria-label="Default select example">
   <option>All Job Type</option>
   <option>Full Time</option>
 </select>
-<select onChange={handlechange} className="form-select ml-4" aria-label="Default select example">
+<select  className="form-select ml-4" aria-label="Default select example">
   <option>All Job Location</option>
   <option>Bangalore</option>
 </select>
@@ -66,7 +75,7 @@ const getcareer = async()=>{
     // value==="All Job Department"?
   <tbody>
     {
-      data.map((items,index)=>{
+      filterdata.map((items,index)=>{
         return(
     <tr className='table-row '>
       <td className='td-1'><h4>{items.title}</h4></td>

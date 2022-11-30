@@ -5,8 +5,11 @@ import axios from 'axios';
 import { AdminDash } from './AdminDash';
 import "./Viewblog.css"
 import { useNavigate } from 'react-router';
-import { Editor } from '@tinymce/tinymce-react';
+// import { Editor } from '@tinymce/tinymce-react';
 import Resizer from "react-image-file-resizer";
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import Editor from 'ckeditor5-custom-build/build/ckeditor';
+
 
 export const Viewblogs = () => {
     const navigate = useNavigate()
@@ -21,7 +24,7 @@ export const Viewblogs = () => {
         "url": "",
         "date": new Date().toLocaleDateString()
     })
-    const[onclose,setOnClose] = useState(true)
+    const [onclose, setOnClose] = useState(true)
     const editorRef = useRef(null);
     useEffect(() => {
         axios.get("/api/auth/viewblogs").then((res) => {
@@ -29,7 +32,7 @@ export const Viewblogs = () => {
             setBlogdata(res.data.result)
         })
         navigate("/viewblogs")
-    }, [blogdata,editblogdata])
+    }, [editblogdata])
     const deletehandler = async (id) => {
 
         setDeleteid(id)
@@ -41,16 +44,20 @@ export const Viewblogs = () => {
     const edithandler = async (id) => {
         setEditid(id)
         console.log(id);
+        
         await axios.post("/api/auth/editid", { params: id }).then((res) => {
+            console.log(res.data.result);
             setEditblogdata(res.data.result)
-            console.log(editblogdata);
+
+
             setAvatarpreview(res.data.result.url)
         }).catch((error) => {
             console.log(error);
         })
     }
+    console.log(editblogdata);
     const Input_handler = (e) => {
-        setEditblogdata({ ...editblogdata, [e.target.name]: e.target.value })
+        setEditblogdata({ ...editblogdata, title:e.target.value })
     }
     const input_file = (e) => {
         setSelectedImage(e.target.files)
@@ -91,15 +98,12 @@ export const Viewblogs = () => {
     };
     encodefile(selectedimage[0]);
     const log = async (e) => {
-e.preventDefault()
-        if (editorRef.current) {
-            editblogdata.description = editorRef.current.getContent()
-            console.log(editblogdata);
-              await axios.post("/api/auth/editblogs", editblogdata, { headers: { "Content-Type": "application/json" } }).then((res) => {
-                console.log(res.data);
+        console.log(editblogdata)
+        e.preventDefault()
+        await axios.post("/api/auth/editblogs", editblogdata, { headers: { "Content-Type": "application/json" } }).then((res) => {
+            console.log(res.data);
 
-              })
-        }
+        })
     };
 
     return (
@@ -110,11 +114,11 @@ e.preventDefault()
                     <div className='blogbox'><h3>View Blogs</h3></div>
                     <div className='blogcard'>
                         {
-                            blogdata.slice(0).reverse().map((items, index) =>{
+                            blogdata.slice(0).reverse().map((items, index) => {
                                 return (
                                     <div className="card mt-4 col-5 card-main" key={index}>
                                         <div className="image-center">
-                                        <img className="card-img-top blogimg" src={items.url} alt="Card image" />
+                                            <img className="card-img-top blogimg" src={items.url} alt="Card image" />
                                         </div>
                                         <div className="card-body">
                                             <h4 className="card-title">{items.title}</h4>
@@ -122,12 +126,12 @@ e.preventDefault()
                                         </div>
                                         <div className="card-bottom">
                                             <div>
-                                            <button className='btn' onClick={() => deletehandler(items._id)}>
-                                                <i className="fa fa-trash" aria-hidden="true"></i>
-                                            </button>
-                                            <button type="button" class="btn" data-toggle="modal" data-target="#myModal" onClick={() => edithandler(items._id)}>
-                                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                                            </button>
+                                                <button className='btn' onClick={() => deletehandler(items._id)}>
+                                                    <i className="fa fa-trash" aria-hidden="true"></i>
+                                                </button>
+                                                <button type="button" class="btn" data-toggle="modal" data-target="#myModal" onClick={() => edithandler(items._id)}>
+                                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                                </button>
                                             </div>
                                             <p>{items.date}</p>
                                         </div>
@@ -139,7 +143,7 @@ e.preventDefault()
                     </div>
                     <div className="modal" id="myModal">
                         <div className="modal-dialog">
-                            <div style = {{width:"120%"}} className="modal-content">
+                            <div style={{ width: "120%" }} className="modal-content">
                                 <div className="modal-header">
                                     <h4 className="modal-title">Edit News</h4>
                                     <button type="button" className="close" data-dismiss="modal">&times;</button>
@@ -148,39 +152,40 @@ e.preventDefault()
                                 <div>
                                     <form action="">
                                         <div className='mb-5 mt-3 model_input'>
-                                            <input type="text" name="title" id="" placeholder='Title' className='model_title' onChange={Input_handler} value={editblogdata.title}/>
+                                            <input type="text" name="title" id="" placeholder='Title' className='model_title' onChange={Input_handler} value={editblogdata.title} />
                                         </div>
                                         <label className='ml-3' htmlFor=""><strong>Description</strong></label>
-                                        <Editor
-                                            onInit={(evt, editor) => editorRef.current = editor}
-                                            initialValue={editblogdata.description}
-                                            init={{
-                                                height: 300,
-                                                menubar: false,
-                                                plugins: [
-                                                    'advlist autolink lists link image charmap print preview anchor',
-                                                    'searchreplace visualblocks code fullscreen',
-                                                    'insertdatetime media table paste code help wordcount'
-                                                ],
-                                                toolbar: 'undo redo | formatselect |' +
-                                                    'bold italic backcolor | alignleft aligncenter' +
-                                                    'alignright alignjustify | bullist numlist outdent indent | ' +
-                                                    'removeformat | help',
-                                                content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+                                        <CKEditor
+                                            editor={Editor}
+                                            data={editblogdata.description}
+                                            config={{ placeholder: "write content here", height: "25rem" }}
+                                            onReady={editor => {
+                                                // You can store the "editor" and use when it is needed.
+                                                console.log('Editor is ready to use!', editor);
                                             }}
+                                            // onChange={(event, editor) => {
+                                            //     const data = editor.getData();
+                                            //     setEditblogdata({ ...editblogdata, description: data })
+                                            //     console.log({ event, editor, data });
+                                            // }}
+                                        // onBlur={ ( event, editor ) => {
+                                        //     console.log( 'Blur.', editor );
+                                        // } }
+                                        // onFocus={ ( event, editor ) => {
+                                        //     console.log( 'Focus.', editor );
+                                        // } }
                                         />
-        
-                                         
-        <div className="ml-3">
-              <h4 className='ml-2'>Feature Image</h4>
-              <div className='flex-file file_input'>
-                  <img className="mt-3" style={{ width: "3.2rem", height: "3.1rem", marginLeft: "10px", borderRadius: "50%" }} src={avtarpreview} />
-               <input className="file" type="file" name="url" id="file" onChange={input_file} />
-                <label className='ml-3' htmlFor="file">
-                   Choose Image
-                </label>
-              </div>
-              </div>
+
+                                        <div className="ml-3">
+                                            <h4 className='ml-2'>Feature Image</h4>
+                                            <div className='flex-file file_input'>
+                                                <img className="mt-3" style={{ width: "3.2rem", height: "3.1rem", marginLeft: "10px", borderRadius: "50%" }} src={avtarpreview} />
+                                                <input className="file" type="file" name="url" id="file" onChange={input_file} />
+                                                <label className='ml-3' htmlFor="file">
+                                                    Choose Image
+                                                </label>
+                                            </div>
+                                        </div>
                                         <div className='btn_box'>
                                             <button className='btn btn-primary give_margin mx-auto' onClick={log}>Submit</button>
                                         </div>

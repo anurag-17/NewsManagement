@@ -1,16 +1,33 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./Blogdetail.css"
 import blog1 from "../Images/blog_1.jpg"
+import { useParams } from 'react-router'
+import axios from 'axios'
 
 export const Blog_1 = () => {
+  const {blogtitle} = useParams()
+  const [blogdata,setBlogdata]  = useState([])
+  const trimtitle  = blogtitle.replaceAll('-', ' ');
+
+  const getdata = async()=>{
+   await axios.get("/api/auth/viewblogs").then((res) => {
+      if(res){
+        setBlogdata(res.data.result)
+      }
+      
+    })
+  }
+
+
     useEffect(() => {
         window.scrollTo(0,0)
+        getdata()
           }, [])
   return (
     <>
     <div className="container blog-main">
     
-<section className='upper-section'>
+{/* <section className='upper-section'>
     <h1 className='blog-heading'>SEBI Chairperson spoke to Fintech Participants at the Global Fintech Fest (GFF 2022)</h1>
     <p className='mt-4'> <strong>Smt. Madhabi Puri Buch,</strong> the chairperson of the Securities and Exchange Board of India, delivered the keynote addressing Fintech participants at the Global Fintech Fest 2022 on Indian Markets: Strengthening the Vision (SEBI).</p>
     <img src={blog1} alt="sebi chairperson" />
@@ -37,12 +54,22 @@ export const Blog_1 = () => {
  </ul>
 
  </div>
-</section>
+</section> */}
+
+{
+  blogdata.filter((items,index)=>{
+    return items.title === trimtitle
+  }).map((item,i)=>{
+return(
+ <p  className="card-text" dangerouslySetInnerHTML={{ __html: item.description }}></p> 
+)
+  })
+}
+
 
 <section>
     <h2 style = {{fontSize:"40px",}}>Leave a Reply</h2>
     <p>Your email address will not be published. Required fields are marked *</p>
-
 <form style = {{width:"inherit"}} action="" className="">
    <div className='blog-form'>
     <div>
@@ -69,7 +96,6 @@ export const Blog_1 = () => {
 </div>
 
   </form>
-
 
 </section>
 
