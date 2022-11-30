@@ -14,6 +14,7 @@ import Investblog4 from './Images/BlogInvest-img4.png';
 import Investblog5 from './Images/BlogInvest-img5.png';
 import { Blogslider } from './Blogslider';
 import Typewriter from "typewriter-effect";
+import { Link } from 'react-router-dom';
 
 
 const Blog = () => {
@@ -124,7 +125,13 @@ const Blog = () => {
                 <div className='BInvest-grid'>
                   {
                     blogdata.slice(0).reverse().map((items, index) => {
+                      const trimtitle = items.title.replace(
+                        / +/g,
+                        "-"
+                      )
+                      console.log(trimtitle)
                       return (
+                      <Link to = {`/${trimtitle}`}>
                         <div className='Binvest-item1'>
                           <div className='bInvest-img'>
                             <img src={items.url} alt='Blog-Invest' style={{height:"250px"}}></img>
@@ -132,6 +139,7 @@ const Blog = () => {
                           <h4>2 min read</h4>
                           <p>{items.title}</p>
                         </div>
+                      </Link>
                       )
                     })
                   }

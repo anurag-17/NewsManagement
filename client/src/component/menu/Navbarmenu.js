@@ -66,7 +66,7 @@ const Navbarmenu = () => {
                 </div>
 
                 <div className="header__middle__menus">
-                    <nav className="main-nav " >
+                    <nav className="main-nav" >
 
                     {/* Responsive Menu Button */}
                     {isResponsiveclose === true ? <> 

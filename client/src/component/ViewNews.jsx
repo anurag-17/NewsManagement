@@ -33,7 +33,7 @@ export const ViewNews = () => {
   };
   useEffect(() => {
     viewnews();
-  }, [newsdata, updatedata]);
+  }, [updatedata,editnewsdata,deleteid]);
 
   const deletehandler = async (id) => {
     setDeleteid(id);
@@ -48,7 +48,7 @@ export const ViewNews = () => {
     setEditid(id);
     console.log(id);
     await axios
-      .post("/api/auth/editidnews", { params: id })
+      .post("/api/auth/editidnews",{ params: id })
       .then((res) => {
         console.log(res.data.result)
         setEditnewsdata(res.data.result);
@@ -61,7 +61,7 @@ export const ViewNews = () => {
   };
 
   const Input_handler = (e) => {
-    setEditnewsdata({ ...editnewsdata, [e.target.name]: e.target.value });
+    setEditnewsdata({ ...editnewsdata,[e.target.name]: e.target.value });
   };
   const input_file = (e) => {
     setSelectedImage(e.target.files);

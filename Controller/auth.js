@@ -67,10 +67,10 @@ exports.addnews = catchAsyncError(
 exports.addblog = catchAsyncError(
     async(req, res, next)=>{
         console.log(req.body)
-        const {title ,description, url }= req.body;
+        const {title ,description, url,date}= req.body;
         try {
             let blogdata = new Blogs({
-                title, description, url
+                title, description, url,date
             })
             blogdata.save().then((result)=>{
                 console.log("successfully blog feeded");
@@ -98,15 +98,11 @@ exports.viewnews = catchAsyncError(
 )
 exports.viewblogs = catchAsyncError(
     async(req, res)=>{
-        try {
-             Blogs.find({}, (error, result)=>{
+             Blogs.find({},(error, result)=>{
                 if (error) {console.log(error , "viewblog error")}
                 res.send({result})
             } )
-            
-        } catch (error) {
-           console.log(error , "catchviewblog error"); 
-        }
+  
     }
 )
 exports.deleteblogs = catchAsyncError(
@@ -154,7 +150,6 @@ exports.editidnews = catchAsyncError(
 )
 exports.editnews =catchAsyncError(
     async(req, res, next)=>{
-        console.log(req.body);
         await News.findByIdAndUpdate({_id : new ObjectId(req.body._id)},{"title": req.body.title, "description": req.body.description, "url": req.body.url, "img": req.body.img}),(error, data)=>{
             if (error) {
                 console.log(error, "updatenews");
@@ -183,7 +178,6 @@ exports.editid = catchAsyncError(
 )
 exports.editblogs = catchAsyncError(
     async(req, res, next)=>{
-        console.log(req.body);
         await Blogs.findByIdAndUpdate({_id: new ObjectId(req.body._id)}, {"title": req.body.title, "description": req.body.description, "url": req.body.url}),(error, data)=>{
             if (error) {
                 console.log(error, "updateblog");

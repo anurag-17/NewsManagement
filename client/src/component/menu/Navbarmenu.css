@@ -64,7 +64,7 @@ ul.main-menu>li.menu-item:first-child {
 .menu-item {
   line-height: 23px;
 }
-li {
+.main-nav li {
   list-style-type: none;
 }
 .menu-item a {
