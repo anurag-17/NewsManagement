@@ -433,6 +433,17 @@ exports.careeredit = catchAsyncError(
     }
 )
 
+exports.editcareer =catchAsyncError(
+    async(req, res, next)=>{
+        await Career.findByIdAndUpdate({_id:new ObjectId(req.body._id)},{"title": req.body.title, "category": req.body.category, "location": req.body.location, "link": req.body.link}),(error, data)=>{
+            if (error) {
+                console.log(error, "updatenews");
+            } else {
+                console.log(data);
+            }
+        }
+    }
+)
 
 exports.deletecareer = catchAsyncError(
     async (req, res, next) => {
