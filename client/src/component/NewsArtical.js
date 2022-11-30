@@ -28,7 +28,7 @@ const Letestslider = ({apidata}) => {
         apidata.map((items,index)=>{
         return(
               <>
-                 <a href= {items.link._cdata}>
+                 <a target="blank" href= {items.link._cdata}>
                 <div className='letest-artical'>
                    <div className='LetestArtical1'>
                     <div className='LetestArticalImg'>
