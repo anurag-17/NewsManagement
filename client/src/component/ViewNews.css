@@ -20,6 +20,9 @@
     overflow-y: scroll;
 }
 
+td,th{
+    text-align: center;
+}
 .flex-image{
     display: flex;flex-direction: column;
 }
