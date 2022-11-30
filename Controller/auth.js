@@ -85,8 +85,9 @@ exports.addblog = catchAsyncError(
 )
 exports.viewnews = catchAsyncError(
     async(req, res)=>{
+        console.log(req.body);
         try {
-           News.find({}, (error, result)=>{
+           News.find({catagory:req.body.catagory}, (error, result)=>{
                 if (error) {console.log(error , "viewnews error")}
                 res.send({result})
             } )

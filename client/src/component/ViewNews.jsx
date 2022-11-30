@@ -25,7 +25,7 @@ export const ViewNews = () => {
   const editorRef = useRef(null);
 
   const viewnews = async () => {
-    await axios.get("/api/auth/viewnews").then((res) => {
+    await axios.post("/api/auth/viewnews").then((res) => {
       setNewsdata(res.data.result);
       newsdata.reverse();
       console.log(newsdata);

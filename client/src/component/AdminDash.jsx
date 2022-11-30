@@ -52,11 +52,11 @@ export const AdminDash = () => {
 
 
                   <li className='adt'>
-                    <Link to='/addnews' className='adt'>Add News</Link>
+                    <Link to='/addnews' className='adt'>Add Learn</Link>
                   </li>
 
                   <li className='adt'>
-                    <Link className='adt' to='/viewnews'>News</Link>
+                    <Link className='adt' to='/viewnews'>Learn</Link>
                   </li>
 
                   <li className='adt'>
