@@ -27,13 +27,13 @@ const Home = () => {
     email: ""
   })
   const [newsdata, setNewsdata] = useState([])
+  const [blogdata,setBlogdata] = useState([])
   const [content, setContent] = useState([])
   const [show, setShow] = useState(false)
   const [message, setMessage] = useState("")
-  const newsres = async () => {
-    await axios.get("/api/auth/viewnews").then((res) => {
-      console.log(res.data)
-      setNewsdata(res.data.result)
+  const getblogdata = async () => {
+    axios.get("/api/auth/viewblogs").then((res) => {
+      setBlogdata(res.data.result)
     })
   }
 
@@ -44,6 +44,7 @@ const Home = () => {
 
   useEffect(() => {
     viewdata()
+    getblogdata()
     window.scrollTo(0, 0)
   }, [])
 
@@ -352,14 +353,21 @@ const Home = () => {
             <h3>Blog</h3>
           </div>
           <div className='blog-grid'>
+            {
+            blogdata.slice(3,6).map((items,index)=>{
+                const trimtitle = items.title.replace(
+                  / +/g,
+                  "-"
+                )
+                return(
             <div className='blog_item1'>
-              <Link to="/Blog_1" target="_blank">
+              <Link to = {`/${trimtitle}`} target= "_blank">
                 <div className='blog-Ct'>
                   <div className='blogImg'>
-                    <img src={blog1}></img>
+                    <img src={items.url}></img>
                   </div>
                   <div className='blod-des'>
-                    <h3>SEBI Chairperson spoke to Fintech Participants at the Global Fintech Fest (GFF 2022)</h3>
+                    <h3>{items.title}</h3>
                     <div className='blog-btn'>
 
                       <button className='Blog-btn'><a href='#'>Read MORE <i class="fa fa-angle-double-right"></i></a></button>
@@ -368,7 +376,10 @@ const Home = () => {
                 </div>
               </Link>
             </div>
-
+                )
+              })
+            }
+{/* 
             <div className='blog_item1'>
               <Link to="/Blog_2" target="_blank">
                 <div className='blog-Ct'>
@@ -399,7 +410,7 @@ const Home = () => {
                   </div>
                 </div>
               </Link>
-            </div>
+            </div> */}
 
           </div>
           <div className='view-btn'>
