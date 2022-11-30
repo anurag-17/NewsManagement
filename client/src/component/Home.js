@@ -361,7 +361,7 @@ const Home = () => {
                 )
                 return(
             <div className='blog_item1'>
-              <Link to = {`/${trimtitle}`} target= "_blank">
+              <Link to = {`/${trimtitle}`}>
                 <div className='blog-Ct'>
                   <div className='blogImg'>
                     <img src={items.url}></img>
