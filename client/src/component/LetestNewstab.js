@@ -37,24 +37,24 @@ const LetestNewstab = () => {
             onSelect={(k) => setKey(k)}
             className="mb-3"
             >
-            <Tab eventKey="home" title="World">
+            <Tab eventKey="home" title="All">
                 <World  apidata={data}/>
             </Tab>
-            <Tab eventKey="Business" title="Business">
+            <Tab eventKey="Business" title="Mutual Fund">
                 <Business  apidata={data}/>
             </Tab>
-            <Tab eventKey="Legal" title="Legal">
+            <Tab eventKey="Legal" title="Beginner lesson">
                 <Legal  apidata={data}/>
             </Tab>
-            <Tab eventKey="Breakingviews" title="Breakingviews">
+            <Tab eventKey="Breakingviews" title="Finance">
                 <Breakingviews  apidata = {data}/>
             </Tab>
-            <Tab eventKey="Technology" title="Technology">
+            <Tab eventKey="Technology" title="Interesting Facts">
                 <Technology  apidata={data}/>
             </Tab>
-            <Tab eventKey="Sports" title="Sports">
+            {/* <Tab eventKey="Sports" title="Sports">
                 <Sports  apidata={data}/>
-            </Tab>
+            </Tab> */}
             </Tabs>
             <div className="view-btn">
         <button className="view-btn">

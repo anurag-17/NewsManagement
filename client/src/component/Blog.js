@@ -344,7 +344,7 @@ const Blog = () => {
 
 
 
-                  <div className='Binvest-item1'>
+                  {/* <div className='Binvest-item1'>
                     <div className='bInvest-img'>
                       <img src={Investblog3} alt='Blog-Invest'></img>
                     </div>
@@ -373,7 +373,7 @@ const Blog = () => {
                     </div>
                     <h4>2 min read</h4>
                     <p>Getting started in stock market: things to consider</p>
-                  </div>
+                  </div> */}
                 </div>
               </div>
               <div className='col-ld-2 col-md-2'>
@@ -421,7 +421,7 @@ const Blog = () => {
                   })
                   }
 
-                  <div className='Binvest-item1'>
+                  {/* <div className='Binvest-item1'>
                     <div className='bInvest-img'>
                       <img src={Investblog2} alt='Blog-Invest'></img>
                     </div>
@@ -458,7 +458,7 @@ const Blog = () => {
                     </div>
                     <h4>2 min read</h4>
                     <p>Getting started in stock market: things to consider</p>
-                  </div>
+                  </div> */}
                 </div>
                 {/* <div className='BInvest-btn'>
             <button className='BInvst'><a href='#'>SEE MORE</a></button>

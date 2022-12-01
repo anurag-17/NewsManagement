@@ -6,7 +6,7 @@ const Business = () => {
   const [newsdata, setNewsdata] = useState();
   const viewnews = async () => {
     await axios
-      .post("/api/auth/viewnews", { catagory: "Business" })
+      .post("/api/auth/viewnews", { catagory: "MutualFund" })
       .then((res) => {
         setNewsdata(res.data.result);
         newsdata.reverse();

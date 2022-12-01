@@ -16,7 +16,7 @@ const Technology = () => {
   const [newsdata, setNewsdata] = useState();
   const viewnews = async () => {
     await axios
-      .post("/api/auth/viewnews", { catagory: "Technology" })
+      .post("/api/auth/viewnews", { catagory:"InterestingFacts" })
       .then((res) => {
         setNewsdata(res.data.result);
         newsdata.reverse();

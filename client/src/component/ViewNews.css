@@ -20,9 +20,7 @@
     overflow-y: scroll;
 }
 
-td,th{
-    text-align: center;
-}
+
 .flex-image{
     display: flex;flex-direction: column;
 }
@@ -36,6 +34,10 @@ td,th{
 }
 .model_input{
     display: flex;
+    flex-direction: column;
+}
+.model_input input{
+    margin-top: 20px;
 }
 .card-bottom{
     border-top: 1px solid grey;

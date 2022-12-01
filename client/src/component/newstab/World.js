@@ -13,7 +13,7 @@ const World = () => {
   const [newsdata, setNewsdata] = useState();
 
   const viewnews = async () => {
-    await axios.post("/api/auth/viewnews",{catagory:"World"}).then((res) => {
+    await axios.post("/api/auth/viewnews",{catagory:"All"}).then((res) => {
       setNewsdata(res.data.result);
       newsdata.reverse();
       console.log(newsdata);

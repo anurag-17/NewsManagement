@@ -175,7 +175,7 @@ export const ViewNews = () => {
             <div className="modal-dialog">
               <div style={{ width: "120%" }} className="modal-content">
                 <div className="modal-header">
-                  <h4 className="modal-title">Edit News</h4>
+                  <h4 className="modal-title">Edit Learn</h4>
                   <button type="button" className="close" data-dismiss="modal">
                     &times;
                   </button>
@@ -212,11 +212,7 @@ export const ViewNews = () => {
                         value={editnewsdata.catagory}
                       />
                     </div>
-                    <label className="ml-3" htmlFor="">
-                      <strong>Description</strong>
-                    </label>
-                  
-
+    
                     <div className="ml-3">
                       <h4 className="ml-2">Feature Image</h4>
                       <div className="flex-file file_input">
