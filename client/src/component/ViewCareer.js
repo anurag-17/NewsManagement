@@ -27,6 +27,7 @@ export const ViewCareer = () => {
     await axios
       .post("/api/auth/deletecareer", { params: id })
       .then((res) => {
+        getcareer()
         console.log(res);
       })
       .catch((e) => {
@@ -69,7 +70,7 @@ export const ViewCareer = () => {
           <div className="table-responsive-sm tableContainer ">
             <table className="table tableA">
               <thead>
-                <tr>
+                <tr style={{textAlign:"center"}}>
                   <th>SNo.</th>
                   <th>job</th>
                   <th>Category</th>
@@ -80,7 +81,7 @@ export const ViewCareer = () => {
               <tbody>
                 {data.map((items, index) => {
                   return (
-                    <tr key={index}>
+                    <tr style = {{textAlign:"center"}} key={index}>
                       <td>{index + 1}</td>
                       <td>{items.title}</td>
                       <td>{items.category}</td>
@@ -115,7 +116,7 @@ export const ViewCareer = () => {
             <div className="modal-dialog">
               <div style={{ width: "120%" }} className="modal-content">
                 <div className="modal-header">
-                  <h4 className="modal-title">Edit News</h4>
+                  <h4 className="modal-title">Edit Career</h4>
                   <button type="button" className="close" data-dismiss="modal">
                     &times;
                   </button>
@@ -161,12 +162,8 @@ export const ViewCareer = () => {
                         value={editblogdata.link}
                       />
                     </div>
-                    <label className="ml-3" htmlFor="">
-                      <strong>Description</strong>
-                    </label>
                   
-
-                    <div className="ml-3">
+                    {/* <div className="ml-3">
                       <h4 className="ml-2">Feature Image</h4>
                       <div className="flex-file file_input">
                         <img
@@ -190,11 +187,12 @@ export const ViewCareer = () => {
                           Choose Image
                         </label>
                       </div>
-                    </div>
+                    </div> */}
                     <div className="btn_box">
                       <button
-                        className="btn btn-primary give_margin mx-auto"
+                        className="btn btn-primary mx-auto"
                         onClick={log}
+                        data-dismiss="modal"
                       >
                         Submit
                       </button>

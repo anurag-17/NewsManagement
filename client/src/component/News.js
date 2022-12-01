@@ -354,7 +354,7 @@ const News = () => {
         </div>
       </section> */}
       <div className='container'>
-        {/* <Carousel
+        <Carousel
           showThumbs={false}
           autoPlay
           infiniteLoop
@@ -377,7 +377,7 @@ const News = () => {
           }
 
 
-        </Carousel> */}
+        </Carousel>
         
       </div>
 
@@ -402,9 +402,6 @@ const News = () => {
                     )
                   })
                 )
-
-
-
 
               })
             }

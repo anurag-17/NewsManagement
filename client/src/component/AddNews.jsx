@@ -135,12 +135,11 @@ export const AddNews = () => {
                 {/* <input type="text"onChange={(e)=>{setAddnews({...addnews ,catagory:e.target.value})}} /> */}
                 <select style= {{width:"100%",display:"block"}} onChange={(e)=>{setAddnews({...addnews,catagory:e.target.value})}} className="form-select mt-2" name="" id="">
                 <option disabled selected value="">Select Category</option>
-                  <option value="World">World</option>
-                  <option value="Business">Business</option>
-                  <option value="Legal">Legal</option>
-                  <option value="Breakingviews">Breakingviews</option>
-                  <option value="Technology">Technology</option>
-                  <option value="Sports">Sports</option>
+                  <option value="All">All</option>
+                  <option value="MutualFund">Mutual Fund</option>
+                  <option value="BeginnerLesson">Beginner lesson</option>
+                  <option value="Finance">Finance</option>
+                  <option value="InterestingFacts">Interesting Facts</option>
                 </select>
                 </label>
                 <button className="btn btn-primary my-4 ml-4" onClick={log}>

@@ -9,6 +9,8 @@ import { useNavigate } from 'react-router';
 import Resizer from "react-image-file-resizer";
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import Editor from 'ckeditor5-custom-build/build/ckeditor';
+import { Pagination } from './Common/Pagination';
+
 
 
 export const Viewblogs = () => {
@@ -24,8 +26,14 @@ export const Viewblogs = () => {
         "url": "",
         "date": new Date().toLocaleDateString()
     })
+    const [currentPage, setCurrentPage] = useState(1);
     const [onclose, setOnClose] = useState(true)
-    const editorRef = useRef(null);
+    const [recordsPerPage] = useState(10);
+    const nPages = Math.ceil(blogdata.length / recordsPerPage);
+
+
+
+
     useEffect(() => {
         axios.get("/api/auth/viewblogs").then((res) => {
             // console.log(res.data.result);
@@ -199,6 +207,11 @@ export const Viewblogs = () => {
                     </div>
                 </div>
             </div>
+            <Pagination
+                       nPages={nPages}
+                       currentPage={currentPage}
+                       setCurrentPage={setCurrentPage}
+            />
         </>
     )
 }

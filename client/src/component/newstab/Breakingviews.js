@@ -15,7 +15,7 @@ const Breakingviews = () => {
   const [newsdata, setNewsdata] = useState();
   const viewnews = async () => {
     await axios
-      .post("/api/auth/viewnews", { catagory: "Breakingviews" })
+      .post("/api/auth/viewnews", { catagory: "Finance" })
       .then((res) => {
         setNewsdata(res.data.result);
         newsdata.reverse();
