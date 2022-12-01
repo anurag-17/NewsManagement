@@ -161,8 +161,9 @@ export const Viewblogs = () => {
                                                 console.log('Editor is ready to use!', editor);
                                             }}
                                             onChange={(event, editor) => {
-                                                const data = editor.getData();
-                                                    setEditblogdata({ ...editblogdata, description: data })
+                                                    const data = editor.getData();
+                                                     editblogdata.description = data
+                                                    // setEditblogdata({ ...editblogdata, description: data })
                                                     console.log({ event, editor, data });
                                             }}
                                         // onBlur={ ( event, editor ) => {
@@ -184,7 +185,7 @@ export const Viewblogs = () => {
                                             </div>
                                         </div>
                                         <div className='btn_box'>
-                                            <button className='btn btn-primary give_margin mx-auto' onClick={log}>Submit</button>
+                                            <button data-dismiss="modal" className='btn btn-primary give_margin mx-auto' onClick={log}>Submit</button>
                                         </div>
                                     </form>
                                 </div>
