@@ -47,12 +47,17 @@ useEffect(() => {
             {item.title}
           </a>
         </div>
+
 </>
               )
             })}
     
       </div>
-
+        <button className="view-btn">
+          <a target="blank" href="https://www.youtube.com/@BullSmartStockAcademy">
+            Learn MORE <i class="fa fa-angle-double-right"></i>
+          </a>
+        </button>
     </div>
   );
 };

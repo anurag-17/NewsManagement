@@ -64,7 +64,7 @@ const Learn = () => {
 
               <div className='l-invesleft'>
                 <div className='learninvestimg'>
-                  <img src={learninvest1}></img>
+               <iframe width="585" height="400" src="https://www.youtube.com/embed/WNw_TFVE0kk" title="BullSmart Stock Academy Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
               </div>
             </div>

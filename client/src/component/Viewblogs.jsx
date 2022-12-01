@@ -12,7 +12,6 @@ import Editor from 'ckeditor5-custom-build/build/ckeditor';
 import { Pagination } from './Common/Pagination';
 
 
-
 export const Viewblogs = () => {
     const navigate = useNavigate()
     const [blogdata, setBlogdata] = useState([])
@@ -28,11 +27,16 @@ export const Viewblogs = () => {
     })
     const [currentPage, setCurrentPage] = useState(1);
     const [onclose, setOnClose] = useState(true)
-    const [recordsPerPage] = useState(10);
+    const [recordsPerPage] = useState(4);
+
+
+    const indexOfLastRecord = currentPage * recordsPerPage;
+
+    const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
+
+    let currentRecords = blogdata.slice(indexOfFirstRecord, indexOfLastRecord);
+
     const nPages = Math.ceil(blogdata.length / recordsPerPage);
-
-
-
 
     useEffect(() => {
         axios.get("/api/auth/viewblogs").then((res) => {
@@ -119,7 +123,7 @@ export const Viewblogs = () => {
                     <div className='blogbox'><h3>View Blogs</h3></div>
                     <div className='blogcard'>
                         {
-                            blogdata.slice(0).reverse().map((items, index) => {
+                            currentRecords.slice(0).reverse().map((items, index) => {
                                 return (
                                     <div className="card mt-4 col-5 card-main" key={index}>
                                         <div className="image-center">
@@ -205,13 +209,14 @@ export const Viewblogs = () => {
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
             <Pagination
                        nPages={nPages}
                        currentPage={currentPage}
                        setCurrentPage={setCurrentPage}
             />
+                </div>
+                
+            </div>
         </>
     )
 }
