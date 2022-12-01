@@ -130,11 +130,11 @@ export const AddNews = () => {
               </div>
               <div className="editor-container">
                 <label htmlFor="">Link</label>
-                <input style ={{padding:"10px"}} type="text"onChange={(e)=>{setAddnews({...addnews ,url:e.target.value})}} />
+                <input value={addnews.url} style ={{padding:"10px"}} type="text"onChange={(e)=>{setAddnews({...addnews ,url:e.target.value})}} />
                 <label style = {{display:"block"}} htmlFor="">category
                 {/* <input type="text"onChange={(e)=>{setAddnews({...addnews ,catagory:e.target.value})}} /> */}
-                <select style= {{width:"100%",display:"block"}} onChange={(e)=>{setAddnews({...addnews,catagory:e.target.value})}} className="form-select mt-2" name="" id="">
-                <option disabled selected value="">Select Category</option>
+                <select value={addnews.catagory} style= {{width:"100%",display:"block"}} onChange={(e)=>{setAddnews({...addnews,catagory:e.target.value})}} className="form-select mt-2" name="" id="">
+                <option disabled value="">Select Category</option>
                   <option value="All">All</option>
                   <option value="MutualFund">Mutual Fund</option>
                   <option value="BeginnerLesson">Beginner lesson</option>

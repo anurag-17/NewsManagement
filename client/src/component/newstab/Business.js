@@ -41,7 +41,11 @@ const Business = () => {
             );
           })}
       </div>
-
+      <button className="view-btn">
+          <a target="blank" href="https://www.youtube.com/playlist?list=PLQ0dEPuPJTIU-ykMY5JtIdTxA9s-Ai44A">
+            Learn MORE <i class="fa fa-angle-double-right"></i>
+          </a>
+        </button>
     </div>
   );
 };

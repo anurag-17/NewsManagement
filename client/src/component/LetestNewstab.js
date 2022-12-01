@@ -57,11 +57,7 @@ const LetestNewstab = () => {
             </Tab> */}
             </Tabs>
             <div className="view-btn">
-        <button className="view-btn">
-          <a target="blank" href="https://www.youtube.com/@BullSmartStockAcademy/videos">
-            Read MORE <i class="fa fa-angle-double-right"></i>
-          </a>
-        </button>
+
       </div>
       </div>
     </div>

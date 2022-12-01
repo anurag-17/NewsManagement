@@ -50,7 +50,11 @@ const Breakingviews = () => {
             );
           })}
       </div>
-
+      <button className="view-btn">
+          <a target="blank" href="https://www.youtube.com/playlist?list=PLQ0dEPuPJTIXwWTmhJfiR0Cr2sY9VXCQ1">
+            Learn MORE <i class="fa fa-angle-double-right"></i>
+          </a>
+        </button>
     </div>
   );
 };
