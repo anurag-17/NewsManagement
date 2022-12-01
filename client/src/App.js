@@ -57,8 +57,8 @@ function App() {
           <Route path='/admindash' element={<AddNews />} />
           <Route path='/addblogs' element={<AddBlogs />} />
           <Route path='/viewnews' element={<ViewNews />} />
-          <Route path='/News' element={<News />} />
-          <Route path='/Learn' element={<Learn />} />
+          <Route path='/news' element={<News />} />
+          <Route path='/learn' element={<Learn />} />
           <Route path='/viewblogs' element={<Viewblogs />} />
           <Route path='/loader' element={<Loader />} />
           <Route path='/addcontent' element={<AddContent />} />

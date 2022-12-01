@@ -41,4 +41,9 @@ h3 {
 .body-main {
     padding: 67px 0px 0px 0px;
 }
+
+.ck-content .text-huge {
+    font-size: 2.8em;
+}
+
 }
