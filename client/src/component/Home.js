@@ -159,14 +159,14 @@ const Home = () => {
       <section id='Top-News'>
         <div className='container'>
           <div class="TopAriclnew">
-            <span><h2 style={{ color: "black" }}>TOP NEWS</h2></span>
+            <span><h2 style={{color:"black"}}>TOP NEWS</h2></span>
           </div>
 
           <div className='home-news'>
             <div className='Homenews-grid'>
               <Topnews apidata={data} />
               <div className='d-flex justify-content-center'>
-                <Link to="/News">
+                <Link to="/news">
                   <button className='view-btn mb-4 hoverclass'>KNOW MORE</button>
                 </Link>
               </div>

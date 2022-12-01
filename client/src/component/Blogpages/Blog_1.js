@@ -60,7 +60,7 @@ export const Blog_1 = () => {
     return items.title.replaceAll("-"," ") === trimtitle
   }).map((item,i)=>{
 return(
- <p  className="card-text" dangerouslySetInnerHTML={{ __html: item.description }}></p> 
+ <p  className="card-text blogtop" dangerouslySetInnerHTML={{ __html: item.description }}></p> 
 )
   })
 }

@@ -12,6 +12,7 @@ export const AddNews = () => {
     url: "",
     catagory:""
   });
+  console.log(addnews)
 
   const [selectedimage, setSelectedImage] = useState([]);
   const [avtarpreview, setAvatarpreview] = useState();
@@ -72,6 +73,12 @@ export const AddNews = () => {
       })
       .then((res) => {
         console.log(res.data);
+        setAddnews({
+          title: "",
+          img: "",
+          url: "",
+          catagory:""
+        })
       });
   };
 
@@ -123,11 +130,20 @@ export const AddNews = () => {
               </div>
               <div className="editor-container">
                 <label htmlFor="">Link</label>
-                <input type="text"onChange={(e)=>{setAddnews({...addnews ,url:e.target.value})}} />
-                <label htmlFor="">category</label>
-                <input type="text"onChange={(e)=>{setAddnews({...addnews ,catagory:e.target.value})}} />
-
-                <button className="btn btn-primary my-2" onClick={log}>
+                <input style ={{padding:"10px"}} type="text"onChange={(e)=>{setAddnews({...addnews ,url:e.target.value})}} />
+                <label style = {{display:"block"}} htmlFor="">category
+                {/* <input type="text"onChange={(e)=>{setAddnews({...addnews ,catagory:e.target.value})}} /> */}
+                <select style= {{width:"100%",display:"block"}} onChange={(e)=>{setAddnews({...addnews,catagory:e.target.value})}} className="form-select mt-2" name="" id="">
+                <option disabled selected value="">Select Category</option>
+                  <option value="World">World</option>
+                  <option value="Business">Business</option>
+                  <option value="Legal">Legal</option>
+                  <option value="Breakingviews">Breakingviews</option>
+                  <option value="Technology">Technology</option>
+                  <option value="Sports">Sports</option>
+                </select>
+                </label>
+                <button className="btn btn-primary my-4 ml-4" onClick={log}>
                   Submit
                 </button>
               </div>

@@ -50,13 +50,7 @@ const Sports = () => {
             );
           })}
       </div>
-      <div className="view-btn">
-        <button className="view-btn">
-          <a href="#">
-            Read MORE <i class="fa fa-angle-double-right"></i>
-          </a>
-        </button>
-      </div>
+
     </div>
   );
 };

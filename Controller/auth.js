@@ -8,6 +8,7 @@ const Email = require("../Model/Email")
 const Career = require("../Model/Career")
 const jwt = require("jsonwebtoken");
 const { query } = require("express");
+const e = require("express");
 var ObjectId = require('mongodb').ObjectId
 
 
@@ -54,7 +55,7 @@ exports.addnews = catchAsyncError(
                 title, catagory, url, img
             })
             newsdata.save().then((result)=>{
-                console.log("successfully news feeded");
+                return res.status(201).json(result)
             }).catch((err)=>{
                 console.log(err, "news feederror");
             })
@@ -83,14 +84,22 @@ exports.addblog = catchAsyncError(
         
     }
 )
+
 exports.viewnews = catchAsyncError(
     async(req, res)=>{
         console.log(req.body);
         try {
-           News.find({catagory:req.body.catagory}, (error, result)=>{
-                if (error) {console.log(error , "viewnews error")}
-                res.send({result})
-            } )
+            if(req.body.catagory){
+                News.find({catagory:req.body.catagory}, (error, result)=>{
+                     if (error) {console.log(error , "viewnews error")}
+                     res.send({result})
+                 } )
+            }else{
+                News.find({},(error, result)=>{
+                    if (error) {console.log(error , "viewnews error")}
+                    res.send({result})
+                } )
+            }
             
         } catch (error) {
            console.log(error , "catchviewnews error"); 
