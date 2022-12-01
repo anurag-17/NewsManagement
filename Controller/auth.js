@@ -67,7 +67,6 @@ exports.addnews = catchAsyncError(
 )
 exports.addblog = catchAsyncError(
     async(req, res, next)=>{
-        console.log(req.body)
         const {title ,description, url,date,category}= req.body;
         try {
             let blogdata = new Blogs({

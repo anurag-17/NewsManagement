@@ -100,7 +100,6 @@ export const Viewblogs = () => {
         e.preventDefault()
         await axios.post("/api/auth/editblogs", editblogdata, { headers: { "Content-Type": "application/json" } }).then((res) => {
             console.log(res.data);
-
         })
     };
 
@@ -161,11 +160,11 @@ export const Viewblogs = () => {
                                                 // You can store the "editor" and use when it is needed.
                                                 console.log('Editor is ready to use!', editor);
                                             }}
-                                            // onChange={(event, editor) => {
-                                            //     const data = editor.getData();
-                                            //     setEditblogdata({ ...editblogdata, description: data })
-                                            //     console.log({ event, editor, data });
-                                            // }}
+                                            onChange={(event, editor) => {
+                                                const data = editor.getData();
+                                                    setEditblogdata({ ...editblogdata, description: data })
+                                                    console.log({ event, editor, data });
+                                            }}
                                         // onBlur={ ( event, editor ) => {
                                         //     console.log( 'Blur.', editor );
                                         // } }
