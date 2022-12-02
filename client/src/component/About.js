@@ -8,8 +8,9 @@ import valueImg2 from './Images/Easy.svg';
 import valueImg3 from './Images/Empowerment.svg';
 import axios from 'axios';
 import { Loader } from './Common/Loader';
+import { Helmet } from 'react-helmet';
 
-const About = () => {
+const About = ({scodata,title}) => {
   const [useremail, setUseremail] = useState({
     email:""
   })
@@ -17,6 +18,15 @@ const About = () => {
   const [message, setMessage] = useState("")
 const [content,setContent] = useState([])
 const [loading,setLoading] = useState(false)
+
+
+// const [scodata,setscodata] = useState([])
+
+// const getscodata = async()=>{
+//   const res = await axios.post("/api/auth/getmetadata",{pagename:"Learn"})
+//   setscodata(res.data)
+// }
+
 const getaboutdata = async()=>{
   setLoading(true)
   const res = await axios.get("/api/auth/getaboutcontent")
@@ -59,7 +69,7 @@ const handleclick = async(e) => {
 }
 
 useEffect(()=>{
-getaboutdata()
+// getaboutdata()
 window.scrollTo(0,0)
 },[])
 
@@ -68,6 +78,21 @@ window.scrollTo(0,0)
     {/* {
       loading?<Loader/>: */}
     <div className='body-main'>
+    {
+        scodata?
+        scodata.filter((items,index)=>{
+          return items.pagename === "About"
+        }).map((item,i)=>{
+return(
+               <Helmet>
+      <title>{`${item.seotitle} - ${title}`}</title>
+        <meta name="description" content={item.description}/>
+        <meta name="keyword" content={item.keyword} />
+      </Helmet>
+
+)
+        }):<Helmet><title>BullSmart</title></Helmet>
+      }
       {/* {
         content.map((items,index)=>{
           return(
@@ -124,7 +149,7 @@ window.scrollTo(0,0)
             <div className='row Banner-main'>
             <div className='Banner-title'>
               <AnimatedOnScroll animationIn="fadeInUp" animationOut="fadeInUp"> <h2>KNOW US BETTER</h2>
-         </AnimatedOnScroll>
+              </AnimatedOnScroll>
             </div>
             </div>
           </div>

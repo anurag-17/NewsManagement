@@ -13,10 +13,9 @@ import { Link } from 'react-router-dom';
 
 
 const Letestslider = ({apidata}) => {
-  // if(apidata){
-  //   var parsed = apidata.rss.channel.item
-  //   console.log(apidata.rss.channel.item)
-  // }
+  if(apidata){
+    console.log(apidata)
+  }
 
   return (
     <div>

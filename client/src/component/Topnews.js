@@ -14,10 +14,7 @@ import "./Home.css"
 
 
 const   Topnews = ({apidata}) => {
-if(apidata){
-  console.log(apidata)
 
-}
   return (
     <>
      <div className='topNewsdata'>       
@@ -25,7 +22,6 @@ if(apidata){
     {
         apidata&&
         apidata.map((items,index)=>{
-        console.log(items)
         return(
               <>
                  <a target="blank" href= {items.link._cdata}>
@@ -44,7 +40,7 @@ if(apidata){
         )
       })
     }
-    
+      
     </div>
 
 

@@ -117,7 +117,7 @@ export const ViewNews = () => {
         <AdminDash />
         <div className="container scroll-main">
           <div className="newsbox">
-            <h3>News</h3>
+            <h3>Learn</h3>
           </div>
           <div className="imgcardnews row">
             {newsdata

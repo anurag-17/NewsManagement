@@ -3,16 +3,23 @@ const News = require("../Model/News");
 const Blogs = require("../Model/Blogs");
 const catchAsyncError = require("../Errorhandlers/catchAsyncError");
 const ErrorResponse = require("../Utlis/errorresponse");
+const emailValidator = require("deep-email-validator");
 const Content = require("../Model/Content")
 const Email = require("../Model/Email")
 const Career = require("../Model/Career")
 const jwt = require("jsonwebtoken");
 const { query } = require("express");
 const e = require("express");
+
 var ObjectId = require('mongodb').ObjectId
 
 
 // dotenv.config({ path: "../config.env" });
+
+async function isEmailValid(email) {
+    return emailValidator.validate(email);
+  }
+
 
 exports.adminlogin = catchAsyncError(
     async (req, res, next) => {
@@ -200,39 +207,73 @@ exports.editblogs = catchAsyncError(
 exports.addcontent = catchAsyncError(
     async(req,res,next)=>{
       const data =   await Content.create({
-            logo:req.body.logo,
-            main_title_1:req.body.main_title_1,
-            main_title_2:req.body.main_title_2,
-            main_subtitle_1:req.body.main_subtitle_1,
-            main_subtitle_2:req.body.main_subtitle_2,
-            main_btn_text:req.body.main_btn_text,
-            main_image:req.body.main_image,
-            tagline:req.body.tagline
+        seotitle:req.body.seotitle,
+        description:req.body.description,
+        keyword:req.body.keyword,
+        pagename:req.body.pagename
         })
         return res.status(201).json(data)
     }
 )
 
+exports.editcontent = catchAsyncError(
+    async(req, res, next)=>{
+        try {
+            let uid = req.body.params
+            await Content.findById({_id: uid}, (error, result)=>{
+             if (error) {
+                 console.log(error, "editid");
+             }
+             res.send({result})
+            })
+        } catch (error) {
+            console.log(error);
+        }
+       
+       
+    }
+)
 
 
-exports.updateContent = catchAsyncError(
+exports.updatecontent = catchAsyncError(
+    async(req, res, next)=>{
+        console.log(req.body)
+        await Content.findByIdAndUpdate(req.body._id,{"seotitle": req.body.seotitle, "description": req.body.description, "keyword": req.body.keyword,}),(error, data)=>{
+            if (error) {
+                console.log(error, "updatecontent");
+            } else {
+                console.log(data);
+            }
+        }
+    }
+)
+
+exports.deletecontent = catchAsyncError(
+    async(req, res, next)=>{
+        let uid = req.body.params
+        console.log(req.body.params);
+        try {
+          await Content.findByIdAndRemove({_id: uid}).then().catch((error)=>{
+                console.log(error);
+            }) 
+        } catch (error) {
+            console.log(error ,"delete blog");
+        }
+    }
+
+)
+
+
+exports.getmetadata = catchAsyncError(
     async(req,res,next)=>{
-      const data =   await Content.findByIdAndUpdate(req.body.id,{
-        logo:req.body.logo,
-        main_title_1:req.body.main_title_1,
-        main_title_2:req.body.main_title_2,
-        main_subtitle_1:req.body.main_subtitle_1,
-        main_subtitle_2:req.body.main_subtitle_2,
-        main_btn_text:req.body.main_btn_text,
-        main_image:req.body.main_image,
-        tagline:req.body.tagline
-        })
+        const data = await Content.find()
         return res.status(200).json(data)
     }
 )
 
 
-exports.getcontent = catchAsyncError(   async(req,res,next)=>{
+exports.getcontent = catchAsyncError( async(req,res,next)=>{
+    console.log(req.body.pagename)
     const data =  await Content.find()
       return res.status(200).json(data)
   })
@@ -315,14 +356,22 @@ exports.useremail = catchAsyncError(
         console.log(req.body);
         const {email} = req.body
         try {
-            let useremail = new Email({email})
+            const { valid, reason, validators } = await isEmailValid(req.body.email);
+            if (!valid) {
+                return res
+                  .status(500)
+                  .json("email is invalid please enter a valid email");
+              }else if(valid){
+                  let useremail = new Email({email})
+                  useremail.save().then((result)=>{
+                      res.send("Submitted Successfully")
+                      console.log("successfully feeded email");
+                  }).catch((err)=>{
+                      console.log(err, " email feederrror");
+                  })
 
-            useremail.save().then((result)=>{
-                res.send("Submitted Successfully")
-                console.log("successfully feeded email");
-            }).catch((err)=>{
-                console.log(err, " email feederrror");
-            })
+              }
+
         } catch (error) {
             console.log(error);
         }

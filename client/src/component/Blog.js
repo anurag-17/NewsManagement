@@ -15,12 +15,23 @@ import Investblog5 from './Images/BlogInvest-img5.png';
 import { Blogslider } from './Blogslider';
 import Typewriter from "typewriter-effect";
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 
-const Blog = () => {
+const Blog = ({scodata,title}) => {
   const [blogdata, setBlogdata] = useState([])
   const reverse  = [...blogdata].reverse();
+
+  // const [scodata,setscodata] = useState([])
+
+  // const getscodata = async()=>{
+  //   const res = await axios.post("/api/auth/getmetadata",{pagename:"Blog"})
+  //   setscodata(res.data)
+  // }
+
+
   useEffect(() => {
+    // getscodata()
     window.scrollTo(0, 0)
     axios.get("/api/auth/viewblogs").then((res) => {
       setBlogdata(res.data.result)
@@ -28,6 +39,21 @@ const Blog = () => {
   }, [])
   return (
     <div className='body-main'>
+                {
+        scodata?
+        scodata.filter((items,index)=>{
+          return items.pagename === "Blog"
+        }).map((item,i)=>{
+return(
+               <Helmet>
+      <title>{`${item.seotitle} - ${title}`}</title>
+        <meta name="description" content={item.description}/>
+        <meta name="keyword" content={item.keyword} />
+      </Helmet>
+
+)
+        }):<Helmet><title>BullSmart</title></Helmet>
+      }
       <section id='Blog-banner'>
         <div className='container-fluid banner-bg'>
           <div className='row Banner-main'>

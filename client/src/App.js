@@ -24,15 +24,25 @@ import { Terms } from './component/Common/Terms';
 import Career from './component/Career';
 import { Blog_1 } from './component/Blogpages/Blog_1';
 import { Blog2 } from './component/Blogpages/Blog2';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Blog3 } from './component/Blogpages/Blog3';
 import { Condition } from './component/Common/Condition';
 import { Viewemail } from './component/Viewemail';
 import { Addcareer } from './component/Addcareer';
 import { ViewCareer } from './component/ViewCareer';
+import axios from 'axios';
 
 function App() {
+  const [scodata,setscodata] = useState([])
+
+  const getscodata = async()=>{
+    const res = await axios.get("/api/auth/getmetadata")
+    setscodata(res.data)
+  }
+  
+
   useEffect(() => {
+    getscodata()
     window.scrollTo(0, 0)
   }, [])
   let location = useLocation()
@@ -48,17 +58,17 @@ function App() {
       <div className='App'>
         {location.pathname !== "/admin" &&location.pathname !=="/addcareer" && location.pathname !== "/forgotpassword" && location.pathname !== "/passwordchange" && location.pathname !== "/admindash" && location.pathname !== "/addblogs" && location.pathname !== "/viewnews" && location.pathname !== "/viewblogs" && location.pathname !== "/addnews" && location.pathname !== "/" && location.pathname !== "/addcontent" && location.pathname !=="/viewemail" && location.pathname !== "/aboutcontent" &&location.pathname !=="/viewcareer"&& <Navbarmenu />}
         <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/blog' element={<Blog />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/career' element={<Career />} />
+          <Route path='/' element={<Home scodata = {scodata} title ="Bullsmart" />} />
+          <Route path='/blog' element={<Blog scodata = {scodata} title ="Bullsmart" />} />
+          <Route path='/about-us' element={<About scodata = {scodata} title ="Bullsmart" />} />
+          <Route path='/career' element={<Career scodata = {scodata} title ="Bullsmart" />} />
           <Route path='/addnews' element={<AddNews />} />
           <Route path='/admin' element={<Admin />} />
           <Route path='/admindash' element={<AddNews />} />
           <Route path='/addblogs' element={<AddBlogs />} />
           <Route path='/viewnews' element={<ViewNews />} />
-          <Route path='/news' element={<News />} />
-          <Route path='/learn' element={<Learn />} />
+          <Route path='/news' element={<News scodata = {scodata} title ="Bullsmart" />} />
+          <Route path='/learn' element={<Learn scodata = {scodata} title ="Bullsmart" />} />
           <Route path='/viewblogs' element={<Viewblogs />} />
           <Route path='/loader' element={<Loader />} />
           <Route path='/addcontent' element={<AddContent />} />
