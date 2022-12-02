@@ -18,15 +18,19 @@ import HomeNav from './menu/HomeNav';
 import { AnimatedOnScroll } from "react-animated-css-onscroll";
 import Topnews from './Topnews';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
+import validator from 'validator'
 import swal from 'sweetalert';
 const convert = require("xml-js")
 
-const Home = () => {
 
+const Home = ({scodata,title}) => {
+const [emailError,setEmailError] = useState('')
   const [useremail, setUseremail] = useState({
     email: ""
   })
   const [newsdata, setNewsdata] = useState([])
+  // const [scodata,setscodata] = useState([])
   const [blogdata,setBlogdata] = useState([])
   const [content, setContent] = useState([])
   const [show, setShow] = useState(false)
@@ -37,13 +41,20 @@ const Home = () => {
     })
   }
 
-  const viewdata = async () => {
-    const res = await axios.get("/api/auth/getcontent")
-    setContent(res.data)
-  }
+  // const viewdata = async () => {
+  //   const res = await axios.get("/api/auth/getcontent")
+  //   setContent(res.data)
+  // }
+
+  // const getscodata = async()=>{
+  //   const res = await axios.post("/api/auth/getmetadata",{pagename:"Home"})
+  //   setscodata(res.data)
+  // }
 
   useEffect(() => {
-    viewdata()
+    // viewdata()
+    newApi()
+    // getscodata()
     getblogdata()
     window.scrollTo(0, 0)
   }, [])
@@ -69,14 +80,26 @@ const Home = () => {
     //     .then(result => console.log(JSON.parse(result)))
     //     .catch(error => console.log('error', error));
   }
+
+  const validateEmail = (e) => {
+    var email = e.target.value
+  
+    if (validator.isEmail(email)) {
+      setEmailError('Valid Email :)')
+    } else {
+      setEmailError('Enter valid Email!')
+    }
+  }
+
   const Input_handler = (e) => {
+    validateEmail(e)
     setUseremail({ ...useremail, [e.target.name]: e.target.value })
   }
   const handleclick = async (e) => {
     e.preventDefault()
     setShow(true)
     setTimeout(()=>{
-      axios.post("/api/auth//useremail",useremail,{headers:{"Content-Type": "application/json" } }).then((res)=>{
+      axios.post("/api/auth/useremail",useremail,{headers:{"Content-Type": "application/json" } }).then((res)=>{
         console.log(res);
         // swal(res.data,"" ,"success")
         setUseremail({
@@ -103,10 +126,25 @@ const Home = () => {
   }
 
   useEffect(() => {
-    newApi()
+
   }, [])
   return (
     <div className='homepage'>
+              {
+        scodata?
+        scodata.filter((items,index)=>{
+          return items.pagename === "Home"
+        }).map((item,i)=>{
+return(
+               <Helmet>
+      <title>{`${item.seotitle} - ${title}`}</title>
+        <meta name="description" content={item.description}/>
+        <meta name="keyword" content={item.keyword} />
+      </Helmet>
+
+)
+        }):<Helmet><title>BullSmart</title></Helmet>
+      }
       <HomeNav />
       <section id='home-banner'>
         <div className='container'>
@@ -119,7 +157,7 @@ const Home = () => {
                 </AnimatedOnScroll>
                 <p>We use technology to help young investors invest smartly.</p>
                 <div className='bannerbtn'>
-                  <Link to="/About"><button className='know-btn'>KNOW MORE</button></Link>
+                  <Link to="/about-us"><button className='know-btn'>KNOW MORE</button></Link>
                 </div>
               </div>
               <div className='col-lg-4 col-md-6'>
@@ -166,7 +204,7 @@ const Home = () => {
             <div className='Homenews-grid'>
               <Topnews apidata={data} />
               <div className='d-flex justify-content-center'>
-                <Link to="/news">
+                <Link to="/news/">
                   <button className='view-btn mb-4 hoverclass'>KNOW MORE</button>
                 </Link>
               </div>
@@ -194,7 +232,6 @@ const Home = () => {
                     it is over they will call me (for discussions)'</p>
                    <h4>By Umair Irfan</h4> 
                 </div>
-
                 <div className='Topnews-item'>                  
                   <h3>Bank Holidays this week: Guru Nanak Jayanti, 3 others. Details here</h3>
                   <p>Responding to a question, the Karnataka CM said, 'Cabinet expansion...I have already spoken.....our leadership is a bit busy with the Gujarat elections, as soon as 
@@ -203,7 +240,6 @@ const Home = () => {
                 </div>
               </div>
             </div>
-
             <div className='col-md-6'>
               <div className='topnew-2'>
               <div className='topnews2-img'>
@@ -249,7 +285,6 @@ const Home = () => {
                     it is over they will call me (for discussions)'</p>
                    <h4>By Umair Irfan</h4> 
                 </div>
-
                 <div className='Topnews-item'>       
                 <div className='Top-sub'>
                     <h4 className='top-title'>Karnataka cabinet expansion on cards?</h4>
@@ -280,6 +315,11 @@ const Home = () => {
                   <form onSubmit={handleclick} action="">
                     <div class="input-group newsform">
                       <input style={{ fontSize: "14px" }} required type="email" className="form-control form_bg" name='email' value={useremail.email} onChange={Input_handler} placeholder="Enter your email for newsletter" />
+                      <span style={{
+          fontWeight: 'bold',
+          display:"block",
+          color: 'red',
+        }}>{emailError}</span>
                       <span className={show ? "input-click" : "input-group-btn"}>
                         <button className="btn d-flex" type="submit"> {show && <i style={{ marginRight: "5px", color: "#003AAD", marginTop: "1px" }} class="fas fa-spinner fa-spin"></i>} <i style={{ padding: "3px", color: "#003AAD", marginLeft: "-4px" }} class="fa fa-arrow-right"></i></button>
                       </span>
@@ -316,7 +356,7 @@ const Home = () => {
                   <h3>Basic Lessons</h3>
                   <p>Start your investment journey with confidence</p>
                   <div className='Invest-btn'>
-                  <a href='https://www.youtube.com/playlist?list=PLQ0dEPuPJTIVcQcqhKQUe8dseABAT4Sm0' target="blank"><button>Learn MORE <i class="fa fa-angle-right"></i></button></a>
+                  <a href='https://www.youtube.com/playlist?list=PLQ0dEPuPJTIVcQcqhKQUe8dseABAT4Sm0' target="blank"><button>Learn More <i class="fa fa-angle-right"></i></button></a>
                   </div>
                 </div>
               </div>
@@ -325,7 +365,7 @@ const Home = () => {
                   <h3>General Investment</h3>
                   <p>Start your investment journey with confidence</p>
                   <div className='Invest-btn'>
-                    <a href='https://www.youtube.com/playlist?list=PLQ0dEPuPJTIVDt8hyT30jUdQVueMutYBm' target="blank"><button>Learn MORE <i class="fa fa-angle-right"></i></button></a>
+                    <a href='https://www.youtube.com/playlist?list=PLQ0dEPuPJTIVDt8hyT30jUdQVueMutYBm' target="blank"><button>Learn More <i class="fa fa-angle-right"></i></button></a>
                   </div>
                 </div>
               </div>
@@ -334,7 +374,7 @@ const Home = () => {
                   <h3>Mutual Funds</h3>
                   <p>Start your investment journey with confidence</p>
                   <div className='Invest-btn'>
-                  <a href='https://www.youtube.com/playlist?list=PLQ0dEPuPJTIU-ykMY5JtIdTxA9s-Ai44A' target="blank"><button>Learn MORE <i class="fa fa-angle-right"></i></button></a>
+                  <a href='https://www.youtube.com/playlist?list=PLQ0dEPuPJTIU-ykMY5JtIdTxA9s-Ai44A' target="blank"><button>Learn More <i class="fa fa-angle-right"></i></button></a>
                   </div>
                 </div>
               </div>
@@ -390,7 +430,6 @@ const Home = () => {
                   <div className='blod-des'>
                     <h3>Things to know before you start investing</h3>
                     <div className='blog-btn'>
-
                       <button className='Blog-btn'><a href='#'>Read MORE <i class="fa fa-angle-double-right"></i></a></button>
                     </div>
                   </div>

@@ -40,7 +40,7 @@ import "swiper/css/pagination";
 import "./styles.css";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Carousel } from 'react-responsive-carousel';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 import newsvideo1 from './Images/nes-video.webp';
 import axios from 'axios';
@@ -56,6 +56,7 @@ import Topnews from './Topnews';
 
 import Typewriter from "typewriter-effect";
 import { Autoplay, Keyboard, Navigation, Pagination, Scrollbar } from 'swiper';
+import { Helmet } from 'react-helmet';
 const convert = require("xml-js");
 const imagearr = [
   {
@@ -84,9 +85,11 @@ const imagearr = [
   },
 ]
 
-const News = () => {
+const News = ({scodata,title}) => {
 
   const [data, setdata] = useState([])
+  // const [scodata,setscodata] = useState([])
+  console.log()
   const [mintdata, setMintData] = useState()
 
   const mintapi = async () => {
@@ -118,9 +121,15 @@ const News = () => {
   }
 
 
+  // const getscodata = async()=>{
+  //   const res = await axios.post("/api/auth/getmetadata",{pagename:"News"})
+  //   // setscodata(res.data)
+  // }
+
   useEffect(() => {
     newApi()
     mintapi()
+    // getscodata()
     window.scrollTo(0, 0)
   }, [])
 
@@ -130,9 +139,24 @@ const News = () => {
 
   return (
     <div className='body-main'>
+           {
+        scodata?
+        scodata.filter((items,index)=>{
+          return items.pagename === "News"
+        }).map((item,i)=>{
+return(
+               <Helmet>
+      <title>{`${item.seotitle} - ${title}`}</title>
+        <meta name="description" content={item.description}/>
+        <meta name="keyword" content={item.keyword} />
+      </Helmet>
+
+)
+        }):<Helmet><title>Bullsmart</title></Helmet>
+      }
       <section id='News-Title'>
         <div className='container'>
-          <div class="typewriter">
+          <div className="typewriter">
             <h2>Smart</h2>
             <Typewriter
               options={{
@@ -146,7 +170,7 @@ const News = () => {
       </section>
       <section style={{ paddingTop: "40px" }} id='Top-News'>
         <div className='container'>
-          <div class="TopAriclnew">
+          <div className="TopAriclnew">
             <span ><h2 style={{ color: 'black' }}>TOP NEWS</h2></span>
           </div>
 
@@ -207,7 +231,7 @@ const News = () => {
             </div>
 
             <div className='col-lg-8 col-md-8 video-right'>
-              <img src={newsvideo1} class='newsvideo1'></img>
+              <img src={newsvideo1} className='newsvideo1'></img>
               <h4>LISTEN NOW IN APP OR ON PUBLIC RADIO</h4>
               <h3>World Cup: How 2 B a legend</h3>
               <p>Pelé. Maradona. Ronaldo. Soccer’s greats are so good, they’re typically known by one name. How winning the World Cup can turn a player into a legend.
@@ -215,7 +239,7 @@ const News = () => {
 
               <div className='today-explain'>
                 <div className='today-video'>
-                  <i class="fa fa-play-circle"></i>
+                  <i className="fa fa-play-circle"></i>
                 </div>
                 <div className='today-video'>
                   <p>Today, Explained</p>
@@ -230,14 +254,14 @@ const News = () => {
         <div className='container'>
           <div className='row'>
             <div className='col-lg-8 col-md-8 LetNews'>
-              <div class="Newtext-divider">
+              <div className="Newtext-divider">
                 THE LATEST
               </div>
-              <NewsArtical apidata={data} />
+              <NewsArtical apidata={data.slice(0,10)} />
             </div>
 
             <div className='col-lg-4 col-md-4'>
-              <div class="Newtext-divider">
+              <div className="Newtext-divider">
                 VIDEOS
               </div>
               <div className='news_vedio'>
@@ -278,7 +302,7 @@ const News = () => {
                 <p>Each week, we explore unique solutions to some of the world's biggest problems.</p>
 
                 <form id="stripe-login">
-                  <div class="field">
+                  <div className="field">
                     <label for="email">Email</label>
                     <input type="email" name="email" className='email-form' />
                     <p>By submitting your email, you agree to our Terms and Privacy Notice. You can opt out at any time. This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.
@@ -305,63 +329,15 @@ const News = () => {
           </div>
         </div>
       </section>
-      {/* ////slider not responsive omitted */}
 
-      {/* <section id="slider-section">
-        <div className="container ">
-          <Swiper
-            slidesPerView={1}
-            centeredSlides={true}
-            loop={true}
-            grabCursor={true}
-            spaceBetween={0}
-            autoplay={{
-              delay: 2500,
-            }}
-            keyboard={{
-              enabled: true,
-            }}
-            pagination={{
-              type: "progressbar",
-            }}
-
-            breakpoints={{
-              769: {
-                slidesPerView: 1,
-                slidesPerGroup: 1,
-              },
-            }}
-            modules={[Autoplay, Pagination, Navigation]}
-            className="mySwiper"
-          >
-            {
-              imagearr.map((items, index) => {
-                console.log(items)
-                return (
-
-                  items.images.map((items, index) => {
-                    return (
-                      <SwiperSlide>
-                        <img src={items} />
-                      </SwiperSlide>
-                    )
-                  })
-                )
-              })
-            }
-
-          </Swiper>
-        </div>
-      </section> */}
       <div className='container'>
         <Carousel
           showThumbs={false}
           autoPlay
+          
           infiniteLoop
         >
-
-          {
-            data.map((items, index) => {
+          {data.map((items, index) => {
               console.log(items.description)
               return (
                 <>
@@ -375,8 +351,6 @@ const News = () => {
               )
             })
           }
-
-
         </Carousel>
         
       </div>
@@ -414,7 +388,23 @@ const News = () => {
             <div className='col-lg-8 col-md-8 LetNews'>
               <hr />
 
-              <NewsArtical apidata={data} />
+
+              <div className="accordion mb-4" id="accordionExample">
+  <div className="accordion-item">
+    <h2 className="accordion-header" id="panelsStayOpen-headingOne">
+      <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+        More News
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne">
+      <div className="accordion-body">
+              <NewsArtical apidata={data.slice(10,data.length)} />
+      </div>
+    </div>
+  </div>
+</div>
+
+
               {/* <div className="news_contentbox">
                 <div className='contentbox_logo'><img src={logobox} alt="" srcset="" /></div>
                 <div className="contentbox_body">
@@ -500,7 +490,7 @@ const News = () => {
                 <p>Dylan Scott guides you through the fallout of the Covid-19 pandemic and the health care policies that matter most.</p>
 
                 <form id="stripe-login">
-                  <div class="field">
+                  <div className="field">
                     <label for="email">Email</label>
                     <input type="email" name="email" className='email-form' />
                     <p>By submitting your email, you agree to our Terms and Privacy Notice. You can opt out at any time. This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.
@@ -573,10 +563,10 @@ const News = () => {
                   </h3>
                   <p>Our App is <span>READY</span>  to help you <br></br> on your investment journey <br></br></p>
                   <h4><span>#Investmentkanayadaur</span></h4>
-                  <div class="input-group newsform">
-                    <input type="email" class="form-control" placeholder="Enter your email for newsletter" />
-                    <span class="input-group-btn">
-                      <button class="btn" type="submit"><i class="fa fa-arrow-right"></i></button>
+                  <div className="input-group newsform">
+                    <input type="email" className="form-control" placeholder="Enter your email for newsletter" />
+                    <span className="input-group-btn">
+                      <button className="btn" type="submit"><i className="fa fa-arrow-right"></i></button>
                     </span>
                   </div>
                 </div>

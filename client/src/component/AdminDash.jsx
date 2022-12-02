@@ -68,6 +68,15 @@ export const AdminDash = () => {
                     <Link className='adt' to='/viewblogs'>Blogs</Link>
                   </li>
 
+                  <li className='adt'>
+                    <Link className='adt' style={{ color: "white" }} to="/addcontent">Add SEO</Link> 
+                  </li>
+
+                  <li className='adt'>
+                    <Link className='adt' style={{ color: "white" }} to="/aboutcontent">Edit SEO</Link> 
+                  </li>
+
+{/* 
                   <div className='content-box'>
                     <li className='adt' onClick={() => setShow(!show)}>
                       <Link to="" className='adt'> Add Content</Link>
@@ -82,7 +91,7 @@ export const AdminDash = () => {
                       </AnimatedOnScroll>
 
                     }
-                  </div>
+                  </div> */}
 
 
                   <li className='adt'>

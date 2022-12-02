@@ -80,11 +80,11 @@ const Navbarmenu = () => {
                     <li  className="menu-item" >
                         <NavLink  activeClassName='is-active' onClick={toggleClass} to={`/`}> Home </NavLink> 
                     </li>
-                    <li className="menu-item " ><NavLink onClick={toggleClass} activeClassName='is-active' to={`/news`}> News </NavLink> </li>
-                    <li className="menu-item " ><NavLink onClick={toggleClass} activeClassName='is-active' to={`/learn`}> Learn </NavLink> </li>
-                    <li className="menu-item " ><NavLink onClick={toggleClass} activeClassName='is-active' to={`/Blog`}> Blog </NavLink> </li>
-                    <li className="menu-item " ><NavLink onClick={toggleClass} activeClassName='is-active' to={`/About`}> About us </NavLink> </li>
-                    <li className="menu-item " ><NavLink onClick={toggleClass} activeClassName='is-active' to={`/Career`}> Career </NavLink> </li>
+                    <li className="menu-item " ><NavLink onClick={toggleClass} activeClassName='is-active' to={`/news/`}> News </NavLink> </li>
+                    <li className="menu-item " ><NavLink onClick={toggleClass} activeClassName='is-active' to={`/learn/`}> Learn </NavLink> </li>
+                    <li className="menu-item " ><NavLink onClick={toggleClass} activeClassName='is-active' to={`/blog/`}> Blog </NavLink> </li>
+                    <li className="menu-item " ><NavLink onClick={toggleClass} activeClassName='is-active' to={`/about-us/`}> About us </NavLink> </li>
+                    <li className="menu-item " ><NavLink onClick={toggleClass} activeClassName='is-active' to={`/career/`}> Career </NavLink> </li>
                     
                     </ul>
 

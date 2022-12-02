@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { AnimatedOnScroll } from 'react-animated-css-onscroll';
 import tranding1 from './Images/tranding-img1.png';
 import tranding2 from './Images/tranding-img2.png';
@@ -18,15 +18,39 @@ import learnCat5 from './Images/learn-cat/learn-cat5.png';
 
 import './Learn.css';
 import LetestNewstab from './LetestNewstab';
+import axios from 'axios';
+import { Helmet } from 'react-helmet';
 
 
 
-const Learn = () => {
+const Learn = ({scodata,title}) => {
+
+
+  // const getscodata = async({scodata})=>{
+  //   const res = await axios.post("/api/auth/getmetadata",{pagename:"Learn"})
+  //   setscodata(res.data)
+  // }
   useEffect(()=>{
+    // getscodata()
     window.scrollTo(0,0)
     },[])
   return (
     <div className='body-main learn-body'>
+              {
+        scodata?
+        scodata.filter((items,index)=>{
+          return items.pagename === "Learn"
+        }).map((item,i)=>{
+return(
+               <Helmet>
+      <title>{`${item.seotitle} - ${title}`}</title>
+        <meta name="description" content={item.description}/>
+        <meta name="keyword" content={item.keyword} />
+      </Helmet>
+
+)
+        }):<Helmet><title>BullSmart</title></Helmet>
+      }
         {/* <section id='Learn-banner'>
           <div className='container-fluid banner-bg'>
             <div className='row Banner-main'>

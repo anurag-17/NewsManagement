@@ -10,20 +10,16 @@ import "react-quill/dist/quill.snow.css";
 // import { Toolbaar } from './Toolbaar';
 
 export const AddContent = () => {
-  const [content,setContent] = useState("this is content")
+  const [content, setContent] = useState("this is content")
   const [data, setData] = useState({
-    logo: "",
-    main_title_1: "",
-    main_title_2:"",
-    tagline: "",
-    main_subtitle_1: "",
-    main_subtitle_2:"",
-    main_btn_text: "",
-    main_image: "",
-    id:"63733a31ca305b1233680676"
+    seotitle:"",
+    description:"",
+    keyword:"",
+    pagename:""
+
   })
   const [avatarpreview, setAvatarpreview] = useState()
-  const [imagepreview,setimagePreview] = useState()
+  const [imagepreview, setimagePreview] = useState()
   const [text, setText] = React.useState("");
 
   const editor = useRef(null);
@@ -82,45 +78,22 @@ export const AddContent = () => {
   //   }
   //   return false;
   // };
+  console.log(data)
 
-  const modules = {
-    toolbar: [
-      [{ header: "1" }, { header: "2" }, { font: [] }],
-      [{ size: [] }],
-      ["bold", "italic", "underline", "strike", "blockquote"],
-      [
-        { list: "ordered" },
-        { list: "bullet" },
-        { indent: "-1" },
-        { indent: "+1" }
-      ],
-      ["image"],
-      ["link","clean","code-block"]
-    ],
-    clipboard: {
-      // toggle to add extra line breaks when pasting HTML:
-      matchVisual: false
-    }
-  };
 
-  const getdata = async()=>{
-    const res = await axios.get("/api/auth/getcontent")
-    console.log(res.data)
-    res.data.map((items,index)=>{
-      setData({
-        logo: items.logo,
-        main_title_1: items.main_title_1,
-        main_title_2:items.main_title_2,
-        tagline: items.tagline,
-        main_subtitle_1: items.main_subtitle_1,
-        main_subtitle_2:items.main_subtitle_2,
-        main_btn_text: items.main_btn_text,
-        main_image: items.main_image,
-        id:"63733a31ca305b1233680676"
-      })
-    })
+  // const getdata = async () => {
+  //   const res = await axios.("/api/auth/getcontent",{pagename:data.pagename})
+  //   console.log(res.data)
+  //   res.data.map((items, index) => {
+  //     setData({
+  //       seotitle: items.seotitle,
+  //       description: items.description,
+  //       keyword: items.keyword,
+  //       pagename: items.pagename,
+  //     })
+  //   })
 
-  }
+  // }
 
   const onChange = (text) => {
     console.log(text)
@@ -130,35 +103,25 @@ export const AddContent = () => {
   console.log(text)
   const style = {
     width: "400px",
-    paddingBottom:"20px",
+    paddingBottom: "20px",
     borderStyle: "double",
-    marginTop:"20px",
-    height:"300px"
+    marginTop: "20px",
+    height: "300px"
   };
 
-  const updatecontent = async(e)=>{
-       e.preventDefault()
-    const res = await axios.post("/api/auth/content",data).then(()=>console.log("updated successfully")).catch((error)=>console.log(error))
+  const updatecontent = async (e) => {
+    e.preventDefault()
+    const res = await axios.post("/api/auth/content",data).then(() => console.log("updated successfully")).catch((error) => console.log(error))
     console.log(res)
-    
-      setData({
-        logo: "",
-        main_title_1: "",
-        main_title_2:"",
-        tagline: "",
-        main_subtitle_1: "",
-        main_subtitle_2:"",
-        main_btn_text: "",
-        main_image: "",
-        id:"63733a31ca305b1233680676"
-      })
+
+    setData({
+      seotitle:"",
+      description:"",
+      keyword:"",
+      pagename:""
+    })
   }
 
-
-  useEffect(()=>{
-    getdata()
-    // focusEditor();
-  },[data])
 
 
   const handleChange = (e) => {
@@ -190,7 +153,7 @@ export const AddContent = () => {
   };
 
 
-  const handleimage =  (e)=>{
+  const handleimage = (e) => {
 
     const reader = new FileReader();
     reader.onload = () => {
@@ -201,7 +164,7 @@ export const AddContent = () => {
     };
     reader.readAsDataURL(e.target.files[0]);
 
-encodefile2(e.target.files[0])
+    encodefile2(e.target.files[0])
   }
 
 
@@ -245,15 +208,15 @@ encodefile2(e.target.files[0])
   return (
     <>
       <div className='flex_blog'>
-        <AdminDash/>
+        <AdminDash />
         <div className='container'>
-        <form onSubmit={updatecontent} action="">
-          <div style={{margin: "0 auto" }} className="mb-4">
-
-     
+          <form onSubmit={updatecontent} action="">
+            <div style={{ margin: "0 auto" }} className="mb-4">
 
 
-{/* 
+
+
+              {/* 
           <div className="editor-wrapper" onClick={focusEditor}>
       <Toolbaar editorState={editorState} setEditorState={setEditorState} />
       <div className="editor-container">
@@ -272,47 +235,42 @@ encodefile2(e.target.files[0])
         />
       </div>
     </div> */}
-            
-        
-        <div className="doubleinput">
-        <div className='inputflex'>
-            <label className="inputlabel mt-2" htmlFor="title">Main Title One
-            <input value={data.main_title_1} onChange={handleChange} type="text" name="main_title_1" id="" placeholder='Main Title' className="title_input mt-1" />
-            </label>
-            <label className="inputlabel mt-2" htmlFor="title">Main Tile Two
-            <input value={data.main_title_2} onChange={handleChange} type="text" name="main_title_2" id="" placeholder='Main Title Two' className="title_input mt-1" />
-            </label>
-        </div>
-            <div className="inputflex">
-            <label className="inputlabel mt-2" htmlFor="title">Sub Title One
-            <input value={data.main_subtitle_1} onChange={handleChange} type="text" name="main_subtitle_1" id="" placeholder='Sub Title' className="title_input mt-1" />
-            </label>
-            <label className="inputlabel mt-2" htmlFor="title">Sub Title Two
-            <input  value={data.main_subtitle_2} onChange={handleChange} type="text" name="main_subtitle_2" id="" placeholder='Sub Title Two' className="title_input mt-1" />
-            </label>
-            </div>
-<div className="inputflex">
 
-            <label className="inputlabel mt-2" htmlFor="title">Tagline
-            <input value = {data.tagline} onChange={handleChange} type="text" name="tagline" id="" placeholder='Tagline' className="title_input mt-" />
-            </label>
 
-            <label className="inputlabel mt-2" htmlFor="title">Button Text
-            <input value = {data.main_btn_text} onChange={handleChange} type="text" name="main_btn_text" id="" placeholder='Button Text' className="title_input mt-1" />
-            </label>
+              <div className="doubleinput">
+                <div className='inputflex'>
+                  <label style={{ display: "block" }} htmlFor="">Select Page
+                    {/* <input type="text"onChange={(e)=>{setAddnews({...addnews ,catagory:e.target.value})}} /> */}
+                    <select name = "pagename" value = {data.pagename} style={{ width: "100%",fontSize:"20px"}} onChange={handleChange} className="form-select mt-2" id="">
+                      <option disabled value="">Select Category</option>
+                      <option name ={data.pagename} value="Home">HomePage</option>
+                      <option  name ={data.pagename} value="About">About Us</option>
+                      <option name ={data.pagename} value="News">News</option>
+                      <option name ={data.pagename} value="Blog">Blog</option>
+                      <option name ={data.pagename} value="Learn">Learn</option>
+                      <option name ={data.pagename} value="Career">Career</option>
+                    </select>
+                  </label>
 
-</div>
 
-<div className="imageinputflex">
-<div style= {{display:"flex",alignItems:"center",justifyContent:"center"}} className='flex-file file_in' >
-<img src = {!imagepreview?data.main_image:imagepreview} className="mt-3" style={{ width: "3.2rem", height: "3.1rem", marginLeft: "10px", borderRadius: "50%" }} alt="mainimage" />
-<input className='files' type="file" name="" id="files" onChange={handleimage}/>
-<label className='ml-3' htmlFor="files">
-                Banner Image
-              </label>
-</div>
+                </div>
+                <div className="inputflex">
+                  <label className="inputlabel mt-2" htmlFor="title"> SEO Title
+                    <input value={data.seotitle} onChange={handleChange} type="text" name="seotitle" id="" placeholder='seo title' className="title_input mt-1" />
+                  </label>
 
-  {/* <div className='quillclass' style = {{width:"400px"}}>
+                </div>
+                <div className="inputflex">
+                  <label className="inputlabel mt-2" htmlFor="title"> Meta description
+                    <textarea name = "description" value={data.description} onChange={handleChange} className='inputlabel' style={{ width: "100%", height: "10rem" }}  id="" cols="50" rows="10"></textarea>
+                  </label>
+
+                </div>
+                <div className="inputflex">
+                  <label className="inputlabel mt-2" htmlFor="title">Keyword
+                    <input value={data.keyword} onChange={handleChange} type="text" name="keyword" id="" placeholder='Keyword' className="title_input mt-1" />
+                  </label>
+                  {/* <div className='quillclass' style = {{width:"400px"}}>
 <ReactQuill
       theme="snow"
       placeholder="Type here"
@@ -323,18 +281,18 @@ encodefile2(e.target.files[0])
       name="content"
     />
   </div> */}
-            <div style= {{display:"flex",alignItems:"center",justifyContent:"center"}} className='flex-file file_in'>
+                  {/* <div style= {{display:"flex",alignItems:"center",justifyContent:"center"}} className='flex-file file_in'>
               <img src = {!avatarpreview?data.logo:avatarpreview} className="mt-3" style={{ width: "3.2rem", height: "3.1rem", marginLeft: "10px", borderRadius: "50%" }} alt ="logoimage"/>
               <input className="files" type="file" name="logo" id="file" onChange={input_file}/>
               <label className='ml-3' htmlFor="file">
                 Choose Logo
               </label>
+            </div> */}
+                </div>
+              </div>
             </div>
-</div>
-        </div>
-          </div>
-          <input style= {{width:"64%", }} type="submit" className='submitbtn'/>
-        </form>
+            <input style={{ width: "64%", }} type="submit" className='submitbtn' />
+          </form>
         </div>
 
       </div>

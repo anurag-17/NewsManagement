@@ -2,31 +2,18 @@ const mongoose = require("mongoose")
 
 
 const contentSchema = new mongoose.Schema({
-logo:{
+seotitle:{
     type:String
 },
-main_title_1:{
+description:{
     type:String
 },
-main_title_2:{
+keyword:{
     type:String
 },
-tagline:{
+pagename:{
     type:String
-},
-main_subtitle_1:{
-    type:String
-},
-main_subtitle_2:{
-    type:String
-},
-main_btn_text:{
-    type:String
-},
-main_image:{
-    type:String,
 }
-
 })
 
 const content = mongoose.model("content",contentSchema)

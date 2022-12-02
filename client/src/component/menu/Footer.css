@@ -26,6 +26,9 @@
 #footer-section ul.footerlist {
     padding: 0;
 }
+#footer-section ul.footerlist li{
+    list-style: none;
+}
 #footer-section ul.footerlist li a {
     font-size: 14px;
     font-weight: 300;

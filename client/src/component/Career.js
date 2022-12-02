@@ -12,7 +12,8 @@ import Investblog5 from './Images/BlogInvest-img5.png';
 import { Blogslider } from './Blogslider';
 import './Career.css'
 import axios from 'axios';
-const Career = () => {
+import { Helmet } from 'react-helmet';
+const Career = ({scodata,title}) => {
 const[value,setvalue] = useState("All Job Department")
 const[data,setdata] = useState([])
 const [filterdata,setfilterdata]  = useState(data)
@@ -42,6 +43,21 @@ const getcareer = async()=>{
       }, [])
   return (
     <div className='body-main'>
+                     {
+        scodata?
+        scodata.filter((items,index)=>{
+          return items.pagename === "Career"
+        }).map((item,i)=>{
+return(
+               <Helmet>
+      <title>{`${item.seotitle} - ${title}`}</title>
+        <meta name="description" content={item.description}/>
+        <meta name="keyword" content={item.keyword} />
+      </Helmet>
+
+)
+        }):<Helmet><title>BullSmart</title></Helmet>
+      }
        <section id='career-banner'>
           <div className='container-fluid banner-bg'>
             <div className='row Banner-main'>
