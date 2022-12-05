@@ -8,6 +8,7 @@ import img4 from "../Images/learnimg4.webp"
 import recommand1 from '../Images/recommanded1.png';
 import recommand2 from '../Images/recommanded2.png';
 import recommand3 from '../Images/recommanded3.png';
+import { Learnslider } from './Learnslider';
 
 const Legal = () => {
 
@@ -29,32 +30,13 @@ const Legal = () => {
 
   return (
     <div>
-      <div className="tranding_1">
-        {newsdata &&
-          newsdata.map((item, index) => {
-            console.log(item);
-            return (
-              <>
-                <div className="tranding-item1">
-                  <div className="traningimg">
-                    <a target="blank" href={item.url}>
-                      {" "}
-                      <img src={item.img} alt="trandingimg"></img>
-                    </a>
-                  </div>
-                  <a target="blank" href={item.url}>
-                    {item.title}
-                  </a>
-                </div>
-              </>
-            );
-          })}
+    <div id="Learn-slider">
+<Learnslider newsdata={newsdata}/>
+    </div>
+      <div className='bannerbtn learnbtn'>
+                  <a href="https://www.youtube.com/playlist?list=PLQ0dEPuPJTIVcQcqhKQUe8dseABAT4Sm0"><button className='know-btn'>KNOW MORE</button></a>
       </div>
-      <button className="view-btn">
-          <a target="blank" href="https://www.youtube.com/playlist?list=PLQ0dEPuPJTIVcQcqhKQUe8dseABAT4Sm0">
-            Learn MORE <i class="fa fa-angle-double-right"></i>
-          </a>
-        </button>
+
     </div>
   );
 };

@@ -62,9 +62,9 @@ export const Blogslider = ({blogdata}) => {
            <div className='latest-img'>
              <img src={items.url} alt='slide'></img>
            </div>
-           <h4 className='time-head'>2 min read1</h4>
+           <h4 className='time-head'>2 min read</h4>
            <h3>{items.title}</h3>
-           <p>Smt. Madhabi Puri Buch, the...</p>
+           {/* <p>Smt. Madhabi Puri Buch, the...</p> */}
          </div>
         </Link>
 

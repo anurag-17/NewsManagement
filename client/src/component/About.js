@@ -202,7 +202,7 @@ return(
                   <p style={{ marginBottom: "-8px", width: "90%" }} >Our App is <span>READY</span>  to help you <br></br> on your investment journey <br></br></p>
                   <h4><span className='investhashtag'>#Investmentkanayadaur</span></h4>
                   <form onSubmit={handleclick} action="">
-                    <div class="input-group newsform">
+                    <div className="input-group newsform">
                       <input style={{ fontSize: "14px" }} required type="email" className="form-control form_bg" name='email' value={useremail.email} onChange={Input_handler} placeholder="Enter your email for newsletter" />
                       <span className={show ? "input-click" : "input-group-btn"}>
                         <button className="btn d-flex" type="submit"> {show && <i style={{marginRight:"5px",color: "#003AAD",marginTop:"1px"}} class="fas fa-spinner fa-spin"></i>} <i style={{ padding: "3px", color: "#003AAD", marginLeft: "-4px" }} class="fa fa-arrow-right "></i></button>

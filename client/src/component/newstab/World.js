@@ -8,6 +8,7 @@ import img4 from "../Images/learnimg4.webp";
 import tranding1 from "../Images/tranding-img1.png";
 import tranding2 from "../Images/tranding-img2.png";
 import tranding3 from "../Images/tranding-img3.png";
+import { Learnslider } from "./Learnslider";
 
 const World = () => {
   const [newsdata, setNewsdata] = useState();
@@ -28,36 +29,13 @@ useEffect(() => {
 
   return (
     <div>
-      <div className="tranding_1">
-            {newsdata&&newsdata.map((item,index)=>{
-              console.log(item);
-              return(
-<>
-<div className="tranding-item1">
-          <div className="traningimg">
-            <a
-              target="blank"
-              href={item.url}
-            >
-              {" "}
-              <img src={item.img} alt="trandingimg"></img>
-            </a>
-          </div>
-          <a target="blank" href={item.url}>
-            {item.title}
-          </a>
-        </div>
+    <div id="Learn-slider">
+<Learnslider newsdata={newsdata}/>
+    </div>
+      <div className='bannerbtn learnbtn'>
+                  <a href="https://www.youtube.com/@BullSmartStockAcademy"><button className='know-btn'>KNOW MORE</button></a>
+                </div>
 
-</>
-              )
-            })}
-    
-      </div>
-        <button className="view-btn">
-          <a target="blank" href="https://www.youtube.com/@BullSmartStockAcademy">
-            Learn MORE <i class="fa fa-angle-double-right"></i>
-          </a>
-        </button>
     </div>
   );
 };

@@ -17,6 +17,9 @@ const Career = ({scodata,title}) => {
 const[value,setvalue] = useState("All Job Department")
 const[data,setdata] = useState([])
 const [filterdata,setfilterdata]  = useState(data)
+ const unique = [...new Map(data.map(item =>
+  [item["category"], item])).values()];
+console.log(unique)
 
   const handlechange = (e)=>{
     if(e.target.value==="All Job Department"){
@@ -74,8 +77,15 @@ return(
 <div className="selectjob mt-5">
 <select onChange={handlechange} className='form-select' aria-label="Default select example">
   <option style={{height:"25px"}}>All Job Department</option>
-  <option>Brand & Marketing</option>
-  <option>Engineering</option>
+  {
+ unique.map((items,index)=>{
+return(
+  <option>{items.category}</option>
+
+)
+    })
+  }
+  {/* <option>Engineering</option> */}
 </select>
 <select className='form-select ml-4' aria-label="Default select example">
   <option>All Job Type</option>
@@ -106,9 +116,7 @@ return(
     //   <td className='td-2'> <i class="fa fa-star"></i> Brand & Marketing</td>
     //   <td><i class="fa fa-location-arrow" aria-hidden="true"></i> Bangalore</td>
     //   <td>More Details→</td>
-
     // </tr>
-  
     // <tr className='table-row'>
     //   <td className='td-1'><h4>Back end Developer</h4> </td>
     //   <td  className='td-2'> <i class="fa fa-star"></i>Engineering</td>
@@ -122,7 +130,6 @@ return(
     //   <td>More Details→</td>
 
     // </tr>
-
         )
       })
     }

@@ -47,7 +47,15 @@
     background-color: #4af8d5;
     flex-grow: 1;
   }
-
+  #Learn-slider .swiper-button-prev:after{
+    font-size: 12px;
+  }
+  #Learn-slider .swiper-button-next:after{
+    font-size: 12px;
+  }
+  #Learn-slider .swiper-button-prev{
+ margin-top: 55px;
+  }
 /* Learn About section start */
 section#LearnAbout-sec {
     background-image: url(../component/Images/learn-banner-bg3.png);   
@@ -55,6 +63,11 @@ section#LearnAbout-sec {
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #F3F0E6;
+    max-height: 578px;
+}
+.learnbtn{
+    display: flex;
+    justify-content: center;
 }
 
 .learnabout {
@@ -118,6 +131,10 @@ section#investing-learn {
 }
 .learninvestimg img {
     border-radius: 0px 10px 10px 0px;
+}
+.iframeclass{
+   height: 400px;
+   width: 100%;
 }
 button.neain-invst {
     background-color: transparent;

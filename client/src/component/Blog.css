@@ -43,8 +43,10 @@ br {
     bottom: 0;
     right: 0;
     background: #fff;
-    padding: 20px;
     max-width: 485px;
+}
+.latest-img img{
+    height: 200px;
 }
 #Blog-sewction .BlogImg img {
     width: 100%;
@@ -172,11 +174,13 @@ br {
     left: 0;
 }
 #BInvest-section .BInvest-rigth{
-    background-image: url(./Images/Invest-bg.png);
+    background-image: url(./Images/Invest-bg.jpg);
     background-size: auto;
     background-position: top right;
     background-repeat: no-repeat;
     padding: 40px 0px 0px 0px;
+    opacity: 0.9;
+
 }
 #BInvest-section .Binveshape{
     position: relative;
@@ -210,6 +214,7 @@ br {
 }
 #BInvest-section .bInvest-img img {
     width: 100%;
+    border-radius: 6px;
 }
 #BInvest-section .Binvest-item1 h4 {
     font-size: 12px;
@@ -235,7 +240,7 @@ br {
 #BInvest-section .text-vertical h3 {
     font-size: 87px;
     line-height: 97px;
-    color: #f7f7f7;
+    color:rgb(172, 167, 167);
     font-weight: 800;
     font-family: "Montserrat";
     transform: rotate(90deg);
@@ -381,11 +386,13 @@ div#Latest-slider {
     margin: 40px 0px;
 }
 #Planning-section .BInvest-rigth{
-    background-image: url(./Images/planing-shape.png);
+    background-image: url(./Images/planing-shape.jpg);
     background-size: auto;
     background-position: top left;
     background-repeat: no-repeat;
     padding:40px 0px 0px 0px;
+    opacity: 0.9;
+
 }
 #Planning-section .Binveshape{
     position: relative;
@@ -446,7 +453,7 @@ div#Latest-slider {
 #Planning-section .text-vertical h3 {
     font-size: 87px;
     line-height: 97px;
-    color: #f7f7f7;
+    color:rgb(172, 167, 167);
     font-weight: 800;
     font-family: 'Arial Bold', sans-serif;
     transform: rotate(-90deg);
@@ -511,11 +518,13 @@ div#Latest-slider {
     top: 65px;
 }
 #Saving-section .BInvest-rigth{
-    background-image: url(./Images/Invest-bg.png);
+    background-image: url(./Images/Invest-bg.jpg);
     background-size: auto;
     background-position: top right;
     background-repeat: no-repeat;
     padding: 40px 0px 0px 0px;
+    opacity: 0.9;
+
 }
 #Saving-section .section-head {
     position: relative;
@@ -561,7 +570,7 @@ div#Latest-slider {
 #Saving-section .text-vertical h3 {
     font-size: 87px;
     line-height: 97px;
-    color: #f7f7f7;
+ color:rgb(172, 167, 167);
     font-weight: 800;
     font-family: 'Arial Bold', sans-serif;
     transform: rotate(90deg);
@@ -608,11 +617,12 @@ div#Latest-slider {
 
 }
 #Industry-section .BInvest-rigth{
-    background-image: url(./Images/planing-shape.png);
+    background-image: url(./Images/planing-shape.jpg);
     background-size: auto;
     background-position: top left;
     background-repeat: no-repeat;
     padding: 40px 0px 40px 0px;
+    opacity: 0.9;
 }
 #Industry-section  .Binveshape{
     position: relative;
@@ -674,7 +684,8 @@ div#Latest-slider {
 #Industry-section .text-vertical h3 {
     font-size: 87px;
     line-height: 97px;
-    color: #f7f7f7;
+    color:rgb(172, 167, 167);
+
     font-weight: 800;
     font-family: 'Arial Bold', sans-serif;
     transform: rotate(-90deg);

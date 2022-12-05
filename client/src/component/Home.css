@@ -10,6 +10,9 @@ section#home-banner .container {
     max-width: 1140px;
     margin: auto;
 }
+.widthcenter{
+    width: 78%;
+}
 .slideb1 {
     padding-top: 90px;
 }
@@ -45,10 +48,12 @@ section#home-banner .container {
 
 button.know-btn {
     border: 2px solid #4af8d5;
+    color: #4af8d5;
     font-size: 14px;
     line-height: 14px;
-    padding: 14px 25px;
+    padding: 12px 27px;
     border-radius: 5px;
+    font-weight: 500;
     background-color: transparent;
 }
 .know-btn a {
@@ -58,10 +63,17 @@ button.know-btn {
 }
 .bannerbtn {
     padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    margin-right: 6%;
 }
 .bannerbtn:hover button.know-btn{
-    background-color: #0F71F2;
-    border: 2px solid #0F71F2;
+    background-color: #0F71F2 !important;
+    border: 2px solid #0F71F2 !important;
+}
+button.view-btn:hover{
+    border: 2px solid #0F71F2 !important;
+    color: #019AFF !important;
 }
 .bannerbtn:hover .know-btn a {
     color: #fff;
@@ -289,12 +301,14 @@ button.view-btn{
 }
 button.view-btn {
     border: 2px solid #1A3073;
+    color:#1A3073;
     font-size: 14px;
     line-height: 14px;
     padding: 14px 25px;
     border-radius: 5px;
     background-color: transparent;
 }
+
 .view-btn a {
     color: #1A3073;
     text-decoration: none;
@@ -331,6 +345,7 @@ button.view-btn {
 }
 .blogImg img {
     width: 100%;
+    border-radius: 6px;
 }
 .blog-Ct h3 {
     color: #1F286F;

@@ -8,6 +8,7 @@ import tranding1 from '../Images/topview1.png';
 import tranding2 from '../Images/topview2.png';
 import tranding3 from '../Images/topview3.png';
 import axios from 'axios';
+import { Learnslider } from './Learnslider';
 
 
 
@@ -30,34 +31,13 @@ const Technology = () => {
 
   return (
     <div>
-      <div className="tranding_1">
-        {newsdata &&
-          newsdata.map((item, index) => {
-            console.log(item);
-            return (
-              <>
-                <div className="tranding-item1">
-                  <div className="traningimg">
-                    <a target="blank" href={item.url}>
-                      {" "}
-                      <img src={item.img} alt="trandingimg"></img>
-                    </a>
-                  </div>
-                  <a target="blank" href={item.url}>
-                    {item.title}
-                  </a>
+    <div id="Learn-slider">
+<Learnslider newsdata={newsdata}/>
+    </div>
+      <div className='bannerbtn learnbtn'>
+                  <a href="https://www.youtube.com/playlist?list=PLQ0dEPuPJTIVYPCYPk5GU4rmLeLcM4pjk"><button className='know-btn'>KNOW MORE</button></a>
                 </div>
-              </>
-            );
-          })}
-          
-      </div>
-   
-      <button className="view-btn">
-          <a target="blank" href="https://www.youtube.com/playlist?list=PLQ0dEPuPJTIVYPCYPk5GU4rmLeLcM4pjk">
-            Learn MORE <i class="fa fa-angle-double-right"></i>
-          </a>
-        </button>
+
     </div>
   );
 };

@@ -37,7 +37,7 @@ const Learn = ({scodata,title}) => {
 console.log(scodata)
 
   return (
-    <div className='body-main learn-body'>
+    <div className='learn-body'>
               {
         scodata?
         scodata.filter((items,index)=>{
@@ -51,7 +51,7 @@ return(
       </Helmet>
 
 )
-        }):<Helmet><title>BullSmart</title></Helmet>
+        }):<Helmet><title>Bullsmart</title></Helmet>
       }
         {/* <section id='Learn-banner'>
           <div className='container-fluid banner-bg'>
@@ -70,7 +70,7 @@ return(
               <div className='col-lg-12 col-md-12'>
                 <div className='learn-des'>
                 <h3>Learn</h3>
-                  <p>Grow your financial confidence with videos, articles, and tips for investors both experienced and new.</p>
+                  <p>one stop solution to financial independence.</p>
                 </div>                 
               </div>               
             </div>
@@ -82,15 +82,15 @@ return(
             <div className='learninvesAlign'>
               <div className='l-invesleft l-investdes'>
                 <h4>Investing  . 4 min </h4>
-                  <h3> How to Start Investing </h3>
-                  <p>   Investing is not as complex as it may seem. Here's how to get started investing and what to consider when you are building a portfolio.
+                  <h3> Bullsmart Stock Academy</h3>
+                  <p>   Take few minutes a day to become your own financial advisor.
                   </p>
                   <button className='neain-invst'><a hrf="#">  Keep reading  </a></button>
               </div>
 
               <div className='l-invesleft'>
                 <div className='learninvestimg'>
-               <iframe width="585" height="400" src="https://www.youtube.com/embed/WNw_TFVE0kk" title="BullSmart Stock Academy Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+               <iframe className='iframeclass' src="https://www.youtube.com/embed/WNw_TFVE0kk" title="BullSmart Stock Academy Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
               </div>
             </div>

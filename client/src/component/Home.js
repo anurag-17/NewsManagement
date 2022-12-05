@@ -19,7 +19,6 @@ import { AnimatedOnScroll } from "react-animated-css-onscroll";
 import Topnews from './Topnews';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-import validator from 'validator'
 import swal from 'sweetalert';
 const convert = require("xml-js")
 
@@ -81,18 +80,9 @@ const [emailError,setEmailError] = useState('')
     //     .catch(error => console.log('error', error));
   }
 
-  const validateEmail = (e) => {
-    var email = e.target.value
-  
-    if (validator.isEmail(email)) {
-      setEmailError('Valid Email :)')
-    } else {
-      setEmailError('Enter valid Email!')
-    }
-  }
+
 
   const Input_handler = (e) => {
-    validateEmail(e)
     setUseremail({ ...useremail, [e.target.name]: e.target.value })
   }
   const handleclick = async (e) => {
@@ -111,6 +101,8 @@ const [emailError,setEmailError] = useState('')
           setMessage("")
         },2000)
        }).catch((e)=>{
+        setShow(false)
+        setEmailError(e.response.data)
         console.log(e);
        })
     },500)
@@ -149,6 +141,7 @@ return(
           <div className='Home-slide'>
             <div className='row home-alin'>
               <div className='col-lg-8 col-md-6 slideb1'>
+                <div className='widthcenter'>
                 <AnimatedOnScroll animationIn="fadeIn" animationOut="fadeIn">
                   <h2>Smart <span>People. </span></h2>
                   <h2>Smart <span>Investment.</span> </h2>
@@ -156,6 +149,7 @@ return(
                 <p>We use technology to help young investors invest smartly.</p>
                 <div className='bannerbtn'>
                   <Link to="/about-us"><button className='know-btn'>KNOW MORE</button></Link>
+                </div>
                 </div>
               </div>
               <div className='col-lg-4 col-md-6'>
@@ -313,17 +307,14 @@ return(
                   <form onSubmit={handleclick} action="">
                     <div className="input-group newsform">
                       <input style={{ fontSize: "14px" }} required type="email" className="form-control form_bg" name='email' value={useremail.email} onChange={Input_handler} placeholder="Enter your email for newsletter" />
-                      <span style={{
-          fontWeight: 'bold',
-          display:"block",
-          color: 'red',
-        }}>{emailError}</span>
                       <span className={show ? "input-click" : "input-group-btn"}>
                         <button className="btn d-flex" type="submit"> {show && <i style={{ marginRight: "5px", color: "#003AAD", marginTop: "1px" }} className="fas fa-spinner fa-spin"></i>} <i style={{ padding: "3px", color: "#003AAD", marginLeft: "-4px" }} className="fa fa-arrow-right"></i></button>
                       </span>
                     </div>
                   </form>
                   <p style={{ fontSize: "17px", fontWeight: "500", fontFamily: "sans-serif", color: "rgba(255, 255, 255, 0.637)", marginTop: "10px" }} >{message}</p>
+                  <p style={{ fontSize: "17px", fontWeight: "600", fontFamily: "sans-serif", color: "red", marginTop: "10px" }} >{emailError}</p>
+
                 </div>
               </div>
               <div className='col-lg-7 col-md-7'>
@@ -338,7 +329,7 @@ return(
 
       <div className='Invest-HT'>
         <section id='Investing-sec'>
-          <div className='container'>
+          <div style={{textAlign:"center"}}  className='container'>
             <div className='section-title'>
               <div className='section-head'>
                 <h2>Investing 101</h2>
@@ -387,7 +378,7 @@ return(
       </div>
       <section id='blof-sec'>
         <div className='container'>
-          <div className='learn-head'>
+          <div style={{textAlign:"center"}} className='learn-head'>
             <h3>Blog</h3>
           </div>
           <div className='blog-grid'>

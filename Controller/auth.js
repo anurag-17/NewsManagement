@@ -351,12 +351,14 @@ exports.useremail = catchAsyncError(
         console.log(req.body);
         const {email} = req.body
         try {
-            const { valid, reason, validators } = await isEmailValid(req.body.email);
-            if (!valid) {
+            const {valid, reason, validators } = await isEmailValid(req.body.email);
+            console.log(valid)
+            if(!valid) {
                 return res
                   .status(500)
                   .json("email is invalid please enter a valid email");
-              }else if(valid){
+              }
+              else{
                   let useremail = new Email({email})
                   useremail.save().then((result)=>{
                       res.send("Submitted Successfully")
@@ -387,24 +389,25 @@ exports.viewemail = catchAsyncError(
     }
 )
 
-exports.useremail = catchAsyncError(
-    async (req, res, next) => {
-        console.log(req.body);
-        const { email } = req.body
-        try {
-            let useremail = new Email({ email })
+// exports.useremail = catchAsyncError(
+//     async (req, res, next) => {
+//         console.log(req.body);
+//         const { email } = req.body
+//         try {
+//             let useremail = new Email({ email })
 
-            useremail.save().then((result) => {
-                res.send("Submitted Successfully")
-                console.log("successfully feeded email");
-            }).catch((err) => {
-                console.log(err, " email feederrror");
-            })
-        } catch (error) {
-            console.log(error);
-        }
-    }
-)
+//             useremail.save().then((result) => {
+//                 res.send("Submitted Successfully")
+//                 console.log("successfully feeded email");
+//             }).catch((err) => {
+//                 console.log(err, " email feederrror");
+//             })
+//         } catch (error) {
+//             console.log(error);
+//         }
+//     }
+// )
+
 exports.viewemail = catchAsyncError(
     async (req, res, next) => {
         try {
