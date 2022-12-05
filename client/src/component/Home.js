@@ -141,6 +141,7 @@ return(
           <div className='Home-slide'>
             <div className='row home-alin'>
               <div className='col-lg-8 col-md-6 slideb1'>
+                <div className='widthcenter'>
                 <AnimatedOnScroll animationIn="fadeIn" animationOut="fadeIn">
                   <h2>Smart <span>People. </span></h2>
                   <h2>Smart <span>Investment.</span> </h2>
@@ -148,6 +149,7 @@ return(
                 <p>We use technology to help young investors invest smartly.</p>
                 <div className='bannerbtn'>
                   <Link to="/about-us"><button className='know-btn'>KNOW MORE</button></Link>
+                </div>
                 </div>
               </div>
               <div className='col-lg-4 col-md-6'>

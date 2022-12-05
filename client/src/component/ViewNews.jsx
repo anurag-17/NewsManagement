@@ -7,6 +7,7 @@ import "./ViewNews.css";
 import { useNavigate } from "react-router";
 import { Editor } from "@tinymce/tinymce-react";
 import Resizer from "react-image-file-resizer";
+import { Pagination } from "./Common/Pagination";
 
 export const ViewNews = () => {
   const navigate = useNavigate();
@@ -16,6 +17,8 @@ export const ViewNews = () => {
   const [selectedimage, setSelectedImage] = useState([]);
   const [avtarpreview, setAvatarpreview] = useState();
   const [updatedata, setUpdateData] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [recordsPerPage] = useState(4);
   const [editnewsdata, setEditnewsdata] = useState({
     title: "",
     description: "",
@@ -23,6 +26,13 @@ export const ViewNews = () => {
     date: new Date().toLocaleDateString(),
   });
   const editorRef = useRef(null);
+
+  const nPages = Math.ceil(newsdata.length / recordsPerPage);
+  const indexOfLastRecord = currentPage * recordsPerPage;
+
+  const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
+  let currentRecords = newsdata.slice(indexOfFirstRecord, indexOfLastRecord);
+
 
   const viewnews = async () => {
     await axios.post("/api/auth/viewnews").then((res) => {
@@ -33,7 +43,7 @@ export const ViewNews = () => {
   };
   useEffect(() => {
     viewnews();
-  }, [updatedata,editnewsdata,deleteid]);
+  }, [updatedata,editnewsdata]);
 
   const deletehandler = async (id) => {
     setDeleteid(id);
@@ -102,6 +112,7 @@ export const ViewNews = () => {
   encodefile(selectedimage[0]);
   const log = async (e) => {
     e.preventDefault();
+    viewnews();
       console.log(editnewsdata);
       await axios
         .post("/api/auth/editnews", editnewsdata, {
@@ -120,7 +131,7 @@ export const ViewNews = () => {
             <h3>Learn</h3>
           </div>
           <div className="imgcardnews row">
-            {newsdata
+            {currentRecords
               .slice(0)
               .reverse()
               .map((items, index) => {
@@ -254,6 +265,7 @@ export const ViewNews = () => {
                     type="button"
                     className="btn btn-danger"
                     data-dismiss="modal"
+                    onClick={viewnews}
                   >
                     Close
                   </button>
@@ -261,6 +273,11 @@ export const ViewNews = () => {
               </div>
             </div>
           </div>
+          <Pagination
+                       nPages={nPages}
+                       currentPage={currentPage}
+                       setCurrentPage={setCurrentPage}
+            />
         </div>
       </div>
     </>

@@ -40,7 +40,6 @@ export const Viewblogs = () => {
 
     useEffect(() => {
         axios.get("/api/auth/viewblogs").then((res) => {
-            // console.log(res.data.result);
             setBlogdata(res.data.result)
         })
         navigate("/viewblogs")
@@ -65,7 +64,6 @@ export const Viewblogs = () => {
             console.log(error);
         })
     }
-    console.log(editblogdata);
     const Input_handler = (e) => {
         setEditblogdata({ ...editblogdata, title:e.target.value })
     }
@@ -110,9 +108,14 @@ export const Viewblogs = () => {
     const log = async (e) => {
         console.log(editblogdata)
         e.preventDefault()
-        await axios.post("/api/auth/editblogs", editblogdata, { headers: { "Content-Type": "application/json" } }).then((res) => {
-            console.log(res.data);
+        await axios.post("/api/auth/editblogs", editblogdata, { headers: { "Content-Type": "application/json" } }).then(async(res) => {
+           await axios.get("/api/auth/viewblogs").then((res) => {
+                setBlogdata(res.data.result)
+            })
         })
+
+
+
     };
 
     return (

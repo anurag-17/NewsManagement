@@ -47,7 +47,15 @@
     background-color: #4af8d5;
     flex-grow: 1;
   }
-
+  #Learn-slider .swiper-button-prev:after{
+    font-size: 12px;
+  }
+  #Learn-slider .swiper-button-next:after{
+    font-size: 12px;
+  }
+  #Learn-slider .swiper-button-prev{
+ margin-top: 55px;
+  }
 /* Learn About section start */
 section#LearnAbout-sec {
     background-image: url(../component/Images/learn-banner-bg3.png);   

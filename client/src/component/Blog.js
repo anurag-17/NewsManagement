@@ -64,6 +64,7 @@ return(
           </div>
         </div>
       </section>
+{/* 
       <section id='News-Title'>
         <div className='container'>
           <div class="typewriter">
@@ -77,8 +78,8 @@ return(
             />
           </div>
         </div>
-      </section>
-      <section id='Blog-sewction'>
+      </section> */}
+      <section style={{backgroundColor:"#f6f5fc",paddingTop:"65px"}} id='Blog-sewction'>
         <div className='container'>
           <div className='row'>
             <div className='col-lg-9 col-md-8'>

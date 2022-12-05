@@ -10,6 +10,9 @@ section#home-banner .container {
     max-width: 1140px;
     margin: auto;
 }
+.widthcenter{
+    width: 78%;
+}
 .slideb1 {
     padding-top: 90px;
 }
@@ -60,6 +63,9 @@ button.know-btn {
 }
 .bannerbtn {
     padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    margin-right: 6%;
 }
 .bannerbtn:hover button.know-btn{
     background-color: #0F71F2;
@@ -291,6 +297,7 @@ button.view-btn{
 }
 button.view-btn {
     border: 2px solid #1A3073;
+    color:#1A3073;
     font-size: 14px;
     line-height: 14px;
     padding: 14px 25px;
