@@ -125,9 +125,7 @@ const [emailError,setEmailError] = useState('')
     // }, 2000)
   }
 
-  useEffect(() => {
-
-  }, [])
+console.log(scodata)
   return (
     <div className='homepage'>
               {
