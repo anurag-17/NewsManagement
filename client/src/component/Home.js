@@ -134,7 +134,7 @@ console.log(scodata)
           return items.pagename === "Home"
         }).map((item,i)=>{
 return(
-               <Helmet>
+      <Helmet>
       <title>{`${item.seotitle} - ${title}`}</title>
         <meta name="description" content={item.description}/>
         <meta name="keyword" content={item.keyword} />
