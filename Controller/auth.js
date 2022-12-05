@@ -114,13 +114,12 @@ exports.viewnews = catchAsyncError(
 )
 exports.viewblogs = catchAsyncError(
     async(req, res)=>{
-             Blogs.find((error, result)=>{
-                if (error) {console.log(error , "viewblog error")}
-                res.send({result})
-            } )
+             const result =  await Blogs.find()
+             res.send({result:result})
   
     }
 )
+
 exports.deleteblogs = catchAsyncError(
     async(req, res, next)=>{
         let uid = req.body.params
@@ -263,7 +262,6 @@ exports.deletecontent = catchAsyncError(
 
 )
 
-
 exports.getmetadata = catchAsyncError(
     async(req,res,next)=>{
         const data = await Content.find()
@@ -271,14 +269,11 @@ exports.getmetadata = catchAsyncError(
     }
 )
 
-
 exports.getcontent = catchAsyncError( async(req,res,next)=>{
     console.log(req.body.pagename)
     const data =  await Content.find()
       return res.status(200).json(data)
   })
-
-
 
 exports.validadmin = catchAsyncError (
     async(req, res, next)=>{
@@ -391,7 +386,6 @@ exports.viewemail = catchAsyncError(
         }
     }
 )
-
 
 exports.useremail = catchAsyncError(
     async (req, res, next) => {
