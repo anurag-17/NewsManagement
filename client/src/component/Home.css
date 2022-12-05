@@ -68,8 +68,12 @@ button.know-btn {
     margin-right: 6%;
 }
 .bannerbtn:hover button.know-btn{
-    background-color: #0F71F2;
-    border: 2px solid #0F71F2;
+    background-color: #0F71F2 !important;
+    border: 2px solid #0F71F2 !important;
+}
+button.view-btn:hover{
+    border: 2px solid #0F71F2 !important;
+    color: #019AFF !important;
 }
 .bannerbtn:hover .know-btn a {
     color: #fff;
@@ -304,6 +308,7 @@ button.view-btn {
     border-radius: 5px;
     background-color: transparent;
 }
+
 .view-btn a {
     color: #1A3073;
     text-decoration: none;

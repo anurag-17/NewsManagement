@@ -329,7 +329,7 @@ return(
 
       <div className='Invest-HT'>
         <section id='Investing-sec'>
-          <div className='container'>
+          <div style={{textAlign:"center"}}  className='container'>
             <div className='section-title'>
               <div className='section-head'>
                 <h2>Investing 101</h2>
@@ -378,7 +378,7 @@ return(
       </div>
       <section id='blof-sec'>
         <div className='container'>
-          <div className='learn-head'>
+          <div style={{textAlign:"center"}} className='learn-head'>
             <h3>Blog</h3>
           </div>
           <div className='blog-grid'>

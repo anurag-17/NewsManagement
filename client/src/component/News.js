@@ -392,11 +392,13 @@ return(
               <div className="accordion mb-4" id="accordionExample">
   <div className="accordion-item">
     <h2 className="accordion-header" id="panelsStayOpen-headingOne">
-      <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+      <button className="accordion-button text-center" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+        <div style = {{width:"100%"}}>
         More News
+        </div>
       </button>
     </h2>
-    <div id="panelsStayOpen-collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne">
+    <div id="panelsStayOpen-collapseOne" className="accordion-collapse collapse" aria-labelledby="headingOne">
       <div className="accordion-body">
               <NewsArtical apidata={data.slice(10,data.length)} />
       </div>
