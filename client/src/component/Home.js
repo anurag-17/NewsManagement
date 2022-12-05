@@ -36,7 +36,7 @@ const [emailError,setEmailError] = useState('')
   const [show, setShow] = useState(false)
   const [message, setMessage] = useState("")
   const getblogdata = async () => {
-    axios.get("/api/auth/viewblogs").then((res) => {
+   await axios.get("/api/auth/viewblogs").then((res) => {
       setBlogdata(res.data.result)
     })
   }
@@ -194,7 +194,7 @@ return(
 
       <section id='Top-News'>
         <div className='container'>
-          <div class="TopAriclnew">
+          <div className="TopAriclnew">
             <span><h2 style={{color:"black"}}>TOP NEWS</h2></span>
           </div>
 
@@ -311,7 +311,7 @@ return(
                   <p style={{ marginBottom: "-8px", width: "90%" }} >Our App is <span>READY</span>  to help you <br></br> on your investment journey <br></br></p>
                   <h4><span className='investhashtag'>#Investmentkanayadaur</span></h4>
                   <form onSubmit={handleclick} action="">
-                    <div class="input-group newsform">
+                    <div className="input-group newsform">
                       <input style={{ fontSize: "14px" }} required type="email" className="form-control form_bg" name='email' value={useremail.email} onChange={Input_handler} placeholder="Enter your email for newsletter" />
                       <span style={{
           fontWeight: 'bold',
@@ -319,7 +319,7 @@ return(
           color: 'red',
         }}>{emailError}</span>
                       <span className={show ? "input-click" : "input-group-btn"}>
-                        <button className="btn d-flex" type="submit"> {show && <i style={{ marginRight: "5px", color: "#003AAD", marginTop: "1px" }} class="fas fa-spinner fa-spin"></i>} <i style={{ padding: "3px", color: "#003AAD", marginLeft: "-4px" }} class="fa fa-arrow-right"></i></button>
+                        <button className="btn d-flex" type="submit"> {show && <i style={{ marginRight: "5px", color: "#003AAD", marginTop: "1px" }} className="fas fa-spinner fa-spin"></i>} <i style={{ padding: "3px", color: "#003AAD", marginLeft: "-4px" }} className="fa fa-arrow-right"></i></button>
                       </span>
                     </div>
                   </form>
@@ -354,7 +354,7 @@ return(
                   <h3>Basic Lessons</h3>
                   <p>Start your investment journey with confidence</p>
                   <div className='Invest-btn'>
-                  <a href='https://www.youtube.com/playlist?list=PLQ0dEPuPJTIVcQcqhKQUe8dseABAT4Sm0' target="blank"><button>Learn More <i class="fa fa-angle-right"></i></button></a>
+                  <a href='https://www.youtube.com/playlist?list=PLQ0dEPuPJTIVcQcqhKQUe8dseABAT4Sm0' target="blank"><button>Learn More <i className="fa fa-angle-right"></i></button></a>
                   </div>
                 </div>
               </div>
@@ -363,7 +363,7 @@ return(
                   <h3>General Investment</h3>
                   <p>Start your investment journey with confidence</p>
                   <div className='Invest-btn'>
-                    <a href='https://www.youtube.com/playlist?list=PLQ0dEPuPJTIVDt8hyT30jUdQVueMutYBm' target="blank"><button>Learn More <i class="fa fa-angle-right"></i></button></a>
+                    <a href='https://www.youtube.com/playlist?list=PLQ0dEPuPJTIVDt8hyT30jUdQVueMutYBm' target="blank"><button>Learn More <i className="fa fa-angle-right"></i></button></a>
                   </div>
                 </div>
               </div>
@@ -372,7 +372,7 @@ return(
                   <h3>Mutual Funds</h3>
                   <p>Start your investment journey with confidence</p>
                   <div className='Invest-btn'>
-                  <a href='https://www.youtube.com/playlist?list=PLQ0dEPuPJTIU-ykMY5JtIdTxA9s-Ai44A' target="blank"><button>Learn More <i class="fa fa-angle-right"></i></button></a>
+                  <a href='https://www.youtube.com/playlist?list=PLQ0dEPuPJTIU-ykMY5JtIdTxA9s-Ai44A' target="blank"><button>Learn More <i className="fa fa-angle-right"></i></button></a>
                   </div>
                 </div>
               </div>
@@ -408,7 +408,7 @@ return(
                     <h3>{items.title}</h3>
                     <div className='blog-btn'>
 
-                      <button className='Blog-btn'><a href='#'>Read MORE <i class="fa fa-angle-double-right"></i></a></button>
+                      <button className='Blog-btn'><a href='#'>Read More<i className="fa fa-angle-double-right"></i></a></button>
                     </div>
                   </div>
                 </div>
@@ -428,7 +428,7 @@ return(
                   <div className='blod-des'>
                     <h3>Things to know before you start investing</h3>
                     <div className='blog-btn'>
-                      <button className='Blog-btn'><a href='#'>Read MORE <i class="fa fa-angle-double-right"></i></a></button>
+                      <button className='Blog-btn'><a href='#'>Read MORE <i className="fa fa-angle-double-right"></i></a></button>
                     </div>
                   </div>
                 </div>
@@ -443,7 +443,7 @@ return(
                   <div className='blod-des'>
                     <h3>Mutual Funds Terminologies: Your Complete Guide</h3>
                     <div className='blog-btn'>
-                      <button className='Blog-btn'><a href='#'>Read MORE <i class="fa fa-angle-double-right"></i></a></button>
+                      <button className='Blog-btn'><a href='#'>Read MORE <i className="fa fa-angle-double-right"></i></a></button>
                     </div>
                   </div>
                 </div>
