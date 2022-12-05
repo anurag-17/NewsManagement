@@ -210,6 +210,7 @@ br {
 }
 #BInvest-section .bInvest-img img {
     width: 100%;
+    border-radius: 6px;
 }
 #BInvest-section .Binvest-item1 h4 {
     font-size: 12px;

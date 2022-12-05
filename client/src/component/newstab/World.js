@@ -47,17 +47,15 @@ useEffect(() => {
             {item.title}
           </a>
         </div>
-
 </>
-              )
+ )
             })}
     
       </div>
-        <button className="view-btn">
-          <a target="blank" href="https://www.youtube.com/@BullSmartStockAcademy">
-            Learn MORE <i class="fa fa-angle-double-right"></i>
-          </a>
-        </button>
+      <div className='bannerbtn learnbtn'>
+                  <a href="https://www.youtube.com/@BullSmartStockAcademy"><button className='know-btn'>KNOW MORE</button></a>
+                </div>
+
     </div>
   );
 };

@@ -52,12 +52,10 @@ const Technology = () => {
           })}
           
       </div>
-   
-      <button className="view-btn">
-          <a target="blank" href="https://www.youtube.com/playlist?list=PLQ0dEPuPJTIVYPCYPk5GU4rmLeLcM4pjk">
-            Learn MORE <i class="fa fa-angle-double-right"></i>
-          </a>
-        </button>
+      <div className='bannerbtn learnbtn'>
+                  <a href="https://www.youtube.com/playlist?list=PLQ0dEPuPJTIVYPCYPk5GU4rmLeLcM4pjk"><button className='know-btn'>KNOW MORE</button></a>
+                </div>
+
     </div>
   );
 };
