@@ -34,6 +34,8 @@ const Learn = ({scodata,title}) => {
     // getscodata()
     window.scrollTo(0,0)
     },[])
+console.log(scodata)
+
   return (
     <div className='body-main learn-body'>
               {
