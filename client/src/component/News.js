@@ -291,7 +291,7 @@ return(
                 </div>
               </div>
               <div className='bannerbtn'>
-                  <a href = "https://www.youtube.com/@BullSmartStockAcademy"><button className='know-btn'>More in Videos</button></a>
+                  <a target="blank" href = "https://www.youtube.com/@BullSmartStockAcademy"><button className='know-btn'>More in Videos</button></a>
                 </div>
               {/* <div className='slide-btn'>
 
@@ -386,17 +386,15 @@ return(
 
 
       <section>
-        <div className="container">
+        <div className="container mt-4">
           <div className='row'>
-            <div className='col-lg-8 col-md-8 LetNews'>
-              <hr />
-
+            <div className='col-lg-12 col-md-8 LetNews'>
 
               <div className="accordion mb-4" id="accordionExample">
   <div className="accordion-item">
     <h2 className="accordion-header" id="panelsStayOpen-headingOne">
-      <button className="accordion-button text-center" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-        <div style = {{width:"100%"}}>
+      <button style = {{border:"2px solid #4af8d5"}} className="accordion-button collapsed text-center" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+        <div style = {{width:"100%",color:"#4af8d5",fontWeight:"550",fontSize:"20px"}}>
         More News
         </div>
       </button>

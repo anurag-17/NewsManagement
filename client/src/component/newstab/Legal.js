@@ -16,7 +16,7 @@ const Legal = () => {
   const [newsdata, setNewsdata] = useState();
   const viewnews = async () => {
     await axios
-      .post("/api/auth/viewnews", { catagory: "BeginnerLesson" })
+      .post("/api/auth/viewnews", { catagory: "BeginnerLesson",section:"Topics" })
       .then((res) => {
         setNewsdata(res.data.result);
         newsdata.reverse();
