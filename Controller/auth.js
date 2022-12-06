@@ -154,7 +154,6 @@ exports.editidnews = catchAsyncError(
                 if (error) {
                     console.log(error, "editidnews");
                 }
-                console.log(result)
                 res.send({result})
             })
         } catch (error) {
@@ -164,7 +163,7 @@ exports.editidnews = catchAsyncError(
 )
 exports.editnews =catchAsyncError(
     async(req, res, next)=>{
-        await News.findByIdAndUpdate({_id : new ObjectId(req.body._id)},{"title": req.body.title, "description": req.body.description, "url": req.body.url, "img": req.body.img}),(error, data)=>{
+        await News.findByIdAndUpdate(req.body._id,{"title": req.body.title, "catagory": req.body.catagory, "url": req.body.url, "img": req.body.img}),(error, data)=>{
             if (error) {
                 console.log(error, "updatenews");
             } else {
@@ -350,7 +349,7 @@ exports.useremail = catchAsyncError(
         console.log(req.body);
         const {email} = req.body
         try {
-            const {valid, reason, validators } = await isEmailValid(req.body.email);
+            const {valid, reason, validators } = isEmailValid(req.body.email);
             console.log(valid)
             if(!valid) {
                 return res
@@ -407,20 +406,20 @@ exports.viewemail = catchAsyncError(
 //     }
 // )
 
-exports.viewemail = catchAsyncError(
-    async (req, res, next) => {
-        try {
-            Email.find({}, (error, result) => {
-                if (error) {
-                    console.log(error, "viewemail");
-                }
-                res.send({ result })
-            })
-        } catch (error) {
-            console.log(error, "viewemail_catch");
-        }
-    }
-)
+// exports.viewemail = catchAsyncError(
+//     async (req, res, next) => {
+//         try {
+//             Email.find({}, (error, result) => {
+//                 if (error) {
+//                     console.log(error, "viewemail");
+//                 }
+//                 res.send({ result })
+//             })
+//         } catch (error) {
+//             console.log(error, "viewemail_catch");
+//         }
+//     }
+// )
 exports.deleteemail = catchAsyncError(
     async (req, res, next) => {
         let uid = req.body.params

@@ -212,7 +212,7 @@ font-family: Arial , sans-serif;
 /* Investing section start */
 #Investing-sec {
     /* background-color: #F2F2F2; */
-    padding: 80px 0px 80px 0px;
+    padding: 60px 0px 60px 0px;
 }
 .Invest-HT {
     background-color: #F2F2F2;
@@ -227,7 +227,7 @@ font-family: Arial , sans-serif;
     color: #1F286F;
     font-size: 26px;
     font-weight: bold;
-    padding-top: 40px;
+    padding-top: 10px;
     font-family: 'Arial Bold', sans-serif;
 }
 #Investing-sec .Investing-grid {

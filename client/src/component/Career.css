@@ -58,8 +58,9 @@ color: grey;
     color: grey;
     font-size: 12px;
 }
-.table-row td:last-child{
+.table-row td:last-child a{
     color: #c36;
+    text-decoration: none;
 }
 .maintable{
     border-left: 1px solid rgba(128, 128, 128, 0.233);

@@ -13,7 +13,7 @@ const Footer = () => {
               <div className='col-lg-5 col-md-3 footer-first'>
                 <img src={logo} alt='footerlogo' className='foot-logo'></img>
                 <address>
-                  Ashoka Fortune, NO 3/1-11ST Main, Next to Dailyhunt,<br></br> Jakkasandra, Kormangala, Bangalore, Karnataka – <br></br> 560034.
+                  Ashoka Fortune, NO 3/1-11ST Main,<br></br> Jakkasandra, Kormangala, Bangalore, Karnataka – <br></br> 560034.
 
                 </address>
                 <ul className='contlist'>

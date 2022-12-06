@@ -38,11 +38,11 @@ const getaboutdata = async()=>{
 const Input_handler = (e) =>{
   setUseremail({...useremail, [e.target.name]: e.target.value})
  }
-const handleclick = async(e) => {
+ const handleclick = async (e) => {
   e.preventDefault()
-   setShow(true)
+  setShow(true)
   setTimeout(()=>{
-    axios.post("/api/auth//useremail",useremail,{headers:{"Content-Type": "application/json" } }).then((res)=>{
+    axios.post("/api/auth/useremail",useremail,{headers:{"Content-Type": "application/json" } }).then((res)=>{
       console.log(res);
       // swal(res.data,"" ,"success")
       setUseremail({
@@ -54,10 +54,14 @@ const handleclick = async(e) => {
         setMessage("")
       },2000)
      }).catch((e)=>{
-      console.log(e);
+      setShow(false)
+      setMessage(e.response.data)
+      setTimeout(()=>{
+        setMessage("")
+      },3000)
      })
   },500)
-  
+
   // setShow(true)
   // setTimeout(() => {
   //   setShow(false)
@@ -67,7 +71,6 @@ const handleclick = async(e) => {
   //   }, 3000)
   // }, 2000)
 }
-
 useEffect(()=>{
 // getaboutdata()
 window.scrollTo(0,0)

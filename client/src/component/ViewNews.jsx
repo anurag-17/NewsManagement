@@ -21,7 +21,7 @@ export const ViewNews = () => {
   const [recordsPerPage] = useState(4);
   const [editnewsdata, setEditnewsdata] = useState({
     title: "",
-    description: "",
+    catagory: "",
     url: "",
     date: new Date().toLocaleDateString(),
   });
@@ -43,7 +43,7 @@ export const ViewNews = () => {
   };
   useEffect(() => {
     viewnews();
-  }, [updatedata,editnewsdata]);
+  }, []);
 
   const deletehandler = async (id) => {
     setDeleteid(id);
@@ -110,9 +110,9 @@ export const ViewNews = () => {
     }
   };
   encodefile(selectedimage[0]);
+
   const log = async (e) => {
     e.preventDefault();
-    viewnews();
       console.log(editnewsdata);
       await axios
         .post("/api/auth/editnews", editnewsdata, {
@@ -120,6 +120,7 @@ export const ViewNews = () => {
         })
         .then((res) => {
           setUpdateData(res.data);
+    viewnews();
         });
   };
   return (
