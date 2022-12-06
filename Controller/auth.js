@@ -8,8 +8,6 @@ const Content = require("../Model/Content")
 const Email = require("../Model/Email")
 const Career = require("../Model/Career")
 const jwt = require("jsonwebtoken");
-const { query } = require("express");
-const e = require("express");
 
 var ObjectId = require('mongodb').ObjectId
 
@@ -56,10 +54,10 @@ exports.adminlogin = catchAsyncError(
 )
 exports.addnews = catchAsyncError(
     async(req, res, next)=>{
-        const {title ,  catagory, url, img }= req.body;
+        const {title ,  catagory, url, img,section }= req.body;
         try {
             let newsdata = new News({
-                title, catagory, url, img
+                title, catagory, url, img,section
             })
             newsdata.save().then((result)=>{
                 return res.status(201).json(result)
@@ -94,8 +92,8 @@ exports.addblog = catchAsyncError(
 exports.viewnews = catchAsyncError(
     async(req, res)=>{
         try {
-            if(req.body.catagory){
-                News.find({catagory:req.body.catagory}, (error, result)=>{
+            if(req.body.catagory||req.body.section){
+                News.find({catagory:req.body.catagory,section:req.body.section}, (error, result)=>{
                      if (error) {console.log(error , "viewnews error")}
                      res.send({result})
                  } )
@@ -163,7 +161,7 @@ exports.editidnews = catchAsyncError(
 )
 exports.editnews =catchAsyncError(
     async(req, res, next)=>{
-        await News.findByIdAndUpdate(req.body._id,{"title": req.body.title, "catagory": req.body.catagory, "url": req.body.url, "img": req.body.img}),(error, data)=>{
+        await News.findByIdAndUpdate(req.body._id,{"title": req.body.title, "catagory": req.body.catagory, "url": req.body.url, "img": req.body.img,"section":req.body.section}),(error, data)=>{
             if (error) {
                 console.log(error, "updatenews");
             } else {
@@ -230,7 +228,6 @@ exports.editcontent = catchAsyncError(
        
     }
 )
-
 
 exports.updatecontent = catchAsyncError(
     async(req, res, next)=>{

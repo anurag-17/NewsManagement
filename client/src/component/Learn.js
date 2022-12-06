@@ -26,16 +26,27 @@ import { Learnslider } from './newstab/Learnslider';
 
 const Learn = ({scodata,title}) => {
 const [newsdata,setNewsdata] = useState()
+const [trending,settrending]  = useState()
 
   const viewnews = async () => {
-    await axios.post("/api/auth/viewnews",{catagory:"All"}).then((res) => {
+    await axios.post("/api/auth/viewnews",{catagory:"All",section:"Topics"}).then((res) => {
       setNewsdata(res.data.result);
       newsdata.reverse();
       console.log(newsdata);
     });
   };
+
+  const gettrending = async()=>{
+    await axios.post("/api/auth/viewnews").then((res)=>{
+      settrending(res.data.result.filter((items,index)=>items.section==="NewTrending"))
+      const liked = res.data.result.filter((items,index)=>items.section ==="MostLiked")
+    })
+  }
+
+  console.log(trending)
   useEffect(()=>{
    viewnews()
+   gettrending()
     window.scrollTo(0,0)
     },[])
 console.log(scodata)

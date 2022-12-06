@@ -10,7 +10,8 @@ export const AddNews = () => {
     title: "",
     img: "",
     url: "",
-    catagory:""
+    catagory:"",
+    section:""
   });
   console.log(addnews)
 
@@ -77,7 +78,8 @@ export const AddNews = () => {
           title: "",
           img: "",
           url: "",
-          catagory:""
+          catagory:"",
+          section:""
         })
       });
   };
@@ -142,6 +144,17 @@ export const AddNews = () => {
                   <option value="InterestingFacts">Interesting Facts</option>
                 </select>
                 </label>
+                
+<label style = {{display:"block"}} htmlFor="">
+  Section
+  <select value={addnews.section} style= {{width:"100%",display:"block"}} className="form-select mt-2" name="" id="" onChange={(e)=>{setAddnews({...addnews,section:e.target.value})}}>
+    <option selected disabled value="">Select Section</option>
+    <option value="Topics">Topics</option>
+    <option value="NewTrending">NEW TRENDING</option>
+    <option value="MostLiked">MOST LIKED</option>
+  </select>
+</label>
+
                 <button className="btn btn-primary my-4 ml-4" onClick={log}>
                   Submit
                 </button>
