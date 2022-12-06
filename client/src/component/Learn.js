@@ -27,6 +27,7 @@ import { Learnslider } from './newstab/Learnslider';
 const Learn = ({scodata,title}) => {
 const [newsdata,setNewsdata] = useState()
 const [trending,settrending]  = useState()
+const [liked,setLiked] = useState()
 
   const viewnews = async () => {
     await axios.post("/api/auth/viewnews",{catagory:"All",section:"Topics"}).then((res) => {
@@ -38,12 +39,14 @@ const [trending,settrending]  = useState()
 
   const gettrending = async()=>{
     await axios.post("/api/auth/viewnews").then((res)=>{
-      settrending(res.data.result.filter((items,index)=>items.section==="NewTrending"))
-      const liked = res.data.result.filter((items,index)=>items.section ==="MostLiked")
+     const trend= res.data.result.filter((items,index)=>items.section==="NewTrending")
+      settrending(trend)
+      const like = res.data.result.filter((items,index)=>items.section==="MostLiked")
+      setLiked(like)
     })
   }
 
-  console.log(trending)
+
   useEffect(()=>{
    viewnews()
    gettrending()
@@ -129,7 +132,7 @@ return(
             New Trending
               </div>
     <div style ={{marginTop:"20px"}} id="Learn-slider">
-<Learnslider newsdata={newsdata}/>
+<Learnslider newsdata={trending}/>
 <div className='bannerbtn learnbtn'>
                   <a href="https://www.youtube.com/@BullSmartStockAcademy"><button className='know-btn'>KNOW MORE</button></a>
                 </div>
@@ -144,7 +147,7 @@ return(
             Most Liked
               </div>
     <div style ={{marginTop:"20px"}} id="Learn-slider">
-<Learnslider newsdata={newsdata}/>
+<Learnslider newsdata={liked}/>
 <div className='bannerbtn learnbtn'>
                   <a href="https://www.youtube.com/@BullSmartStockAcademy"><button className='know-btn'>KNOW MORE</button></a>
                 </div>

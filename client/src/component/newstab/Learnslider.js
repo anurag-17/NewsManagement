@@ -20,7 +20,6 @@ export const Learnslider = ({newsdata}) => {
             className="mySwiper"  
           >
             {newsdata&&newsdata.map((item,index)=>{
-              console.log(item);
               return(
 <>
 <div className="tranding_1">
