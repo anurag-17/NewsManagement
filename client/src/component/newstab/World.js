@@ -22,7 +22,6 @@ const World = () => {
   };
 useEffect(() => {
   viewnews();
-
 }, []);
 
 

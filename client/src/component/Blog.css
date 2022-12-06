@@ -684,14 +684,13 @@ div#Latest-slider {
 #Industry-section .text-vertical h3 {
     font-size: 87px;
     line-height: 97px;
-    color:rgb(172, 167, 167);
-
+    color: rgb(172, 167, 167);
     font-weight: 800;
     font-family: 'Arial Bold', sans-serif;
     transform: rotate(-90deg);
     position: absolute;
     top: 300px;
-    right: -335px;  
+    right: -360px;
 }
 #Industry-section .BInvest-btn a {
     font-size: 14px;
@@ -819,6 +818,7 @@ div#Latest-slider {
       }
       
       .Letestslide .swiper-slide img {
+
         display: block;
         width: 100%;
         height: 100%;
@@ -859,7 +859,7 @@ div#Latest-slider {
         margin-left: auto;
         margin-right: auto;
         position: relative;
-        overflow:inherit;
+        /* overflow:inherit; */
         list-style: none;
         padding: 0;
         z-index: 1;
@@ -1012,6 +1012,7 @@ div#Latest-slider {
     }
      #Slider1.rec.rec-swipable {
         padding-top: 60px;
+
     }
     #Slider1 .rec-slider-container {
         position: inherit;

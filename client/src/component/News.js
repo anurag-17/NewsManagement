@@ -290,10 +290,13 @@ return(
                   </div>
                 </div>
               </div>
-              <div className='slide-btn'>
+              <div className='bannerbtn'>
+                  <a href = "https://www.youtube.com/@BullSmartStockAcademy"><button className='know-btn'>More in Videos</button></a>
+                </div>
+              {/* <div className='slide-btn'>
 
-                <button className='Newsbtn'><Link to='/Learn'>More in Video  </Link></button>
-              </div>
+                <button className='Newsbtn'><Link to='/Learn'></Link></button>
+              </div> */}
               {/* <div className='Future-main'>
                 <div className='v-shape'>
                   <h2>V</h2>

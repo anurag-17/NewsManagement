@@ -107,7 +107,9 @@ return(
       <td className='td-1'><h4>{items.title}</h4></td>
       <td> <i class="fa fa-star"></i>{items.category}</td>
       <td><i class="fa fa-location-arrow" aria-hidden="true"></i>{items.location}</td>
-      <a target="blank" href={items.link}><td> More Details→</td></a>
+      <td>
+      <a target="blank" href={items.link}>More Details→</a>
+      </td>
       
 
     </tr>

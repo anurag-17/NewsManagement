@@ -102,8 +102,10 @@ const [emailError,setEmailError] = useState('')
         },2000)
        }).catch((e)=>{
         setShow(false)
-        setEmailError(e.response.data)
-        console.log(e);
+        setMessage(e.response.data)
+        setTimeout(()=>{
+          setMessage("")
+        },3000)
        })
     },500)
 
@@ -313,8 +315,6 @@ return(
                     </div>
                   </form>
                   <p style={{ fontSize: "17px", fontWeight: "500", fontFamily: "sans-serif", color: "rgba(255, 255, 255, 0.637)", marginTop: "10px" }} >{message}</p>
-                  <p style={{ fontSize: "17px", fontWeight: "600", fontFamily: "sans-serif", color: "red", marginTop: "10px" }} >{emailError}</p>
-
                 </div>
               </div>
               <div className='col-lg-7 col-md-7'>

@@ -15,23 +15,27 @@ import learnCat2 from './Images/learn-cat/learn-cat2.png';
 import learnCat3 from './Images/learn-cat/learn-cat3.png';
 import learnCat4 from './Images/learn-cat/learn-cat4.png';
 import learnCat5 from './Images/learn-cat/learn-cat5.png';
-
+import ReactPlayer from 'react-player'
 import './Learn.css';
 import LetestNewstab from './LetestNewstab';
 import axios from 'axios';
 import { Helmet } from 'react-helmet';
+import { Learnslider } from './newstab/Learnslider';
 
 
 
 const Learn = ({scodata,title}) => {
+const [newsdata,setNewsdata] = useState()
 
-
-  // const getscodata = async({scodata})=>{
-  //   const res = await axios.post("/api/auth/getmetadata",{pagename:"Learn"})
-  //   setscodata(res.data)
-  // }
+  const viewnews = async () => {
+    await axios.post("/api/auth/viewnews",{catagory:"All"}).then((res) => {
+      setNewsdata(res.data.result);
+      newsdata.reverse();
+      console.log(newsdata);
+    });
+  };
   useEffect(()=>{
-    // getscodata()
+   viewnews()
     window.scrollTo(0,0)
     },[])
 console.log(scodata)
@@ -81,16 +85,17 @@ return(
           <div className='container'>
             <div className='learninvesAlign'>
               <div className='l-invesleft l-investdes'>
-                <h4>Investing  . 4 min </h4>
+                {/* <h4>Investing  . 4 min </h4> */}
                   <h3> Bullsmart Stock Academy</h3>
                   <p>   Take few minutes a day to become your own financial advisor.
                   </p>
-                  <button className='neain-invst'><a hrf="#">  Keep reading  </a></button>
+                  <button className='neain-invst'><a style={{textDecoration:"none"}} target="blank" href="https://www.youtube.com/@BullSmartStockAcademy">  Keep Learning  </a></button>
               </div>
 
               <div className='l-invesleft'>
                 <div className='learninvestimg'>
-               <iframe className='iframeclass' src="https://www.youtube.com/embed/WNw_TFVE0kk" title="BullSmart Stock Academy Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <ReactPlayer loop ={true} controls={true} url='https://www.youtube.com/embed/WNw_TFVE0kk' />
+               {/* <iframe className='iframeclass' src="https://www.youtube.com/embed/WNw_TFVE0kk" title="BullSmart Stock Academy Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */}
                 </div>
               </div>
             </div>
@@ -105,6 +110,37 @@ return(
             <LetestNewstab/>
             </div>
         </section>
+
+
+        <section id='topic-sec'>          
+           <div className='container'>
+            <div class="Newtext-divider">
+            New Trending
+              </div>
+    <div style ={{marginTop:"20px"}} id="Learn-slider">
+<Learnslider newsdata={newsdata}/>
+<div className='bannerbtn learnbtn'>
+                  <a href="https://www.youtube.com/@BullSmartStockAcademy"><button className='know-btn'>KNOW MORE</button></a>
+                </div>
+    </div>
+            </div>
+        </section>
+
+
+        <section id='topic-sec'>          
+           <div className='container'>
+            <div class="Newtext-divider">
+            Most Liked
+              </div>
+    <div style ={{marginTop:"20px"}} id="Learn-slider">
+<Learnslider newsdata={newsdata}/>
+<div className='bannerbtn learnbtn'>
+                  <a href="https://www.youtube.com/@BullSmartStockAcademy"><button className='know-btn'>KNOW MORE</button></a>
+                </div>
+    </div>
+            </div>
+        </section>
+
 
         {/* <section id='learnCat-sec'>
           <div className='container'>

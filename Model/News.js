@@ -7,12 +7,14 @@ const newsSchema = new mongoose.Schema({
     "catagory": {
         type: String
     },
+    "section":{
+       type: String
+    },
     "url":{
-        type:String,
-      
+        type:String      
     },
     "img":{
-        type: String,
+        type: String
     }
 })
 const News = mongoose.model("news", newsSchema)

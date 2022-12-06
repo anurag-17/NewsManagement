@@ -37,6 +37,11 @@ const Blog = ({scodata,title}) => {
       setBlogdata(res.data.result)
     })
   }, [])
+
+  const shuffle = arr => [...arr].sort(() => Math.random() - 0.5);
+  console.log(Math.random() - 0.5)
+  const newList = shuffle(blogdata);
+  console.log(newList)
   return (
     <div className='body-main'>
                 {
@@ -113,18 +118,28 @@ return(
                   <h3>Must Read</h3>
                 </div>
                 <div className='Blog-MRead'>
+                  {
+                    newList.slice(0,3).map((items,index)=>{
+                      const trimtitle = items.title.replace(
+                        / +/g,
+                        "-"
+                      )
+                      return(
+                        <Link style={{textDecoration:"none"}} to = {`/${trimtitle}`}>
+                        <div className='Blog-mread1'>
+                        <p>{items.title}</p>
+                      </div>
+                      </Link>
+                      )
+                    })
+                  }
+{/* 
                   <div className='Blog-mread1'>
-                    {/* <h3>SEPTEMBER 02</h3> */}
-                    <p>Getting started in the stock market:things to consider</p>
-                  </div>
-                  <div className='Blog-mread1'>
-                    {/* <h3>SEPTEMBER 02</h3> */}
                     <p>Mutual Funds: The Definitive Guide to Building Your Portfolio</p>
                   </div>
                   <div className='Blog-mread1'>
-                    {/* <h3>SEPTEMBER 02</h3> */}
                     <p>Mutual Funds: The Definitive Guide to Building Your Portfolio</p>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
@@ -248,7 +263,7 @@ return(
         </div>
       </section>
 
-
+      Healthy Weight
       <section id='Planning-section'>
         <div className='Binveshape'>
           <div className='container BInvest-rigth'>
