@@ -87,7 +87,6 @@ const Footer = () => {
               <div className='col-lg-6 col-md-6'>
                 <div className='social-menu'>
                   <ul className='socillist'>
-
                     <li><a href='#'><i class="fa fa-youtube-play"></i></a></li>
                     <li><a href='#'><i class="fa fa-facebook-f"></i></a></li>
                     <li><a href='#'><i class="fa fa-twitter"></i></a></li>

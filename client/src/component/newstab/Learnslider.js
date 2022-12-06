@@ -1,7 +1,6 @@
 import React from 'react'
 import { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide , pagination} from "swiper/react";
-
 export const Learnslider = ({newsdata}) => {
   return (
   <>
@@ -15,16 +14,31 @@ export const Learnslider = ({newsdata}) => {
             pagination={{
               clickable: true,
             }}
+            breakpoints={{
+              400: {
+                slidesPerView: 1,
+                spaceBetween: 10,
+              },
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 30,
+              },
+              1024: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+              },
+            }}
             navigation={true}        
             modules={[Pagination, Navigation]}
             className="mySwiper"  
+            
           >
             {newsdata&&newsdata.map((item,index)=>{
               console.log(item);
               return(
-<>
-<div className="tranding_1">
-<div className="tranding-item1">
+          <>
+          <div className="tranding_1">
+          <div className="tranding-item1">
           <div className="traningimg">            
           <SwiperSlide>
           <a

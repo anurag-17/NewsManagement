@@ -97,6 +97,7 @@ section#LearnAbout-sec {
 }
 section#investing-learn {
     padding: 60px 0px 60px 0px;
+    overflow: hidden;
 }
 .learninvesAlign {
     border-radius: 10px;
@@ -237,6 +238,21 @@ button.neain-invst {
     font-style: normal;
     color: #C79F62;
     font-weight: 700;
+}
+ 
+#Learn-slider .swiper-button-prev {
+    background-color: transparent !important;
+    border: none !important;
+}
+#Learn-slider .swiper {
+    width: 100%;
+}
+#Learn-slider .swiper-button-next{
+    background-color: transparent !important;
+    border: none !important;
+}
+#Learn-slider .swiper-slide a {
+    width: 75%;
 }
 /* Topic section end */
 
@@ -409,6 +425,23 @@ section#learnCat-sec {
         font-size: 20px;
         line-height: 24px;
     }
+    .learninvesAlign {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 0px;
+    }
+    .learnabout {
+        padding: 150px 0px 150px 0px;
+    }
+    .l-invesleft {
+        width: 100%;
+    }   
+    
+    .learnabout h3 {
+        font-size: 60px;
+        line-height: 90px;
+        padding-bottom: 0px;
+    }
   }
 
   @media (max-width:767px) {
@@ -428,6 +461,12 @@ section#learnCat-sec {
     }
     #tranding-section {
         padding: 30px 0px 30px 0px;
+    }
+    .learnabout {
+        padding: 110px 0px 110px 0px;
+    }
+    .l-investdes {
+        padding-bottom: 30px;
     }
 }
 

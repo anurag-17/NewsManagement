@@ -333,7 +333,7 @@ return(
         </div>
       </section>
 
-      <div className='container'>
+      <div className='container news-carosael'>
         <Carousel
           showThumbs={false}
           autoPlay
