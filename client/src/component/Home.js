@@ -197,11 +197,9 @@ return(
           <div className='home-news'>
             <div className='Homenews-grid'>
               <Topnews apidata={data} />
-              <div className='d-flex justify-content-center'>
-                <Link to="/news/">
-                  <button className='view-btn mb-4 hoverclass'>KNOW MORE</button>
-                </Link>
-              </div>
+              <div style={{paddingTop:"0"}} className='bannerbtn mb-3'>
+                  <Link to="/news/"><button className='know-btn'>KNOW MORE</button></Link>
+                </div>
             </div>
           </div>
 
@@ -369,9 +367,9 @@ return(
               </div>
             </div>
             <div className='view-btn'>
-              <Link to="/Learn">
-                <button className='view-btn'>VIEW MORE</button>
-              </Link>
+              <div style={{paddingTop:"0"}} className='bannerbtn mb-3'>
+                  <Link to="/learn/"><button className='know-btn'>VIEW MORE</button></Link>
+                </div>
             </div>
           </div>
         </section>
@@ -443,9 +441,9 @@ return(
 
           </div>
           <div className='view-btn'>
-            <Link to="/Blog">
-              <button className='view-btn'>VIEW MORE</button>
-            </Link>
+          <div style={{paddingTop:"0"}} className='bannerbtn mb-3'>
+                  <Link to="/blog/"><button className='know-btn'>VIEW MORE</button></Link>
+                </div>
           </div>
         </div>
       </section>
