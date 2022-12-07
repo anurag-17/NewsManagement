@@ -346,12 +346,10 @@ exports.useremail = catchAsyncError(
         console.log(req.body);
         const {email} = req.body
         try {
-            const {valid, reason, validators } = isEmailValid(req.body.email);
-            console.log(valid)
-            if(!valid) {
-                return res
-                  .status(500)
-                  .json("email is invalid please enter a valid email");
+            const {valid, reason, validators} = isEmailValid("chandrawanshiaashutosh@gmail.com");
+            console.log(valid,reason,validators)
+            if(!valid){         
+                  res.status(500).send("email is invalid please enter a valid email");
               }
               else{
                   let useremail = new Email({email})
