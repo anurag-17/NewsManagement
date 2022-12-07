@@ -3,6 +3,15 @@ import { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide , pagination} from "swiper/react";
 import "swiper/css";
 import Img1 from "../Images/blog-img3.png";
+import Carousel from "react-elastic-carousel";
+
+
+const breakPoints = [
+  { width: 1, itemsToShow: 1 },
+  { width: 550, itemsToShow: 2, itemsToScroll: 2 },
+  { width: 768, itemsToShow: 4 },
+  { width: 1200, itemsToShow: 5 }
+];
 export const Learnslider = ({newsdata}) => {
   return (
   <> 
@@ -62,7 +71,7 @@ export const Learnslider = ({newsdata}) => {
 </Swiper> */}
 
       <div>
-      <Swiper
+      {/* <Swiper
         slidesPerView={1}
         spaceBetween={10}
         pagination={{
@@ -112,7 +121,37 @@ export const Learnslider = ({newsdata}) => {
       </>
       )
       })}
-      </Swiper>
+      </Swiper> */}
+      <div className="container">
+            <Carousel breakPoints={breakPoints}>
+            {newsdata&&newsdata.map((item,index)=>{
+              console.log(item);
+              return(
+          <>
+          <div className="tranding-item1">
+          <div className="traningimg">            
+          
+          <a
+              target="blank"
+              href={item.url}
+            >
+              {" "}
+              <img src={item.img} alt="trandingimg"></img>
+            </a>
+         
+
+          </div>
+          <a target="blank" href={item.url}>
+            {item.title}
+          </a>
+        </div>
+    
+      </>
+      )
+      })} 
+
+            </Carousel>
+            </div>
       </div>
 
   </>

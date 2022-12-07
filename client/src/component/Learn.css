@@ -390,7 +390,54 @@ section#learnCat-sec {
 }
 
 /* recommand-sec section end */
-
+/* leran slider */
+.rec-arrow-left {
+    left: 16%;
+    position: inherit;
+    top: -76px;
+}
+.rec-arrow-right {
+    position: inherit;
+    left: 22%;
+    top: -75px;
+}
+.tranding-item1 a {
+    font-size: 20px;
+    line-height: 28px;
+    color: #1F286F;
+    font-weight: 600;
+    font-family: 'Arial Bold', sans-serif;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    padding-bottom: 0px;
+}
+.kXteup , .Slxdj {
+    font-size:12px;
+    background-color: transparent !important;
+    color: #333;
+    box-shadow: none !important;
+    border-radius: 50%;
+    border: none !important;
+    padding: 0;
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    line-height: 50px;
+}
+.tranding-item1 {
+    padding: 0px 10px;
+}
+.kXteup:hover:enabled, .kXteup:focus:enabled {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    color: #000 !important;
+}
+/* .traningimg img {
+    width: 100%;
+} */
 
 
 /* responsive */
@@ -489,6 +536,9 @@ section#learnCat-sec {
     }
     #recommand-sec .tranding_1 {
         grid-template-columns: repeat(2,1fr);
+    }
+    #topic-sec {
+        padding: 0px 0px 16px 0px;
     }
 }
 

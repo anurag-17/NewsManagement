@@ -865,8 +865,20 @@ margin-top: auto;
     .contentbox_bodyA{
         width: 80%;
     }
+    .news-carosael {
+        width: 100%;
+        max-width: 400px !important;
+    }
 }
 @media (max-width:629px) {
+    .sponser_content{
+        margin: 0 auto;
+    }
+}
+
+
+
+@media (max-width:400px) {
     .sponser_content{
         margin: 0 auto;
     }
