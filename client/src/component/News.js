@@ -337,7 +337,6 @@ return(
         <Carousel
           showThumbs={false}
           autoPlay
-          
           infiniteLoop
         >
           {data.map((items, index) => {
