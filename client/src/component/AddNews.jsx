@@ -98,6 +98,7 @@ export const AddNews = () => {
                   name="title"
                   id=""
                   placeholder="Title"
+                  value={addnews.title}
                   onChange={Input_handler}
                   className="title_input mt-4"
                 />
