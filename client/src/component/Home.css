@@ -853,6 +853,9 @@ font-family: 'Arial Bold', sans-serif;
     font-size: 18px;
     line-height: 24px;
 }
+.widthcenter {
+    width: 100%;
+}
 }
 @media (max-width:867px){
     .topNewsdata a:nth-child(2) {
@@ -955,6 +958,12 @@ section#New-section {
 .topNewsdata a:nth-child(2) h3 {
     font-size: 18px;
     line-height: 28px;
+}
+.widthcenter {
+    width: 100%;
+}
+.slideb1 {
+    padding-top: 40px;
 }
 }
 
@@ -1090,5 +1099,8 @@ section#New-section {
     .topNewsdata a img {
         float: inherit;
         max-width: 100%;
+    }
+    .topNewsdata a:nth-child(2) .NewsImg2 img {
+        max-width:100%;
     }
  }
