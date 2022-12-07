@@ -252,15 +252,15 @@ return(
       </section> */}
       <section id='LetNews-section'>
         <div className='container'>
-          <div className='row'>
-            <div className='col-lg-8 col-md-8 LetNews'>
+          <div className='row letnews-'>
+            <div className='col-lg-8 col-md-8 LetNews letnews-1'>
               <div className="Newtext-divider">
                 THE LATEST
               </div>
               <NewsArtical apidata={data.slice(0,10)} />
             </div>
 
-            <div className='col-lg-4 col-md-4'>
+            <div className='col-lg-4 col-md-4 letnews-1'>
               <div className="Newtext-divider">
                 VIDEOS
               </div>
@@ -386,26 +386,26 @@ return(
 
 
       <section>
-        <div className="container mt-4">
+      <div className="container mt-4">
           <div className='row'>
-            <div className='col-lg-12 col-md-8 LetNews'>
+            <div className='col-lg-12 col-md-8 col-sm-8 LetNews d-flex justify-content-center'>
 
               <div className="accordion mb-4" id="accordionExample">
-  <div className="accordion-item">
-    <h2 className="accordion-header" id="panelsStayOpen-headingOne">
-      <button style = {{border:"2px solid #4af8d5"}} className="accordion-button collapsed text-center" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-        <div style = {{width:"100%",color:"#4af8d5",fontWeight:"550",fontSize:"20px"}}>
-        More News
-        </div>
-      </button>
-    </h2>
-    <div id="panelsStayOpen-collapseOne" className="accordion-collapse collapse" aria-labelledby="headingOne">
-      <div className="accordion-body">
-              <NewsArtical apidata={data.slice(10,data.length)} />
-      </div>
-    </div>
-  </div>
-</div>
+            <div className="accordion-item">
+              <h2 className="accordion-header" id="panelsStayOpen-headingOne">
+                <button style = {{border:"2px solid #4af8d5"}} className="accordion-button collapsed text-center" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                  <div className='px-4' style = {{width:"100%",color:"#4af8d5",fontWeight:"550",fontSize:"20px"}}>
+                  More News
+                  </div>
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseOne" className="accordion-collapse collapse" aria-labelledby="headingOne">
+                <div className="accordion-body">
+                        <NewsArtical apidata={data.slice(10,data.length)} />
+                </div>
+              </div>
+            </div>
+          </div>
 
 
               {/* <div className="news_contentbox">

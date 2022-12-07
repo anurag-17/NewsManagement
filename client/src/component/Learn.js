@@ -99,7 +99,7 @@ return(
           <div className='container'>
             <div className='learninvesAlign'>
               <div className='l-invesleft l-investdes'>
-                {/* <h4>Investing  . 4 min </h4> */}
+                {/* <h4>Investing  . 4 min </h4>  */}
                   <h3> Bullsmart Stock Academy</h3>
                   <p>   Take few minutes a day to become your own financial advisor.
                   </p>
@@ -109,11 +109,11 @@ return(
               <div className='l-invesleft'>
                 <div className='learninvestimg'>
                 <ReactPlayer loop ={true} controls={true} url='https://www.youtube.com/embed/WNw_TFVE0kk' />
-               {/* <iframe className='iframeclass' src="https://www.youtube.com/embed/WNw_TFVE0kk" title="BullSmart Stock Academy Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */}
+              {/* <iframe className='iframeclass' src="https://www.youtube.com/embed/WNw_TFVE0kk" title="BullSmart Stock Academy Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  */}
                 </div>
               </div>
             </div>
-          </div>
+            </div>
         </section>
 
         <section id='topic-sec'>          
@@ -144,7 +144,7 @@ return(
         <section id='topic-sec'>          
            <div className='container'>
             <div class="Newtext-divider">
-            Most Liked
+            MOST VIEWED
               </div>
     <div style ={{marginTop:"20px"}} id="Learn-slider">
 <Learnslider newsdata={liked}/>
