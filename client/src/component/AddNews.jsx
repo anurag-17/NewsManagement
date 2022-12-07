@@ -89,7 +89,7 @@ export const AddNews = () => {
       <div className="flex_news bgnews">
         <AdminDash />
         <div className="container adminnews scroll-main mt-3">
-          <h2 style={{ fontSize: "1.8rem",fontWeight:"600" }}>Add Vedio</h2>
+          <h2 style={{ fontSize: "1.8rem",fontWeight:"600" }}>Add Video</h2>
           <div>
             <form action="">
               <div className="flex-image">
