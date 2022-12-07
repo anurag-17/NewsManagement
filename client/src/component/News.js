@@ -334,7 +334,7 @@ return(
       </section>
 
       <div className='container news-carosael'>
-        <Carousel
+        {/* <Carousel
           showThumbs={false}
           autoPlay
           infiniteLoop
@@ -353,7 +353,7 @@ return(
               )
             })
           }
-        </Carousel>
+        </Carousel> */}
         
       </div>
 
