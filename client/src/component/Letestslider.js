@@ -9,7 +9,14 @@ import letestslide6 from './Images/letestSlide6.png';
 import guidslid1 from './Images/guid-slide1.png';
 import guidslid2 from './Images/guid-slide2.png';
 import { Navigation, Pagination } from "swiper";
+import Carousel from "react-elastic-carousel";
 
+const breakPoints = [
+  { width: 1, itemsToShow: 1 },
+  { width: 550, itemsToShow: 2, itemsToScroll: 2 },
+  { width: 768, itemsToShow: 4 },
+  { width: 1200, itemsToShow: 5 }
+];
 
 const Letestslider = ({apidata}) => {
   if(apidata){
@@ -116,6 +123,30 @@ const Letestslider = ({apidata}) => {
      
       </div>
     </div>
+
+      <div className="container">
+            <Carousel breakPoints={breakPoints}>
+            {
+        parsed&&
+        parsed.map((items,index)=>{
+          console.log(items["media:content"]._attributes)
+          return(
+            <div>
+           <div id='Latest-slider'>
+            <div className='latest-img'>
+              <img src={items["media:content"]._attributes.url} alt='slide'></img>
+            </div>
+            <h4 className='time-head'>2 min read1</h4>
+            <h3>{items.title._cdata}</h3>
+            <p>Smt. Madhabi Puri Buch, the...</p>
+          </div>
+          </div>
+          )
+        })
+      }    
+
+            </Carousel>
+            </div>
     </div>
   )
 }
