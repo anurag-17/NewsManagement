@@ -396,7 +396,6 @@ return(
                   <div className='blod-des'>
                     <h3>{items.title}</h3>
                     <div className='blog-btn'>
-
                       <button className='Blog-btn'><a href='#'>Read More<i className="fa fa-angle-double-right"></i></a></button>
                     </div>
                   </div>
@@ -407,8 +406,7 @@ return(
                 )
               })
             }
-{/* 
-            <div className='blog_item1'>
+{/*  <div className='blog_item1'>
               <Link to="/Blog_2" target="_blank">
                 <div className='blog-Ct'>
                   <div className='blogImg'>
