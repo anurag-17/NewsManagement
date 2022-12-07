@@ -346,7 +346,7 @@ exports.useremail = catchAsyncError(
         console.log(req.body);
         const {email} = req.body
         try {
-            const {valid, reason, validators} = isEmailValid("chandrawanshiaashutosh@gmail.com");
+            const {valid, reason, validators} = await isEmailValid(email);
             console.log(valid,reason,validators)
             if(!valid){         
                   res.status(500).send("email is invalid please enter a valid email");
@@ -357,7 +357,7 @@ exports.useremail = catchAsyncError(
                       res.send("Submitted Successfully")
                       console.log("successfully feeded email");
                   }).catch((err)=>{
-                      console.log(err, " email feederrror");
+                      console.log(err, "email feederrror");
                   })
 
               }
@@ -367,6 +367,7 @@ exports.useremail = catchAsyncError(
         }
     }
 )
+
 exports.viewemail = catchAsyncError(
     async(req,res, next)=>{
         try {
@@ -382,24 +383,6 @@ exports.viewemail = catchAsyncError(
     }
 )
 
-// exports.useremail = catchAsyncError(
-//     async (req, res, next) => {
-//         console.log(req.body);
-//         const { email } = req.body
-//         try {
-//             let useremail = new Email({ email })
-
-//             useremail.save().then((result) => {
-//                 res.send("Submitted Successfully")
-//                 console.log("successfully feeded email");
-//             }).catch((err) => {
-//                 console.log(err, " email feederrror");
-//             })
-//         } catch (error) {
-//             console.log(error);
-//         }
-//     }
-// )
 
 // exports.viewemail = catchAsyncError(
 //     async (req, res, next) => {
