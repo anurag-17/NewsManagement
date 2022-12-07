@@ -168,7 +168,7 @@ return(
           </div>
         </div>
       </section>
-      <section style={{ paddingTop: "40px" }} id='Top-News'>
+      <section style={{ paddingTop: "30px" }} id='Top-News'>
         <div className='container'>
           <div className="TopAriclnew">
             <span ><h2 style={{ color: 'black' }}>TOP NEWS</h2></span>
@@ -337,7 +337,6 @@ return(
         <Carousel
           showThumbs={false}
           autoPlay
-          
           infiniteLoop
         >
           {data.map((items, index) => {

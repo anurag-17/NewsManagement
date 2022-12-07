@@ -13,7 +13,6 @@ export const AdminDash = () => {
   const navigate = useNavigate()
   useEffect(() => {
     axios.get("/api/auth/adminin", { params: token !== null ? token.token : "" }).then((res) => {
-      console.log(res);
       if (res.data.message == "error") {
         navigate("/admin")
       }

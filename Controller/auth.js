@@ -18,7 +18,6 @@ async function isEmailValid(email) {
     return emailValidator.validate(email);
   }
 
-
 exports.adminlogin = catchAsyncError(
     async (req, res, next) => {
         const { email, password } = req.body;
@@ -345,15 +344,14 @@ exports.useremail = catchAsyncError(
     async(req, res, next)=>{
         console.log(req.body);
         const {email} = req.body
-        try {
-            const {valid, reason, validators} = await isEmailValid(email);
+            const {valid, reason, validators} = await isEmailValid(req.body.email);
             console.log(valid,reason,validators)
             if(!valid){         
                   res.status(500).send("email is invalid please enter a valid email");
               }
-              else{
+              else if(valid){
                   let useremail = new Email({email})
-                  useremail.save().then((result)=>{
+                 await useremail.save().then((result)=>{
                       res.send("Submitted Successfully")
                       console.log("successfully feeded email");
                   }).catch((err)=>{
@@ -362,11 +360,9 @@ exports.useremail = catchAsyncError(
 
               }
 
-        } catch (error) {
-            console.log(error);
-        }
     }
 )
+
 
 exports.viewemail = catchAsyncError(
     async(req,res, next)=>{

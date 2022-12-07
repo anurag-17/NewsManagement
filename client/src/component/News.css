@@ -817,7 +817,10 @@ margin-top: auto;
     .sponser_content{
     width: 300px;
     }
-    
+    .news-carosael {
+        width: 100%;
+        max-width: 500px !important;
+    }
 }
 
 @media (max-width:667px) {
