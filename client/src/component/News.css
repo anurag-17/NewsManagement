@@ -720,11 +720,13 @@ margin-top: auto;
     .newsleft1 {
         padding-right: 30px;
 
+    }  
+    .news-carosael {
+        max-width: 667px;
     }
-    /* .remove_container{
-        width: 80% !important;
-        margin: 0 auto !important;
-    } */
+    iframe {
+        width: 100% !important;
+    }
 }
 
 
@@ -824,7 +826,7 @@ margin-top: auto;
     }
 
     section#LetNews-section {
-        padding: 0px 0px 0px 0px
+        padding: 0px 0px 40px 0px
     }
 
     .slide-btn {

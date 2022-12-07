@@ -244,16 +244,14 @@ button.neain-invst {
     background-color: transparent !important;
     border: none !important;
 }
-#Learn-slider .swiper {
-    width: 100%;
-}
+
 #Learn-slider .swiper-button-next{
     background-color: transparent !important;
     border: none !important;
 }
 #Learn-slider .swiper-slide a {
-    width: 75%;
-}
+    width: 75% !important;
+} */
 /* Topic section end */
 
 /* tranding-section start */
