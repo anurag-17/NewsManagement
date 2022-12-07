@@ -10,6 +10,9 @@ import letestslide6 from './Images/letestSlide6.png';
 import guidslid1 from './Images/guid-slide1.png';
 import guidslid2 from './Images/guid-slide2.png';
 import { Link } from 'react-router-dom';
+import "./styles.css";
+import "swiper/css";
+
 
 export const Blogslider = ({blogdata}) => {
   console.log(blogdata)
@@ -17,7 +20,6 @@ export const Blogslider = ({blogdata}) => {
     <div>
     <div className='guidslide'>
     <div className='Let-slider1'>
-
    <Swiper  
     slidesPerView={4}
       spaceBetween={45}
@@ -28,20 +30,16 @@ export const Blogslider = ({blogdata}) => {
         clickable: true,
       }}
       breakpoints={{
-        "@0.00": {
-          slidesPerView: 1,
-          spaceBetween: 10,
-        },
-        "@0.75": {
+        640: {
           slidesPerView: 2,
           spaceBetween: 20,
         },
-        "@1.00": {
+        768: {
           slidesPerView: 3,
           spaceBetween: 40,
         },
-        "@1.50": {
-          slidesPerView: 4,
+        1024: {
+          slidesPerView: 5,
           spaceBetween: 50,
         },
       }}
@@ -63,61 +61,18 @@ export const Blogslider = ({blogdata}) => {
              <img src={items.url} alt='slide'></img>
            </div>
            <h4 className='time-head'>2 min read</h4>
-           <h3>{items.title}</h3>
-           {/* <p>Smt. Madhabi Puri Buch, the...</p> */}
+           <h3>{items.title}</h3>        
          </div>
         </Link>
 
        </SwiperSlide>
         )
       })
-     }  
-
-
-      {/* <SwiperSlide>
-      <div id='Latest-slider'>
-          <div className='latest-img'>
-            <img src={letestslide2} alt='slide'></img>
-          </div>
-          <h4 className='time-head'>2 min read</h4>
-          <h3>Things to know before you start investing</h3>
-          <p>Intro: There are a plethora of terms and acronyms that you need to know if you want to understand the...</p>
-        </div>
-      </SwiperSlide>
-      <SwiperSlide>
-      <div id='Latest-slider'>
-          <div className='latest-img'>
-            <img src={letestslide3} alt='slide'></img>
-          </div>
-          <h4 className='time-head'>2 min read</h4>
-          <h3>Mutual Funds Terminologies: Your Complete Guide</h3>
-          <p>Intro: There are a plethora of terms and acronyms that you need to know if you want to understand the...</p>
-        </div>
-      </SwiperSlide>
-      <SwiperSlide>
-      <div id='Latest-slider'>
-          <div className='latest-img'>
-            <img src={letestslide4} alt='slide'></img>
-          </div>
-          <h4 className='time-head'>2 min read</h4>
-          <h3>Top myths about investing in the stock market</h3>
-          <p>Top myths about investing in the stock market</p>
-        </div>
-      </SwiperSlide>
-      <SwiperSlide>
-      <div id='Latest-slider'>
-          <div className='latest-img'>
-            <img src={letestslide6} alt='slide'></img>
-          </div>
-          <h4 className='time-head'>2 min read</h4>
-          <h3>Top myths about investing in the stock market</h3>
-          <p>Let’s break the 5 common myths that are stopping you from getting started with your investment journey...</p>
-        </div>
-      </SwiperSlide> */}
-    </Swiper>
-   
+     }      
+    </Swiper>  
     </div>
-  </div>
+  </div> 
+ 
   </div>
   )
 }
