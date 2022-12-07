@@ -12,13 +12,20 @@ import guidslid2 from './Images/guid-slide2.png';
 import { Link } from 'react-router-dom';
 import "./styles.css";
 import "swiper/css";
+import Carousel from "react-elastic-carousel";
 
+const breakPoints = [
+  { width: 1, itemsToShow: 1 },
+  { width: 550, itemsToShow: 2, itemsToScroll: 2 },
+  { width: 768, itemsToShow: 4 },
+  { width: 1200, itemsToShow: 5 }
+];
 
 export const Blogslider = ({blogdata}) => {
   console.log(blogdata)
   return (
     <div>
-    <div className='guidslide'>
+    {/* <div className='guidslide'>
     <div className='Let-slider1'>
    <Swiper  
     slidesPerView={4}
@@ -71,8 +78,34 @@ export const Blogslider = ({blogdata}) => {
      }      
     </Swiper>  
     </div>
-  </div> 
- 
+    </div>  */}
+
+      <div className="container">
+          <Carousel breakPoints={breakPoints}>
+          {
+       blogdata.map((items,index)=>{
+        const trimtitle = items.title.replace(
+          / +/g,
+          "-"
+        )
+        return(
+          <div>
+          <div className="LetestStories">
+          <div className="Let-Image">
+          <img src={items.url} alt='slide'></img>
+          </div>
+          <h3 className="title-Mint">
+              2 Minut ago
+          </h3>
+          <h2>{items.title}</h2>         
+          </div>
+         </div>
+        )
+      })
+     }    
+
+            </Carousel>
+            </div>
   </div>
   )
 }
