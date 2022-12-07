@@ -35,7 +35,6 @@ export const Learnslider = ({newsdata}) => {
             
           >
             {newsdata&&newsdata.map((item,index)=>{
-              console.log(item);
               return(
           <>
           <div className="tranding_1">

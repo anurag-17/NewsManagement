@@ -3,6 +3,10 @@ import logo from '../Images/logo.png';
 import downlaodimg1 from '../Images/google-playstore.png';
 import './Footer.css';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCoffee} from '@fortawesome/free-solid-svg-icons'
+import {faFacebookF, faYoutube,faInstagram,faTwitter, faLinkedinIn} from '@fortawesome/free-brands-svg-icons';
+
 const Footer = () => {
   return (
     <div>
@@ -87,11 +91,11 @@ const Footer = () => {
               <div className='col-lg-6 col-md-6'>
                 <div className='social-menu'>
                   <ul className='socillist'>
-                    <li><a href='#'><i class="fa fa-youtube-play"></i></a></li>
-                    <li><a href='#'><i class="fa fa-facebook-f"></i></a></li>
-                    <li><a href='#'><i class="fa fa-twitter"></i></a></li>
-                    <li><a href='#'><i class="fa fa-linkedin"></i></a></li>
-                    <li><a href='#'><i class="fa fa-instagram"></i></a></li>
+                    <li> <a href = "#"><FontAwesomeIcon icon={faFacebookF} /></a> </li>
+                    <li><a target="blank" href='https://www.youtube.com/@BullSmartStockAcademy'><FontAwesomeIcon icon={faYoutube} /></a></li>
+                    <li><a target="blank" href='https://twitter.com/Bullsmartapp'><FontAwesomeIcon icon={faTwitter} /></a></li>
+                    <li><a target="blank" href='https://www.instagram.com/bullsmart_official/'><FontAwesomeIcon icon={faInstagram} /></a></li>
+                    <li><a target="blank" href='https://www.linkedin.com/company/bullsmart/'><FontAwesomeIcon icon={faLinkedinIn} /></a></li>
                   </ul>
                 </div>
               </div>
