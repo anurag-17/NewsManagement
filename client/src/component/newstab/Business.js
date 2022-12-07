@@ -24,9 +24,9 @@ const Business = () => {
     <div id="Learn-slider">
 <Learnslider newsdata={newsdata}/>
     </div>
-      <div className='bannerbtn learnbtn'>
-                  <a href="https://www.youtube.com/playlist?list=PLQ0dEPuPJTIU-ykMY5JtIdTxA9s-Ai44A"><button className='know-btn'>KNOW MORE</button></a>
-      </div>
+    <div className='bannerbtn learnbtn'>
+                  <a target="blank" href="https://www.youtube.com/@BullSmartStockAcademy"><button className='know-btn'>KNOW MORE</button></a>
+                </div>
     </div>
   );
 };
