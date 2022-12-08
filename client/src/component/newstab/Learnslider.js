@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide , pagination} from "swiper/react";
 import "swiper/css";
@@ -9,10 +9,27 @@ import Carousel from "react-elastic-carousel";
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
   { width: 550, itemsToShow: 2, itemsToScroll: 2 },
-  { width: 768, itemsToShow: 4 },
-  { width: 1200, itemsToShow: 5 }
+  { width: 768, itemsToShow: 3 },
+  { width: 1200, itemsToShow: 3 }
 ];
 export const Learnslider = ({newsdata}) => {
+
+  const carouselRef = useRef(null);
+ 
+  let resetTimeout;
+  
+  const onNextStart = (currentItem, nextItem) => {
+    if (currentItem.index === nextItem.index) {
+      // we hit the last item, go to first item
+      carouselRef.current.goTo(0);
+    }
+  };
+  const onPrevStart = (currentItem, nextItem) => {
+    if (currentItem.index === nextItem.index) {
+      // we hit the first item, go to last item
+      carouselRef.current.goTo(newsdata.length);
+    }
+  };
   return (
   <> 
           {/* <Swiper
@@ -122,11 +139,14 @@ export const Learnslider = ({newsdata}) => {
       )
       })}
       </Swiper> */}
+      <div></div>
       <div className="container">
             <Carousel breakPoints={breakPoints}
-            enableAutoPlay 
-            autoPlaySpeed={3000}
-             >
+            ref={carouselRef}
+            onPrevStart={onPrevStart}
+            onNextStart={onNextStart}
+            disableArrowsOnEnd={false}
+            >
             {newsdata&&newsdata.map((item,index)=>{
               console.log(item);
               return(

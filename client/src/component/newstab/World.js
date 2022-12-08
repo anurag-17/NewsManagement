@@ -32,7 +32,7 @@ useEffect(() => {
 <Learnslider newsdata={newsdata}/>
     </div>
       <div className='bannerbtn learnbtn'>
-                  <a href="https://www.youtube.com/@BullSmartStockAcademy"><button className='know-btn'>KNOW MORE</button></a>
+                  <a target="blank" href="https://www.youtube.com/@BullSmartStockAcademy"><button className='know-btn'>KNOW MORE</button></a>
                 </div>
 
     </div>

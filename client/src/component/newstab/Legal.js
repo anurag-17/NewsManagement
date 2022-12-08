@@ -33,9 +33,9 @@ const Legal = () => {
     <div id="Learn-slider">
 <Learnslider newsdata={newsdata}/>
     </div>
-      <div className='bannerbtn learnbtn'>
-                  <a href="https://www.youtube.com/playlist?list=PLQ0dEPuPJTIVcQcqhKQUe8dseABAT4Sm0"><button className='know-btn'>KNOW MORE</button></a>
-      </div>
+    <div className='bannerbtn learnbtn'>
+                  <a target="blank" href="https://www.youtube.com/@BullSmartStockAcademy"><button className='know-btn'>KNOW MORE</button></a>
+                </div>
 
     </div>
   );
