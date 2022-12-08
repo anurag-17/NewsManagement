@@ -64,8 +64,8 @@ return(
 )
   })
 }
-<section>
-    <h2 style = {{fontSize:"40px",}}>Leave a Reply</h2>
+<section className='reply-blog'>
+    <h2>Leave a Reply</h2>
     <p>Your email address will not be published. Required fields are marked *</p>
 <form style = {{width:"inherit"}} action="" className="">
    <div className='blog-form'>

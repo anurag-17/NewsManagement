@@ -108,7 +108,8 @@ return(
 
               <div className='l-invesleft'>
                 <div className='learninvestimg'>
-                <ReactPlayer loop ={true} controls={true} url='https://www.youtube.com/embed/WNw_TFVE0kk' />
+                 <div class="video-play">
+                 <ReactPlayer loop ={true} controls={true} url='https://www.youtube.com/embed/WNw_TFVE0kk' /></div>                 
               {/* <iframe className='iframeclass' src="https://www.youtube.com/embed/WNw_TFVE0kk" title="BullSmart Stock Academy Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  */}
                 </div>
               </div>

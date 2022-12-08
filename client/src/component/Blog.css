@@ -1,13 +1,20 @@
 /* blog banner start */
 #Blog-banner .banner-bg{
-    
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../component/Images/blogimage.jpg); */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     width: 100%;
 }
-.blogbg_a{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../component/Images/bLOG111.webp) !important;
+.bgblog{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../component/Images/bLOG111.webp);
+    /* background-size: cover;
+    background-repeat: no-repeat;
+background-position: center;
+    width: 100%; */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 #Blog-banner .Banner-main {
     padding:165px 0px;
@@ -44,9 +51,10 @@ br {
 #Blog-sewction .BContent {
     position: absolute;
     bottom: 0;
-    right: 0;
+    right: 30px;
     background: #fff;
     max-width: 485px;
+    padding: 10px 20px;
 }
 .latest-img img{
     height: 200px;
@@ -182,7 +190,7 @@ br {
     background-position: top right;
     background-repeat: no-repeat;
     padding: 40px 0px 0px 0px;
-    opacity: 0.9;
+    opacity:1;
 
 }
 #BInvest-section .Binveshape{
@@ -394,7 +402,7 @@ div#Latest-slider {
     background-position: top left;
     background-repeat: no-repeat;
     padding:40px 0px 0px 0px;
-    opacity: 0.9;
+    opacity:1;
 
 }
 #Planning-section .Binveshape{
@@ -526,7 +534,7 @@ div#Latest-slider {
     background-position: top right;
     background-repeat: no-repeat;
     padding: 40px 0px 0px 0px;
-    opacity: 0.9;
+    opacity: 1;
 
 }
 #Saving-section .section-head {
@@ -625,7 +633,7 @@ div#Latest-slider {
     background-position: top left;
     background-repeat: no-repeat;
     padding: 40px 0px 40px 0px;
-    opacity: 0.9;
+    opacity:1;
 }
 #Industry-section  .Binveshape{
     position: relative;
@@ -693,7 +701,7 @@ div#Latest-slider {
     transform: rotate(-90deg);
     position: absolute;
     top: 300px;
-    right: -360px;
+    right: -340px;
 }
 #Industry-section .BInvest-btn a {
     font-size: 14px;
@@ -1161,7 +1169,7 @@ div#Latest-slider {
 }
 .Let-Image img {
     width: 100%;
-    height: 250px;
+    height: 200px;
     object-fit: cover;
 }
 .kXteup:hover:enabled, .kXteup:focus:enabled {
@@ -1260,6 +1268,7 @@ div#Latest-slider {
         #Guid-section .latest-img img {
             width: 100%;
             max-width: 70%;
+            background-color: transparent;
         }
         .Binveshape:before {
             width: 100%;
@@ -1270,6 +1279,32 @@ div#Latest-slider {
         }
         .rec-arrow-right {
             left: 27%;
+        }
+        #Planning-section {
+            padding: 40px 10px 40px 10px;
+        }
+        #Saving-section {
+            padding: 5px 10px 40px 10px;
+        }
+        #Planning-section .text-vertical h3 {
+            right: -196px;
+        }
+        #Saving-section .text-vertical h3 {
+            right: -80px;
+        }
+        #Industry-section .text-vertical h3 {
+            right: -407px;
+        }
+        #Industry-section {
+            padding: 40px 10px 30px 10px;
+        }
+        #BInvest-section {
+            padding: 40px 10px 0px 10px;
+        }
+        .bInvest-img img {
+            width: 100%;
+            height: 250px !important;
+            object-fit: cover !important;
         }
       }
 
@@ -1420,15 +1455,90 @@ div#Latest-slider {
             left: 22%;
             top: -75px;
         }
-      }
+        #Blog-banner .Banner-main {
+            padding: 120px 0px;
+        }
+        #Blog-banner .Banner-title h2 {
+            font-size: 45px;
+            line-height: 46px;
+        }
+        #Planning-section .section-head h2 {
+            text-align: center;
+            padding-right: 0px !important;
+            
+        }
+        #Planning-section .text-vertical h3 {
+            top: -100px;
+            right: 27%;
+            transform: inherit;         
+        }
+        .row.Binvest-alin {
+            background-color: #fff;
+            padding: 20px 0px;
+            flex-direction: column-reverse;
+        }
+       
+        #Industry-section .section-head h2 {
+            padding-bottom: 30px;
+        }
+        #Industry-section .Binveshape:before {
+            height: auto;
+        }
+        .bInvest-img img {
+            width: 100%;
+            height: 250px !important;
+            object-fit: cover !important;
+        }
+
+        .Latest-title h3 {
+            text-align: center;
+        }
+        .text-vertical {
+            display: none !important;
+        }
+        #Industry-section .section-head h2 {
+            padding-right: 0px !important;
+        }
+        #BInvest-section .BInvest-rigth {
+            background-size: cover;
+        }
+        #Planning-section .BInvest-rigth {
+            background-size: cover;
+        }
+        #Saving-section .BInvest-rigth {
+            background-size: cover;
+        }
+        #Industry-section .BInvest-rigth {
+            background-size: cover;
+        }
+        #BInvest-section .Binveshape:before {
+            background-color: transparent;
+        }
+        #Planning-section .Binveshape:before {
+            background-color: transparent;
+        }
+        #Saving-section .Binveshape:before {
+            background-color: transparent;
+        }
+        #Industry-section .Binveshape:before {
+            background-color: transparent;
+        }
+       
+    }
 
       @media (max-width:667px) {
       #Planning-section .section-head h2 {
         font-size: 30px;
         text-align: center;
         line-height: 42px;
+        padding-bottom: 30px;
     }
-
+    #Saving-section .section-head h2 {
+        font-size: 30px;
+        padding-bottom: 30px;
+        padding-left: 0px;
+        line-height: 30px;
+    }
     #Planning-section {
         padding: 30px 0px 30px 0px;
         margin: 0px;
@@ -1472,12 +1582,27 @@ div#Latest-slider {
         text-align: center;
     }
     #Blog-banner .Banner-main {
-        padding: 100px 0px !important; 
+        padding: 65px 0px !important; 
     }
     #Blog-banner .Banner-title h2 {
         font-size: 35px !important;
         line-height: 46px !important;
     }
+    #Blog-sewction .BContent {
+        width: 100%;
+        text-align: center;
+    }
+    .Blog-mread1 p {
+        margin-bottom: 0px;
+    }
+    #BInvest-section .Binveshape:before {
+        height: auto;
+    }
+    .Binvest-alin {
+        background: #fff;
+        padding: 20px;
+    }
+   
 }
 
       @media (max-width:500px) {
@@ -1520,3 +1645,22 @@ div#Latest-slider {
           width: 300px;
         }
       }
+
+      @media (max-width:667px) {
+      .LetestStories h2 {
+        font-size: 18px;
+        line-height: 24px;
+        }
+        #Blog-sewction .BContent p {
+            font-size: 18px;
+            line-height: 28px;
+        }
+        #Blog-sewction .BContent p:after {
+            width: 25px;
+            height: 20px;
+        }
+        #BInvest-section .section-head h2 {
+            font-size: 30px;
+            line-height: 42px;
+        }
+        }
