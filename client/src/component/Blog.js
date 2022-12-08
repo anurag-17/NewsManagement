@@ -60,7 +60,7 @@ return(
         }):<Helmet><title>BullSmart</title></Helmet>
       }
       <section id='Blog-banner'>
-        <div className='container-fluid banner-bg'>
+        <div className='container-fluid banner-bg blogbg_a'>
           <div className='row Banner-main'>
             <div className='Banner-title'>
               <AnimatedOnScroll animationIn="fadeInUp" animationOut="fadeInUp"> <h2>YOUR FINANCIAL GUIDE </h2>
