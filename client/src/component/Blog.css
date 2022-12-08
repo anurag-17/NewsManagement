@@ -1,13 +1,20 @@
 /* blog banner start */
 #Blog-banner .banner-bg{
-    
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../component/Images/blogimage.jpg); */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     width: 100%;
 }
-.blogbg_a{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../component/Images/bLOG111.webp) !important;
+.bgblog{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../component/Images/bLOG111.webp);
+    /* background-size: cover;
+    background-repeat: no-repeat;
+background-position: center;
+    width: 100%; */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 #Blog-banner .Banner-main {
     padding:165px 0px;

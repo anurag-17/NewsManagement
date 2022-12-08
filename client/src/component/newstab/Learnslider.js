@@ -13,11 +13,7 @@ const breakPoints = [
   { width: 1200, itemsToShow: 3 }
 ];
 export const Learnslider = ({newsdata}) => {
-
-  const carouselRef = useRef(null);
- 
-  let resetTimeout;
-  
+  const carouselRef = React.useRef(null);
   const onNextStart = (currentItem, nextItem) => {
     if (currentItem.index === nextItem.index) {
       // we hit the last item, go to first item
@@ -146,7 +142,7 @@ export const Learnslider = ({newsdata}) => {
             onPrevStart={onPrevStart}
             onNextStart={onNextStart}
             disableArrowsOnEnd={false}
-            >
+             >
             {newsdata&&newsdata.map((item,index)=>{
               console.log(item);
               return(
