@@ -104,4 +104,15 @@ color: grey;
         border-radius:0;
         padding:5px;
     }
+    .maintable .td-1 h4 {
+        padding-right: 0px;
+        font-size: 12px;
+        line-height: 16px;
+    }
+   .maintable .table-row td:last-child a {
+        font-size: 12px;
+    }
+    .maintable .table td, .table th {
+        padding: 5px;
+    }
 }
