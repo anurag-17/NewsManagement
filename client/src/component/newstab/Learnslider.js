@@ -139,6 +139,7 @@ export const Learnslider = ({newsdata}) => {
       )
       })}
       </Swiper> */}
+      <div></div>
       <div className="container">
             <Carousel breakPoints={breakPoints}
             ref={carouselRef}
