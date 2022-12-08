@@ -135,7 +135,7 @@ return(
     <div style ={{marginTop:"20px"}} id="Learn-slider">
 <Learnslider newsdata={trending}/>
 <div className='bannerbtn learnbtn'>
-                  <a href="https://www.youtube.com/@BullSmartStockAcademy"><button className='know-btn'>KNOW MORE</button></a>
+                  <a target="blank" href="https://www.youtube.com/@BullSmartStockAcademy"><button className='know-btn'>KNOW MORE</button></a>
                 </div>
     </div>
             </div>
@@ -150,7 +150,7 @@ return(
     <div style ={{marginTop:"20px"}} id="Learn-slider">
 <Learnslider newsdata={liked}/>
 <div className='bannerbtn learnbtn'>
-                  <a href="https://www.youtube.com/@BullSmartStockAcademy"><button className='know-btn'>KNOW MORE</button></a>
+                  <a target="blank" href="https://www.youtube.com/@BullSmartStockAcademy"><button className='know-btn'>KNOW MORE</button></a>
                 </div>
     </div>
             </div>

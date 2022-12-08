@@ -88,8 +88,8 @@ const [emailError,setEmailError] = useState('')
   const handleclick = async (e) => {
     e.preventDefault()
     setShow(true)
-    setTimeout(()=>{
-      axios.post("/api/auth/useremail",useremail,{headers:{"Content-Type": "application/json" } }).then((res)=>{
+ 
+      await axios.post("/api/auth/useremail",useremail,{headers:{"Content-Type": "application/json" } }).then((res)=>{
         console.log(res);
         // swal(res.data,"" ,"success")
         setUseremail({
@@ -107,7 +107,7 @@ const [emailError,setEmailError] = useState('')
           setMessage("")
         },3000)
        })
-    },500)
+  
 
     // setShow(true)
     // setTimeout(() => {
@@ -396,7 +396,6 @@ return(
                   <div className='blod-des'>
                     <h3>{items.title}</h3>
                     <div className='blog-btn'>
-
                       <button className='Blog-btn'><a href='#'>Read More<i className="fa fa-angle-double-right"></i></a></button>
                     </div>
                   </div>
@@ -407,8 +406,7 @@ return(
                 )
               })
             }
-{/* 
-            <div className='blog_item1'>
+{/*  <div className='blog_item1'>
               <Link to="/Blog_2" target="_blank">
                 <div className='blog-Ct'>
                   <div className='blogImg'>

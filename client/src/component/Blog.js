@@ -28,6 +28,7 @@ const Blog = ({scodata,title}) => {
   //   const res = await axios.post("/api/auth/getmetadata",{pagename:"Blog"})
   //   setscodata(res.data)
   // }
+  
 
 
   useEffect(() => {
@@ -61,7 +62,7 @@ return(
       }
       <section id='Blog-banner'>
         <div className='container-fluid banner-bg'>
-          <div className='row Banner-main'>
+          <div className='row Banner-main bgblog'>
             <div className='Banner-title'>
               <AnimatedOnScroll animationIn="fadeInUp" animationOut="fadeInUp"> <h2>YOUR FINANCIAL GUIDE </h2>
               </AnimatedOnScroll>

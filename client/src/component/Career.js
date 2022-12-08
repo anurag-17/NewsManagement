@@ -87,11 +87,11 @@ return(
   }
   {/* <option>Engineering</option> */}
 </select>
-<select className='form-select ml-4' aria-label="Default select example">
+<select className='form-select' aria-label="Default select example">
   <option>All Job Type</option>
   <option>Full Time</option>
 </select>
-<select  className="form-select ml-4" aria-label="Default select example">
+<select  className="form-select" aria-label="Default select example">
   <option>All Job Location</option>
   <option>Bangalore</option>
 </select>

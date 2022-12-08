@@ -3,21 +3,20 @@ const News = require("../Model/News");
 const Blogs = require("../Model/Blogs");
 const catchAsyncError = require("../Errorhandlers/catchAsyncError");
 const ErrorResponse = require("../Utlis/errorresponse");
-const emailValidator = require("deep-email-validator");
+// const emailValidator = require("deep-email-validator");
 const Content = require("../Model/Content")
 const Email = require("../Model/Email")
 const Career = require("../Model/Career")
 const jwt = require("jsonwebtoken");
-
+const EmailValidator = require('email-deep-validator');
 var ObjectId = require('mongodb').ObjectId
 
 
 // dotenv.config({ path: "../config.env" });
 
-async function isEmailValid(email) {
-    return emailValidator.validate(email);
-  }
-
+// async function isEmailValid(email) {
+//     return emailValidator.validate(email);
+//   }
 
 exports.adminlogin = catchAsyncError(
     async (req, res, next) => {
@@ -345,30 +344,28 @@ exports.useremail = catchAsyncError(
     async(req, res, next)=>{
         console.log(req.body);
         const {email} = req.body
-        try {
-            const {valid, reason, validators } = isEmailValid(req.body.email);
-            console.log(valid)
-            if(!valid) {
-                return res
-                  .status(500)
-                  .json("email is invalid please enter a valid email");
+            // const {valid, reason, validators} = await isEmailValid(req.body.email);\
+            const emailValidator = new EmailValidator();
+            const { wellFormed, validDomain, validMailbox } = await emailValidator.verify(req.body.email);
+            console.log(wellFormed,validDomain,validMailbox)
+            if(!validMailbox||!wellFormed||!validDomain){         
+                  res.status(500).send("email is invalid please enter a valid email");
               }
               else{
                   let useremail = new Email({email})
-                  useremail.save().then((result)=>{
+                 await useremail.save().then((result)=>{
                       res.send("Submitted Successfully")
                       console.log("successfully feeded email");
                   }).catch((err)=>{
-                      console.log(err, " email feederrror");
+                      console.log(err, "email feederrror");
                   })
 
               }
 
-        } catch (error) {
-            console.log(error);
-        }
     }
 )
+
+
 exports.viewemail = catchAsyncError(
     async(req,res, next)=>{
         try {
@@ -384,24 +381,6 @@ exports.viewemail = catchAsyncError(
     }
 )
 
-// exports.useremail = catchAsyncError(
-//     async (req, res, next) => {
-//         console.log(req.body);
-//         const { email } = req.body
-//         try {
-//             let useremail = new Email({ email })
-
-//             useremail.save().then((result) => {
-//                 res.send("Submitted Successfully")
-//                 console.log("successfully feeded email");
-//             }).catch((err) => {
-//                 console.log(err, " email feederrror");
-//             })
-//         } catch (error) {
-//             console.log(error);
-//         }
-//     }
-// )
 
 // exports.viewemail = catchAsyncError(
 //     async (req, res, next) => {

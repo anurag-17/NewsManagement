@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import about1 from './Images/who-about.jpg';
+import about1 from './Images/About us page who we are.png';
 import './About.css';
 import Liveimg6 from './Images/livepay.png';
 import {AnimatedOnScroll} from "react-animated-css-onscroll";

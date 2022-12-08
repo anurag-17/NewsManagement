@@ -33,8 +33,8 @@ const Breakingviews = () => {
     <div id="Learn-slider">
 <Learnslider newsdata={newsdata}/>
     </div>
-      <div className='bannerbtn learnbtn'>
-                  <a href="https://www.youtube.com/playlist?list=PLQ0dEPuPJTIXwWTmhJfiR0Cr2sY9VXCQ1"><button className='know-btn'>KNOW MORE</button></a>
+    <div className='bannerbtn learnbtn'>
+                  <a target="blank" href="https://www.youtube.com/@BullSmartStockAcademy"><button className='know-btn'>KNOW MORE</button></a>
                 </div>
     </div>
   );
