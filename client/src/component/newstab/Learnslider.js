@@ -166,11 +166,10 @@ export const Learnslider = ({newsdata}) => {
           <a target="blank" href={item.url}>
             {item.title}
           </a>
-        </div>
-    
-      </>
-      )
-      })} 
+        </div>    
+        </>
+        )
+        })} 
 
             </Carousel>
             </div>

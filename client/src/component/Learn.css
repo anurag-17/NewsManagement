@@ -151,6 +151,7 @@ button.neain-invst {
 #topic-sec .Newstab-cat {
     padding-top: 30px;
 }
+
 #topic-sec .nav-tabs .nav-link {
     color: #000;
     font-size: 14px;
@@ -161,6 +162,7 @@ button.neain-invst {
 }
 #topic-sec .Newstab-cat ul li {
     padding-right: 15px;
+    padding-bottom: 10px;
 }
 #topic-sec .nav-link {
     display: block;
@@ -513,9 +515,27 @@ section#learnCat-sec {
     .l-investdes {
         padding-bottom: 30px;
     }
+    #topic-sec .Newstab-cat .nav-tabs {
+        justify-content: center;
+    }
+    #topic-sec {
+        padding: 0px 0px 35px 0px;
+    }
+    section#investing-learn {
+        padding: 45px 0px 45px 0px;
+    }
+    .Newtext-divider:before {
+        content: '';
+        height: 4px;
+        background-color: #4af8d5;
+        flex-grow: 1;
+    }
 }
-
-
+@media (max-width:720px) {
+.traningimg img {
+    width: 100%;
+}
+}
 @media (max-width:667px) {
    
     .Banner-title h2 {
@@ -540,6 +560,25 @@ section#learnCat-sec {
     #topic-sec {
         padding: 0px 0px 16px 0px;
     }
+    .video-play div {
+        width: 100% !important;
+    }
+    .l-investdes h3 {
+        font-size: 30px;
+        line-height: 34px;
+    }
+    .learnabout {
+        padding: 90px 0px 90px 0px;
+    }
+    .learnabout h3 {
+        font-size: 40px;
+        line-height: 55px;
+    }
+    .L-aboutAlin p {
+        font-size: 24px;
+        line-height: 26px;
+        padding-top: 0px;
+    }  
 }
 
 
@@ -556,7 +595,11 @@ section#learnCat-sec {
     .tranding-item1 {
         text-align: center;
     }
-        
+    .L-aboutAlin p {
+        font-size: 20px;
+        line-height: 26px;
+        padding-top: 0px;
+    }      
 }
 
 

@@ -263,7 +263,7 @@ return(
         </div>
       </section>
 
-      Healthy Weight
+      {/* Healthy Weight */}
       <section id='Planning-section'>
         <div className='Binveshape'>
           <div className='container BInvest-rigth'>
@@ -271,12 +271,12 @@ return(
               <h2>Planning</h2>
             </div>
             <div className='row Binvest-alin'>
-              <div className='col-ld-2 col-md-2'>
+              <div className='col-lg-2 col-md-2 col-sm-12'>
                 <div className='text-vertical'>
                   <h3>PLANNING</h3>
                 </div>
               </div>
-              <div className='col-lg-10 col-md-10'>
+              <div className='col-lg-10 col-md-10 col-sm-12'>
                 <div className='BInvest-grid'>
                   {
                     blogdata.filter((items,index)=>{
@@ -357,7 +357,7 @@ return(
               <h2>SAVING</h2>
             </div>
             <div className='row Binvest-alin'>
-              <div className='col-lg-10 col-md-10'>
+              <div className='col-lg-10 col-md-10 col-sm-12'>
                 <div className='BInvest-grid'>
                   {/* <div className='Binvest-item1'>
                     <div className='bInvest-img'>
@@ -418,7 +418,7 @@ return(
                   </div> */}
                 </div>
               </div>
-              <div className='col-ld-2 col-md-2'>
+              <div className='col-ld-2 col-md-2 col-sm-12'>
                 <div className='text-vertical'>
                   <h3>SAVING</h3>
                 </div>

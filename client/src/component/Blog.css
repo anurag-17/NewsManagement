@@ -44,9 +44,10 @@ br {
 #Blog-sewction .BContent {
     position: absolute;
     bottom: 0;
-    right: 0;
+    right: 30px;
     background: #fff;
     max-width: 485px;
+    padding: 10px 20px;
 }
 .latest-img img{
     height: 200px;
@@ -1161,7 +1162,7 @@ div#Latest-slider {
 }
 .Let-Image img {
     width: 100%;
-    height: 250px;
+    height: 200px;
     object-fit: cover;
 }
 .kXteup:hover:enabled, .kXteup:focus:enabled {
@@ -1270,6 +1271,26 @@ div#Latest-slider {
         }
         .rec-arrow-right {
             left: 27%;
+        }
+        #Planning-section {
+            padding: 40px 10px 40px 10px;
+        }
+        #Saving-section {
+            padding: 5px 10px 40px 10px;
+        }
+        #Planning-section .text-vertical h3 {
+            right: -160px;
+        }
+        #Industry-section {
+            padding: 40px 10px 30px 10px;
+        }
+        #BInvest-section {
+            padding: 40px 10px 0px 10px;
+        }
+        .bInvest-img img {
+            width: 100%;
+            height: 250px !important;
+            object-fit: cover !important;
         }
       }
 
@@ -1420,6 +1441,59 @@ div#Latest-slider {
             left: 22%;
             top: -75px;
         }
+        #Blog-banner .Banner-main {
+            padding: 120px 0px;
+        }
+        #Blog-banner .Banner-title h2 {
+            font-size: 45px;
+            line-height: 46px;
+        }
+        #Planning-section .section-head h2 {
+            text-align: center;
+            padding-right: 0px !important;
+            
+        }
+        #Planning-section .text-vertical h3 {
+            top: -100px;
+            right: 27%;
+            transform: inherit;         
+        }
+        .row.Binvest-alin {
+            background-color: #fff;
+            padding: 20px 0px;
+            flex-direction: column-reverse;
+        }
+       
+        #Industry-section .section-head h2 {
+            padding-bottom: 30px;
+        }
+        #Industry-section .Binveshape:before {
+            height: auto;
+        }
+        .bInvest-img img {
+            width: 100%;
+            height: 250px !important;
+            object-fit: cover !important;
+        }
+
+        .Latest-title h3 {
+            text-align: center;
+        }
+        .text-vertical {
+            display: none !important;
+        }
+        #Industry-section .section-head h2 {
+            padding-right: 0px !important;
+        }
+        #BInvest-section .BInvest-rigth {
+            background-size: cover;
+        }
+        #Planning-section .BInvest-rigth {
+            background-size: cover;
+        }
+        #Saving-section .BInvest-rigth {
+            background-size: cover;
+        }
       }
 
       @media (max-width:667px) {
@@ -1472,12 +1546,27 @@ div#Latest-slider {
         text-align: center;
     }
     #Blog-banner .Banner-main {
-        padding: 100px 0px !important; 
+        padding: 65px 0px !important; 
     }
     #Blog-banner .Banner-title h2 {
         font-size: 35px !important;
         line-height: 46px !important;
     }
+    #Blog-sewction .BContent {
+        width: 100%;
+        text-align: center;
+    }
+    .Blog-mread1 p {
+        margin-bottom: 0px;
+    }
+    #BInvest-section .Binveshape:before {
+        height: auto;
+    }
+    .Binvest-alin {
+        background: #fff;
+        padding: 20px;
+    }
+   
 }
 
       @media (max-width:500px) {

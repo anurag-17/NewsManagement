@@ -21,7 +21,7 @@
     padding: 15px 5px 15px 0px;
 }
 .form-select{
-    width: 15%;
+    width: 25%;
     font-size:12px;
     display:inline;
     border-radius:0;
@@ -67,10 +67,18 @@ color: grey;
     border-right: 1px solid rgba(128, 128, 128, 0.233);
 
 }
+.form-select:focus {
+    border-color: #86b7fe;
+    outline: 0;
+    box-shadow: none;
+}
+
+
+/* responsive */
 
 @media(min-width:868px){
     .form-select{
-        width:15%;
+        width:20%;
         font-size:12px;
         display:inline;
         border-radius:0;
@@ -78,7 +86,16 @@ color: grey;
     }
 }
 
-
+@media (max-width:767px){
+    #job-openings h3 {
+        font-size: 30px;
+        text-align: center;
+        line-height: 36px;
+    }
+    .selectjob.mt-5 {
+        margin-top: 25px !important;
+    }
+}
 @media (max-width:658px){
     .form-select{
         width:27%;
