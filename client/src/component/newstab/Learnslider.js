@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide , pagination} from "swiper/react";
 import "swiper/css";
@@ -13,6 +13,23 @@ const breakPoints = [
   { width: 1200, itemsToShow: 3 }
 ];
 export const Learnslider = ({newsdata}) => {
+
+  const carouselRef = useRef(null);
+ 
+  let resetTimeout;
+  
+  const onNextStart = (currentItem, nextItem) => {
+    if (currentItem.index === nextItem.index) {
+      // we hit the last item, go to first item
+      carouselRef.current.goTo(0);
+    }
+  };
+  const onPrevStart = (currentItem, nextItem) => {
+    if (currentItem.index === nextItem.index) {
+      // we hit the first item, go to last item
+      carouselRef.current.goTo(newsdata.length);
+    }
+  };
   return (
   <> 
           {/* <Swiper
@@ -123,7 +140,12 @@ export const Learnslider = ({newsdata}) => {
       })}
       </Swiper> */}
       <div className="container">
-            <Carousel breakPoints={breakPoints}>
+            <Carousel breakPoints={breakPoints}
+            ref={carouselRef}
+            onPrevStart={onPrevStart}
+            onNextStart={onNextStart}
+            disableArrowsOnEnd={false}
+            >
             {newsdata&&newsdata.map((item,index)=>{
               console.log(item);
               return(

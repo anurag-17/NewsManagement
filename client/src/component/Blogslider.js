@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { Navigation, Pagination } from "swiper";
-import { Swiper, SwiperSlide , pagination} from "swiper/react";
+import { Swiper, SwiperSlide, pagination } from "swiper/react";
 import letestslide1 from './Images/letestSlide1.png';
 import letestslide2 from './Images/letestSlide2.png';
 import letestslide3 from './Images/letestSlide3.png';
@@ -21,11 +21,28 @@ const breakPoints = [
   { width: 1200, itemsToShow: 5 }
 ];
 
-export const Blogslider = ({blogdata}) => {
+export const Blogslider = ({ blogdata }) => {
+  const carouselRef = useRef(null);
+ 
+  let resetTimeout;
+  
+  const onNextStart = (currentItem, nextItem) => {
+    if (currentItem.index === nextItem.index) {
+      // we hit the last item, go to first item
+      carouselRef.current.goTo(0);
+    }
+  };
+  const onPrevStart = (currentItem, nextItem) => {
+    if (currentItem.index === nextItem.index) {
+      // we hit the first item, go to last item
+      carouselRef.current.goTo(blogdata.length);
+    }
+  };
   console.log(blogdata)
+
   return (
     <div>
-    {/* <div className='guidslide'>
+      {/* <div className='guidslide'>
     <div className='Let-slider1'>
    <Swiper  
     slidesPerView={4}
@@ -81,31 +98,37 @@ export const Blogslider = ({blogdata}) => {
     </div>  */}
 
       <div className="container">
-          <Carousel breakPoints={breakPoints}>
+        <Carousel breakPoints={breakPoints}
+        ref={carouselRef}
+        onPrevStart={onPrevStart}
+        onNextStart={onNextStart}
+        disableArrowsOnEnd={false}
+         
+        >
           {
-       blogdata.map((items,index)=>{
-        const trimtitle = items.title.replace(
-          / +/g,
-          "-"
-        )
-        return(
-          <div>
-          <div className="LetestStories">
-          <div className="Let-Image">
-          <img src={items.url} alt='slide'></img>
-          </div>
-          <h3 className="title-Mint">
-              2 Minut ago
-          </h3>
-          <h2>{items.title}</h2>         
-          </div>
-         </div>
-        )
-      })
-     }    
+            blogdata.map((items, index) => {
+              const trimtitle = items.title.replace(
+                / +/g,
+                "-"
+              )
+              return (
+                <div>
+                  <div className="LetestStories">
+                    <div className="Let-Image">
+                      <img src={items.url} alt='slide'></img>
+                    </div>
+                    <h3 className="title-Mint">
+                      2 Minute ago
+                    </h3>
+                    <h2>{items.title}</h2>
+                  </div>
+                </div>
+              )
+            })
+          }
 
-            </Carousel>
-            </div>
-  </div>
+        </Carousel>
+      </div>
+    </div>
   )
 }
