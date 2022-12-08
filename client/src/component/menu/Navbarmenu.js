@@ -61,7 +61,7 @@ const Navbarmenu = () => {
                
                 <div className="header__middle__logo">
                     <NavLink activeClassName='is-active' to="/">
-                      <img src={logo} alt='logo'></img>
+                      <img src={logo} alt='logo' to={`/`}></img>
                     </NavLink>
                 </div>
 

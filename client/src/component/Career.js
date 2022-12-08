@@ -103,7 +103,8 @@ return(
     {
       filterdata.map((items,index)=>{
         return(
-    <tr className='table-row '>
+          
+    <tr className='table-row'>
       <td className='td-1'><h4>{items.title}</h4></td>
       <td> <i class="fa fa-star"></i>{items.category}</td>
       <td><i class="fa fa-location-arrow" aria-hidden="true"></i>{items.location}</td>

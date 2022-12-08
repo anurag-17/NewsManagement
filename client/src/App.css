@@ -17,6 +17,9 @@ span {
 a {
     text-decoration: none;
 }
+a:hover {
+    text-decoration: none;
+}
 p{
  font-size: 16px;
  line-height: 24px;
@@ -46,5 +49,10 @@ h3 {
 .ck-content .text-huge {
     font-size: 2.8em;
 }
+
+}
+
+
+@media (max-width:992px) {
 
 }

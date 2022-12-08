@@ -388,7 +388,7 @@ return(
       <section>
       <div className="container mt-4">
           <div className='row'>
-            <div className='col-lg-12 col-md-8 col-sm-8 LetNews d-flex justify-content-center'>
+            <div className='col-lg-12 col-md-8 col-sm-12 LetNews d-flex justify-content-center'>
 
               <div className="accordion mb-4" id="accordionExample">
             <div className="accordion-item">

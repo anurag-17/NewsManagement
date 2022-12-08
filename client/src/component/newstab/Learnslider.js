@@ -123,7 +123,10 @@ export const Learnslider = ({newsdata}) => {
       })}
       </Swiper> */}
       <div className="container">
-            <Carousel breakPoints={breakPoints}>
+            <Carousel breakPoints={breakPoints}
+            enableAutoPlay 
+            autoPlaySpeed={3000}
+             >
             {newsdata&&newsdata.map((item,index)=>{
               console.log(item);
               return(
@@ -144,11 +147,10 @@ export const Learnslider = ({newsdata}) => {
           <a target="blank" href={item.url}>
             {item.title}
           </a>
-        </div>
-    
-      </>
-      )
-      })} 
+        </div>    
+        </>
+        )
+        })} 
 
             </Carousel>
             </div>
