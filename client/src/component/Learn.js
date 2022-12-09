@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { AnimatedOnScroll } from 'react-animated-css-onscroll';
 import tranding1 from './Images/tranding-img1.png';
 import tranding2 from './Images/tranding-img2.png';
 import tranding3 from './Images/tranding-img3.png';
@@ -17,6 +16,7 @@ import learnCat4 from './Images/learn-cat/learn-cat4.png';
 import learnCat5 from './Images/learn-cat/learn-cat5.png';
 import ReactPlayer from 'react-player'
 import './Learn.css';
+import {AnimatedOnScroll} from "react-animated-css-onscroll";
 import LetestNewstab from './LetestNewstab';
 import axios from 'axios';
 import { Helmet } from 'react-helmet';
@@ -30,7 +30,7 @@ const [trending,settrending]  = useState()
 const [liked,setLiked] = useState()
 
   const viewnews = async () => {
-    await axios.post("/api/auth/viewnews",{catagory:"All",section:"Topics"}).then((res) => {
+     axios.post("/api/auth/viewnews",{catagory:"All",section:"Topics"}).then((res) => {
       setNewsdata(res.data.result);
       newsdata.reverse();
       console.log(newsdata);
@@ -87,8 +87,10 @@ return(
             <div className='row L-aboutAlin'>
               <div className='col-lg-12 col-md-12'>
                 <div className='learn-des'>
-                <h3>Learn</h3>
+                <AnimatedOnScroll animationIn="fadeInUp" animationOut="fadeInUp"> <h3>Learn</h3>
                   <p>one stop solution to financial independence.</p>
+              </AnimatedOnScroll>
+                
                 </div>                 
               </div>               
             </div>

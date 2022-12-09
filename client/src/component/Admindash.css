@@ -62,6 +62,7 @@ Created with https://www.css-gradient.com */
 .ad {
     color: red;
     font-weight: 800;
+    cursor: pointer;
 }
 
 .iconbar {

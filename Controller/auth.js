@@ -112,6 +112,7 @@ exports.viewblogs = catchAsyncError(
     async(req, res)=>{
              const result =  await Blogs.find()
              res.send({result:result})
+             
   
     }
 )

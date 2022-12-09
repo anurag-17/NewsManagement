@@ -109,7 +109,7 @@ return(
       <td> <i class="fa fa-star"></i>{items.category}</td>
       <td><i class="fa fa-location-arrow" aria-hidden="true"></i>{items.location}</td>
       <td>
-      <a target="blank" href={items.link}>More Details→</a>
+      <a className='td-2a' target="blank" href={items.link}>More Details→</a>
       </td>
       
 

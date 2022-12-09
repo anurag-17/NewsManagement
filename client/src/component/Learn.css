@@ -58,12 +58,12 @@
   }
 /* Learn About section start */
 section#LearnAbout-sec {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../component/Images/LEARN.webp);   
+    background-image: url(../component/Images/LEARN.webp);   
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #F3F0E6;
-    max-height: 500px;
+    min-height: 85vh;
 }
 .learnbtn{
     display: flex;
@@ -78,6 +78,10 @@ section#LearnAbout-sec {
     text-align: center;
     max-width: 448px;
     margin: auto;
+
+}
+.learn-des{
+    margin-top: 120px;
 }
 .learnabout h3 {
     color: #1A3073;
