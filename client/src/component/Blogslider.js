@@ -21,7 +21,7 @@ const breakPoints = [
   { width: 1200, itemsToShow: 5 }
 ];
 
-export const Blogslider = ({blogdata}) => {
+export const Blogslider = ({ blogdata }) => {
   const carouselRef = React.useRef(null);
   const onNextStart = (currentItem, nextItem) => {
     if (currentItem.index === nextItem.index) {
@@ -95,36 +95,38 @@ export const Blogslider = ({blogdata}) => {
     </div>  */}
 
       <div className="container">
-          <Carousel breakPoints={breakPoints}
-           ref={carouselRef}
-           onPrevStart={onPrevStart}
-           onNextStart={onNextStart}
-           disableArrowsOnEnd={false}>
-            
-          {
-       blogdata.map((items,index)=>{
-        const trimtitle = items.title.replace(
-          / +/g,
-          "-"
-        )
-        return(
-          <div>
-          <div className="LetestStories">
-          <div className="Let-Image">
-          <img src={items.url} alt='slide'></img>
-          </div>
-          <h3 className="title-Mint">
-              2 Minute ago
-          </h3>
-          <h2>{items.title}</h2>         
-          </div>
-         </div>
-        )
-      })
-     }    
+        <Carousel breakPoints={breakPoints}
+          ref={carouselRef}
+          onPrevStart={onPrevStart}
+          onNextStart={onNextStart}
+          disableArrowsOnEnd={false}>
 
-        </Carousel>
-      </div>
-    </div>
+          {
+            blogdata.map((items, index) => {
+              const trimtitle = items.title.replace(
+                / +/g,
+                "-"
+              )
+              return (
+                <div>
+                  <Link to={`/${trimtitle}`}>
+                  <div className="LetestStories">
+                    <div className="Let-Image">
+                      <img src={items.url} alt='slide'></img>
+                    </div>
+                    <h3 className="title-Mint">
+                      2 Minute ago
+                    </h3>
+                    <h2>{items.title}</h2>
+                  </div>
+                  </Link>
+                </div>
+      )
+            })
+          }
+
+    </Carousel>
+      </div >
+    </div >
   )
 }

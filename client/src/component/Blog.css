@@ -7,7 +7,7 @@
     width: 100%;
 }
 .bgblog{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../component/Images/bLOG111.webp);
+    background-image:  url(../component/Images/bLOG111.webp);
     /* background-size: cover;
     background-repeat: no-repeat;
 background-position: center;
@@ -15,6 +15,7 @@ background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+    min-height: 85vh;
 }
 #Blog-banner .Banner-main {
     padding:165px 0px;

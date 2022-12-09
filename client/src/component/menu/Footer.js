@@ -41,7 +41,7 @@ const Footer = () => {
                     <Link to="/Blog">
                       <li> <a href='#'>Blog</a></li>
                     </Link>
-                    <Link to="/About">
+                    <Link to="/about-us">
                       <li> <a href='#'>About Us</a></li>
                     </Link>
                     <Link to="/Career">
@@ -91,7 +91,7 @@ const Footer = () => {
               <div className='col-lg-6 col-md-6'>
                 <div className='social-menu'>
                   <ul className='socillist'>
-                    <li> <a href = "https://www.facebook.com/bullsmartofficial/"><FontAwesomeIcon style={{color:"#4267B2"}} icon={faFacebookF} /></a> </li>
+                    <li> <a  target="blank" href = "https://www.facebook.com/bullsmartofficial/"><FontAwesomeIcon style={{color:"#4267B2"}} icon={faFacebookF} /></a> </li>
                     <li><a  target="blank" href='https://www.youtube.com/@BullSmartStockAcademy'><FontAwesomeIcon style = {{color:"#FF0000"}}   icon={faYoutube} /></a></li>
                     <li><a target="blank" href='https://twitter.com/Bullsmartapp'><FontAwesomeIcon style={{color:"#0d6efd"}} icon={faTwitter} /></a></li>
                     <li><a target="blank" href='https://www.instagram.com/bullsmart_official/'><FontAwesomeIcon style ={{color:"#C13584"}} icon={faInstagram} /></a></li>

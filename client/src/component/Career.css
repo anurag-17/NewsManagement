@@ -1,5 +1,5 @@
 #career-banner .banner-bg{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../component/Images/Career.webp);
+    background-image:  url(../component/Images/Career.webp);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -44,8 +44,9 @@
     font-weight: 400;
     font-style: normal;
     font-family: 'Arial Bold', sans-serif;
-    color: #1F286F;
+    color: #c36;
 }
+
 .table-row{
 font-size: 14px;
 color: grey;
@@ -75,7 +76,9 @@ color: grey;
     outline: 0;
     box-shadow: none;
 }
-
+.td-2a{
+    color: #c36 !important;
+}
 
 /* responsive */
 

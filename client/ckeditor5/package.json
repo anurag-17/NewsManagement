@@ -43,6 +43,7 @@
     "build": "webpack --mode production"
   },
   "dependencies": {
+    "@ckeditor/ckeditor5-enter": "^35.3.2",
     "@ckeditor/ckeditor5-source-editing": "^35.3.2",
     "ckeditor5-line-height-plugin": "^0.1.6"
   }
