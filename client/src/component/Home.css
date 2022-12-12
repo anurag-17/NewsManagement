@@ -1,7 +1,8 @@
 section#home-banner {
     background-color: transparent;
     background-image: linear-gradient(50deg, #003AAD 0%, #070F1F 100%);
-    padding: 200px 0px 273px 0px;
+    /* padding: 200px 0px 273px 0px; */
+    padding: 200px 0px 123px 0px;
 }
 .home-alin {
     /* align-items: center; */
@@ -40,10 +41,14 @@ section#home-banner .container {
 .Banner-img {
     width: 100%;
     height: 100%;
+   
 }
-.Banner-img img {
+/* .Banner-img video {
     width: 100%;
     max-width:85%;
+} */
+.bgvideoA{
+    width: 80%;
 }
 
 button.know-btn {
@@ -899,6 +904,10 @@ font-family: 'Arial Bold', sans-serif;
     padding-bottom: 20px;
 }
 .news-img {
+    height: 350px;
+}
+.bgvideoA{
+    width: 50%;
     height: 350px;
 }
 

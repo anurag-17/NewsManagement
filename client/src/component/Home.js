@@ -11,6 +11,7 @@ import blog2 from './Images/blog-img2.png';
 import blog3 from './Images/blog-img3.png';
 import blog4 from './Images/bottom-news1.webp';
 import blog5 from './Images/blog_img5.jpg'
+import bgvideo from './Images/bgvideo.mp4'
 import './Home.css';
 import axios from 'axios';
 import Navbarmenu from './menu/Navbarmenu';
@@ -156,7 +157,10 @@ return(
               </div>
               <div className='col-lg-4 col-md-6'>
                 <div className='Banner-img'>
-                  <img src={Bnnerimg} alt='bannerimg'></img>
+                  {/* <img src={Bnnerimg} alt='bannerimg'></img> */}
+                <video className='bgvideoA' autoPlay loop muted>
+                  <source src={bgvideo} type='video/mp4' />
+                </video>
                 </div>
               </div>
               {
