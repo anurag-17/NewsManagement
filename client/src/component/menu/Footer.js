@@ -1,13 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from '../Images/logo.png';
 import downlaodimg1 from '../Images/google-playstore.png';
 import './Footer.css';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee} from '@fortawesome/free-solid-svg-icons'
 import {faFacebookF, faYoutube,faInstagram,faTwitter, faLinkedinIn} from '@fortawesome/free-brands-svg-icons';
 
 const Footer = () => {
+//   const [isMenu, setisMenu] = useState(false);
+//   const toggleClass = () => {
+//     setisMenu(isMenu === false ? true : false);
+   
+// };
+
+
+
   return (
     <div>
       <section id='footer-section'>
@@ -32,9 +40,9 @@ const Footer = () => {
                     <h3>Company</h3>
                   </div>
                   <ul className='footerlist'>
-                    <Link to="/News">
-                      <li> <a href='#'>News</a></li>
-                    </Link>
+                    
+                      {/* <li><NavLink to="/News" activeClassName='is-active' ><a href='#'>News</a></NavLink></li>
+                   
                     <Link to="/Learn">
                       <li> <a href='#'>Learn</a></li>
                     </Link>
@@ -46,7 +54,15 @@ const Footer = () => {
                     </Link>
                     <Link to="/Career">
                       <li> <a href='#'>Career</a></li>
-                    </Link>
+                    </Link> */}
+                    
+                    <li  >
+                        <NavLink activeClassName='is-active' to={`/news/`}> News </NavLink> 
+                        </li>
+                    <li ><NavLink  activeClassName='is-active' to={`/learn/`}> Learn </NavLink> </li>
+                    <li  ><NavLink  activeClassName='is-active' to={`/blog/`}> Blog </NavLink> </li>
+                    <li ><NavLink  activeClassName='is-active' to={`/about-us/`}> About us </NavLink> </li>
+                    <li  ><NavLink  activeClassName='is-active' to={`/career/`}> Career </NavLink> </li>
                   </ul>
                 </div>
               </div>
@@ -91,7 +107,7 @@ const Footer = () => {
               <div className='col-lg-6 col-md-6'>
                 <div className='social-menu'>
                   <ul className='socillist'>
-                    <li> <a  target="blank" href = "https://www.facebook.com/bullsmartofficial/"><FontAwesomeIcon style={{color:"#4267B2"}} icon={faFacebookF} /></a> </li>
+                    <li> <a target="blank"  href = "https://www.facebook.com/bullsmartofficial/"><FontAwesomeIcon style={{color:"#4267B2"}} icon={faFacebookF} /></a> </li>
                     <li><a  target="blank" href='https://www.youtube.com/@BullSmartStockAcademy'><FontAwesomeIcon style = {{color:"#FF0000"}}   icon={faYoutube} /></a></li>
                     <li><a target="blank" href='https://twitter.com/Bullsmartapp'><FontAwesomeIcon style={{color:"#0d6efd"}} icon={faTwitter} /></a></li>
                     <li><a target="blank" href='https://www.instagram.com/bullsmart_official/'><FontAwesomeIcon style ={{color:"#C13584"}} icon={faInstagram} /></a></li>
